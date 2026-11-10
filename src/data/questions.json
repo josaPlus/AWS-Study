@@ -9768,5 +9768,1228 @@
       "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-bill-001",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Antes de migrar, una empresa quiere estimar cuánto le costará al mes una arquitectura con EC2, RDS y S3 en una Región concreta. ¿Qué herramienta debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Pricing Calculator",
+        "explanation": "Correcta. La calculadora estima el coste de una arquitectura antes de desplegarla, combinando servicios y opciones."
+      },
+      {
+        "id": "b",
+        "text": "AWS Cost Explorer",
+        "explanation": "Cost Explorer analiza el gasto de recursos que YA se están usando; no sirve para estimar una arquitectura que aún no existe."
+      },
+      {
+        "id": "c",
+        "text": "AWS Budgets",
+        "explanation": "Budgets alerta cuando el gasto supera un presupuesto; no calcula el coste de una arquitectura nueva."
+      },
+      {
+        "id": "d",
+        "text": "AWS Cost and Usage Report",
+        "explanation": "El CUR detalla el uso y coste REAL de la cuenta; no estima despliegues futuros."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Estimar costes antes de desplegar → Pricing Calculator.",
+    "refs": [
+      "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-002",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un director financiero quiere recibir un correo cuando el gasto PREVISTO del mes vaya a superar 5.000 USD. ¿Qué servicio debe configurar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Budgets",
+        "explanation": "Correcta. Budgets permite alertas sobre el gasto real o previsto al cruzar un umbral."
+      },
+      {
+        "id": "b",
+        "text": "AWS Cost Explorer",
+        "explanation": "Cost Explorer muestra tendencias y previsiones, pero las alertas por umbral se configuran en otro servicio."
+      },
+      {
+        "id": "c",
+        "text": "AWS Pricing Calculator",
+        "explanation": "La calculadora estima costes de arquitecturas futuras; no vigila el gasto ni envía alertas."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor recomienda optimizaciones, pero no avisa cuando el gasto supera un presupuesto."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Alertas por gasto real o previsto → AWS Budgets.",
+    "refs": [
+      "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-003",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo quiere analizar gráficamente cómo ha evolucionado su gasto en AWS por servicio en los últimos 6 meses y prever el gasto de los próximos meses. ¿Qué herramienta debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Cost Explorer",
+        "explanation": "Correcta. Cost Explorer visualiza costes históricos con filtros y agrupaciones y ofrece previsiones."
+      },
+      {
+        "id": "b",
+        "text": "AWS Pricing Calculator",
+        "explanation": "La calculadora no conoce tu gasto real; solo estima arquitecturas que describes."
+      },
+      {
+        "id": "c",
+        "text": "AWS Artifact",
+        "explanation": "Artifact proporciona informes de cumplimiento, no de costes."
+      },
+      {
+        "id": "d",
+        "text": "Amazon CloudWatch Logs",
+        "explanation": "CloudWatch Logs guarda registros de aplicaciones; no analiza costes por servicio."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Analizar costes pasados y prever los futuros → Cost Explorer.",
+    "refs": [
+      "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-004",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita el informe de costes y uso más detallado posible, a nivel de hora y de recurso, para cargarlo en su propio data warehouse. ¿Qué debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Cost and Usage Report (CUR)",
+        "explanation": "Correcta. El CUR (vía AWS Data Exports) es el conjunto de datos de facturación más granular, entregado en S3."
+      },
+      {
+        "id": "b",
+        "text": "AWS Budgets",
+        "explanation": "Budgets vigila umbrales de gasto; no exporta datos detallados por hora y recurso."
+      },
+      {
+        "id": "c",
+        "text": "La página de inicio de Billing",
+        "explanation": "La consola de facturación da un resumen, no el nivel de detalle por hora y recurso."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor da recomendaciones; no genera exportaciones de facturación."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Datos de facturación más detallados (hora, recurso, etiqueta) → Cost and Usage Report.",
+    "refs": [
+      "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-005",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere ver en sus informes cuánto gasta cada proyecto, aunque todos compartan la misma cuenta de AWS. ¿Qué debe hacer?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Etiquetar los recursos con el proyecto y activar esas etiquetas como etiquetas de asignación de costes",
+        "explanation": "Correcta. Las etiquetas activadas aparecen en Cost Explorer y en el CUR para agrupar el gasto por proyecto."
+      },
+      {
+        "id": "b",
+        "text": "Crear un usuario de IAM por proyecto",
+        "explanation": "Los usuarios de IAM controlan acceso, no atribuyen costes de recursos a proyectos."
+      },
+      {
+        "id": "c",
+        "text": "Usar Regiones diferentes para cada proyecto",
+        "explanation": "Separar por Región complica la arquitectura y no es un método de asignación de costes."
+      },
+      {
+        "id": "d",
+        "text": "Contratar el plan Enterprise Support",
+        "explanation": "El plan de soporte no añade información de costes por proyecto."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Repartir costes por proyecto/equipo → etiquetas de asignación de costes (o cuentas separadas).",
+    "refs": [
+      "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-006",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Qué DOS beneficios aporta la facturación unificada de AWS Organizations? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Una sola factura para todas las cuentas",
+        "explanation": "Correcta. La cuenta de administración paga una factura que agrupa el uso de todas las cuentas."
+      },
+      {
+        "id": "b",
+        "text": "Sumar el uso de todas las cuentas para obtener descuentos por volumen",
+        "explanation": "Correcta. El uso combinado alcanza antes los niveles de precio con descuento (p. ej., en S3 o transferencia de datos)."
+      },
+      {
+        "id": "c",
+        "text": "Soporte técnico gratuito de nivel Enterprise",
+        "explanation": "Incorrecta. El plan de soporte se contrata aparte; la facturación unificada no lo incluye."
+      },
+      {
+        "id": "d",
+        "text": "Eliminación de los cargos por transferencia de datos",
+        "explanation": "Incorrecta. La transferencia de datos se sigue cobrando según sus reglas."
+      },
+      {
+        "id": "e",
+        "text": "Créditos ilimitados de la capa gratuita",
+        "explanation": "Incorrecta. La capa gratuita tiene límites y no se multiplica por usar Organizations."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "Facturación unificada: una factura, descuentos por volumen y RI/Savings Plans compartidos.",
+    "refs": [
+      "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-007",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere impedir que CUALQUIER usuario, incluido el root, de las cuentas de desarrollo use servicios fuera de una lista aprobada. Las cuentas están en una OU de AWS Organizations. ¿Qué debe aplicar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Una Service Control Policy (SCP) en la OU",
+        "explanation": "Correcta. Las SCP fijan los permisos máximos de las cuentas de la OU y afectan incluso a su usuario root."
+      },
+      {
+        "id": "b",
+        "text": "Una política de IAM en cada usuario",
+        "explanation": "Las políticas de IAM no limitan al usuario root de la cuenta y habría que repetirlas en cada usuario."
+      },
+      {
+        "id": "c",
+        "text": "Una regla de AWS Config",
+        "explanation": "Config detecta configuraciones no conformes después de que ocurren; no impide las llamadas a la API."
+      },
+      {
+        "id": "d",
+        "text": "AWS Budgets",
+        "explanation": "Budgets controla el gasto, no qué servicios se pueden usar."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Limitar lo que pueden hacer cuentas enteras (incluido su root) → SCP de Organizations.",
+    "refs": [
+      "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-008",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa va a crear decenas de cuentas nuevas y quiere configurar rápidamente un entorno multicuenta seguro, con guardarraíles y un panel de cumplimiento, siguiendo las buenas prácticas de AWS. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Control Tower",
+        "explanation": "Correcta. Control Tower crea una landing zone con Organizations, aplica guardarraíles y muestra un dashboard de cumplimiento."
+      },
+      {
+        "id": "b",
+        "text": "AWS Service Catalog",
+        "explanation": "Service Catalog ofrece productos aprobados para que los usuarios los lancen; no configura el entorno multicuenta completo."
+      },
+      {
+        "id": "c",
+        "text": "AWS Resource Access Manager",
+        "explanation": "RAM comparte recursos entre cuentas; no crea ni gobierna el entorno multicuenta."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor recomienda buenas prácticas, pero no configura cuentas ni guardarraíles."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Entorno multicuenta seguro con guardarraíles en pocos clics → Control Tower.",
+    "refs": [
+      "https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-009",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa tiene una aplicación de producción crítica y necesita respuesta en menos de 15 minutos ante caídas críticas y un Technical Account Manager designado. ¿Qué plan de soporte cumple estos requisitos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enterprise",
+        "explanation": "Correcta. Enterprise ofrece respuesta en menos de 15 minutos para sistemas críticos caídos y un TAM designado."
+      },
+      {
+        "id": "b",
+        "text": "Enterprise On-Ramp",
+        "explanation": "On-Ramp responde en menos de 30 minutos a caídas críticas y da acceso a un GRUPO de TAM, no a uno designado."
+      },
+      {
+        "id": "c",
+        "text": "Business",
+        "explanation": "Business responde en menos de 1 hora ante la caída de un sistema de producción y no incluye TAM."
+      },
+      {
+        "id": "d",
+        "text": "Developer",
+        "explanation": "Developer solo da acceso por correo en horario laboral y está pensado para pruebas y desarrollo."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "TAM designado y respuesta <15 min → Enterprise.",
+    "refs": [
+      "https://aws.amazon.com/premiumsupport/plans/"
+    ],
+    "source": "original",
+    "note": "Con los planes nuevos (2025), Enterprise Support también ofrece 15 min y TAM; Unified Operations llega a 5 min."
+  },
+  {
+    "id": "q-bill-010",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una startup tiene cargas de trabajo en producción y quiere soporte técnico 24/7 por teléfono y chat, y acceso a todas las comprobaciones de Trusted Advisor, al menor coste posible. ¿Qué plan clásico debe elegir?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Business",
+        "explanation": "Correcta. Business es el plan más económico con soporte técnico 24/7 por teléfono, correo y chat, y el conjunto completo de Trusted Advisor."
+      },
+      {
+        "id": "b",
+        "text": "Developer",
+        "explanation": "Developer solo ofrece correo en horario laboral y comprobaciones básicas de Trusted Advisor."
+      },
+      {
+        "id": "c",
+        "text": "Basic",
+        "explanation": "Basic no incluye soporte técnico; solo atención de cuentas y facturación."
+      },
+      {
+        "id": "d",
+        "text": "Enterprise",
+        "explanation": "Enterprise cumple los requisitos, pero es mucho más caro; no es la opción de menor coste."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Producción + 24/7 + Trusted Advisor completo al menor coste → Business.",
+    "refs": [
+      "https://aws.amazon.com/premiumsupport/plans/"
+    ],
+    "source": "original",
+    "note": "En la oferta nueva de AWS, el equivalente de entrada es Business Support+."
+  },
+  {
+    "id": "q-bill-011",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un estudiante usa AWS para aprender y solo necesita documentación, foros y ayuda con la facturación. ¿Qué plan de soporte le basta?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Basic",
+        "explanation": "Correcta. Basic es gratuito e incluye atención de cuentas y facturación, documentación, re:Post y comprobaciones básicas."
+      },
+      {
+        "id": "b",
+        "text": "Developer",
+        "explanation": "Developer añade soporte técnico por correo; tiene coste y no es necesario para lo que pide."
+      },
+      {
+        "id": "c",
+        "text": "Business",
+        "explanation": "Business es para cargas de producción con soporte 24/7; es excesivo para aprender."
+      },
+      {
+        "id": "d",
+        "text": "Enterprise On-Ramp",
+        "explanation": "On-Ramp está pensado para cargas críticas de negocio; es desproporcionado."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Solo documentación, foros y facturación → Basic (gratis).",
+    "refs": [
+      "https://aws.amazon.com/premiumsupport/plans/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-012",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere recibir recomendaciones para reducir costes, mejorar la seguridad, la tolerancia a fallos y el rendimiento, y ver si se acerca a las cuotas de servicio, todo desde una sola herramienta. ¿Cuál es?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Correcta. Trusted Advisor revisa la cuenta en las categorías de costes, rendimiento, seguridad, tolerancia a fallos, cuotas de servicio y excelencia operativa."
+      },
+      {
+        "id": "b",
+        "text": "AWS Compute Optimizer",
+        "explanation": "Compute Optimizer solo recomienda el tamaño adecuado de recursos de cómputo y almacenamiento; no revisa seguridad ni tolerancia a fallos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector se centra en vulnerabilidades de software; no da recomendaciones de costes ni cuotas."
+      },
+      {
+        "id": "d",
+        "text": "AWS Well-Architected Tool",
+        "explanation": "La Well-Architected Tool revisa una carga de trabajo mediante un cuestionario; no analiza automáticamente toda la cuenta ni las cuotas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recomendaciones automáticas en costes, seguridad, rendimiento, fallos y cuotas → Trusted Advisor.",
+    "refs": [
+      "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-013",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa sospecha que sus instancias EC2 están sobredimensionadas. ¿Qué servicio analiza su uso real con machine learning y recomienda tipos y tamaños más adecuados?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Compute Optimizer",
+        "explanation": "Correcta. Compute Optimizer analiza métricas históricas y recomienda el tamaño óptimo de EC2, ASG, EBS, Lambda y más."
+      },
+      {
+        "id": "b",
+        "text": "AWS Pricing Calculator",
+        "explanation": "La calculadora estima precios de configuraciones que tú eliges; no analiza el uso real."
+      },
+      {
+        "id": "c",
+        "text": "AWS Budgets",
+        "explanation": "Budgets avisa al superar un presupuesto, pero no recomienda tamaños de instancia."
+      },
+      {
+        "id": "d",
+        "text": "AWS Cost Anomaly Detection",
+        "explanation": "Cost Anomaly Detection detecta gastos inusuales; no recomienda redimensionar recursos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Redimensionar (rightsizing) recursos con ML → Compute Optimizer.",
+    "refs": [
+      "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-014",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un error de configuración disparó el gasto de una cuenta durante el fin de semana y nadie se dio cuenta. ¿Qué servicio habría detectado este gasto inusual con machine learning sin definir umbrales?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Cost Anomaly Detection",
+        "explanation": "Correcta. Este servicio aprende el patrón habitual de gasto, detecta anomalías y avisa con su causa raíz."
+      },
+      {
+        "id": "b",
+        "text": "AWS Pricing Calculator",
+        "explanation": "La calculadora solo estima costes antes de desplegar."
+      },
+      {
+        "id": "c",
+        "text": "AWS Artifact",
+        "explanation": "Artifact contiene informes de cumplimiento, no monitoriza costes."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector busca vulnerabilidades; no analiza la facturación."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Detectar gastos inusuales con ML → Cost Anomaly Detection. Umbrales fijos → Budgets.",
+    "refs": [
+      "https://docs.aws.amazon.com/cost-management/latest/userguide/manage-ad.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-015",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere ser avisada antes de alcanzar el límite de vCPU On-Demand de su cuenta y solicitar un aumento. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Service Quotas",
+        "explanation": "Correcta. Service Quotas muestra los límites, permite pedir aumentos y crear alarmas de CloudWatch al acercarse a ellos."
+      },
+      {
+        "id": "b",
+        "text": "AWS Budgets",
+        "explanation": "Budgets trabaja con importes y uso facturable, no con los límites técnicos de los servicios."
+      },
+      {
+        "id": "c",
+        "text": "AWS Organizations",
+        "explanation": "Organizations gestiona cuentas y políticas; no muestra ni amplía cuotas de servicios."
+      },
+      {
+        "id": "d",
+        "text": "AWS Health Dashboard",
+        "explanation": "El Health Dashboard informa de eventos de servicio; no gestiona límites de la cuenta."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Límites de servicios y solicitudes de aumento → Service Quotas.",
+    "refs": [
+      "https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-016",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa transfiere grandes volúmenes de datos entre instancias EC2. ¿Qué configuración resulta MÁS barata en transferencia de datos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Instancias en la misma AZ comunicándose por IP privada",
+        "explanation": "Correcta. El tráfico dentro de la misma AZ usando IP privada no tiene coste de transferencia."
+      },
+      {
+        "id": "b",
+        "text": "Instancias en distintas AZ usando IP pública",
+        "explanation": "El tráfico entre AZ tiene coste, y usar IP pública lo encarece aún más."
+      },
+      {
+        "id": "c",
+        "text": "Instancias en distintas Regiones",
+        "explanation": "La transferencia entre Regiones es la más cara de estas opciones."
+      },
+      {
+        "id": "d",
+        "text": "Enviar los datos a través de internet",
+        "explanation": "La salida a internet se cobra por GB; es más cara que el tráfico interno."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Más barato: misma AZ + IP privada. Coste creciente: entre AZ → entre Regiones → salida a internet.",
+    "refs": [
+      "https://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-017",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Cuáles de estos servicios NO tienen coste por sí mismos (solo se pagan los recursos que crean o usan)? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CloudFormation",
+        "explanation": "Correcta. CloudFormation es gratuito; se pagan los recursos que aprovisiona."
+      },
+      {
+        "id": "b",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Correcta. Beanstalk no tiene coste adicional; se pagan las instancias, balanceadores y demás recursos subyacentes."
+      },
+      {
+        "id": "c",
+        "text": "NAT Gateway",
+        "explanation": "Incorrecta. El NAT Gateway se cobra por hora y por GB procesado."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EC2 On-Demand",
+        "explanation": "Incorrecta. Las instancias se cobran por segundo u hora de uso."
+      },
+      {
+        "id": "e",
+        "text": "AWS Shield Advanced",
+        "explanation": "Incorrecta. Shield Advanced tiene una cuota mensual (Shield Standard sí es gratuito)."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "Gratis como servicio: IAM, VPC, CloudFormation, Beanstalk, Auto Scaling, Organizations.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/how-aws-pricing-works/aws-free-tier.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-018",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "El departamento de TI quiere que los equipos de negocio puedan lanzar por su cuenta entornos preaprobados (por ejemplo, una base de datos con cierta configuración) sin darles permisos amplios. ¿Qué servicio lo permite?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Service Catalog",
+        "explanation": "Correcta. Service Catalog ofrece un catálogo de productos aprobados que los usuarios lanzan en autoservicio con permisos limitados."
+      },
+      {
+        "id": "b",
+        "text": "AWS Marketplace",
+        "explanation": "Marketplace es una tienda de software de terceros; no controla qué configuraciones internas pueden lanzar los empleados."
+      },
+      {
+        "id": "c",
+        "text": "AWS Organizations",
+        "explanation": "Organizations gestiona cuentas y SCP; no ofrece un catálogo de productos aprobados para autoservicio."
+      },
+      {
+        "id": "d",
+        "text": "AWS Resource Access Manager",
+        "explanation": "RAM comparte recursos existentes entre cuentas; no ofrece plantillas aprobadas para lanzar."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Autoservicio de productos aprobados por TI → Service Catalog.",
+    "refs": [
+      "https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-019",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa con varias cuentas compró Reserved Instances en una de ellas, pero otra cuenta es la que ejecuta las instancias. ¿Cómo puede aprovechar el descuento?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Uniendo las cuentas en AWS Organizations con facturación unificada",
+        "explanation": "Correcta. Con facturación unificada, los descuentos de RI y Savings Plans se comparten entre las cuentas de la organización (si no se desactiva)."
+      },
+      {
+        "id": "b",
+        "text": "Copiando las Reserved Instances a la otra cuenta",
+        "explanation": "Las RI no se copian entre cuentas; el descuento se comparte mediante la facturación unificada."
+      },
+      {
+        "id": "c",
+        "text": "Contratando el plan Enterprise Support",
+        "explanation": "El plan de soporte no influye en cómo se aplican los descuentos de RI."
+      },
+      {
+        "id": "d",
+        "text": "No es posible: el descuento solo aplica en la cuenta que compró la RI",
+        "explanation": "Falso. Dentro de una organización con facturación unificada, el descuento puede aplicarse a otras cuentas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Compartir descuentos de RI/Savings Plans entre cuentas → Organizations con facturación unificada.",
+    "refs": [
+      "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ri-turn-off.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-020",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Qué afirmación describe correctamente uno de los principios de precios de AWS?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cuanto más usas de algunos servicios (como S3), menor es el precio por unidad",
+        "explanation": "Correcta. AWS aplica precios por niveles: el coste por GB baja al aumentar el volumen."
+      },
+      {
+        "id": "b",
+        "text": "Siempre hay que pagar por adelantado un año de servicio",
+        "explanation": "Falso. El modelo base es pago por uso, sin pagos iniciales; el pago adelantado solo es una opción para obtener descuentos."
+      },
+      {
+        "id": "c",
+        "text": "Los precios son iguales en todas las Regiones",
+        "explanation": "Falso. Los precios varían según la Región."
+      },
+      {
+        "id": "d",
+        "text": "Los datos que entran a AWS se cobran más caros que los que salen",
+        "explanation": "Falso. La entrada de datos es gratuita en general y la salida se cobra."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Principios: pago por uso, ahorrar reservando, pagar menos por unidad al usar más, y precios que bajan con el tiempo.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/how-aws-pricing-works/key-principles.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-021",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un estudiante crea una cuenta nueva de AWS en 2026 y elige el Plan gratuito. ¿Qué ocurre?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Recibe créditos y no se le cobra; el plan termina a los 6 meses o al agotar los créditos",
+        "explanation": "Correcta. Desde julio de 2025 las cuentas nuevas reciben créditos y, con el Plan gratuito, no se generan cargos durante 6 meses o hasta gastar los créditos."
+      },
+      {
+        "id": "b",
+        "text": "Puede usar cualquier servicio sin límite durante 12 meses",
+        "explanation": "No existe uso ilimitado: hay créditos y límites, y el Plan gratuito restringe algunos servicios."
+      },
+      {
+        "id": "c",
+        "text": "Debe pagar por adelantado el uso del primer año",
+        "explanation": "La capa gratuita no requiere pagos por adelantado."
+      },
+      {
+        "id": "d",
+        "text": "Obtiene automáticamente el plan de soporte Enterprise",
+        "explanation": "La capa gratuita no incluye planes de soporte de pago; la cuenta tiene soporte Basic."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Capa gratuita actual: créditos (hasta 200 USD) y Plan gratuito de 6 meses o hasta agotar créditos.",
+    "refs": [
+      "https://aws.amazon.com/free/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-022",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "La cuenta de redes de una empresa tiene una VPC con subredes, y otras cuentas de la organización necesitan lanzar recursos en esas mismas subredes sin crear VPC propias. ¿Qué servicio lo permite?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Resource Access Manager (RAM)",
+        "explanation": "Correcta. RAM permite compartir subredes de una VPC (y otros recursos) con otras cuentas de la organización."
+      },
+      {
+        "id": "b",
+        "text": "VPC Peering",
+        "explanation": "El peering conecta dos VPC distintas; no permite que otra cuenta lance recursos dentro de TUS subredes."
+      },
+      {
+        "id": "c",
+        "text": "AWS Service Catalog",
+        "explanation": "Service Catalog ofrece productos aprobados para lanzar; no comparte subredes existentes."
+      },
+      {
+        "id": "d",
+        "text": "AWS Control Tower",
+        "explanation": "Control Tower configura y gobierna el entorno multicuenta; no es el mecanismo para compartir subredes."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Compartir recursos (subredes, Transit Gateway…) entre cuentas → Resource Access Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/ram/latest/userguide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-023",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa con plan Enterprise tiene dudas complejas sobre su factura y quiere que un especialista en facturación de AWS le ayude. ¿Qué recurso le corresponde?",
+    "options": [
+      {
+        "id": "a",
+        "text": "El equipo Concierge de soporte",
+        "explanation": "Correcta. Concierge son especialistas en facturación y cuentas incluidos en los planes Enterprise."
+      },
+      {
+        "id": "b",
+        "text": "AWS Professional Services",
+        "explanation": "Professional Services ofrece consultoría de proyectos de migración o arquitectura; no resuelve dudas de facturación del día a día."
+      },
+      {
+        "id": "c",
+        "text": "AWS Abuse",
+        "explanation": "AWS Abuse recibe denuncias de uso indebido de recursos; no atiende dudas de facturación."
+      },
+      {
+        "id": "d",
+        "text": "AWS Marketplace",
+        "explanation": "Marketplace es un catálogo de software de terceros."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Especialistas en facturación (planes Enterprise) → Concierge.",
+    "refs": [
+      "https://aws.amazon.com/premiumsupport/plans/enterprise/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-bill-024",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación tiene un uso de cómputo constante y la empresa quiere un compromiso de gasto por hora que le dé descuento sobre EC2 aunque cambie de familia de instancia o de Región. ¿Qué herramienta le recomienda cuánto comprometer según su uso histórico?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Las recomendaciones de Savings Plans en AWS Cost Explorer",
+        "explanation": "Correcta. Cost Explorer analiza el uso pasado y recomienda el compromiso por hora de Savings Plans más adecuado."
+      },
+      {
+        "id": "b",
+        "text": "AWS Pricing Calculator",
+        "explanation": "La calculadora estima precios de configuraciones que tú introduces, sin analizar tu uso real."
+      },
+      {
+        "id": "c",
+        "text": "AWS Trusted Advisor únicamente",
+        "explanation": "Trusted Advisor puede sugerir ahorros, pero las recomendaciones detalladas de compromiso de Savings Plans están en Cost Explorer."
+      },
+      {
+        "id": "d",
+        "text": "AWS Budgets",
+        "explanation": "Budgets puede vigilar la cobertura y uso de Savings Plans, pero no recomienda cuánto comprometer."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "¿Cuánto comprometer en Savings Plans? → recomendaciones en Cost Explorer.",
+    "refs": [
+      "https://docs.aws.amazon.com/savingsplans/latest/userguide/sp-recommendations.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-bill-001",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Crea presupuestos de coste o uso y envía alertas cuando el gasto real o previsto supera un umbral.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Budgets",
+        "explanation": "Correcta. Budgets es el servicio de presupuestos y alertas."
+      },
+      {
+        "id": "b",
+        "text": "AWS Cost Explorer",
+        "explanation": "Cost Explorer visualiza y prevé costes, pero las alertas por umbral se definen en Budgets. Sería la respuesta para analizar tendencias."
+      },
+      {
+        "id": "c",
+        "text": "AWS Cost Anomaly Detection",
+        "explanation": "Detecta gastos inusuales con ML SIN umbrales fijos. Sería la respuesta para encontrar picos inesperados."
+      },
+      {
+        "id": "d",
+        "text": "Amazon CloudWatch Billing Alarm",
+        "explanation": "Una alarma de facturación de CloudWatch avisa solo sobre el gasto real acumulado, no sobre el previsto ni sobre presupuestos de uso."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Presupuestos y alertas → Budgets.",
+    "refs": [
+      "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-bill-002",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Visualiza el gasto histórico por servicio, cuenta o etiqueta, prevé el gasto futuro y recomienda Savings Plans.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Cost Explorer",
+        "explanation": "Correcta. Cost Explorer es la herramienta de análisis visual de costes."
+      },
+      {
+        "id": "b",
+        "text": "AWS Pricing Calculator",
+        "explanation": "La calculadora estima arquitecturas futuras, no analiza el gasto real. Sería la respuesta antes de desplegar."
+      },
+      {
+        "id": "c",
+        "text": "AWS Cost and Usage Report",
+        "explanation": "El CUR entrega los datos más detallados como archivos en S3, sin gráficos ni previsiones integradas."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor da recomendaciones de ahorro, pero no visualiza el histórico de gasto."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Analizar y prever costes → Cost Explorer.",
+    "refs": [
+      "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-bill-003",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Gestiona varias cuentas de AWS de forma centralizada con unidades organizativas, políticas de control de servicios y facturación unificada.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Organizations",
+        "explanation": "Correcta. Organizations agrupa cuentas, aplica SCP y unifica la facturación."
+      },
+      {
+        "id": "b",
+        "text": "AWS Control Tower",
+        "explanation": "Control Tower construye una landing zone con guardarraíles USANDO Organizations. Sería la respuesta para configurar un entorno multicuenta siguiendo buenas prácticas."
+      },
+      {
+        "id": "c",
+        "text": "AWS IAM Identity Center",
+        "explanation": "Identity Center da inicio de sesión único a las cuentas; no las organiza ni unifica la facturación."
+      },
+      {
+        "id": "d",
+        "text": "AWS Resource Access Manager",
+        "explanation": "RAM comparte recursos entre cuentas; no gestiona cuentas ni facturación."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Gestionar muchas cuentas, OU, SCP y facturación unificada → Organizations.",
+    "refs": [
+      "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-bill-004",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Configura y gobierna un entorno multicuenta seguro (landing zone) con guardarraíles y un panel de cumplimiento.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Control Tower",
+        "explanation": "Correcta. Control Tower automatiza la landing zone y sus guardarraíles."
+      },
+      {
+        "id": "b",
+        "text": "AWS Organizations",
+        "explanation": "Organizations es la base (OU, SCP, facturación), pero no despliega por sí solo la landing zone con guardarraíles y dashboard."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "Config evalúa reglas de configuración; Control Tower lo usa para los guardarraíles de detección, pero no configura el entorno multicuenta."
+      },
+      {
+        "id": "d",
+        "text": "AWS Security Hub",
+        "explanation": "Security Hub centraliza hallazgos de seguridad; no crea cuentas ni landing zones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Landing zone multicuenta con guardarraíles → Control Tower.",
+    "refs": [
+      "https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-bill-005",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Recomienda el tipo y tamaño óptimo de instancias EC2, volúmenes EBS y funciones Lambda analizando su uso con machine learning.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Compute Optimizer",
+        "explanation": "Correcta. Compute Optimizer hace recomendaciones de rightsizing."
+      },
+      {
+        "id": "b",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor detecta, por ejemplo, instancias infrautilizadas, pero no hace el análisis detallado de tipos y tamaños con ML. Sería la respuesta para una revisión general de buenas prácticas."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CodeGuru Profiler",
+        "explanation": "CodeGuru Profiler optimiza el CÓDIGO de la aplicación, no el tamaño de los recursos."
+      },
+      {
+        "id": "d",
+        "text": "EC2 Auto Scaling",
+        "explanation": "Auto Scaling ajusta la cantidad de instancias, no recomienda su tipo o tamaño."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Rightsizing con ML → Compute Optimizer.",
+    "refs": [
+      "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-bill-006",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Revisa la cuenta y recomienda mejoras en costes, rendimiento, seguridad, tolerancia a fallos, cuotas de servicio y excelencia operativa.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Correcta. Trusted Advisor hace estas comprobaciones automáticas en la cuenta."
+      },
+      {
+        "id": "b",
+        "text": "AWS Well-Architected Tool",
+        "explanation": "La Well-Architected Tool revisa UNA carga de trabajo mediante preguntas sobre los 6 pilares. Sería la respuesta para una revisión de arquitectura."
+      },
+      {
+        "id": "c",
+        "text": "AWS Security Hub",
+        "explanation": "Security Hub se centra en hallazgos y estándares de seguridad, no en costes ni rendimiento."
+      },
+      {
+        "id": "d",
+        "text": "AWS Health Dashboard",
+        "explanation": "El Health Dashboard informa de eventos de servicios de AWS, no da recomendaciones de optimización."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recomendaciones automáticas de buenas prácticas en la cuenta → Trusted Advisor.",
+    "refs": [
+      "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-bill-007",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Estima el coste de una arquitectura en AWS antes de desplegarla.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Pricing Calculator",
+        "explanation": "Correcta. La calculadora de precios estima arquitecturas futuras."
+      },
+      {
+        "id": "b",
+        "text": "AWS Cost Explorer",
+        "explanation": "Cost Explorer analiza costes de recursos ya en uso. Sería la respuesta para revisar el gasto del mes pasado."
+      },
+      {
+        "id": "c",
+        "text": "AWS Budgets",
+        "explanation": "Budgets vigila el gasto frente a un presupuesto. Sería la respuesta para recibir alertas."
+      },
+      {
+        "id": "d",
+        "text": "AWS Migration Evaluator",
+        "explanation": "Migration Evaluator construye un caso de negocio analizando tu centro de datos actual; no es la calculadora general de arquitecturas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Estimar antes de desplegar → Pricing Calculator.",
+    "refs": [
+      "https://calculator.aws/"
+    ],
+    "source": "original"
   }
 ]

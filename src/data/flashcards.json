@@ -3086,5 +3086,297 @@
       "config"
     ],
     "difficulty": 2
+  },
+  {
+    "id": "bill-001",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Organizations?",
+    "back": "Servicio global para gestionar varias cuentas de AWS desde una cuenta de administración: agruparlas en unidades organizativas (OU), aplicar políticas (SCP), crear cuentas por API y unificar la facturación.",
+    "tags": [
+      "organizations"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "bill-002",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué son las Service Control Policies (SCP)?",
+    "back": "Políticas de AWS Organizations que fijan los permisos MÁXIMOS de las cuentas de una OU o de una cuenta (listas de permitir o denegar acciones de IAM). Afectan a todos los usuarios y roles de la cuenta, incluido su root, pero no a la cuenta de administración. No conceden permisos por sí solas.",
+    "tags": [
+      "scp"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-003",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es la facturación unificada (consolidated billing)?",
+    "back": "Con Organizations, todas las cuentas se pagan con una sola factura. Además se suma el uso de todas las cuentas para alcanzar descuentos por volumen, y los descuentos de Reserved Instances y Savings Plans se comparten entre cuentas.",
+    "tags": [
+      "organizations",
+      "facturacion"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "bill-004",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "type": "dato-clave",
+    "front": "Ventajas de una estrategia multicuenta",
+    "back": "Aislar entornos (dev/test/prod), separar por equipo o centro de costes, limitar el impacto de un incidente de seguridad, aplicar políticas distintas, y ver los costes por cuenta. Se combina con etiquetas y CloudTrail centralizado en una cuenta de logs.",
+    "tags": [
+      "organizations"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-005",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Control Tower?",
+    "back": "La forma más sencilla de configurar y gobernar un entorno multicuenta seguro siguiendo buenas prácticas (landing zone). Usa Organizations por debajo, aplica guardarraíles (preventivos y de detección) y ofrece un dashboard de cumplimiento.",
+    "tags": [
+      "control-tower"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-006",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Resource Access Manager (RAM)?",
+    "back": "Permite COMPARTIR recursos que posees con otras cuentas o con tu organización (subredes de una VPC, Transit Gateways, reglas de Route 53 Resolver, License Manager…), evitando duplicarlos.",
+    "tags": [
+      "ram"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "bill-007",
+    "domain": 2,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Service Catalog?",
+    "back": "Un catálogo de productos aprobados (stacks de CloudFormation) que los administradores definen para que los usuarios, aunque sean nuevos en AWS, lancen solo recursos autorizados y conformes a las políticas de la empresa (autoservicio controlado).",
+    "tags": [
+      "service-catalog"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-008",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "Los modelos de precios de AWS",
+    "back": "Pago por uso (sin compromiso); ahorrar al reservar (RI, Savings Plans, compromisos de 1-3 años); pagar menos por unidad al usar más (descuentos por volumen, p. ej. en S3); y pagar menos a medida que AWS crece (bajadas de precio).",
+    "tags": [
+      "precios"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "bill-009",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "dato-clave",
+    "front": "Capa gratuita de AWS (desde jul-2025)",
+    "back": "Las cuentas nuevas reciben créditos (100 USD al registrarse y hasta 100 USD más por completar actividades) y eligen el Plan gratuito (dura 6 meses o hasta agotar los créditos, sin cargos y con servicios limitados) o el Plan de pago. Siguen existiendo ofertas 'siempre gratis' con límites (p. ej., 1 millón de peticiones de Lambda al mes).",
+    "tags": [
+      "free-tier"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-010",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "dato-clave",
+    "front": "¿Qué servicios no tienen coste propio en AWS?",
+    "back": "IAM, VPC (no los NAT Gateway ni las IPs públicas), facturación unificada, CloudFormation, Elastic Beanstalk, Auto Scaling y Organizations. Pagas los recursos que crean o usan (EC2, EBS, etc.).",
+    "tags": [
+      "precios"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-011",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "dato-clave",
+    "front": "Transferencia de datos: ¿qué se cobra?",
+    "back": "Entrada a AWS: gratis. Salida a internet: se cobra por GB. Entre AZ: tiene coste (menor si usas IP privada). Dentro de la misma AZ con IP privada: gratis. Entre Regiones: se cobra. Para ahorrar: mantener el tráfico privado y dentro de la misma AZ cuando sea posible.",
+    "tags": [
+      "precios",
+      "red"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "bill-012",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es el AWS Pricing Calculator?",
+    "back": "Herramienta web gratuita (calculator.aws) para ESTIMAR el coste de una arquitectura ANTES de desplegarla, combinando servicios, Regiones y opciones de compra.",
+    "tags": [
+      "pricing-calculator"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "bill-013",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Cost Explorer?",
+    "back": "Visualiza, entiende y gestiona tus costes y uso a lo largo del tiempo, con filtros y agrupaciones (por servicio, cuenta, etiqueta). Analiza hasta 12 meses atrás, PREVÉ el gasto futuro y recomienda Savings Plans.",
+    "tags": [
+      "cost-explorer"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "bill-014",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Budgets?",
+    "back": "Crea presupuestos de coste, uso, RI o Savings Plans y envía alertas (correo/SNS) cuando el gasto real o PREVISTO supera el umbral. Puede ejecutar acciones automáticas. Los dos primeros presupuestos son gratuitos.",
+    "tags": [
+      "budgets"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "bill-015",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es el AWS Cost and Usage Report (CUR)?",
+    "back": "El conjunto de datos de costes y uso MÁS DETALLADO disponible (por hora, recurso y etiqueta), entregado en S3 y analizable con Athena, Redshift o QuickSight. Hoy se genera mediante AWS Data Exports.",
+    "tags": [
+      "cur"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-016",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué son las etiquetas de asignación de costes?",
+    "back": "Etiquetas (clave=valor) de los recursos que, una vez activadas en Billing, aparecen como columnas en los informes de costes para atribuir el gasto a proyectos, equipos o entornos. Hay etiquetas generadas por AWS (aws:createdBy) y definidas por el usuario.",
+    "tags": [
+      "etiquetas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-017",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Cost Anomaly Detection?",
+    "back": "Monitoriza continuamente costes y uso con machine learning para detectar gastos INUSUALES, analiza la causa raíz y avisa (correo o SNS) sin que tengas que definir umbrales.",
+    "tags": [
+      "cost-anomaly"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-018",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es Service Quotas?",
+    "back": "Muestra y gestiona las cuotas (límites) de los servicios de tu cuenta, permite solicitar aumentos y crear alarmas de CloudWatch cuando te acercas a un límite (p. ej., número de vCPU On-Demand).",
+    "tags": [
+      "service-quotas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-019",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Trusted Advisor?",
+    "back": "Analiza tu cuenta y recomienda mejoras en 6 categorías: optimización de costes, rendimiento, seguridad, tolerancia a fallos, cuotas de servicio y excelencia operativa. Con Basic/Developer solo tienes las comprobaciones básicas de seguridad y cuotas; el conjunto completo requiere un plan superior.",
+    "tags": [
+      "trusted-advisor"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "bill-020",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es AWS Compute Optimizer?",
+    "back": "Usa machine learning sobre las métricas de CloudWatch para recomendar el tamaño y tipo ÓPTIMOS de EC2, Auto Scaling Groups, volúmenes EBS, funciones Lambda y más, para reducir costes (hasta un 25 %) y mejorar el rendimiento.",
+    "tags": [
+      "compute-optimizer"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-021",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "comparacion",
+    "front": "Planes de soporte clásicos (los del examen)",
+    "back": "Basic: gratis, solo atención de cuentas y facturación, re:Post y documentación.\nDeveloper: correo en horario laboral, sistema deteriorado <12 h.\nBusiness: 24/7, producción caída <1 h, Trusted Advisor completo.\nEnterprise On-Ramp: crítico caído <30 min, grupo de TAM.\nEnterprise: crítico caído <15 min, TAM designado, Concierge.",
+    "tags": [
+      "soporte"
+    ],
+    "difficulty": 2,
+    "note": "AWS lanzó en 2025 los planes Business Support+, Enterprise y Unified Operations. Developer, Business clásico y Enterprise On-Ramp se mantienen para clientes actuales hasta el 1-ene-2027."
+  },
+  {
+    "id": "bill-022",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es un Technical Account Manager (TAM)?",
+    "back": "Un experto técnico de AWS asignado a la cuenta que actúa como punto de contacto principal, da orientación proactiva, revisiones de arquitectura y coordina con los equipos de AWS. Designado en el plan Enterprise (un grupo de TAM en Enterprise On-Ramp).",
+    "tags": [
+      "soporte",
+      "tam"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "bill-023",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "concepto",
+    "front": "¿Qué es el equipo Concierge de soporte?",
+    "back": "Especialistas en facturación y cuentas incluidos en los planes Enterprise (y Enterprise On-Ramp) que ayudan con dudas de facturación, optimización y gestión de cuentas.",
+    "tags": [
+      "soporte"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "bill-024",
+    "domain": 4,
+    "section": "Cuentas, facturación y soporte",
+    "type": "comparacion",
+    "front": "Pricing Calculator vs Cost Explorer vs Budgets",
+    "back": "Pricing Calculator: ANTES de desplegar, estima cuánto costará.\nCost Explorer: DESPUÉS, analiza el gasto pasado y prevé el futuro.\nBudgets: VIGILA y alerta cuando el gasto real o previsto pasa un umbral.",
+    "tags": [
+      "costes"
+    ],
+    "difficulty": 1
   }
 ]
