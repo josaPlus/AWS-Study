@@ -10991,5 +10991,1259 @@
       "https://calculator.aws/"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-ml-001",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere analizar miles de reseñas de clientes para saber si son positivas o negativas y qué productos se mencionan, sin construir modelos propios. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Comprehend",
+        "explanation": "Correcta. Comprehend es NLP gestionado: detecta sentimiento, entidades y frases clave en textos."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Rekognition",
+        "explanation": "Rekognition analiza imágenes y vídeos, no texto. Sería la respuesta para detectar objetos o caras en fotos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Textract",
+        "explanation": "Textract EXTRAE texto de documentos escaneados, pero no analiza su sentimiento. Sería la respuesta para leer formularios o facturas."
+      },
+      {
+        "id": "d",
+        "text": "Amazon SageMaker AI",
+        "explanation": "SageMaker sirve para construir y entrenar modelos propios; el requisito es NO construir modelos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Sentimiento y entidades en texto (NLP) → Comprehend.",
+    "refs": [
+      "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ml-002",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de científicos de datos quiere construir, entrenar y desplegar sus propios modelos de machine learning en un servicio totalmente gestionado. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon SageMaker AI",
+        "explanation": "Correcta. SageMaker AI cubre todo el ciclo de vida de los modelos propios: preparación, entrenamiento, ajuste y despliegue."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Personalize",
+        "explanation": "Personalize ofrece recomendaciones ya preparadas sin construir modelos desde cero; no es una plataforma general de ML."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Comprehend",
+        "explanation": "Comprehend es un servicio de IA listo para usar (NLP); no sirve para entrenar cualquier tipo de modelo propio."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EMR",
+        "explanation": "EMR procesa big data con Spark o Hadoop; puede preparar datos, pero no es la plataforma gestionada de ML de AWS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Construir y entrenar modelos propios → SageMaker AI. Servicios listos para usar → Comprehend, Rekognition, etc.",
+    "refs": [
+      "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ml-003",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un banco recibe miles de formularios escaneados y quiere extraer automáticamente los campos (nombre, cantidades, tablas) para cargarlos en su base de datos. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Textract",
+        "explanation": "Correcta. Textract extrae texto, escritura a mano, tablas y pares clave-valor de formularios escaneados."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Transcribe",
+        "explanation": "Transcribe convierte AUDIO en texto, no documentos escaneados."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Translate",
+        "explanation": "Translate traduce texto entre idiomas; no lo extrae de imágenes."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Kendra",
+        "explanation": "Kendra busca respuestas en documentos ya indexados; no está diseñado para extraer campos de formularios escaneados."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Extraer texto y datos de documentos escaneados → Textract.",
+    "refs": [
+      "https://docs.aws.amazon.com/textract/latest/dg/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-001",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere migrar rápidamente sus servidores on-premises a Amazon EC2 sin modificar las aplicaciones. ¿Qué estrategia de migración describe esto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rehost (lift and shift)",
+        "explanation": "Correcta. Rehost consiste en mover los servidores tal cual a la nube, sin cambios en las aplicaciones."
+      },
+      {
+        "id": "b",
+        "text": "Refactor / Re-architect",
+        "explanation": "Refactor implica rediseñar la aplicación con servicios nativos de la nube; requiere cambios importantes."
+      },
+      {
+        "id": "c",
+        "text": "Repurchase",
+        "explanation": "Repurchase es cambiar a otro producto, normalmente SaaS; no se mantienen los servidores."
+      },
+      {
+        "id": "d",
+        "text": "Retire",
+        "explanation": "Retire es apagar aplicaciones que ya no se necesitan; no implica migrarlas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Mover servidores sin cambios → Rehost (con Application Migration Service).",
+    "refs": [
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-002",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Durante la migración, una empresa mueve su base de datos MySQL autogestionada a Amazon RDS para ahorrarse la administración, sin cambiar la arquitectura de la aplicación. ¿Qué estrategia aplica?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Replatform (lift and reshape)",
+        "explanation": "Correcta. Replatform aplica optimizaciones puntuales, como pasar a un servicio gestionado, sin rediseñar la aplicación."
+      },
+      {
+        "id": "b",
+        "text": "Rehost",
+        "explanation": "Rehost movería el servidor de base de datos tal cual a EC2, sin aprovechar un servicio gestionado."
+      },
+      {
+        "id": "c",
+        "text": "Retain",
+        "explanation": "Retain significa dejar la aplicación donde está por ahora; aquí sí se está migrando."
+      },
+      {
+        "id": "d",
+        "text": "Refactor",
+        "explanation": "Refactor implicaría rediseñar la aplicación (p. ej., microservicios serverless); el escenario mantiene la arquitectura."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Pasar a un servicio gestionado sin rediseñar → Replatform.",
+    "refs": [
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-003",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa decide abandonar su CRM desarrollado internamente y contratar un CRM SaaS como parte de su migración a la nube. ¿Qué estrategia de las 7 Rs aplica?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Repurchase",
+        "explanation": "Correcta. Repurchase ('drop and shop') es sustituir la aplicación por otro producto, normalmente SaaS."
+      },
+      {
+        "id": "b",
+        "text": "Relocate",
+        "explanation": "Relocate mueve la plataforma completa (p. ej., VMware) a la nube a nivel de hipervisor; no cambia de producto."
+      },
+      {
+        "id": "c",
+        "text": "Rehost",
+        "explanation": "Rehost movería el mismo CRM a EC2 sin cambios."
+      },
+      {
+        "id": "d",
+        "text": "Retain",
+        "explanation": "Retain mantendría el CRM actual donde está."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Cambiar a un producto distinto (SaaS) → Repurchase.",
+    "refs": [
+      "https://aws.amazon.com/blogs/enterprise-strategy/new-possibilities-seven-strategies-to-accelerate-your-application-migration-to-aws/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-004",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere rediseñar su aplicación monolítica en microservicios serverless para aprovechar al máximo la escalabilidad y agilidad de la nube. ¿Qué estrategia de migración es?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Refactor / Re-architect",
+        "explanation": "Correcta. Refactor reimagina la arquitectura con funcionalidades nativas de la nube; es la estrategia más costosa pero la que más beneficios aporta."
+      },
+      {
+        "id": "b",
+        "text": "Replatform",
+        "explanation": "Replatform solo hace optimizaciones puntuales sin cambiar la arquitectura de fondo."
+      },
+      {
+        "id": "c",
+        "text": "Rehost",
+        "explanation": "Rehost mueve la aplicación sin cambios, así que seguiría siendo monolítica."
+      },
+      {
+        "id": "d",
+        "text": "Retire",
+        "explanation": "Retire elimina aplicaciones innecesarias; no las rediseña."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Rediseñar con servicios nativos (microservicios, serverless) → Refactor.",
+    "refs": [
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-005",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "Al evaluar su cartera de aplicaciones, una empresa descubre que algunas ya no se usan y otras tienen dependencias que impiden moverlas por ahora. ¿Qué DOS estrategias aplicará a esas aplicaciones? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Retire",
+        "explanation": "Correcta. Las aplicaciones que ya no aportan valor se apagan (Retire), lo que reduce costes y superficie de ataque."
+      },
+      {
+        "id": "b",
+        "text": "Retain",
+        "explanation": "Correcta. Las aplicaciones que no pueden moverse todavía se mantienen donde están (Retain) y se revisan más adelante."
+      },
+      {
+        "id": "c",
+        "text": "Refactor",
+        "explanation": "Incorrecta. Refactor rediseña aplicaciones que sí se van a migrar; no aplica a las que se abandonan o se quedan."
+      },
+      {
+        "id": "d",
+        "text": "Rehost",
+        "explanation": "Incorrecta. Rehost migraría las aplicaciones tal cual, y el escenario dice que no se van a mover."
+      },
+      {
+        "id": "e",
+        "text": "Repurchase",
+        "explanation": "Incorrecta. Repurchase cambia una aplicación por otro producto; no describe ninguno de los dos casos."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "Ya no se usa → Retire. No se puede mover aún → Retain.",
+    "refs": [
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-006",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita un servicio que replique continuamente sus servidores físicos y virtuales y los convierta para ejecutarse nativamente en EC2, como solución principal de lift-and-shift. ¿Cuál es?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Application Migration Service (MGN)",
+        "explanation": "Correcta. MGN es la solución recomendada para rehosting: replica servidores y los lanza en EC2 con mínima interrupción."
+      },
+      {
+        "id": "b",
+        "text": "AWS Database Migration Service",
+        "explanation": "DMS migra bases de datos, no servidores completos con su sistema operativo y aplicaciones."
+      },
+      {
+        "id": "c",
+        "text": "AWS DataSync",
+        "explanation": "DataSync transfiere archivos y objetos, no servidores completos."
+      },
+      {
+        "id": "d",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk despliega aplicaciones nuevas desde el código; no replica servidores existentes."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Migrar servidores lift-and-shift a EC2 → Application Migration Service (MGN).",
+    "refs": [
+      "https://docs.aws.amazon.com/mgn/latest/ug/what-is-application-migration-service.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-007",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Antes de decidir si migra a AWS, la dirección de una empresa pide un caso de negocio basado en datos que compare el coste de su centro de datos actual con el coste proyectado en AWS. ¿Qué servicio ayuda con esto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Migration Evaluator",
+        "explanation": "Correcta. Migration Evaluator analiza el entorno actual y genera un caso de negocio con la estimación de costes en AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS Cost Explorer",
+        "explanation": "Cost Explorer analiza costes de recursos que ya están en AWS; no evalúa el centro de datos on-premises."
+      },
+      {
+        "id": "c",
+        "text": "AWS Budgets",
+        "explanation": "Budgets vigila presupuestos de gasto en AWS; no construye un caso de negocio de migración."
+      },
+      {
+        "id": "d",
+        "text": "AWS Application Migration Service",
+        "explanation": "MGN ejecuta la migración de servidores; no calcula el caso de negocio previo."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Caso de negocio de la migración → Migration Evaluator.",
+    "refs": [
+      "https://aws.amazon.com/migration-evaluator/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-008",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita recuperar su aplicación en otra Región en pocos minutos ante un desastre y está dispuesta a mantener allí una copia reducida de todo el entorno siempre en funcionamiento. ¿Qué estrategia de recuperación ante desastres describe esto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warm Standby",
+        "explanation": "Correcta. Warm Standby mantiene una versión reducida pero completa del sistema siempre activa, que se escala al producirse el desastre."
+      },
+      {
+        "id": "b",
+        "text": "Backup and Restore",
+        "explanation": "Solo guarda copias de seguridad; recuperar el entorno lleva horas, no minutos."
+      },
+      {
+        "id": "c",
+        "text": "Pilot Light",
+        "explanation": "Pilot Light mantiene activo solo el núcleo crítico (como la base de datos); el resto hay que levantarlo, por lo que tarda más que Warm Standby."
+      },
+      {
+        "id": "d",
+        "text": "Multi-Site activo-activo",
+        "explanation": "Multi-Site mantiene el entorno COMPLETO a escala real en ambas ubicaciones; es más caro que una copia reducida."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "DR de menor a mayor coste/velocidad: Backup & Restore → Pilot Light → Warm Standby → Multi-Site.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-009",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere gestionar de forma centralizada las copias de seguridad de EBS, RDS, DynamoDB y EFS con planes de retención y copias entre Regiones. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Backup",
+        "explanation": "Correcta. AWS Backup centraliza y automatiza las copias de seguridad de muchos servicios con planes y políticas."
+      },
+      {
+        "id": "b",
+        "text": "AWS Elastic Disaster Recovery",
+        "explanation": "DRS replica servidores para recuperación rápida; no es el servicio centralizado de copias de seguridad de bases de datos y sistemas de archivos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon S3 Glacier",
+        "explanation": "Glacier es almacenamiento de archivo; no orquesta copias de seguridad de varios servicios."
+      },
+      {
+        "id": "d",
+        "text": "AWS Storage Gateway",
+        "explanation": "Storage Gateway conecta almacenamiento local con AWS (p. ej., cintas virtuales); no gestiona backups de RDS o DynamoDB."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Copias de seguridad centralizadas de muchos servicios → AWS Backup.",
+    "refs": [
+      "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-010",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere ofrecer a sus 300 empleados remotos un escritorio Windows completo y seguro en la nube, sin gestionar una infraestructura VDI propia. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon WorkSpaces",
+        "explanation": "Correcta. WorkSpaces entrega escritorios virtuales completos como servicio gestionado."
+      },
+      {
+        "id": "b",
+        "text": "Amazon AppStream 2.0",
+        "explanation": "AppStream transmite APLICACIONES concretas al navegador, no un escritorio completo."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Lightsail",
+        "explanation": "Lightsail ofrece servidores virtuales sencillos; no es una solución de escritorios para usuarios finales."
+      },
+      {
+        "id": "d",
+        "text": "AWS Client VPN",
+        "explanation": "Client VPN conecta los portátiles a la VPC, pero no proporciona escritorios virtuales."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Escritorio virtual completo (DaaS) → WorkSpaces. Una sola aplicación en streaming → AppStream 2.0.",
+    "refs": [
+      "https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-011",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo quiere comprobar la resiliencia de su aplicación provocando de forma controlada la caída de instancias y aumentos de latencia en un entorno real. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Fault Injection Service",
+        "explanation": "Correcta. FIS ejecuta experimentos de ingeniería del caos para descubrir puntos débiles."
+      },
+      {
+        "id": "b",
+        "text": "AWS Device Farm",
+        "explanation": "Device Farm prueba aplicaciones en dispositivos móviles y navegadores reales; no inyecta fallos en la infraestructura."
+      },
+      {
+        "id": "c",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor señala riesgos de tolerancia a fallos, pero no provoca fallos controlados."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector busca vulnerabilidades de seguridad; no simula caídas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Ingeniería del caos / inyección de fallos → Fault Injection Service.",
+    "refs": [
+      "https://docs.aws.amazon.com/fis/latest/userguide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-otr-012",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un proceso de negocio debe ejecutar varias funciones Lambda en orden, con ramas condicionales, reintentos y un paso de aprobación humana, y el equipo quiere verlo como un diagrama. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Step Functions",
+        "explanation": "Correcta. Step Functions orquesta flujos de trabajo visuales con estados, condiciones, paralelismo, reintentos y esperas."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SQS",
+        "explanation": "SQS desacopla componentes con colas, pero no define flujos con condiciones ni muestra un diagrama."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EventBridge",
+        "explanation": "EventBridge enruta eventos a destinos, pero no gestiona el estado de un flujo con pasos secuenciales y aprobaciones."
+      },
+      {
+        "id": "d",
+        "text": "AWS CodePipeline",
+        "explanation": "CodePipeline orquesta flujos de CI/CD de software, no procesos de negocio de la aplicación."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Orquestación visual de pasos (Lambda y servicios) → Step Functions.",
+    "refs": [
+      "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-001",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Detecta objetos, caras, texto y contenido inapropiado en imágenes y vídeos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Rekognition",
+        "explanation": "Correcta. Rekognition es el servicio de visión por computadora de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Textract",
+        "explanation": "Textract extrae texto y datos de DOCUMENTOS escaneados (formularios, tablas). Sería la respuesta para digitalizar facturas."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Comprehend",
+        "explanation": "Comprehend analiza TEXTO (sentimiento, entidades). Sería la respuesta para clasificar reseñas."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Kendra",
+        "explanation": "Kendra es búsqueda inteligente en documentos. Sería la respuesta para un buscador interno de la empresa."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Imágenes y vídeo → Rekognition.",
+    "refs": [
+      "https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-002",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Convierte automáticamente audio de llamadas o vídeos en texto, por ejemplo para generar subtítulos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Polly",
+        "explanation": "Polly hace lo contrario: convierte TEXTO en voz. Sería la respuesta para que una aplicación hable."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Transcribe",
+        "explanation": "Correcta. Transcribe convierte voz en texto."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Translate",
+        "explanation": "Translate traduce texto entre idiomas; no procesa audio."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Lex",
+        "explanation": "Lex construye chatbots conversacionales; entiende la intención del usuario, pero no está pensado para transcribir grabaciones."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Voz → texto: Transcribe. Texto → voz: Polly.",
+    "refs": [
+      "https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-003",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Convierte texto en voz realista para crear aplicaciones que hablan, como lectores de artículos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Polly",
+        "explanation": "Correcta. Polly genera voz natural a partir de texto."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Transcribe",
+        "explanation": "Transcribe convierte voz en texto. Sería la respuesta para transcribir reuniones."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Connect",
+        "explanation": "Connect es un centro de contacto en la nube; puede usar voces, pero no es el servicio de síntesis de voz."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Comprehend",
+        "explanation": "Comprehend analiza texto; no lo convierte en audio."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Texto → voz → Polly.",
+    "refs": [
+      "https://docs.aws.amazon.com/polly/latest/dg/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-004",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Construye chatbots y asistentes de voz conversacionales con la misma tecnología que Alexa.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Lex",
+        "explanation": "Correcta. Lex combina reconocimiento de voz y comprensión del lenguaje para crear bots."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Connect",
+        "explanation": "Connect es el centro de contacto (call center) en la nube; puede integrar bots de Lex, pero no es la herramienta para construirlos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Polly",
+        "explanation": "Polly solo convierte texto en voz; no entiende lo que dice el usuario."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Kendra",
+        "explanation": "Kendra busca respuestas en documentos; no gestiona conversaciones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Chatbots y bots de voz → Lex.",
+    "refs": [
+      "https://docs.aws.amazon.com/lexv2/latest/dg/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-005",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Centro de contacto en la nube para recibir llamadas de clientes, enrutar a agentes y crear flujos, sin compromisos a largo plazo.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Connect",
+        "explanation": "Correcta. Connect es el call center omnicanal en la nube de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Lex",
+        "explanation": "Lex crea los bots conversacionales que pueden atender dentro de Connect, pero no es el centro de contacto."
+      },
+      {
+        "id": "c",
+        "text": "Amazon SNS",
+        "explanation": "SNS envía notificaciones (SMS, correo, push); no gestiona llamadas ni agentes."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Chime SDK",
+        "explanation": "El Chime SDK añade audio y vídeo en tiempo real a aplicaciones; no es un centro de contacto con agentes."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Call center en la nube → Connect.",
+    "refs": [
+      "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-006",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Genera recomendaciones personalizadas de productos en tiempo real con la misma tecnología que Amazon.com.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Personalize",
+        "explanation": "Correcta. Personalize crea sistemas de recomendación sin experiencia previa en ML."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SageMaker AI",
+        "explanation": "SageMaker permite construir cualquier modelo, también de recomendaciones, pero requiere crearlo y entrenarlo. Sería la respuesta para modelos totalmente propios."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Comprehend",
+        "explanation": "Comprehend analiza texto; no recomienda productos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Neptune",
+        "explanation": "Neptune es una base de datos de grafos que puede apoyar recomendaciones, pero no es un servicio de ML listo para usar."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recomendaciones listas para usar → Personalize.",
+    "refs": [
+      "https://docs.aws.amazon.com/personalize/latest/dg/what-is-personalize.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-007",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Búsqueda inteligente en documentos internos (PDF, wikis, HTML) que devuelve respuestas en lenguaje natural.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Kendra",
+        "explanation": "Correcta. Kendra es el servicio de búsqueda empresarial con ML (revisa su estado de disponibilidad para proyectos nuevos)."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Textract",
+        "explanation": "Textract extrae texto de documentos escaneados, pero no responde preguntas buscando entre ellos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Athena",
+        "explanation": "Athena consulta datos estructurados en S3 con SQL; no hace búsqueda en lenguaje natural."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Lex",
+        "explanation": "Lex gestiona conversaciones de un bot; podría usar Kendra por debajo, pero no indexa documentos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Buscador inteligente de documentos → Kendra.",
+    "refs": [
+      "https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-008",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Traduce automáticamente el contenido de un sitio web a varios idiomas.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Translate",
+        "explanation": "Correcta. Translate realiza traducción automática neuronal."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Comprehend",
+        "explanation": "Comprehend detecta el idioma de un texto, pero no lo traduce."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Transcribe",
+        "explanation": "Transcribe convierte audio en texto; no traduce entre idiomas."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Polly",
+        "explanation": "Polly convierte texto en voz en varios idiomas, pero no traduce el texto."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Traducción → Translate.",
+    "refs": [
+      "https://docs.aws.amazon.com/translate/latest/dg/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ml-009",
+    "domain": 3,
+    "section": "Machine Learning",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Plataforma totalmente gestionada para construir, entrenar y desplegar modelos de machine learning propios.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon SageMaker AI",
+        "explanation": "Correcta. SageMaker AI es la plataforma de ML de extremo a extremo de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Bedrock",
+        "explanation": "Bedrock da acceso a modelos fundacionales ya entrenados para IA generativa mediante una API; no es la plataforma para entrenar cualquier modelo propio."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Rekognition",
+        "explanation": "Rekognition es un servicio de visión listo para usar; no sirve para entrenar modelos arbitrarios."
+      },
+      {
+        "id": "d",
+        "text": "AWS Glue",
+        "explanation": "Glue prepara datos (ETL); no entrena ni despliega modelos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "ML propio de extremo a extremo → SageMaker AI.",
+    "refs": [
+      "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-otr-001",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Escritorios virtuales Windows o Linux gestionados como servicio para empleados de cualquier lugar.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon WorkSpaces",
+        "explanation": "Correcta. WorkSpaces es el escritorio como servicio (DaaS)."
+      },
+      {
+        "id": "b",
+        "text": "Amazon AppStream 2.0",
+        "explanation": "AppStream transmite aplicaciones individuales, no escritorios completos. Sería la respuesta para ofrecer una sola aplicación de diseño en el navegador."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EC2",
+        "explanation": "Con EC2 podrías montar una VDI tú mismo, pero no es un servicio gestionado de escritorios."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Lightsail",
+        "explanation": "Lightsail ofrece servidores sencillos, no escritorios para usuarios finales."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Escritorios virtuales gestionados → WorkSpaces.",
+    "refs": [
+      "https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-otr-002",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Conecta de forma segura miles de millones de dispositivos IoT a la nube y enruta sus mensajes a otros servicios de AWS.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS IoT Core",
+        "explanation": "Correcta. IoT Core es el servicio para conectar y gestionar la mensajería de dispositivos IoT."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Kinesis",
+        "explanation": "Kinesis procesa flujos de datos en tiempo real, pero no gestiona la conexión segura de dispositivos."
+      },
+      {
+        "id": "c",
+        "text": "AWS IoT Greengrass",
+        "explanation": "Greengrass ejecuta código y ML EN los dispositivos locales (en el borde). Sería la respuesta para procesar datos sin conexión constante."
+      },
+      {
+        "id": "d",
+        "text": "Amazon MQ",
+        "explanation": "Amazon MQ es un broker para aplicaciones empresariales; no está diseñado para miles de millones de dispositivos IoT."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Conectar dispositivos IoT a la nube → IoT Core.",
+    "refs": [
+      "https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-otr-003",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Herramientas para crear y desplegar aplicaciones web y móviles full-stack con autenticación, almacenamiento, APIs, hosting y CI/CD.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Amplify",
+        "explanation": "Correcta. Amplify agrupa herramientas y servicios para apps web y móviles."
+      },
+      {
+        "id": "b",
+        "text": "AWS AppSync",
+        "explanation": "AppSync crea APIs GraphQL; Amplify puede usarlo, pero no cubre todo el ciclo de la app. Sería la respuesta para una API GraphQL."
+      },
+      {
+        "id": "c",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk despliega aplicaciones de servidor en EC2; no está orientado a apps móviles full-stack con autenticación integrada."
+      },
+      {
+        "id": "d",
+        "text": "AWS Device Farm",
+        "explanation": "Device Farm prueba apps en dispositivos reales; no las construye ni las despliega."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Apps web y móviles full-stack → Amplify.",
+    "refs": [
+      "https://docs.amplify.aws/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-otr-004",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Prueba aplicaciones web y móviles en navegadores de escritorio y en teléfonos y tabletas reales alojados por AWS.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Device Farm",
+        "explanation": "Correcta. Device Farm ofrece una granja de dispositivos reales para pruebas."
+      },
+      {
+        "id": "b",
+        "text": "AWS Fault Injection Service",
+        "explanation": "FIS inyecta fallos en la infraestructura para probar la resiliencia, no prueba apps en dispositivos."
+      },
+      {
+        "id": "c",
+        "text": "AWS CodeBuild",
+        "explanation": "CodeBuild ejecuta pruebas automatizadas en contenedores, pero no en teléfonos reales."
+      },
+      {
+        "id": "d",
+        "text": "Amazon AppStream 2.0",
+        "explanation": "AppStream transmite aplicaciones a usuarios; no es una plataforma de pruebas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Pruebas en dispositivos reales → Device Farm.",
+    "refs": [
+      "https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-otr-005",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Centraliza y automatiza las copias de seguridad de EC2, EBS, RDS, DynamoDB, EFS y otros servicios con planes y retención.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Backup",
+        "explanation": "Correcta. AWS Backup es el servicio central de copias de seguridad."
+      },
+      {
+        "id": "b",
+        "text": "EBS Snapshots",
+        "explanation": "Los snapshots cubren solo volúmenes EBS; no gestionan de forma central otros servicios."
+      },
+      {
+        "id": "c",
+        "text": "AWS Elastic Disaster Recovery",
+        "explanation": "DRS replica servidores para recuperación rápida ante desastres. Sería la respuesta para failover de servidores en minutos."
+      },
+      {
+        "id": "d",
+        "text": "S3 Cross-Region Replication",
+        "explanation": "CRR copia objetos de S3 a otra Región; no orquesta backups de otros servicios."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Backups centralizados → AWS Backup.",
+    "refs": [
+      "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-otr-006",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Replica servidores de forma continua a nivel de bloque en AWS para recuperarlos en minutos tras un desastre (antes CloudEndure Disaster Recovery).",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Elastic Disaster Recovery",
+        "explanation": "Correcta. DRS ofrece recuperación rápida de servidores físicos, virtuales o en la nube."
+      },
+      {
+        "id": "b",
+        "text": "AWS Application Migration Service",
+        "explanation": "MGN también replica servidores, pero para MIGRARLOS a AWS. Sería la respuesta para un lift-and-shift."
+      },
+      {
+        "id": "c",
+        "text": "AWS Backup",
+        "explanation": "AWS Backup hace copias programadas; restaurar desde backup tarda más que el failover continuo de DRS."
+      },
+      {
+        "id": "d",
+        "text": "AWS DataSync",
+        "explanation": "DataSync transfiere archivos; no replica servidores completos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recuperación ante desastres de servidores en minutos → Elastic Disaster Recovery.",
+    "refs": [
+      "https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-otr-007",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Orquesta visualmente flujos de trabajo serverless que coordinan funciones Lambda y otros servicios, con reintentos y condiciones.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Step Functions",
+        "explanation": "Correcta. Step Functions es el orquestador visual de flujos de trabajo."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EventBridge",
+        "explanation": "EventBridge enruta eventos con reglas, pero no mantiene el estado de un flujo de varios pasos. Sería la respuesta para reaccionar a un evento."
+      },
+      {
+        "id": "c",
+        "text": "AWS Infrastructure Composer",
+        "explanation": "Infrastructure Composer diseña visualmente la INFRAESTRUCTURA, no la lógica de ejecución de un proceso."
+      },
+      {
+        "id": "d",
+        "text": "AWS Batch",
+        "explanation": "Batch ejecuta trabajos por lotes; no orquesta flujos con condiciones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Flujos de trabajo visuales con estado → Step Functions.",
+    "refs": [
+      "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-otr-008",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Diseña visualmente aplicaciones serverless arrastrando componentes y genera la plantilla de infraestructura como código.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Infrastructure Composer",
+        "explanation": "Correcta. Infrastructure Composer (antes Application Composer) genera IaC a partir de un diseño visual."
+      },
+      {
+        "id": "b",
+        "text": "AWS CDK",
+        "explanation": "El CDK define infraestructura con código en lenguajes de programación, no de forma visual."
+      },
+      {
+        "id": "c",
+        "text": "AWS Step Functions",
+        "explanation": "Step Functions diseña visualmente FLUJOS de ejecución, no la infraestructura de la aplicación."
+      },
+      {
+        "id": "d",
+        "text": "AWS Service Catalog",
+        "explanation": "Service Catalog publica productos aprobados; no ofrece un lienzo de diseño visual."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Diseño visual de infraestructura serverless → Infrastructure Composer.",
+    "refs": [
+      "https://docs.aws.amazon.com/infrastructure-composer/latest/dg/what-is-composer.html"
+    ],
+    "source": "original"
   }
 ]

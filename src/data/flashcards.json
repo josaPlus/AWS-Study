@@ -3378,5 +3378,343 @@
       "costes"
     ],
     "difficulty": 1
+  },
+  {
+    "id": "ml-001",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Rekognition?",
+    "back": "Analiza imágenes y vídeos con ML: detecta objetos, personas, texto y escenas, hace análisis y comparación facial, reconoce famosos y modera contenido inapropiado.",
+    "tags": [
+      "rekognition"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ml-002",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "comparacion",
+    "front": "Transcribe vs Polly",
+    "back": "Transcribe: voz → texto (reconocimiento automático del habla, subtítulos, transcripción de llamadas; puede ocultar datos personales).\nPolly: texto → voz natural (aplicaciones que hablan).",
+    "tags": [
+      "transcribe",
+      "polly"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ml-003",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Translate?",
+    "back": "Traducción automática y natural de textos entre idiomas para localizar sitios web, documentos o contenido generado por usuarios.",
+    "tags": [
+      "translate"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ml-004",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "comparacion",
+    "front": "Amazon Lex vs Amazon Connect",
+    "back": "Lex: construir chatbots y bots de voz conversacionales (la tecnología de Alexa: reconocimiento de voz + comprensión del lenguaje).\nConnect: centro de contacto (call center) en la nube, sin compromisos; puede integrar bots de Lex.",
+    "tags": [
+      "lex",
+      "connect"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ml-005",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Comprehend?",
+    "back": "Procesamiento de lenguaje natural (NLP) totalmente gestionado: detecta el idioma, el sentimiento (positivo/negativo), las entidades, las frases clave y temas en textos, como reseñas o correos de clientes.",
+    "tags": [
+      "comprehend",
+      "nlp"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ml-006",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "concepto",
+    "front": "¿Qué es Amazon SageMaker AI?",
+    "back": "Servicio totalmente gestionado para que desarrolladores y científicos de datos CONSTRUYAN, entrenen y desplieguen sus propios modelos de machine learning, cubriendo todo el ciclo: etiquetado, entrenamiento, ajuste y despliegue.",
+    "tags": [
+      "sagemaker"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ml-007",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Kendra?",
+    "back": "Búsqueda inteligente de documentos con ML: extrae respuestas en lenguaje natural de documentos internos (PDF, HTML, wikis, PowerPoint) y aprende de las interacciones.",
+    "tags": [
+      "kendra"
+    ],
+    "difficulty": 2,
+    "note": "AWS ha anunciado cambios de disponibilidad para Kendra en 2026; consulta su estado en la página de ciclo de vida de servicios antes de usarlo en un proyecto nuevo."
+  },
+  {
+    "id": "ml-008",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Personalize?",
+    "back": "Servicio de ML para crear recomendaciones personalizadas en tiempo real (productos, contenido, marketing) con la misma tecnología que usa Amazon.com, sin experiencia en ML.",
+    "tags": [
+      "personalize"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ml-009",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Textract?",
+    "back": "Extrae automáticamente texto, escritura a mano, tablas y datos de formularios de documentos escaneados (facturas, identificaciones, formularios médicos o financieros).",
+    "tags": [
+      "textract"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ml-010",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "comparacion",
+    "front": "Resumen rápido de los servicios de IA",
+    "back": "Rekognition: imágenes y vídeo. Transcribe: audio→texto. Polly: texto→voz. Translate: traducir. Lex: chatbots. Connect: call center. Comprehend: analizar texto (NLP). SageMaker AI: crear modelos propios. Kendra: buscar en documentos. Personalize: recomendaciones. Textract: extraer texto de documentos.",
+    "tags": [
+      "ml"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ml-011",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "dato-clave",
+    "front": "¿Qué es Amazon Bedrock? (fuera del PDF, útil)",
+    "back": "Servicio totalmente gestionado para crear aplicaciones de IA generativa usando modelos fundacionales de varios proveedores mediante una API, sin gestionar infraestructura. Permite personalizarlos con tus datos.",
+    "tags": [
+      "bedrock",
+      "ia-generativa"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ml-012",
+    "domain": 3,
+    "section": "Machine Learning",
+    "type": "dato-clave",
+    "front": "¿Qué es Amazon Q Developer? (fuera del PDF, útil)",
+    "back": "Asistente de IA generativa para desarrollo y operaciones en AWS: genera y revisa código, explica recursos y ayuda a resolver problemas desde el IDE o la consola.",
+    "tags": [
+      "amazon-q",
+      "ia-generativa"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "otr-001",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "comparacion",
+    "front": "WorkSpaces vs AppStream 2.0",
+    "back": "WorkSpaces: escritorio virtual COMPLETO (Windows o Linux) gestionado como servicio (DaaS), sustituto de la VDI on-premises.\nAppStream 2.0: transmite UNA aplicación de escritorio al navegador del usuario, sin entregar el escritorio entero.",
+    "tags": [
+      "workspaces",
+      "appstream"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-002",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS IoT Core?",
+    "back": "Conecta dispositivos IoT a la nube de forma segura y a gran escala (miles de millones de dispositivos y mensajes), y enruta sus datos a otros servicios de AWS. Usa protocolos como MQTT. Es serverless.",
+    "tags": [
+      "iot"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "otr-003",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "comparacion",
+    "front": "AWS AppSync vs AWS Amplify",
+    "back": "AppSync: APIs GraphQL gestionadas con datos en tiempo real y sincronización sin conexión.\nAmplify: conjunto de herramientas para construir y desplegar aplicaciones web y móviles full-stack (autenticación, almacenamiento, APIs, hosting y CI/CD). Es el 'Beanstalk de las apps web y móviles'.",
+    "tags": [
+      "appsync",
+      "amplify"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-004",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS Infrastructure Composer?",
+    "back": "Diseña VISUALMENTE aplicaciones serverless arrastrando y conectando componentes, y genera la infraestructura como código (CloudFormation/SAM). Antes se llamaba Application Composer.",
+    "tags": [
+      "infrastructure-composer"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-005",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS Device Farm?",
+    "back": "Servicio gestionado para probar aplicaciones web y móviles en navegadores de escritorio y en dispositivos móviles REALES (teléfonos y tabletas), de forma manual o automatizada.",
+    "tags": [
+      "device-farm"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-006",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS Backup?",
+    "back": "Centraliza y automatiza las copias de seguridad de muchos servicios (EC2, EBS, S3, RDS, Aurora, DynamoDB, EFS, FSx, Storage Gateway…) con planes de backup, retención, copias entre Regiones y entre cuentas.",
+    "tags": [
+      "backup"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "otr-007",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "comparacion",
+    "front": "Estrategias de recuperación ante desastres (de más barata a más rápida)",
+    "back": "1) Backup and Restore: solo copias; recuperación lenta, coste mínimo.\n2) Pilot Light: el núcleo crítico (p. ej. la BD) siempre activo en pequeño.\n3) Warm Standby: copia completa reducida siempre funcionando.\n4) Multi-Site / Hot Site: copia completa a escala real activa; recuperación casi inmediata, la más cara.",
+    "tags": [
+      "dr"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-008",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS Elastic Disaster Recovery (DRS)?",
+    "back": "Recupera rápidamente servidores físicos, virtuales o en la nube replicándolos de forma continua en AWS a nivel de bloque, con failover en minutos. Antes se llamaba CloudEndure Disaster Recovery.",
+    "tags": [
+      "drs",
+      "dr"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-009",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS Application Migration Service (MGN)?",
+    "back": "La solución principal de AWS para migrar servidores con 'lift and shift' (rehost): replica servidores físicos, virtuales o de otras nubes y los convierte para ejecutarse nativamente en EC2, con mínima interrupción. Sustituye a CloudEndure Migration y a Server Migration Service (SMS).",
+    "tags": [
+      "mgn",
+      "migracion"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-010",
+    "domain": 1,
+    "section": "Otros servicios y migración",
+    "type": "comparacion",
+    "front": "Herramientas para PLANIFICAR una migración",
+    "back": "Migration Evaluator: caso de negocio basado en datos (costes actuales vs AWS).\nApplication Discovery Service: inventario de servidores, uso y dependencias (con o sin agente).\nMigration Hub: lugar central para seguir el progreso de las migraciones.",
+    "tags": [
+      "migracion"
+    ],
+    "difficulty": 3,
+    "note": "AWS Migration Hub y Application Discovery Service pasaron a mantenimiento y no aceptan clientes nuevos desde el 7-nov-2025; AWS orienta a AWS Transform para nuevas migraciones."
+  },
+  {
+    "id": "otr-011",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS Fault Injection Service (FIS)?",
+    "back": "Ejecuta experimentos de inyección de fallos (ingeniería del caos) sobre tus cargas: provoca caídas de instancias, aumento de CPU o latencia para comprobar cómo responde la aplicación y mejorar su resiliencia.",
+    "tags": [
+      "fis",
+      "resiliencia"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-012",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS Step Functions?",
+    "back": "Orquesta flujos de trabajo serverless de forma VISUAL coordinando funciones Lambda y otros servicios: secuencias, condiciones, paralelismo, reintentos, tiempos de espera e incluso aprobación humana.",
+    "tags": [
+      "step-functions"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "otr-013",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué es AWS Ground Station?",
+    "back": "Servicio gestionado para controlar satélites y descargar y procesar sus datos sin construir una red propia de estaciones terrestres, integrando los datos directamente con servicios de AWS.",
+    "tags": [
+      "ground-station"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "otr-014",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "concepto",
+    "front": "¿Qué era Amazon Pinpoint?",
+    "back": "Servicio de comunicaciones de marketing bidireccionales (correo, SMS, push, voz, mensajes en la app) con segmentación de audiencias y campañas.",
+    "tags": [
+      "pinpoint"
+    ],
+    "difficulty": 3,
+    "note": "AWS anunció el fin de soporte de Amazon Pinpoint para el 30-oct-2026. Los canales de SMS, voz y push continúan en AWS End User Messaging; para correo, Amazon SES."
+  },
+  {
+    "id": "otr-015",
+    "domain": 3,
+    "section": "Otros servicios y migración",
+    "type": "comparacion",
+    "front": "DataSync vs Snow Family vs Storage Gateway",
+    "back": "DataSync: transfiere datos por la RED de forma programada (migración o sincronización).\nSnow Family: transfiere datos de forma FÍSICA con dispositivos (solo clientes existentes desde nov-2025).\nStorage Gateway: puente HÍBRIDO permanente para que aplicaciones locales usen almacenamiento en la nube.",
+    "tags": [
+      "datasync",
+      "migracion"
+    ],
+    "difficulty": 2
   }
 ]
