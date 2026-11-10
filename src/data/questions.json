@@ -7722,5 +7722,947 @@
       "https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-vpc-001",
+    "domain": 2,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "El equipo de seguridad detecta ataques desde una dirección IP concreta contra todas las instancias de una subred y quiere bloquearla explícitamente. ¿Qué debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Una Network ACL con una regla de denegación para esa IP",
+        "explanation": "Correcta. Las NACL actúan a nivel de subred y admiten reglas de DENEGAR, así que pueden bloquear una IP concreta."
+      },
+      {
+        "id": "b",
+        "text": "Una regla de denegación en el Security Group",
+        "explanation": "Los Security Groups solo tienen reglas de permitir; no es posible denegar explícitamente una IP con ellos."
+      },
+      {
+        "id": "c",
+        "text": "Un VPC Endpoint",
+        "explanation": "Los endpoints dan acceso privado a servicios de AWS; no bloquean tráfico de atacantes."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector evalúa vulnerabilidades; no bloquea tráfico de red."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Denegar explícitamente una IP en una subred → Network ACL (los SG no tienen 'denegar').",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-002",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Unas instancias EC2 en una subred privada necesitan descargar actualizaciones de internet, pero no deben poder recibir conexiones iniciadas desde internet. ¿Qué componente se usa?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Un NAT Gateway en una subred pública",
+        "explanation": "Correcta. El NAT Gateway permite tráfico saliente desde subredes privadas y bloquea las conexiones entrantes iniciadas desde internet."
+      },
+      {
+        "id": "b",
+        "text": "Asociar directamente un Internet Gateway a la subred privada",
+        "explanation": "Una ruta directa al Internet Gateway convertiría la subred en pública, exponiendo las instancias si tienen IP pública."
+      },
+      {
+        "id": "c",
+        "text": "Un VPC Peering",
+        "explanation": "El peering conecta dos VPC entre sí; no da salida a internet."
+      },
+      {
+        "id": "d",
+        "text": "AWS Direct Connect",
+        "explanation": "Direct Connect conecta tu centro de datos con AWS de forma privada; no es la salida a internet de una subred privada."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Salida a internet sin entrada para subredes privadas → NAT Gateway.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-003",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita una conexión entre su centro de datos y AWS con ancho de banda alto y latencia consistente, que no pase por internet público. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Direct Connect",
+        "explanation": "Correcta. Direct Connect es una conexión física privada y dedicada con rendimiento estable."
+      },
+      {
+        "id": "b",
+        "text": "AWS Site-to-Site VPN",
+        "explanation": "La VPN cifra el tráfico, pero viaja por internet público, así que el rendimiento puede variar."
+      },
+      {
+        "id": "c",
+        "text": "AWS Client VPN",
+        "explanation": "Client VPN conecta ordenadores individuales de usuarios, no un centro de datos completo, y también va por internet."
+      },
+      {
+        "id": "d",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront es una CDN para usuarios de internet; no conecta un centro de datos con una VPC."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Conexión privada, dedicada y consistente → Direct Connect. Rápida y por internet → Site-to-Site VPN.",
+    "refs": [
+      "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-004",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita conectar su oficina a una VPC HOY MISMO, de forma cifrada y con poco presupuesto, aunque el rendimiento varíe. ¿Qué opción es la más adecuada?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Site-to-Site VPN",
+        "explanation": "Correcta. La VPN se configura en minutos sobre internet, cifra el tráfico y es económica."
+      },
+      {
+        "id": "b",
+        "text": "AWS Direct Connect",
+        "explanation": "Direct Connect requiere instalar una conexión física, lo que tarda semanas o meses; no cumple el plazo."
+      },
+      {
+        "id": "c",
+        "text": "VPC Peering",
+        "explanation": "El peering conecta VPC entre sí dentro de AWS; no conecta una oficina física."
+      },
+      {
+        "id": "d",
+        "text": "AWS Transit Gateway únicamente",
+        "explanation": "Transit Gateway es un hub para interconectar redes, pero por sí solo no crea el enlace cifrado desde la oficina; necesitaría una VPN o Direct Connect."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Conexión híbrida inmediata, cifrada y barata → Site-to-Site VPN.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-005",
+    "domain": 2,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Unas instancias en una subred privada deben leer objetos de S3 sin que el tráfico salga a internet ni pase por un NAT Gateway. ¿Qué debe configurarse?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Un VPC Gateway Endpoint para S3",
+        "explanation": "Correcta. El Gateway Endpoint permite llegar a S3 (y DynamoDB) por la red privada de AWS, sin internet y sin coste adicional."
+      },
+      {
+        "id": "b",
+        "text": "Un Internet Gateway",
+        "explanation": "El Internet Gateway saca el tráfico a internet, justo lo que se quiere evitar."
+      },
+      {
+        "id": "c",
+        "text": "S3 Transfer Acceleration",
+        "explanation": "Transfer Acceleration acelera transferencias por internet usando Edge Locations; no mantiene el tráfico dentro de la VPC."
+      },
+      {
+        "id": "d",
+        "text": "Una Elastic IP en cada instancia",
+        "explanation": "Una Elastic IP es una IP pública: implicaría salir a internet."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Acceso privado a S3/DynamoDB desde una VPC → Gateway Endpoint. Otros servicios → Interface Endpoint (PrivateLink).",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-006",
+    "domain": 2,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo necesita investigar por qué una instancia no recibe conexiones y quiere ver qué tráfico IP se está aceptando o rechazando en su interfaz de red. ¿Qué característica debe activar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "VPC Flow Logs",
+        "explanation": "Correcta. Los Flow Logs registran el tráfico IP aceptado y rechazado en las interfaces de red de la VPC."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudTrail",
+        "explanation": "CloudTrail registra llamadas a la API de AWS, no los paquetes de red que llegan a una instancia."
+      },
+      {
+        "id": "c",
+        "text": "AWS X-Ray",
+        "explanation": "X-Ray traza peticiones dentro de la aplicación; no muestra el tráfico rechazado por la red."
+      },
+      {
+        "id": "d",
+        "text": "AWS Health Dashboard",
+        "explanation": "El Health Dashboard informa del estado de los servicios de AWS, no del tráfico de tu VPC."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Ver el tráfico IP aceptado/rechazado → VPC Flow Logs.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-007",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa tiene 60 VPCs en varias cuentas y su red on-premises, y quiere conectarlas todas entre sí de forma centralizada y transitiva, sin gestionar decenas de conexiones de peering. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Transit Gateway",
+        "explanation": "Correcta. Transit Gateway actúa como hub central y permite conexión transitiva entre miles de VPCs y redes on-premises."
+      },
+      {
+        "id": "b",
+        "text": "VPC Peering entre todas las VPC",
+        "explanation": "El peering no es transitivo; conectar 60 VPCs en malla exigiría cientos de conexiones difíciles de gestionar."
+      },
+      {
+        "id": "c",
+        "text": "AWS Client VPN",
+        "explanation": "Client VPN conecta usuarios individuales, no VPCs entre sí."
+      },
+      {
+        "id": "d",
+        "text": "NAT Gateway",
+        "explanation": "El NAT Gateway da salida a internet a subredes privadas; no interconecta VPCs."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Conectar muchas VPCs y on-premises de forma transitiva → Transit Gateway.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-008",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un proveedor de software quiere ofrecer su servicio, alojado en su VPC, a cientos de clientes en sus propias VPCs de forma privada, sin peering, sin internet y sin preocuparse por solapamientos de IP. ¿Qué tecnología debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS PrivateLink",
+        "explanation": "Correcta. PrivateLink expone un servicio (detrás de un NLB) a muchas VPCs mediante endpoints privados, sin peering ni internet."
+      },
+      {
+        "id": "b",
+        "text": "VPC Peering con cada cliente",
+        "explanation": "Requeriría cientos de conexiones, rangos de IP sin solaparse y daría acceso a toda la red, no solo al servicio."
+      },
+      {
+        "id": "c",
+        "text": "Un Internet Gateway público",
+        "explanation": "Exponer el servicio en internet contradice el requisito de conectividad privada."
+      },
+      {
+        "id": "d",
+        "text": "AWS Site-to-Site VPN con cada cliente",
+        "explanation": "Una VPN por cliente sería costosa de gestionar y está pensada para conectar redes on-premises, no para publicar servicios."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Exponer un servicio de forma privada a muchas VPCs → PrivateLink.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-009",
+    "domain": 2,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Qué DOS afirmaciones sobre las Network ACL son correctas? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Se aplican a nivel de subred",
+        "explanation": "Correcta. Una NACL controla todo el tráfico que entra o sale de las subredes asociadas."
+      },
+      {
+        "id": "b",
+        "text": "Son sin estado: el tráfico de respuesta debe permitirse explícitamente",
+        "explanation": "Correcta. Al ser stateless, las reglas de salida deben permitir también las respuestas."
+      },
+      {
+        "id": "c",
+        "text": "Solo admiten reglas de permitir",
+        "explanation": "Incorrecta. Esa característica es de los Security Groups; las NACL admiten permitir y denegar."
+      },
+      {
+        "id": "d",
+        "text": "Se asocian a cada instancia EC2 individualmente",
+        "explanation": "Incorrecta. A las instancias (interfaces de red) se asocian los Security Groups, no las NACL."
+      },
+      {
+        "id": "e",
+        "text": "Analizan el contenido HTTP para bloquear inyección SQL",
+        "explanation": "Incorrecta. Las NACL filtran por IP, puerto y protocolo; la inspección HTTP es tarea de AWS WAF."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "NACL: subred, sin estado, permitir y denegar, reglas en orden numérico.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/userguide/infrastructure-security.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-vpc-010",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Varios empleados que teletrabajan necesitan conectarse desde sus portátiles, de forma segura, a recursos en una VPC privada. ¿Qué servicio deben usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Client VPN",
+        "explanation": "Correcta. Client VPN ofrece conexiones VPN gestionadas (basadas en OpenVPN) desde dispositivos de usuarios a la VPC."
+      },
+      {
+        "id": "b",
+        "text": "AWS Direct Connect",
+        "explanation": "Direct Connect es una línea dedicada para un centro de datos, no para portátiles de empleados remotos."
+      },
+      {
+        "id": "c",
+        "text": "AWS Site-to-Site VPN",
+        "explanation": "Site-to-Site conecta una RED completa (oficina o centro de datos) con un dispositivo de gateway, no a usuarios individuales."
+      },
+      {
+        "id": "d",
+        "text": "Un Internet Gateway",
+        "explanation": "El Internet Gateway da acceso a internet a subredes públicas; no crea un túnel seguro hacia recursos privados."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Usuarios remotos individuales → Client VPN. Oficina completa → Site-to-Site VPN.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-idn-001",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una app móvil tendrá millones de usuarios que deben registrarse e iniciar sesión, incluso con su cuenta de Google o Apple. ¿Qué servicio debe usar el equipo de desarrollo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Cognito",
+        "explanation": "Correcta. Cognito gestiona el registro y el inicio de sesión de usuarios de aplicaciones a gran escala, con proveedores sociales y SAML."
+      },
+      {
+        "id": "b",
+        "text": "Crear un usuario de IAM para cada cliente",
+        "explanation": "IAM es para identidades que administran AWS, no para millones de usuarios finales de una aplicación; además hay límites de usuarios por cuenta."
+      },
+      {
+        "id": "c",
+        "text": "AWS IAM Identity Center",
+        "explanation": "Identity Center da inicio de sesión único a EMPLEADOS en cuentas de AWS y aplicaciones empresariales, no a clientes de una app móvil."
+      },
+      {
+        "id": "d",
+        "text": "AWS Directory Service",
+        "explanation": "Directory Service ofrece Active Directory para entornos corporativos; no es la solución de identidad para apps de consumo."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Usuarios finales de apps web/móviles → Cognito.",
+    "refs": [
+      "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-idn-002",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa con 20 cuentas en AWS Organizations quiere que sus empleados inicien sesión una sola vez y accedan a las cuentas y aplicaciones SaaS que les correspondan. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS IAM Identity Center",
+        "explanation": "Correcta. IAM Identity Center (antes AWS SSO) centraliza el acceso de los empleados a todas las cuentas de la organización y a aplicaciones SAML."
+      },
+      {
+        "id": "b",
+        "text": "Usuarios de IAM duplicados en cada cuenta",
+        "explanation": "Crear usuarios en las 20 cuentas multiplica las credenciales y la administración; justo lo que se quiere evitar."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Cognito",
+        "explanation": "Cognito está pensado para los usuarios de tus aplicaciones, no para el acceso de empleados a cuentas de AWS."
+      },
+      {
+        "id": "d",
+        "text": "AWS Secrets Manager",
+        "explanation": "Secrets Manager guarda secretos de aplicaciones; no es un sistema de inicio de sesión único."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Inicio de sesión único de empleados en muchas cuentas y apps → IAM Identity Center.",
+    "refs": [
+      "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-idn-003",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un usuario de la cuenta A necesita acceder temporalmente a recursos de la cuenta B. ¿Qué mecanismo es el recomendado?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Asumir un rol de IAM de la cuenta B, que obtiene credenciales temporales mediante AWS STS",
+        "explanation": "Correcta. El acceso entre cuentas se hace asumiendo un rol; STS entrega credenciales temporales con los permisos del rol."
+      },
+      {
+        "id": "b",
+        "text": "Compartir el usuario root de la cuenta B",
+        "explanation": "Compartir el root es una práctica gravemente insegura y da acceso total a la cuenta."
+      },
+      {
+        "id": "c",
+        "text": "Crear claves de acceso permanentes en la cuenta B y enviarlas por correo",
+        "explanation": "Las claves permanentes enviadas por correo pueden filtrarse y no caducan; no es el mecanismo recomendado."
+      },
+      {
+        "id": "d",
+        "text": "Activar Amazon Cognito en la cuenta A",
+        "explanation": "Cognito gestiona usuarios de aplicaciones; no es el mecanismo para acceso entre cuentas de AWS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Acceso entre cuentas → asumir un rol (credenciales temporales de STS).",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-idn-004",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere ejecutar en AWS un Active Directory de Microsoft totalmente gestionado y establecer una relación de confianza con su Active Directory on-premises. ¿Qué opción debe elegir?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Managed Microsoft AD (AWS Directory Service)",
+        "explanation": "Correcta. Managed Microsoft AD es un Active Directory real en AWS que admite relaciones de confianza con el AD local."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Cognito",
+        "explanation": "Cognito gestiona usuarios de aplicaciones web y móviles; no es un Active Directory de Microsoft."
+      },
+      {
+        "id": "c",
+        "text": "AWS IAM",
+        "explanation": "IAM gestiona identidades de AWS; no implementa Active Directory ni relaciones de confianza de dominio."
+      },
+      {
+        "id": "d",
+        "text": "Amazon WorkSpaces",
+        "explanation": "WorkSpaces ofrece escritorios virtuales; usa un directorio, pero no es el servicio que lo proporciona."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Active Directory gestionado en AWS con confianza al AD local → AWS Managed Microsoft AD.",
+    "refs": [
+      "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-idn-005",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Qué servicio de AWS emite credenciales de seguridad temporales y de privilegios limitados para usuarios federados o para quien asume un rol?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Security Token Service (STS)",
+        "explanation": "Correcta. STS genera las credenciales temporales que se usan al asumir roles o en la federación."
+      },
+      {
+        "id": "b",
+        "text": "AWS Key Management Service (KMS)",
+        "explanation": "KMS gestiona claves de cifrado, no credenciales de acceso temporales."
+      },
+      {
+        "id": "c",
+        "text": "AWS Certificate Manager (ACM)",
+        "explanation": "ACM gestiona certificados SSL/TLS para sitios web, no credenciales de usuarios."
+      },
+      {
+        "id": "d",
+        "text": "AWS Secrets Manager",
+        "explanation": "Secrets Manager almacena y rota secretos de aplicaciones; no emite credenciales temporales de AWS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Credenciales temporales (roles, federación) → AWS STS.",
+    "refs": [
+      "https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-idn-006",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa ya autentica a sus empleados con un proveedor de identidad corporativo compatible con SAML 2.0 y no quiere crear usuarios de IAM. ¿Qué concepto le permite dar acceso a AWS con esas identidades?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Federación de identidades",
+        "explanation": "Correcta. La federación permite que identidades externas de confianza accedan a AWS con credenciales temporales, sin usuarios de IAM."
+      },
+      {
+        "id": "b",
+        "text": "Principio de mínimo privilegio",
+        "explanation": "El mínimo privilegio define CUÁNTOS permisos dar, no cómo reutilizar identidades externas."
+      },
+      {
+        "id": "c",
+        "text": "Políticas de contraseñas de IAM",
+        "explanation": "Las políticas de contraseñas aplican a usuarios de IAM, que justamente no se quieren crear."
+      },
+      {
+        "id": "d",
+        "text": "Multi-Factor Authentication",
+        "explanation": "MFA refuerza la autenticación, pero no permite usar identidades de otro proveedor."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Usar identidades corporativas (SAML/OIDC) sin usuarios de IAM → federación.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-vpc-001",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Conexión de red física, privada y dedicada entre un centro de datos y AWS que no atraviesa internet.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Direct Connect",
+        "explanation": "Correcta. Direct Connect ofrece enlaces dedicados privados hacia AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS Site-to-Site VPN",
+        "explanation": "La VPN Site-to-Site cifra el tráfico, pero viaja por internet público. Sería la respuesta si se necesitara rapidez y bajo coste."
+      },
+      {
+        "id": "c",
+        "text": "AWS Transit Gateway",
+        "explanation": "Transit Gateway interconecta VPCs y redes como hub, pero no es el enlace físico con el centro de datos."
+      },
+      {
+        "id": "d",
+        "text": "AWS PrivateLink",
+        "explanation": "PrivateLink expone servicios de forma privada entre VPCs; no conecta un centro de datos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Línea privada dedicada → Direct Connect.",
+    "refs": [
+      "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-vpc-002",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Hub de red que conecta miles de VPCs y redes on-premises con enrutamiento transitivo.",
+    "options": [
+      {
+        "id": "a",
+        "text": "VPC Peering",
+        "explanation": "El peering conecta pares de VPCs y NO es transitivo. Sería la respuesta para conectar solo dos VPCs."
+      },
+      {
+        "id": "b",
+        "text": "AWS Transit Gateway",
+        "explanation": "Correcta. Transit Gateway es el hub hub-and-spoke de AWS."
+      },
+      {
+        "id": "c",
+        "text": "NAT Gateway",
+        "explanation": "El NAT Gateway da salida a internet a subredes privadas; no interconecta redes."
+      },
+      {
+        "id": "d",
+        "text": "Internet Gateway",
+        "explanation": "El Internet Gateway conecta la VPC con internet; no interconecta VPCs entre sí."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Hub transitivo para muchas redes → Transit Gateway.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-vpc-003",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Permite que instancias en subredes privadas inicien conexiones salientes hacia internet sin aceptar conexiones entrantes.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Internet Gateway",
+        "explanation": "El Internet Gateway permite tráfico en ambos sentidos para subredes públicas; no protege a las privadas de conexiones entrantes."
+      },
+      {
+        "id": "b",
+        "text": "NAT Gateway",
+        "explanation": "Correcta. El NAT Gateway da solo salida a las subredes privadas."
+      },
+      {
+        "id": "c",
+        "text": "VPC Endpoint",
+        "explanation": "Un endpoint da acceso privado a servicios de AWS, no a internet en general."
+      },
+      {
+        "id": "d",
+        "text": "Egress-only Internet Gateway",
+        "explanation": "Hace algo parecido, pero solo para tráfico IPv6. Sería la respuesta si la pregunta mencionara IPv6."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Salida a internet (IPv4) para subredes privadas → NAT Gateway.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-vpc-004",
+    "domain": 2,
+    "section": "VPC y redes",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Firewall sin estado a nivel de subred con reglas numeradas de permitir y denegar.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Network ACL",
+        "explanation": "Correcta. La NACL es el firewall de subred sin estado."
+      },
+      {
+        "id": "b",
+        "text": "Security Group",
+        "explanation": "El Security Group es con estado, a nivel de instancia y solo permite. Sería la respuesta para abrir el puerto 443 en un servidor."
+      },
+      {
+        "id": "c",
+        "text": "AWS WAF",
+        "explanation": "WAF filtra peticiones web (capa 7) en CloudFront, ALB o API Gateway, no subredes."
+      },
+      {
+        "id": "d",
+        "text": "AWS Firewall Manager",
+        "explanation": "Firewall Manager administra reglas de seguridad de forma centralizada en varias cuentas; no es el firewall de subred en sí."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Firewall de subred sin estado → Network ACL.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-vpc-005",
+    "domain": 3,
+    "section": "VPC y redes",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Conecta el portátil de un usuario remoto a una VPC mediante una VPN gestionada basada en OpenVPN.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Client VPN",
+        "explanation": "Correcta. Client VPN es la VPN de acceso remoto para usuarios."
+      },
+      {
+        "id": "b",
+        "text": "AWS Site-to-Site VPN",
+        "explanation": "Site-to-Site conecta redes completas (oficinas, centros de datos), no dispositivos individuales."
+      },
+      {
+        "id": "c",
+        "text": "AWS Systems Manager Session Manager",
+        "explanation": "Session Manager abre una consola en una instancia concreta, no una conexión de red a toda la VPC."
+      },
+      {
+        "id": "d",
+        "text": "Amazon WorkSpaces",
+        "explanation": "WorkSpaces da un escritorio virtual en la nube; no conecta el portátil a la VPC por VPN."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "VPN de acceso remoto para usuarios → Client VPN.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-idn-001",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Registro, inicio de sesión y control de acceso para los usuarios de tus aplicaciones web y móviles, con inicio de sesión social.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Cognito",
+        "explanation": "Correcta. Cognito es la identidad para usuarios de aplicaciones."
+      },
+      {
+        "id": "b",
+        "text": "AWS IAM Identity Center",
+        "explanation": "Identity Center da SSO a empleados en cuentas de AWS y aplicaciones empresariales. Sería la respuesta para el acceso de la plantilla a muchas cuentas."
+      },
+      {
+        "id": "c",
+        "text": "AWS IAM",
+        "explanation": "IAM gestiona identidades que administran recursos de AWS, no usuarios finales de una app."
+      },
+      {
+        "id": "d",
+        "text": "AWS Directory Service",
+        "explanation": "Directory Service proporciona Active Directory corporativo. Sería la respuesta para aplicaciones Windows que necesitan AD."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Usuarios de apps → Cognito.",
+    "refs": [
+      "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-idn-002",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Inicio de sesión único para los empleados en todas las cuentas de una AWS Organization y en aplicaciones SAML.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS IAM Identity Center",
+        "explanation": "Correcta. Es el sucesor de AWS Single Sign-On."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Cognito",
+        "explanation": "Cognito es para usuarios de aplicaciones de consumo, no para empleados en cuentas de AWS."
+      },
+      {
+        "id": "c",
+        "text": "AWS Organizations",
+        "explanation": "Organizations agrupa y gobierna cuentas (SCP, facturación unificada), pero el inicio de sesión único lo da otro servicio."
+      },
+      {
+        "id": "d",
+        "text": "AWS STS",
+        "explanation": "STS emite credenciales temporales por debajo, pero no ofrece el portal de SSO para empleados."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "SSO de empleados multicuenta → IAM Identity Center.",
+    "refs": [
+      "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-idn-003",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Emite credenciales temporales y limitadas para quien asume un rol o para usuarios federados.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS STS",
+        "explanation": "Correcta. Security Token Service emite las credenciales temporales."
+      },
+      {
+        "id": "b",
+        "text": "AWS KMS",
+        "explanation": "KMS gestiona claves de cifrado. Sería la respuesta para cifrar datos con claves controladas."
+      },
+      {
+        "id": "c",
+        "text": "AWS Secrets Manager",
+        "explanation": "Secrets Manager guarda y rota secretos de aplicaciones. Sería la respuesta para rotar contraseñas de bases de datos."
+      },
+      {
+        "id": "d",
+        "text": "IAM Access Analyzer",
+        "explanation": "Access Analyzer detecta recursos compartidos con entidades externas; no emite credenciales."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Credenciales temporales → STS.",
+    "refs": [
+      "https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html"
+    ],
+    "source": "original"
   }
 ]

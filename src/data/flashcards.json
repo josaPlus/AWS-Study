@@ -2571,5 +2571,302 @@
       "lambda"
     ],
     "difficulty": 1
+  },
+  {
+    "id": "vpc-001",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es una VPC?",
+    "back": "Virtual Private Cloud: tu red privada y aislada dentro de AWS, en una Región. Defines su rango de IPs, subredes, tablas de rutas y gateways, y despliegas dentro tus recursos (EC2, RDS…).",
+    "tags": [
+      "vpc"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "vpc-002",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "comparacion",
+    "front": "Subred pública vs privada",
+    "back": "Pública: su tabla de rutas tiene salida a un Internet Gateway; para recursos accesibles desde internet (balanceadores, bastiones).\nPrivada: sin ruta directa a internet; para bases de datos y servidores internos. Cada subred vive en UNA AZ.",
+    "tags": [
+      "vpc",
+      "subredes"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "vpc-003",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es un Internet Gateway (IGW)?",
+    "back": "El componente que conecta una VPC con internet. Las subredes públicas tienen una ruta hacia él en su tabla de rutas.",
+    "tags": [
+      "vpc"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "vpc-004",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es un NAT Gateway?",
+    "back": "Permite que las instancias de subredes PRIVADAS salgan a internet (p. ej. para descargar actualizaciones) sin que nadie desde internet pueda iniciar conexiones hacia ellas. Gestionado por AWS; se coloca en una subred pública. (NAT Instance = la versión autogestionada en EC2).",
+    "tags": [
+      "vpc",
+      "nat"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-005",
+    "domain": 2,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es una Network ACL (NACL)?",
+    "back": "Firewall a nivel de SUBRED que controla el tráfico entrante y saliente con reglas de permitir y denegar basadas en IP, puerto y protocolo. Es sin estado: hay que permitir explícitamente la respuesta. Las reglas se evalúan por número.",
+    "tags": [
+      "nacl",
+      "seguridad"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-006",
+    "domain": 2,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué son los VPC Flow Logs?",
+    "back": "Registros del tráfico IP que pasa por las interfaces de la VPC (aceptado o rechazado). Sirven para depurar problemas de conectividad y para seguridad. Se envían a S3, CloudWatch Logs o Data Firehose.",
+    "tags": [
+      "flow-logs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-007",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es VPC Peering?",
+    "back": "Conexión privada entre dos VPC (de la misma o distinta cuenta o Región) usando la red de AWS, para que se comporten como una sola red. Los rangos de IP no deben solaparse y NO es transitivo: A↔B y B↔C no implica A↔C.",
+    "tags": [
+      "peering"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-008",
+    "domain": 2,
+    "section": "VPC y redes",
+    "type": "comparacion",
+    "front": "VPC Endpoint de tipo Gateway vs Interface",
+    "back": "Ambos permiten acceder a servicios de AWS de forma PRIVADA, sin pasar por internet.\nGateway: solo S3 y DynamoDB; gratuito; se añade a la tabla de rutas.\nInterface (con PrivateLink): la mayoría de los servicios; crea una interfaz de red con IP privada; tiene coste.",
+    "tags": [
+      "endpoints"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "vpc-009",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es AWS PrivateLink?",
+    "back": "La forma más segura y escalable de exponer un servicio a miles de VPCs (propias o de clientes) de forma privada, sin peering, sin internet, sin NAT ni tablas de rutas complejas. También lo usan los Interface Endpoints.",
+    "tags": [
+      "privatelink"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "vpc-010",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es una Site-to-Site VPN?",
+    "back": "Conexión cifrada entre tu centro de datos y una VPC a través de internet público. Se configura en minutos. Necesita un Customer Gateway (CGW) en tu lado y un Virtual Private Gateway (VGW) o Transit Gateway en AWS.",
+    "tags": [
+      "vpn",
+      "hibrido"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-011",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es AWS Direct Connect (DX)?",
+    "back": "Conexión física PRIVADA y dedicada entre tu centro de datos y AWS, sin pasar por internet: más ancho de banda, latencia estable y más seguridad. Tarda semanas (a veces meses) en instalarse.",
+    "tags": [
+      "direct-connect",
+      "hibrido"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-012",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "comparacion",
+    "front": "Site-to-Site VPN vs Direct Connect",
+    "back": "VPN: por internet público, cifrada, rápida de montar y barata, rendimiento variable.\nDirect Connect: línea privada dedicada, rendimiento consistente y mayor ancho de banda, más cara y lenta de instalar. Pueden combinarse (VPN como respaldo de DX).",
+    "tags": [
+      "vpn",
+      "direct-connect"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-013",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es AWS Client VPN?",
+    "back": "Conexión VPN (basada en OpenVPN) desde el ordenador de un usuario a la red privada en AWS (y, a través de ella, a la red on-premises). Pensada para trabajadores remotos.",
+    "tags": [
+      "vpn"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-014",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "concepto",
+    "front": "¿Qué es AWS Transit Gateway?",
+    "back": "Un hub central que conecta miles de VPCs y redes on-premises en una topología hub-and-spoke, con conexión transitiva. Simplifica redes que con peering serían una malla inmanejable.",
+    "tags": [
+      "transit-gateway"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-015",
+    "domain": 3,
+    "section": "VPC y redes",
+    "type": "dato-clave",
+    "front": "IPv4 pública vs privada vs Elastic IP",
+    "back": "Pública: accesible desde internet; cambia al detener/arrancar una instancia.\nPrivada: solo dentro de la red privada (VPC).\nElastic IP: IPv4 pública fija que asignas a una instancia. Todas las IPv4 públicas tienen coste por hora en AWS.",
+    "tags": [
+      "ip"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "vpc-016",
+    "domain": 2,
+    "section": "VPC y redes",
+    "type": "comparacion",
+    "front": "Capas de seguridad de red en una VPC",
+    "back": "NACL (subred, sin estado, permitir/denegar) → Security Group (instancia, con estado, solo permitir). Además: AWS Network Firewall (toda la VPC, capas 3-7) y WAF (peticiones web). Defensa en profundidad.",
+    "tags": [
+      "seguridad",
+      "red"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "idn-001",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "type": "concepto",
+    "front": "¿Qué es AWS STS?",
+    "back": "Security Token Service: emite credenciales TEMPORALES con privilegios limitados para acceder a recursos de AWS. Se usa al asumir roles, en el acceso entre cuentas y en la federación de identidades.",
+    "tags": [
+      "sts"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "idn-002",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Cognito?",
+    "back": "Gestión de identidades para los USUARIOS de tus aplicaciones web y móviles (potencialmente millones): registro, inicio de sesión, inicio con Google/Facebook/Apple o SAML, y credenciales para acceder a AWS. No se crean usuarios de IAM para ellos.",
+    "tags": [
+      "cognito"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "idn-003",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "type": "concepto",
+    "front": "¿Qué es AWS Directory Service?",
+    "back": "Microsoft Active Directory en AWS. Opciones: AWS Managed Microsoft AD (un AD real gestionado, con confianza hacia tu AD on-premises), AD Connector (proxy hacia tu AD local) y Simple AD (directorio básico compatible).",
+    "tags": [
+      "active-directory"
+    ],
+    "difficulty": 2,
+    "note": "Simple AD está en mantenimiento y no acepta clientes nuevos desde el 30-jul-2026."
+  },
+  {
+    "id": "idn-004",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "type": "concepto",
+    "front": "¿Qué es AWS IAM Identity Center?",
+    "back": "Sucesor de AWS Single Sign-On: un único inicio de sesión para todas las cuentas de una AWS Organization, aplicaciones empresariales (SaaS, SAML 2.0) y aplicaciones de EC2 Windows. Las identidades pueden venir de su propio directorio, de Active Directory o de un IdP externo.",
+    "tags": [
+      "identity-center",
+      "sso"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "idn-005",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "type": "comparacion",
+    "front": "IAM vs IAM Identity Center vs Cognito",
+    "back": "IAM: identidades y permisos dentro de UNA cuenta (usuarios, roles, servicios).\nIAM Identity Center: inicio de sesión único de los EMPLEADOS a muchas cuentas y aplicaciones.\nCognito: usuarios FINALES de tus aplicaciones web y móviles.",
+    "tags": [
+      "identidad"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "idn-006",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "type": "concepto",
+    "front": "¿Qué es la federación de identidades?",
+    "back": "Permitir que usuarios autenticados por un proveedor externo de confianza (Active Directory, Google, un IdP SAML u OIDC) accedan a AWS sin crearles usuarios de IAM, recibiendo credenciales temporales.",
+    "tags": [
+      "federacion"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "idn-007",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "type": "caso-de-uso",
+    "front": "Tus 200 empleados ya tienen cuenta en Microsoft Entra ID / Active Directory y deben entrar a 15 cuentas de AWS. ¿Qué usas?",
+    "back": "IAM Identity Center conectado a su directorio existente: un solo inicio de sesión y permisos por conjunto de permisos en cada cuenta, sin crear usuarios de IAM.",
+    "tags": [
+      "identity-center"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "idn-008",
+    "domain": 2,
+    "section": "Identidad avanzada",
+    "type": "caso-de-uso",
+    "front": "Una app móvil necesita registro de usuarios e inicio de sesión con Google. ¿Qué servicio usas?",
+    "back": "Amazon Cognito (grupos de usuarios con proveedores de identidad sociales).",
+    "tags": [
+      "cognito"
+    ],
+    "difficulty": 1
   }
 ]
