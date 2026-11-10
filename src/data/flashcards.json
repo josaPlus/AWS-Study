@@ -101,5 +101,462 @@
       "cifrado"
     ],
     "difficulty": 2
+  },
+  {
+    "id": "cloud-001",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "¿Qué es el cloud computing?",
+    "back": "La entrega bajo demanda de recursos de TI (cómputo, almacenamiento, bases de datos, red, aplicaciones) a través de internet, pagando solo por lo que usas y sin comprar ni mantener centros de datos propios.",
+    "tags": [
+      "definicion"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-002",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "comparacion",
+    "front": "Nube pública vs privada vs híbrida",
+    "back": "Pública: recursos de un proveedor (AWS) compartidos y accesibles por internet.\nPrivada: infraestructura usada por una sola organización, con control total.\nHíbrida: combina servidores on-premises con la nube pública, conectados entre sí.",
+    "tags": [
+      "modelos-despliegue"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-003",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "Las 5 características esenciales del cloud computing",
+    "back": "1) Autoservicio bajo demanda.\n2) Amplio acceso a la red.\n3) Recursos compartidos (multi-tenant) en un pool.\n4) Elasticidad y escalabilidad rápidas.\n5) Servicio medido: pagas según el consumo.",
+    "tags": [
+      "caracteristicas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cloud-004",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "Las 6 ventajas del cloud computing según AWS",
+    "back": "1) Cambiar gasto de capital (CAPEX) por gasto variable (OPEX).\n2) Beneficiarse de economías de escala masivas.\n3) Dejar de adivinar la capacidad.\n4) Aumentar velocidad y agilidad.\n5) Dejar de gastar en mantener centros de datos.\n6) Hacerse global en minutos.",
+    "tags": [
+      "ventajas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cloud-005",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "comparacion",
+    "front": "CAPEX vs OPEX",
+    "back": "CAPEX: gasto de capital por adelantado (comprar servidores, centro de datos).\nOPEX: gasto operativo variable según el uso. La nube convierte CAPEX en OPEX: no hay inversión inicial grande.",
+    "tags": [
+      "costes"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-006",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "comparacion",
+    "front": "IaaS vs PaaS vs SaaS",
+    "back": "IaaS: te dan bloques básicos (servidores, red, almacenamiento); tú gestionas SO y aplicaciones. Ej.: EC2.\nPaaS: la plataforma está gestionada; solo despliegas tu código y datos. Ej.: Elastic Beanstalk.\nSaaS: producto terminado que solo usas. Ej.: Gmail, Amazon Rekognition como servicio.",
+    "tags": [
+      "modelos-servicio"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-007",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "caso-de-uso",
+    "front": "¿EC2, Elastic Beanstalk o un producto como Dropbox? Clasifícalos en IaaS / PaaS / SaaS.",
+    "back": "EC2 → IaaS (tú gestionas el SO).\nElastic Beanstalk → PaaS (solo subes el código).\nDropbox / Gmail → SaaS (usas la aplicación terminada).",
+    "tags": [
+      "modelos-servicio"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-008",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "Los 3 fundamentos de precios de AWS",
+    "back": "Pagas por: 1) cómputo (tiempo de procesamiento), 2) almacenamiento (datos guardados) y 3) transferencia de datos SALIENTE de la nube. La transferencia de datos ENTRANTE es gratis.",
+    "tags": [
+      "precios"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cloud-009",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "comparacion",
+    "front": "Escalabilidad vs elasticidad",
+    "back": "Escalabilidad: capacidad de manejar más carga añadiendo recursos (más grandes o más cantidad).\nElasticidad: escalar automáticamente hacia arriba Y hacia abajo según la demanda, para pagar solo lo necesario en cada momento.",
+    "tags": [
+      "conceptos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cloud-010",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "¿Qué es la agilidad en la nube?",
+    "back": "Poder obtener recursos de TI en minutos en lugar de semanas. Reduce el coste y el tiempo de experimentar, así que los equipos pueden probar ideas e innovar más rápido.",
+    "tags": [
+      "conceptos"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-011",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "¿Qué es la alta disponibilidad?",
+    "back": "Diseñar un sistema para que siga funcionando aunque falle un componente, normalmente ejecutándolo en al menos 2 zonas de disponibilidad (centros de datos separados).",
+    "tags": [
+      "conceptos",
+      "disponibilidad"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-012",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "¿Qué es la tolerancia a fallos?",
+    "back": "La capacidad de un sistema de seguir funcionando sin interrupción cuando falla una parte, gracias a la redundancia. Es un nivel más exigente que la alta disponibilidad: no debería notarse el fallo.",
+    "tags": [
+      "conceptos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cloud-013",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "dato-clave",
+    "front": "¿Qué es una economía de escala en la nube?",
+    "back": "Como AWS agrega el uso de cientos de miles de clientes, consigue costes por unidad más bajos y los traslada a precios más bajos para todos (AWS ha bajado precios muchas veces).",
+    "tags": [
+      "ventajas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-014",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "¿Qué problemas resuelve la nube frente a un centro de datos propio?",
+    "back": "Evita pagar alquiler, energía, refrigeración y mantenimiento; elimina la espera para comprar hardware; permite escalar sin límite práctico; reduce el personal dedicado a infraestructura y facilita recuperarse ante desastres.",
+    "tags": [
+      "ventajas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-015",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "¿Qué es el aprovisionamiento bajo demanda?",
+    "back": "El usuario crea y usa recursos por sí mismo (autoservicio) cuando los necesita, sin intervención humana del proveedor, y los libera cuando ya no los necesita.",
+    "tags": [
+      "caracteristicas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-016",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "dato-clave",
+    "front": "¿Qué es multi-tenancy (multiinquilino)?",
+    "back": "Varios clientes comparten la misma infraestructura física de forma segura y aislada entre sí. Permite las economías de escala de la nube pública.",
+    "tags": [
+      "caracteristicas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cloud-017",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "caso-de-uso",
+    "front": "Tu tienda recibe 10 veces más tráfico en el Buen Fin. ¿Qué ventaja de la nube te ayuda?",
+    "back": "Dejar de adivinar la capacidad y la elasticidad: añades servidores solo durante el pico y los quitas después, en lugar de comprar hardware que estaría ocioso el resto del año.",
+    "tags": [
+      "ventajas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-018",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "¿Qué es la Política de Uso Aceptable (AUP) de AWS?",
+    "back": "Las reglas que prohíben usar AWS para actividades ilegales, dañinas u ofensivas, violar la seguridad de otros, enviar spam o abusar de la red. Al usar AWS aceptas cumplirla.",
+    "tags": [
+      "politicas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cloud-019",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "comparacion",
+    "front": "Escalado vertical vs horizontal",
+    "back": "Vertical (scale up/down): hacer más grande o más pequeña una instancia (más CPU/RAM). Tiene un límite de hardware; típico en bases de datos.\nHorizontal (scale out/in): añadir o quitar instancias. Base de las aplicaciones distribuidas y del Auto Scaling.",
+    "tags": [
+      "escalabilidad"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cloud-020",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "type": "concepto",
+    "front": "¿Cuál es el modelo de precios básico de AWS?",
+    "back": "Pago por uso (pay-as-you-go): sin contratos a largo plazo obligatorios ni pagos iniciales; pagas solo por los recursos que consumes y dejas de pagar cuando los apagas.",
+    "tags": [
+      "precios"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-001",
+    "domain": 2,
+    "section": "IAM",
+    "type": "concepto",
+    "front": "¿Qué es IAM y cuál es su ámbito?",
+    "back": "Identity and Access Management: controla QUIÉN puede acceder (autenticación) y QUÉ puede hacer (autorización) en tu cuenta. Es un servicio global y no tiene coste adicional.",
+    "tags": [
+      "iam"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-002",
+    "domain": 2,
+    "section": "IAM",
+    "type": "concepto",
+    "front": "¿Qué es la cuenta root y cómo se debe usar?",
+    "back": "La identidad creada con el correo de la cuenta; tiene acceso total y no se puede limitar con políticas IAM. Solo debe usarse para tareas que la requieren, con MFA activado y sin claves de acceso.",
+    "tags": [
+      "root"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-003",
+    "domain": 2,
+    "section": "IAM",
+    "type": "dato-clave",
+    "front": "Tareas que SOLO puede hacer el usuario root",
+    "back": "Ejemplos: cambiar la configuración de la cuenta (nombre, correo, contraseña root), cerrar la cuenta, cambiar o cancelar el plan de AWS Support, restaurar permisos de IAM y registrarse como vendedor en el Reserved Instance Marketplace.",
+    "tags": [
+      "root"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "iam-004",
+    "domain": 2,
+    "section": "IAM",
+    "type": "comparacion",
+    "front": "Usuario vs grupo vs rol de IAM",
+    "back": "Usuario: una persona o aplicación con credenciales permanentes.\nGrupo: conjunto de usuarios que comparten permisos (solo contiene usuarios, no grupos).\nRol: identidad con permisos TEMPORALES que asumen servicios (p. ej. EC2), usuarios u otras cuentas.",
+    "tags": [
+      "iam"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-005",
+    "domain": 2,
+    "section": "IAM",
+    "type": "concepto",
+    "front": "Principio de mínimo privilegio",
+    "back": "Dar a cada usuario o servicio solo los permisos que necesita para su trabajo, y nada más. Reduce el impacto si unas credenciales se ven comprometidas.",
+    "tags": [
+      "buenas-practicas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-006",
+    "domain": 2,
+    "section": "IAM",
+    "type": "concepto",
+    "front": "Estructura de una política IAM (JSON)",
+    "back": "Version + uno o más Statement. Cada Statement tiene: Effect (Allow/Deny), Action (acciones de API), Resource (a qué recursos) y opcionalmente Principal (a quién aplica) y Condition (cuándo aplica). Un Deny explícito siempre gana.",
+    "tags": [
+      "politicas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iam-007",
+    "domain": 2,
+    "section": "IAM",
+    "type": "concepto",
+    "front": "¿Qué es MFA y qué tipos admite AWS?",
+    "back": "Autenticación multifactor: contraseña (algo que sabes) + un dispositivo (algo que tienes). AWS admite apps de MFA virtual (autenticadores), llaves de seguridad FIDO/passkeys y tokens de hardware TOTP.",
+    "tags": [
+      "mfa"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-008",
+    "domain": 2,
+    "section": "IAM",
+    "type": "comparacion",
+    "front": "Las 3 formas de acceder a AWS",
+    "back": "1) Consola de administración: usuario + contraseña (+ MFA).\n2) AWS CLI: línea de comandos con claves de acceso.\n3) AWS SDK: desde el código de tu aplicación con claves de acceso o roles.",
+    "tags": [
+      "acceso"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-009",
+    "domain": 2,
+    "section": "IAM",
+    "type": "dato-clave",
+    "front": "¿Qué son las claves de acceso (access keys)?",
+    "back": "Un ID de clave de acceso + una clave secreta que permiten usar la CLI o el SDK. Son como un usuario y contraseña: no se comparten, no se suben a repositorios y no se crean para el root.",
+    "tags": [
+      "acceso"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-010",
+    "domain": 2,
+    "section": "IAM",
+    "type": "caso-de-uso",
+    "front": "Una aplicación en EC2 necesita leer objetos de S3. ¿Cómo le das permiso de forma segura?",
+    "back": "Crea un rol de IAM con permiso de lectura en S3 y asígnalo a la instancia (perfil de instancia). La aplicación obtiene credenciales temporales automáticamente; nunca guardes claves de acceso en la instancia.",
+    "tags": [
+      "roles"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-011",
+    "domain": 2,
+    "section": "IAM",
+    "type": "comparacion",
+    "front": "IAM Credentials Report vs IAM Access Advisor",
+    "back": "Credentials Report: informe a nivel de CUENTA con todos los usuarios y el estado de sus credenciales (contraseñas, claves, MFA).\nAccess Advisor: a nivel de USUARIO/ROL, muestra a qué servicios tiene permiso y cuándo los usó por última vez, para recortar permisos.",
+    "tags": [
+      "auditoria"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iam-012",
+    "domain": 2,
+    "section": "IAM",
+    "type": "concepto",
+    "front": "¿Qué es una política de contraseñas en IAM?",
+    "back": "Reglas para las contraseñas de los usuarios IAM: longitud mínima, tipos de caracteres, expiración, impedir reutilizar contraseñas anteriores y permitir que cada usuario cambie la suya.",
+    "tags": [
+      "buenas-practicas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-013",
+    "domain": 2,
+    "section": "IAM",
+    "type": "concepto",
+    "front": "¿Qué es AWS CloudShell?",
+    "back": "Una terminal en el navegador, dentro de la consola de AWS, con la AWS CLI ya instalada y autenticada con tus credenciales. Disponible en muchas Regiones y sin coste adicional.",
+    "tags": [
+      "acceso"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iam-014",
+    "domain": 2,
+    "section": "IAM",
+    "type": "dato-clave",
+    "front": "Buenas prácticas de IAM (resumen)",
+    "back": "No usar root salvo lo imprescindible; un usuario por persona; asignar permisos a grupos; política de contraseñas fuerte; MFA obligatorio; roles para servicios; claves de acceso solo para CLI/SDK; auditar con Credentials Report y Access Advisor; preferir IAM Identity Center para personas.",
+    "tags": [
+      "buenas-practicas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iam-015",
+    "domain": 2,
+    "section": "IAM",
+    "type": "comparacion",
+    "front": "Política administrada por AWS vs administrada por el cliente vs en línea",
+    "back": "Administrada por AWS: creada y mantenida por AWS (p. ej., ReadOnlyAccess).\nAdministrada por el cliente: tú la creas y la reutilizas en varias identidades.\nEn línea (inline): incrustada en una sola identidad; se borra con ella.",
+    "tags": [
+      "politicas"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "iam-016",
+    "domain": 2,
+    "section": "IAM",
+    "type": "caso-de-uso",
+    "front": "Un usuario pertenece a dos grupos: uno permite borrar buckets y otro lo deniega explícitamente. ¿Puede borrarlos?",
+    "back": "No. En IAM un Deny explícito siempre prevalece sobre cualquier Allow. Si no hay Allow ni Deny, la acción se deniega de forma implícita.",
+    "tags": [
+      "politicas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iam-017",
+    "domain": 2,
+    "section": "IAM",
+    "type": "concepto",
+    "front": "¿Qué responsabilidades de IAM tiene el cliente en el modelo compartido?",
+    "back": "AWS protege la infraestructura del servicio IAM. El cliente gestiona usuarios, grupos, roles y políticas, activa MFA, rota claves, aplica el mínimo privilegio y revisa los accesos.",
+    "tags": [
+      "responsabilidad-compartida"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iam-018",
+    "domain": 2,
+    "section": "IAM",
+    "type": "dato-clave",
+    "front": "¿Pueden los grupos de IAM contener otros grupos?",
+    "back": "No. Un grupo solo contiene usuarios, y un usuario puede pertenecer a varios grupos (o a ninguno, aunque no es buena práctica).",
+    "tags": [
+      "iam"
+    ],
+    "difficulty": 2
   }
 ]

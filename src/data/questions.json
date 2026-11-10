@@ -316,5 +316,1355 @@
       "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-cloud-001",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una startup no quiere hacer una gran inversión inicial en servidores y prefiere pagar mes a mes solo por la capacidad que consume. ¿Qué ventaja de la nube describe esto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cambiar gasto de capital por gasto variable",
+        "explanation": "Correcta. En lugar de comprar hardware por adelantado (CAPEX), la empresa paga según el consumo real (OPEX), que es exactamente lo que describe el escenario."
+      },
+      {
+        "id": "b",
+        "text": "Hacerse global en minutos",
+        "explanation": "Esta ventaja se refiere a desplegar en varias Regiones del mundo rápidamente para estar cerca de los usuarios; no habla de cómo se paga la infraestructura."
+      },
+      {
+        "id": "c",
+        "text": "Aumentar la velocidad y la agilidad",
+        "explanation": "La agilidad trata de obtener recursos en minutos para experimentar más rápido. Es una ventaja real, pero el escenario se centra en evitar la inversión inicial."
+      },
+      {
+        "id": "d",
+        "text": "Beneficiarse de economías de escala masivas",
+        "explanation": "Las economías de escala explican por qué los precios de AWS son bajos (agrega el uso de muchos clientes), no el cambio de pagar por adelantado a pagar por uso."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Sin inversión inicial y pagando por consumo = cambiar CAPEX por OPEX (gasto variable).",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-002",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Antes de migrar, una empresa compraba servidores para el pico máximo esperado del año, y la mayor parte del tiempo estaban infrautilizados. ¿Qué ventaja de la nube resuelve este problema?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dejar de gastar dinero en mantener centros de datos",
+        "explanation": "Esta ventaja habla de no pagar energía, refrigeración ni personal para el hardware. El problema del escenario es estimar mal la capacidad, no el mantenimiento."
+      },
+      {
+        "id": "b",
+        "text": "Dejar de adivinar la capacidad",
+        "explanation": "Correcta. En la nube puedes aumentar o reducir recursos según la demanda real, así no compras capacidad de más para el pico ni te quedas corto."
+      },
+      {
+        "id": "c",
+        "text": "Hacerse global en minutos",
+        "explanation": "Ser global es desplegar en varias Regiones del mundo. No resuelve tener servidores ociosos la mayor parte del año."
+      },
+      {
+        "id": "d",
+        "text": "Cambiar gasto de capital por gasto variable",
+        "explanation": "Está relacionado, pero esta ventaja describe la forma de pago (sin inversión inicial). El escenario apunta específicamente a no tener que estimar el pico de capacidad."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Servidores ociosos o insuficientes por estimar mal el pico → la nube permite 'dejar de adivinar la capacidad'.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-003",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa mantiene sus sistemas de nómina en su centro de datos y usa AWS para su sitio web público, con ambos entornos conectados de forma privada. ¿Qué modelo de despliegue está usando?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nube pública",
+        "explanation": "La nube pública implicaría que todos los sistemas corren en la infraestructura de un proveedor como AWS. Aquí parte de la infraestructura sigue on-premises."
+      },
+      {
+        "id": "b",
+        "text": "Nube privada",
+        "explanation": "Una nube privada es infraestructura dedicada a una sola organización. La empresa también usa AWS (nube pública), así que no es solo privada."
+      },
+      {
+        "id": "c",
+        "text": "Nube híbrida",
+        "explanation": "Correcta. Combinar servidores on-premises con servicios de la nube pública, conectados entre sí, es el modelo híbrido."
+      },
+      {
+        "id": "d",
+        "text": "Software como servicio (SaaS)",
+        "explanation": "SaaS es un modelo de SERVICIO (usar una aplicación terminada), no un modelo de despliegue. No describe dónde vive la infraestructura."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Parte on-premises + parte en la nube pública, conectadas = nube híbrida.",
+    "refs": [
+      "https://aws.amazon.com/what-is/hybrid-cloud/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-004",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de desarrollo solo quiere subir el código de su aplicación web y que el proveedor se encargue del sistema operativo, los parches, el balanceo y el escalado. ¿Qué modelo de servicio busca?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Infraestructura como servicio (IaaS)",
+        "explanation": "Con IaaS (como EC2) el equipo seguiría gestionando el sistema operativo, los parches y la configuración del servidor, justo lo que quiere evitar."
+      },
+      {
+        "id": "b",
+        "text": "Plataforma como servicio (PaaS)",
+        "explanation": "Correcta. En PaaS (como Elastic Beanstalk) el proveedor gestiona la plataforma subyacente y el cliente solo aporta el código y los datos."
+      },
+      {
+        "id": "c",
+        "text": "Software como servicio (SaaS)",
+        "explanation": "SaaS es usar una aplicación ya terminada (como un correo web). El equipo quiere desplegar SU propia aplicación, no consumir una existente."
+      },
+      {
+        "id": "d",
+        "text": "Nube privada",
+        "explanation": "Nube privada es un modelo de despliegue (infraestructura dedicada), no indica qué capas gestiona el proveedor. No responde a la necesidad planteada."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "'Solo subo mi código y el proveedor gestiona lo demás' = PaaS (p. ej., Elastic Beanstalk).",
+    "refs": [
+      "https://aws.amazon.com/types-of-cloud-computing/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-005",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Cuáles de los siguientes son fundamentos del modelo de precios de AWS por los que se cobra normalmente? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Capacidad de cómputo utilizada",
+        "explanation": "Correcta. El cómputo (tiempo de ejecución de instancias, funciones, etc.) es uno de los tres pilares de cobro de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Transferencia de datos saliente de AWS hacia internet",
+        "explanation": "Correcta. Los datos que salen de AWS se cobran por GB; es el tercer fundamento junto con cómputo y almacenamiento."
+      },
+      {
+        "id": "c",
+        "text": "Transferencia de datos entrante a AWS desde internet",
+        "explanation": "Incorrecta. La entrada de datos a AWS es gratuita en general; por eso migrar datos hacia AWS no genera cargos de transferencia."
+      },
+      {
+        "id": "d",
+        "text": "Número de usuarios de IAM creados",
+        "explanation": "Incorrecta. IAM es gratuito: crear usuarios, grupos, roles o políticas no tiene coste."
+      },
+      {
+        "id": "e",
+        "text": "Uso de la consola de administración",
+        "explanation": "Incorrecta. Acceder a la consola web de AWS no tiene coste; se cobran los recursos que creas, no la herramienta para gestionarlos."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "AWS cobra por cómputo, almacenamiento y datos SALIENTES. Los datos entrantes y servicios como IAM son gratis.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/how-aws-pricing-works/key-principles.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-006",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación añade servidores automáticamente cuando aumenta el tráfico y los elimina cuando baja, para no pagar por capacidad ociosa. ¿Qué concepto describe mejor este comportamiento?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Alta disponibilidad",
+        "explanation": "La alta disponibilidad busca que el sistema siga funcionando si falla un componente (p. ej., usando varias AZ). No implica ajustar la capacidad a la demanda."
+      },
+      {
+        "id": "b",
+        "text": "Escalado vertical",
+        "explanation": "El escalado vertical cambia el tamaño de una instancia (más CPU o RAM). El escenario añade y quita servidores, que es escalado horizontal y automático."
+      },
+      {
+        "id": "c",
+        "text": "Elasticidad",
+        "explanation": "Correcta. Elasticidad es escalar automáticamente hacia arriba y hacia abajo según la demanda, pagando solo lo que se usa en cada momento."
+      },
+      {
+        "id": "d",
+        "text": "Agilidad",
+        "explanation": "La agilidad es la rapidez para obtener recursos y experimentar. No describe el ajuste automático de capacidad según el tráfico."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Subir Y bajar recursos automáticamente según la demanda = elasticidad.",
+    "refs": [
+      "https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concept.elasticity.en.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-007",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Por qué AWS puede ofrecer precios más bajos que los que conseguiría una empresa operando su propio centro de datos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Porque los clientes deben firmar contratos de 3 años",
+        "explanation": "AWS no exige contratos largos: el modelo base es pago por uso. Los compromisos (Reserved Instances, Savings Plans) son opcionales para obtener descuentos."
+      },
+      {
+        "id": "b",
+        "text": "Por las economías de escala al agregar el uso de muchos clientes",
+        "explanation": "Correcta. Al comprar y operar infraestructura para cientos de miles de clientes, AWS reduce el coste por unidad y traslada parte del ahorro a los precios."
+      },
+      {
+        "id": "c",
+        "text": "Porque los datos entrantes y salientes son siempre gratuitos",
+        "explanation": "Falso: solo la transferencia ENTRANTE es gratuita en general; la saliente se cobra. Además, esto no explica los precios bajos de AWS."
+      },
+      {
+        "id": "d",
+        "text": "Porque AWS no se responsabiliza de la seguridad física",
+        "explanation": "Falso: AWS sí es responsable de la seguridad física de sus centros de datos dentro del modelo de responsabilidad compartida."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Economías de escala: AWS agrega el uso de muchos clientes y por eso puede bajar precios.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-008",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de I+D quiere probar una idea nueva con varios servidores durante dos días y luego descartarlos si no funciona, sin esperar semanas por una compra de hardware. ¿Qué beneficio de la nube aprovecha?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Velocidad y agilidad",
+        "explanation": "Correcta. Poder crear recursos en minutos y desecharlos sin coste de inversión hace que experimentar sea barato y rápido."
+      },
+      {
+        "id": "b",
+        "text": "Tolerancia a fallos",
+        "explanation": "La tolerancia a fallos es seguir funcionando cuando falla un componente. No tiene que ver con obtener recursos rápido para experimentar."
+      },
+      {
+        "id": "c",
+        "text": "Economías de escala",
+        "explanation": "Las economías de escala explican los precios bajos de AWS, pero el escenario destaca la rapidez para conseguir y descartar recursos."
+      },
+      {
+        "id": "d",
+        "text": "Seguridad física gestionada por AWS",
+        "explanation": "Que AWS proteja los centros de datos es un beneficio real, pero no tiene relación con experimentar rápidamente con servidores temporales."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recursos en minutos y experimentos baratos = agilidad.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-009",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Cuál de los siguientes es un ejemplo de Infraestructura como Servicio (IaaS) en AWS?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Elastic Beanstalk es PaaS: gestiona la plataforma y tú solo subes el código. Sería la respuesta si se preguntara por un ejemplo de PaaS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EC2",
+        "explanation": "Correcta. EC2 ofrece servidores virtuales en los que el cliente controla el sistema operativo, el software y la configuración de red: el ejemplo clásico de IaaS."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Rekognition",
+        "explanation": "Rekognition es un servicio de IA listo para usar mediante API (más cercano a SaaS): no gestionas ninguna infraestructura."
+      },
+      {
+        "id": "d",
+        "text": "Amazon WorkSpaces",
+        "explanation": "WorkSpaces entrega escritorios virtuales gestionados como servicio (DaaS); el usuario consume un escritorio terminado, no bloques de infraestructura."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "IaaS = bloques básicos donde tú gestionas el SO: EC2. PaaS = Beanstalk. SaaS = producto terminado.",
+    "refs": [
+      "https://aws.amazon.com/types-of-cloud-computing/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-010",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Qué DOS ventajas obtiene una empresa al migrar su centro de datos a AWS? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deja de pagar por energía, refrigeración y mantenimiento del hardware",
+        "explanation": "Correcta. AWS asume la operación física de los centros de datos, así que el cliente deja de gastar en mantenerlos."
+      },
+      {
+        "id": "b",
+        "text": "Puede desplegar aplicaciones en varias Regiones del mundo en minutos",
+        "explanation": "Correcta. Con la infraestructura global de AWS es posible llegar a usuarios de otros continentes rápidamente ('hacerse global en minutos')."
+      },
+      {
+        "id": "c",
+        "text": "AWS se hace responsable de cifrar todos los datos del cliente",
+        "explanation": "Incorrecta. Según el modelo de responsabilidad compartida, proteger y cifrar los datos es responsabilidad del cliente, aunque AWS dé las herramientas."
+      },
+      {
+        "id": "d",
+        "text": "Ya no necesita gestionar permisos de usuarios",
+        "explanation": "Incorrecta. La gestión de identidades y permisos (IAM) sigue siendo siempre responsabilidad del cliente."
+      },
+      {
+        "id": "e",
+        "text": "Obtiene capacidad ilimitada gratis durante el primer año",
+        "explanation": "Incorrecta. La capa gratuita tiene límites y créditos acotados; la capacidad adicional se paga por uso."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "Migrar elimina el gasto de mantener centros de datos y permite ser global en minutos; los datos y permisos siguen siendo tuyos.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-011",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un cliente usa AWS para alojar un sitio que envía correos masivos no solicitados a millones de destinatarios. ¿Qué documento de AWS está incumpliendo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "El modelo de responsabilidad compartida",
+        "explanation": "El modelo de responsabilidad compartida define qué protege AWS y qué protege el cliente. No es el documento que prohíbe el spam."
+      },
+      {
+        "id": "b",
+        "text": "La Política de Uso Aceptable de AWS",
+        "explanation": "Correcta. La AUP prohíbe usos ilegales, dañinos u ofensivos, incluido el envío de correo masivo no solicitado (spam)."
+      },
+      {
+        "id": "c",
+        "text": "El AWS Well-Architected Framework",
+        "explanation": "Well-Architected es una guía de buenas prácticas de arquitectura (6 pilares). No regula qué usos están permitidos."
+      },
+      {
+        "id": "d",
+        "text": "El AWS Cloud Adoption Framework",
+        "explanation": "El CAF ayuda a planificar la adopción de la nube en la organización. No establece prohibiciones de uso."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Usos prohibidos (spam, actividades ilegales, ataques) → Política de Uso Aceptable (AUP).",
+    "refs": [
+      "https://aws.amazon.com/aup/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-012",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una base de datos se queda sin memoria y el equipo cambia la instancia por otra con el doble de RAM y CPU. ¿Qué tipo de escalado aplicó?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Escalado horizontal",
+        "explanation": "El escalado horizontal añade MÁS instancias. Aquí se reemplazó una instancia por otra más grande."
+      },
+      {
+        "id": "b",
+        "text": "Escalado vertical",
+        "explanation": "Correcta. Aumentar el tamaño (CPU/RAM) de una misma instancia es escalado vertical, habitual en bases de datos que no se distribuyen fácilmente."
+      },
+      {
+        "id": "c",
+        "text": "Elasticidad",
+        "explanation": "La elasticidad implica ajustar automáticamente la capacidad hacia arriba y abajo según la demanda; un cambio manual de tamaño no lo es."
+      },
+      {
+        "id": "d",
+        "text": "Alta disponibilidad",
+        "explanation": "La alta disponibilidad se logra con redundancia (por ejemplo, varias AZ), no haciendo más grande una sola instancia."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Más grande = vertical (scale up). Más instancias = horizontal (scale out).",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-013",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Qué característica del cloud computing permite a un usuario crear servidores por sí mismo desde una consola web, sin hablar con nadie del proveedor?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Servicio medido",
+        "explanation": "El servicio medido significa que el uso se mide y se cobra según el consumo. No describe cómo se obtienen los recursos."
+      },
+      {
+        "id": "b",
+        "text": "Autoservicio bajo demanda",
+        "explanation": "Correcta. El usuario aprovisiona recursos cuando los necesita y de forma autónoma, sin intervención humana del proveedor."
+      },
+      {
+        "id": "c",
+        "text": "Multi-tenancy",
+        "explanation": "Multi-tenancy significa que varios clientes comparten la infraestructura de forma aislada. No describe el proceso de aprovisionamiento."
+      },
+      {
+        "id": "d",
+        "text": "Amplio acceso a la red",
+        "explanation": "Amplio acceso a la red indica que los recursos están disponibles por la red desde distintos dispositivos, no que el usuario los cree sin ayuda."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Crear recursos tú mismo, cuando quieras, sin intermediarios = autoservicio bajo demanda.",
+    "refs": [
+      "https://aws.amazon.com/what-is-cloud-computing/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-014",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación se despliega en instancias de dos zonas de disponibilidad distintas para que siga funcionando si un centro de datos completo falla. ¿Qué objetivo de diseño se busca?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Alta disponibilidad",
+        "explanation": "Correcta. Repartir la aplicación en al menos dos AZ permite sobrevivir a la caída de un centro de datos: es la definición práctica de alta disponibilidad."
+      },
+      {
+        "id": "b",
+        "text": "Escalado vertical",
+        "explanation": "El escalado vertical aumenta el tamaño de una instancia; no protege contra la caída de un centro de datos."
+      },
+      {
+        "id": "c",
+        "text": "Optimización de costes",
+        "explanation": "Desplegar en dos AZ suele costar más, no menos. El objetivo del escenario es la continuidad del servicio."
+      },
+      {
+        "id": "d",
+        "text": "Agilidad",
+        "explanation": "La agilidad es la rapidez para obtener recursos y experimentar. El escenario trata de resistir fallos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Varias AZ para sobrevivir a la caída de un centro de datos = alta disponibilidad.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/real-time-communication-on-aws/high-availability-and-scalability-on-aws.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-015",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa usa un servicio de correo electrónico en la web y no gestiona servidores, actualizaciones ni almacenamiento; solo usa la aplicación. ¿Qué modelo de servicio es?",
+    "options": [
+      {
+        "id": "a",
+        "text": "IaaS",
+        "explanation": "En IaaS el cliente gestiona el sistema operativo y las aplicaciones sobre servidores del proveedor. Aquí no gestiona nada técnico."
+      },
+      {
+        "id": "b",
+        "text": "PaaS",
+        "explanation": "En PaaS el cliente despliega y gestiona su propio código. Aquí no hay código propio: solo se usa una aplicación terminada."
+      },
+      {
+        "id": "c",
+        "text": "SaaS",
+        "explanation": "Correcta. Software como servicio: el proveedor gestiona todo y el cliente solo usa la aplicación, como un correo web."
+      },
+      {
+        "id": "d",
+        "text": "On-premises",
+        "explanation": "On-premises significa que la infraestructura está en las instalaciones del cliente. El escenario describe un servicio en la web gestionado por otro."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Solo usas la aplicación terminada, el proveedor gestiona todo = SaaS.",
+    "refs": [
+      "https://aws.amazon.com/types-of-cloud-computing/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-cloud-016",
+    "domain": 1,
+    "section": "Cloud Computing",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Qué afirmación sobre el modelo de precios de pago por uso de AWS es correcta?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Se paga una cuota fija anual independientemente del uso",
+        "explanation": "Lo contrario: el pago por uso cobra según el consumo real. Las cuotas fijas no son el modelo base de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Se paga solo por los recursos consumidos, sin contratos a largo plazo obligatorios",
+        "explanation": "Correcta. El modelo base de AWS no exige compromisos ni pagos iniciales: pagas lo que usas y dejas de pagar al apagar los recursos."
+      },
+      {
+        "id": "c",
+        "text": "Es necesario comprar el hardware y AWS lo aloja",
+        "explanation": "Eso sería colocation (alojar tu hardware en el centro de datos de otro). En AWS no compras hardware."
+      },
+      {
+        "id": "d",
+        "text": "Solo está disponible con el plan Enterprise Support",
+        "explanation": "El pago por uso aplica a todos los clientes; no depende del plan de soporte contratado."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Pago por uso: sin pagos iniciales ni contratos obligatorios; pagas lo que consumes.",
+    "refs": [
+      "https://aws.amazon.com/pricing/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-001",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación que corre en una instancia EC2 necesita escribir archivos en un bucket de S3. ¿Cuál es la forma MÁS segura de darle acceso?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Guardar las claves de acceso de un usuario IAM en un archivo de configuración de la instancia",
+        "explanation": "Funciona, pero es inseguro: las claves son permanentes y pueden filtrarse si alguien accede a la instancia o al código. AWS desaconseja esta práctica."
+      },
+      {
+        "id": "b",
+        "text": "Asignar a la instancia un rol de IAM con permiso de escritura en ese bucket",
+        "explanation": "Correcta. El rol entrega credenciales temporales que se rotan automáticamente, sin guardar secretos en la instancia."
+      },
+      {
+        "id": "c",
+        "text": "Usar las credenciales del usuario root en la aplicación",
+        "explanation": "Nunca debe usarse root para aplicaciones: tiene acceso total e ilimitado a la cuenta y viola el principio de mínimo privilegio."
+      },
+      {
+        "id": "d",
+        "text": "Hacer el bucket público para que cualquiera pueda escribir",
+        "explanation": "Abrir el bucket a escritura pública expone los datos a cualquiera en internet. Es un riesgo de seguridad grave."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Servicio de AWS que necesita permisos (EC2, Lambda…) → rol de IAM, nunca claves guardadas.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-002",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Cuáles son DOS buenas prácticas recomendadas para proteger la cuenta root de AWS? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Activar MFA en el usuario root",
+        "explanation": "Correcta. MFA añade un segundo factor, de modo que una contraseña robada no basta para entrar con el usuario más poderoso de la cuenta."
+      },
+      {
+        "id": "b",
+        "text": "No crear claves de acceso para el usuario root",
+        "explanation": "Correcta. Las claves de acceso del root darían acceso total por CLI/SDK; si se filtran, la cuenta entera queda comprometida."
+      },
+      {
+        "id": "c",
+        "text": "Usar el usuario root para las tareas administrativas diarias",
+        "explanation": "Incorrecta. Para el trabajo diario se usan identidades con permisos limitados; el root solo para las pocas tareas que lo requieren."
+      },
+      {
+        "id": "d",
+        "text": "Compartir la contraseña root con el equipo de operaciones",
+        "explanation": "Incorrecta. Compartir credenciales impide saber quién hizo qué y aumenta el riesgo. Cada persona debe tener su propia identidad."
+      },
+      {
+        "id": "e",
+        "text": "Adjuntar una política IAM al root para limitar sus permisos",
+        "explanation": "Incorrecta. Las políticas IAM no restringen al usuario root dentro de su propia cuenta (solo las SCP de Organizations pueden limitar cuentas miembro)."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "Root: MFA siempre, sin claves de acceso y solo para tareas que lo exigen.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-003",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Diez desarrolladores necesitan los mismos permisos y el equipo crece cada mes. ¿Cuál es la forma más eficiente de gestionar sus permisos en IAM?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Crear un grupo de IAM, adjuntarle la política y añadir a los desarrolladores",
+        "explanation": "Correcta. Los grupos permiten asignar permisos una vez y que los hereden todos sus miembros; añadir a alguien nuevo es solo incluirlo en el grupo."
+      },
+      {
+        "id": "b",
+        "text": "Adjuntar una política en línea a cada usuario",
+        "explanation": "Funciona, pero hay que repetirla y mantenerla en cada usuario. Es propenso a errores y difícil de actualizar."
+      },
+      {
+        "id": "c",
+        "text": "Crear un solo usuario IAM compartido por todo el equipo",
+        "explanation": "Compartir un usuario impide auditar quién hizo cada acción y obliga a compartir credenciales. Va contra las buenas prácticas."
+      },
+      {
+        "id": "d",
+        "text": "Darles acceso con el usuario root",
+        "explanation": "El root tiene acceso total e irrestricto. Usarlo viola el mínimo privilegio y pone en riesgo toda la cuenta."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Permisos comunes a varias personas → grupo de IAM con la política adjunta.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-004",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "El equipo de seguridad quiere revisar qué servicios ha usado realmente un usuario IAM en los últimos meses para quitarle los permisos que no utiliza. ¿Qué herramienta debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "IAM Credentials Report",
+        "explanation": "El Credentials Report lista a nivel de cuenta el estado de las credenciales (contraseñas, claves, MFA) de todos los usuarios, no qué servicios usó cada uno."
+      },
+      {
+        "id": "b",
+        "text": "IAM Access Advisor",
+        "explanation": "Correcta. Access Advisor muestra, para un usuario o rol, los servicios a los que tiene permiso y la última vez que accedió a cada uno, ideal para aplicar el mínimo privilegio."
+      },
+      {
+        "id": "c",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor revisa la cuenta contra buenas prácticas (costes, seguridad, rendimiento…), pero no detalla los servicios usados por un usuario concreto."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector busca vulnerabilidades de software en EC2, ECR y Lambda. No analiza permisos de usuarios IAM."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Permisos usados por un usuario y cuándo → Access Advisor. Estado de credenciales de toda la cuenta → Credentials Report.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_last-accessed.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-005",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un auditor pide un archivo que liste todos los usuarios IAM de la cuenta e indique si tienen MFA activado y cuándo rotaron sus claves de acceso. ¿Qué debe generar el administrador?",
+    "options": [
+      {
+        "id": "a",
+        "text": "IAM Credentials Report",
+        "explanation": "Correcta. Este informe (CSV) a nivel de cuenta muestra para cada usuario el estado de su contraseña, sus claves de acceso y si tiene MFA."
+      },
+      {
+        "id": "b",
+        "text": "IAM Access Advisor",
+        "explanation": "Access Advisor muestra los servicios usados por una identidad concreta y cuándo. No genera un listado global de credenciales y MFA."
+      },
+      {
+        "id": "c",
+        "text": "AWS CloudTrail",
+        "explanation": "CloudTrail registra las llamadas a la API (quién hizo qué y cuándo), pero no resume el estado de MFA o de rotación de claves de cada usuario."
+      },
+      {
+        "id": "d",
+        "text": "AWS Artifact",
+        "explanation": "Artifact proporciona informes de cumplimiento de AWS (SOC, ISO), no información sobre los usuarios de tu cuenta."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Estado de contraseñas, claves y MFA de todos los usuarios → IAM Credentials Report.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-006",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una política IAM permite s3:* sobre todos los buckets, pero otra política adjunta al mismo usuario deniega explícitamente s3:DeleteBucket. ¿Qué ocurre cuando el usuario intenta borrar un bucket?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Se permite, porque s3:* incluye todas las acciones",
+        "explanation": "Aunque s3:* incluye DeleteBucket, en IAM un Deny explícito siempre prevalece sobre cualquier Allow."
+      },
+      {
+        "id": "b",
+        "text": "Se deniega, porque un Deny explícito tiene prioridad",
+        "explanation": "Correcta. La lógica de evaluación de IAM aplica primero los Deny explícitos: si existe uno que coincide, la acción se bloquea."
+      },
+      {
+        "id": "c",
+        "text": "Depende de qué política se adjuntó primero",
+        "explanation": "El orden de adjuntar las políticas no importa. IAM evalúa todas las políticas en conjunto."
+      },
+      {
+        "id": "d",
+        "text": "Se permite solo si el usuario tiene MFA",
+        "explanation": "La MFA no anula un Deny explícito. Solo influiría si existiera una condición específica sobre MFA en la política."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "En IAM: Deny explícito > Allow > denegación implícita por defecto.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-007",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Qué principio de seguridad se aplica al conceder a un analista solo permisos de lectura sobre los buckets que necesita, en lugar de acceso de administrador?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Defensa en profundidad",
+        "explanation": "La defensa en profundidad consiste en aplicar seguridad en varias capas (red, instancia, aplicación, datos). No describe limitar permisos a lo necesario."
+      },
+      {
+        "id": "b",
+        "text": "Principio de mínimo privilegio",
+        "explanation": "Correcta. Otorgar solo los permisos imprescindibles para la tarea reduce el impacto de un error o de credenciales comprometidas."
+      },
+      {
+        "id": "c",
+        "text": "Modelo de responsabilidad compartida",
+        "explanation": "El modelo de responsabilidad compartida reparte tareas de seguridad entre AWS y el cliente; no define cuántos permisos dar a un usuario."
+      },
+      {
+        "id": "d",
+        "text": "Alta disponibilidad",
+        "explanation": "La alta disponibilidad trata de que el sistema siga funcionando ante fallos. No tiene relación con la gestión de permisos."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Solo los permisos necesarios para la tarea = mínimo privilegio.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-008",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Cuál de estas tareas requiere iniciar sesión con el usuario root de la cuenta?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Crear un usuario IAM con permisos de administrador",
+        "explanation": "Cualquier identidad con permisos de IAM suficientes puede crear usuarios; no requiere el root."
+      },
+      {
+        "id": "b",
+        "text": "Cambiar el plan de AWS Support de la cuenta",
+        "explanation": "Correcta. Cambiar o cancelar el plan de soporte es una de las pocas tareas reservadas al usuario root."
+      },
+      {
+        "id": "c",
+        "text": "Lanzar una instancia EC2",
+        "explanation": "Lanzar instancias solo requiere permisos de EC2 en una identidad IAM. Usar root para esto sería una mala práctica."
+      },
+      {
+        "id": "d",
+        "text": "Ver la factura del mes en curso",
+        "explanation": "Los usuarios IAM pueden ver la facturación si el root activa el acceso de IAM a la información de facturación y tienen los permisos adecuados."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Tareas exclusivas del root: cambiar el plan de soporte, la configuración de la cuenta, cerrarla, etc.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-009",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un desarrollador quiere automatizar tareas en AWS con scripts que se ejecutan desde su terminal local. ¿Qué credenciales necesita configurar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Su usuario y contraseña de la consola",
+        "explanation": "La contraseña solo sirve para iniciar sesión en la consola web; la AWS CLI no se autentica con ella."
+      },
+      {
+        "id": "b",
+        "text": "Un par de claves de acceso (ID de clave y clave secreta)",
+        "explanation": "Correcta. La CLI y los SDK usan claves de acceso (o credenciales temporales) para firmar las llamadas a la API."
+      },
+      {
+        "id": "c",
+        "text": "Un par de claves SSH de EC2",
+        "explanation": "Las claves SSH sirven para conectarse a instancias Linux, no para autenticarse ante la API de AWS."
+      },
+      {
+        "id": "d",
+        "text": "Un certificado de AWS Certificate Manager",
+        "explanation": "ACM gestiona certificados SSL/TLS para sitios web; no sirve para autenticar un usuario ante la CLI."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Consola = usuario + contraseña (+MFA). CLI y SDK = claves de acceso (o credenciales temporales).",
+    "refs": [
+      "https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-010",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Cuál es el ámbito geográfico del servicio IAM?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es global: los usuarios y roles sirven en todas las Regiones",
+        "explanation": "Correcta. IAM es un servicio global; no se eligen Regiones al crear usuarios, grupos, roles o políticas."
+      },
+      {
+        "id": "b",
+        "text": "Es regional: hay que crear los usuarios en cada Región",
+        "explanation": "Falso. Si IAM fuera regional habría que duplicar identidades en cada Región; no es así."
+      },
+      {
+        "id": "c",
+        "text": "Es por zona de disponibilidad",
+        "explanation": "Ningún servicio de identidad funciona a nivel de AZ. Las AZ son relevantes para recursos como instancias o subredes."
+      },
+      {
+        "id": "d",
+        "text": "Depende del plan de soporte contratado",
+        "explanation": "El ámbito de un servicio no depende del plan de soporte; IAM es global para todos los clientes."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "IAM es global (como Route 53, CloudFront y WAF para CloudFront).",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-011",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "Según el modelo de responsabilidad compartida, ¿qué DOS tareas relacionadas con IAM corresponden al cliente? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Activar MFA para los usuarios",
+        "explanation": "Correcta. Configurar los mecanismos de autenticación de sus identidades es parte de la seguridad EN la nube, responsabilidad del cliente."
+      },
+      {
+        "id": "b",
+        "text": "Revisar y rotar las claves de acceso",
+        "explanation": "Correcta. El cliente debe gestionar el ciclo de vida de sus credenciales: rotarlas, desactivarlas y eliminar las que no se usan."
+      },
+      {
+        "id": "c",
+        "text": "Proteger la infraestructura global que ejecuta IAM",
+        "explanation": "Incorrecta. La infraestructura que ejecuta el servicio IAM (hardware, red, software) es responsabilidad de AWS."
+      },
+      {
+        "id": "d",
+        "text": "Garantizar la disponibilidad del servicio IAM",
+        "explanation": "Incorrecta. La disponibilidad y el funcionamiento del servicio son responsabilidad de AWS."
+      },
+      {
+        "id": "e",
+        "text": "Cifrar físicamente los discos de los servidores de IAM",
+        "explanation": "Incorrecta. El cliente no tiene acceso al hardware de AWS; su protección física corresponde a AWS."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "En IAM el cliente gestiona identidades, MFA, políticas y claves; AWS la infraestructura del servicio.",
+    "refs": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-012",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "En una política IAM, ¿qué elemento define si la declaración permite o deniega las acciones?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Effect",
+        "explanation": "Correcta. Effect solo admite Allow o Deny e indica el resultado de la declaración cuando coinciden la acción y el recurso."
+      },
+      {
+        "id": "b",
+        "text": "Action",
+        "explanation": "Action enumera las llamadas a la API afectadas (p. ej., s3:GetObject), pero no indica si se permiten o se deniegan."
+      },
+      {
+        "id": "c",
+        "text": "Resource",
+        "explanation": "Resource indica sobre qué recursos (ARN) aplica la declaración, no el efecto."
+      },
+      {
+        "id": "d",
+        "text": "Version",
+        "explanation": "Version indica la versión del lenguaje de políticas (normalmente 2012-10-17). No permite ni deniega nada."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Política IAM: Effect (Allow/Deny) + Action + Resource (+ Principal, Condition).",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-013",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere obligar a que las contraseñas de sus usuarios IAM tengan al menos 14 caracteres y caduquen cada 90 días. ¿Qué debe configurar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Una política de contraseñas de IAM para la cuenta",
+        "explanation": "Correcta. La política de contraseñas define longitud mínima, complejidad, caducidad y reutilización para todos los usuarios IAM de la cuenta."
+      },
+      {
+        "id": "b",
+        "text": "Una Service Control Policy (SCP) en AWS Organizations",
+        "explanation": "Las SCP limitan qué acciones pueden hacerse en cuentas miembro, pero no definen requisitos de longitud o caducidad de contraseñas."
+      },
+      {
+        "id": "c",
+        "text": "Un rol de IAM con MFA",
+        "explanation": "Los roles no tienen contraseña; usan credenciales temporales. La MFA añade un factor, pero no impone reglas de contraseña."
+      },
+      {
+        "id": "d",
+        "text": "AWS Secrets Manager con rotación",
+        "explanation": "Secrets Manager rota secretos de aplicaciones (como contraseñas de bases de datos), no las contraseñas de inicio de sesión de los usuarios IAM."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Reglas de longitud, complejidad y caducidad de contraseñas IAM → política de contraseñas de la cuenta.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iam-014",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un administrador quiere ejecutar comandos de la AWS CLI desde el navegador, sin instalar nada en su equipo y usando las credenciales de su sesión en la consola. ¿Qué puede usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CloudShell",
+        "explanation": "Correcta. CloudShell es una terminal en el navegador, integrada en la consola, con la CLI preinstalada y autenticada con tu sesión."
+      },
+      {
+        "id": "b",
+        "text": "AWS Systems Manager Session Manager",
+        "explanation": "Session Manager abre una consola segura dentro de una instancia EC2 o servidor on-premises, no una terminal para administrar la cuenta con la CLI."
+      },
+      {
+        "id": "c",
+        "text": "EC2 Instance Connect",
+        "explanation": "Instance Connect permite conectarse por SSH a una instancia EC2 desde el navegador; no es una terminal de la CLI de la cuenta."
+      },
+      {
+        "id": "d",
+        "text": "AWS Cloud9",
+        "explanation": "Cloud9 era un IDE en la nube y está cerrado a clientes nuevos desde 2024. Además, CloudShell es la herramienta pensada para usar la CLI rápidamente."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Terminal con la AWS CLI en el navegador, sin instalar nada → CloudShell.",
+    "refs": [
+      "https://docs.aws.amazon.com/cloudshell/latest/userguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iam-001",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Concede credenciales temporales y permisos a un servicio de AWS (como EC2 o Lambda) para que acceda a otros servicios sin guardar claves.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rol de IAM",
+        "explanation": "Correcta. Un rol de IAM es asumido por un servicio o identidad y entrega credenciales temporales que se renuevan automáticamente."
+      },
+      {
+        "id": "b",
+        "text": "Grupo de IAM",
+        "explanation": "Un grupo agrupa usuarios para asignarles permisos comunes; no puede ser asumido por un servicio como EC2. Sería la respuesta para gestionar permisos de un equipo de personas."
+      },
+      {
+        "id": "c",
+        "text": "Usuario de IAM con claves de acceso",
+        "explanation": "Un usuario tiene credenciales permanentes; guardarlas en un servicio es inseguro. Sería apropiado para que una persona use la CLI."
+      },
+      {
+        "id": "d",
+        "text": "Política de bucket de S3",
+        "explanation": "Una política de bucket controla quién accede a un bucket concreto, pero no da credenciales a un servicio. Sería la respuesta para permitir acceso entre cuentas a un bucket."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Permisos para servicios de AWS → roles de IAM (credenciales temporales).",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iam-002",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Muestra, para un usuario o rol concreto, qué servicios tiene permitidos y cuándo los usó por última vez, para recortar permisos innecesarios.",
+    "options": [
+      {
+        "id": "a",
+        "text": "IAM Credentials Report",
+        "explanation": "El Credentials Report da una vista de TODA la cuenta sobre el estado de contraseñas, claves y MFA; no muestra el uso de servicios por identidad."
+      },
+      {
+        "id": "b",
+        "text": "IAM Access Advisor",
+        "explanation": "Correcta. Access Advisor muestra los servicios accedidos por una identidad y la fecha del último acceso, base para aplicar el mínimo privilegio."
+      },
+      {
+        "id": "c",
+        "text": "IAM Access Analyzer",
+        "explanation": "Access Analyzer detecta recursos compartidos con entidades externas a tu zona de confianza (otras cuentas o público). Sería la respuesta para encontrar un bucket accesible desde fuera."
+      },
+      {
+        "id": "d",
+        "text": "AWS CloudTrail",
+        "explanation": "CloudTrail registra cada llamada a la API con detalle, pero no resume por identidad qué servicios usó para recortar permisos."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Último acceso a servicios de una identidad → IAM Access Advisor.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_last-accessed.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iam-003",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Terminal en el navegador, integrada en la consola de AWS, con la CLI ya instalada y autenticada con tus credenciales.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CloudShell",
+        "explanation": "Correcta. CloudShell te da una shell lista para usar la CLI sin instalar nada localmente."
+      },
+      {
+        "id": "b",
+        "text": "AWS SDK",
+        "explanation": "El SDK es un conjunto de librerías para llamar a AWS desde el código de una aplicación (Python, Java, JavaScript…), no una terminal."
+      },
+      {
+        "id": "c",
+        "text": "AWS CLI instalada localmente",
+        "explanation": "La CLI local requiere instalarla y configurar claves de acceso en tu equipo; no está integrada en el navegador."
+      },
+      {
+        "id": "d",
+        "text": "EC2 Instance Connect",
+        "explanation": "Instance Connect abre una sesión SSH a una instancia EC2 concreta; no es una terminal para administrar la cuenta."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "CLI en el navegador sin instalar nada → AWS CloudShell.",
+    "refs": [
+      "https://docs.aws.amazon.com/cloudshell/latest/userguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iam-004",
+    "domain": 2,
+    "section": "IAM",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Conjunto de librerías por lenguaje de programación que permiten que tu aplicación llame a las APIs de AWS directamente desde el código.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CLI",
+        "explanation": "La CLI sirve para ejecutar comandos en una terminal o scripts de shell; no son librerías para integrar en el código de una aplicación."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudFormation",
+        "explanation": "CloudFormation crea infraestructura a partir de plantillas declarativas; no es una librería para llamar a la API desde una aplicación."
+      },
+      {
+        "id": "c",
+        "text": "AWS SDK",
+        "explanation": "Correcta. Los SDK (para Python/boto3, JavaScript, Java, Go…) permiten usar los servicios de AWS desde el código de la aplicación."
+      },
+      {
+        "id": "d",
+        "text": "AWS CDK",
+        "explanation": "El CDK define INFRAESTRUCTURA con lenguajes de programación y la convierte en CloudFormation. Sería la respuesta si se quisiera describir recursos en TypeScript o Python."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Llamar a AWS desde el código de una aplicación → AWS SDK. Desde la terminal → CLI.",
+    "refs": [
+      "https://aws.amazon.com/developer/tools/"
+    ],
+    "source": "original"
   }
 ]
