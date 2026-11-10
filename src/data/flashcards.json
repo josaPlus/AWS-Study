@@ -1877,5 +1877,401 @@
       "precios"
     ],
     "difficulty": 2
+  },
+  {
+    "id": "iac-001",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es la infraestructura como código (IaC)?",
+    "back": "Definir la infraestructura (redes, servidores, bases de datos…) en archivos de código versionables en lugar de crearla a mano. Permite repetir despliegues idénticos, revisar cambios y destruir y recrear entornos con facilidad.",
+    "tags": [
+      "iac"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iac-002",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS CloudFormation?",
+    "back": "Servicio de IaC declarativo: describes los recursos en una plantilla YAML o JSON y CloudFormation los crea, actualiza o elimina como un 'stack', en el orden correcto. Soporta casi todos los servicios de AWS.",
+    "tags": [
+      "cloudformation"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iac-003",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "dato-clave",
+    "front": "Beneficios de CloudFormation",
+    "back": "Infraestructura reproducible en cualquier Región o cuenta; control de versiones de la infraestructura; etiquetado uniforme para ver costes por stack; destruir y recrear entornos (p. ej. apagar pruebas por la noche); diagramas automáticos en Infrastructure Composer. El servicio en sí es gratis: pagas los recursos creados.",
+    "tags": [
+      "cloudformation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-004",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS CDK?",
+    "back": "Cloud Development Kit: defines la infraestructura con lenguajes de programación conocidos (TypeScript, Python, Java, C#, Go) y el CDK la convierte ('synthesize') en plantillas de CloudFormation.",
+    "tags": [
+      "cdk"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-005",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS Elastic Beanstalk?",
+    "back": "Plataforma como servicio (PaaS) centrada en el desarrollador: subes el código y Beanstalk aprovisiona y gestiona EC2, Auto Scaling, balanceador, monitoreo y despliegues. Tú mantienes el control de la configuración. Pagas solo los recursos subyacentes.",
+    "tags": [
+      "beanstalk"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iac-006",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "dato-clave",
+    "front": "Modelos de arquitectura en Elastic Beanstalk",
+    "back": "Instancia única (desarrollo), alta disponibilidad con balanceador (web en producción) y entorno worker sin balanceador (procesamiento en segundo plano). Incluye un agente de salud que envía métricas a CloudWatch.",
+    "tags": [
+      "beanstalk"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "iac-007",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS CodeDeploy?",
+    "back": "Automatiza el despliegue de aplicaciones en instancias EC2, servidores on-premises (es un servicio híbrido), Lambda y ECS. Requiere el agente de CodeDeploy en los servidores.",
+    "tags": [
+      "codedeploy",
+      "ci-cd"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-008",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS CodeCommit?",
+    "back": "Repositorio Git privado y gestionado en AWS para almacenar código fuente con control de versiones, integrado con IAM.",
+    "tags": [
+      "codecommit",
+      "ci-cd"
+    ],
+    "difficulty": 2,
+    "note": "CodeCommit cerró a clientes nuevos en julio de 2024, pero AWS lo devolvió a disponibilidad general el 24-nov-2025: vuelve a aceptar clientes nuevos."
+  },
+  {
+    "id": "iac-009",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS CodeBuild?",
+    "back": "Servicio de compilación serverless: compila el código fuente, ejecuta pruebas y genera paquetes listos para desplegar. Pagas por minuto de compilación.",
+    "tags": [
+      "codebuild",
+      "ci-cd"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-010",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS CodePipeline?",
+    "back": "Orquesta las etapas de CI/CD (código → compilación → pruebas → despliegue) para que cada cambio llegue a producción de forma automática. Se integra con CodeCommit, GitHub, CodeBuild, CodeDeploy, Beanstalk, CloudFormation y más.",
+    "tags": [
+      "codepipeline",
+      "ci-cd"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-011",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS CodeArtifact?",
+    "back": "Repositorio gestionado de paquetes de software (dependencias) compatible con npm, Maven, Gradle, pip, NuGet y otros. Los desarrolladores y CodeBuild obtienen las dependencias desde ahí.",
+    "tags": [
+      "codeartifact"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-012",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es AWS Systems Manager (SSM)?",
+    "back": "Servicio híbrido para gestionar flotas de EC2 y servidores on-premises a escala: aplicar parches (Patch Manager), ejecutar comandos en muchos servidores (Run Command), abrir sesiones sin SSH (Session Manager) y guardar configuración (Parameter Store). Requiere el agente SSM.",
+    "tags": [
+      "ssm"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-013",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "concepto",
+    "front": "¿Qué es SSM Parameter Store?",
+    "back": "Almacén seguro y jerárquico de configuración y secretos (cadenas de conexión, contraseñas), con cifrado opcional mediante KMS, control de versiones y permisos de IAM. Sin rotación automática nativa (para eso, Secrets Manager).",
+    "tags": [
+      "ssm",
+      "parameter-store"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-014",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "comparacion",
+    "front": "CloudFormation vs Elastic Beanstalk",
+    "back": "CloudFormation: IaC para CUALQUIER infraestructura de AWS; tú defines cada recurso.\nBeanstalk: PaaS para desplegar APLICACIONES; tú subes el código y él decide y gestiona la infraestructura típica (EC2, ASG, ELB).",
+    "tags": [
+      "cloudformation",
+      "beanstalk"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "iac-015",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "comparacion",
+    "front": "Resumen de las herramientas de CI/CD de AWS",
+    "back": "CodeCommit: guarda el código (Git).\nCodeBuild: compila y prueba.\nCodeDeploy: despliega en servidores, Lambda o ECS.\nCodePipeline: orquesta todo el flujo.\nCodeArtifact: guarda dependencias.",
+    "tags": [
+      "ci-cd"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "iac-016",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "type": "caso-de-uso",
+    "front": "Debes aplicar un parche de seguridad a 500 servidores (EC2 y on-premises) sin entrar uno por uno. ¿Qué usas?",
+    "back": "AWS Systems Manager: Patch Manager para parchear automáticamente y Run Command para ejecutar comandos en toda la flota, ambos a través del agente SSM.",
+    "tags": [
+      "ssm"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "glob-001",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué es una Región de AWS?",
+    "back": "Una ubicación geográfica (p. ej. us-east-1, eu-west-3) formada por varias zonas de disponibilidad aisladas. La mayoría de los servicios son regionales.",
+    "tags": [
+      "regiones"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "glob-002",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "dato-clave",
+    "front": "4 factores para elegir una Región",
+    "back": "1) Cumplimiento: requisitos legales de dónde deben residir los datos.\n2) Proximidad a los usuarios: menor latencia.\n3) Servicios disponibles: no todos están en todas las Regiones.\n4) Precio: varía entre Regiones.",
+    "tags": [
+      "regiones"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "glob-003",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué es una zona de disponibilidad (AZ)?",
+    "back": "Uno o varios centros de datos independientes, con energía, red y conectividad redundantes, aislados físicamente de otras AZ ante desastres, pero conectados entre sí con redes de baja latencia. Cada Región tiene normalmente 3 (mínimo 3, máximo 6).",
+    "tags": [
+      "az"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "glob-004",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué son las Edge Locations (puntos de presencia)?",
+    "back": "Cientos de ubicaciones en todo el mundo (más que Regiones) donde AWS cachea contenido y ofrece servicios con baja latencia a los usuarios finales: CloudFront, Route 53, Global Accelerator, S3 Transfer Acceleration.",
+    "tags": [
+      "edge"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "glob-005",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "dato-clave",
+    "front": "Servicios globales vs regionales",
+    "back": "Globales: IAM, Route 53, CloudFront y WAF (cuando se usa con CloudFront).\nRegionales: la mayoría (EC2, Beanstalk, Lambda, Rekognition…). S3 tiene nombres globales pero los buckets son regionales.",
+    "tags": [
+      "regiones"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "glob-006",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Route 53?",
+    "back": "DNS gestionado, de alta disponibilidad y escalable: traduce nombres de dominio a direcciones IP, registra dominios, hace comprobaciones de estado y enruta usuarios según distintas políticas. El 53 viene del puerto de DNS.",
+    "tags": [
+      "route53"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "glob-007",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "comparacion",
+    "front": "Políticas de enrutamiento de Route 53",
+    "back": "Simple: un recurso, sin comprobaciones de estado.\nPonderada: reparte el tráfico por porcentajes.\nLatencia: envía al usuario a la Región con menor latencia.\nConmutación por error (failover): a un recurso secundario si el principal falla la comprobación de estado.\nGeolocalización: según la ubicación del usuario.",
+    "tags": [
+      "route53"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "glob-008",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué es Amazon CloudFront?",
+    "back": "Red de entrega de contenido (CDN): cachea contenido en Edge Locations cercanas a los usuarios para reducir la latencia. Orígenes: S3, ALB, EC2 o cualquier servidor HTTP. Incluye protección DDoS (Shield) e integración con WAF.",
+    "tags": [
+      "cloudfront",
+      "cdn"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "glob-009",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "comparacion",
+    "front": "CloudFront vs S3 Cross-Region Replication",
+    "back": "CloudFront: red global de borde con caché (TTL); ideal para contenido ESTÁTICO que debe estar disponible en todo el mundo.\nS3 CRR: copia completa de los datos en otras Regiones concretas, actualizada casi en tiempo real y de solo lectura; ideal para contenido DINÁMICO que requiere baja latencia en pocas Regiones.",
+    "tags": [
+      "cloudfront",
+      "s3"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "glob-010",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué es AWS Global Accelerator?",
+    "back": "Mejora la disponibilidad y el rendimiento de aplicaciones globales enviando el tráfico por la red privada de AWS desde la Edge Location más cercana. Ofrece 2 IPs anycast estáticas. Sin caché; funciona con TCP y UDP.",
+    "tags": [
+      "global-accelerator"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "glob-011",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "comparacion",
+    "front": "CloudFront vs Global Accelerator",
+    "back": "Ambos usan la red global y las Edge Locations y se integran con Shield.\nCloudFront: CACHEA contenido (imágenes, vídeos) y contenido dinámico HTTP en el borde.\nGlobal Accelerator: NO cachea; acelera conexiones TCP/UDP hacia una aplicación regional, con IPs estáticas y failover rápido (juegos, IoT, VoIP).",
+    "tags": [
+      "cloudfront",
+      "global-accelerator"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "glob-012",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué es AWS Outposts?",
+    "back": "Racks de servidores de AWS instalados en TU centro de datos, con los mismos servicios, APIs y herramientas que en la nube. Para baja latencia local, procesamiento de datos locales o residencia de datos. Tú eres responsable de la seguridad física del rack.",
+    "tags": [
+      "outposts",
+      "hibrido"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "glob-013",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué es AWS Wavelength?",
+    "back": "Infraestructura de AWS integrada en las redes 5G de los operadores de telecomunicaciones, para aplicaciones de latencia ultrabaja en dispositivos móviles (coches conectados, streaming, AR/VR, juegos en tiempo real).",
+    "tags": [
+      "wavelength",
+      "5g"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "glob-014",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "concepto",
+    "front": "¿Qué son las AWS Local Zones?",
+    "back": "Extensiones de una Región que acercan cómputo, almacenamiento y bases de datos a grandes ciudades donde no hay Región, para aplicaciones sensibles a la latencia (p. ej., una Local Zone de us-east-1 en Boston).",
+    "tags": [
+      "local-zones"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "glob-015",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "comparacion",
+    "front": "Arquitecturas globales: de menos a más resiliencia",
+    "back": "Una Región, una AZ (sin alta disponibilidad).\nUna Región, varias AZ (alta disponibilidad).\nVarias Regiones activa-pasiva (recuperación ante desastres; escrituras en una Región).\nVarias Regiones activa-activa (lectura y escritura en todas; menor latencia global).",
+    "tags": [
+      "arquitectura"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "glob-016",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "type": "dato-clave",
+    "front": "¿Para qué sirve desplegar una aplicación en varias Regiones?",
+    "back": "Reducir la latencia para usuarios de distintos continentes, recuperación ante desastres si cae una Región completa, protección ante ataques en un área y cumplir requisitos de residencia de datos locales.",
+    "tags": [
+      "regiones"
+    ],
+    "difficulty": 1
   }
 ]

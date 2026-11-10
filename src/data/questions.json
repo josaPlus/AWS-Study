@@ -5597,5 +5597,1266 @@
       "https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-iac-001",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere crear entornos idénticos de desarrollo, pruebas y producción en varias Regiones, definidos en plantillas versionadas y reproducibles. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CloudFormation",
+        "explanation": "Correcta. CloudFormation crea stacks de recursos a partir de plantillas YAML/JSON, de forma repetible en cualquier Región o cuenta."
+      },
+      {
+        "id": "b",
+        "text": "AWS Systems Manager",
+        "explanation": "Systems Manager gestiona y parchea flotas de servidores existentes; no crea la infraestructura completa desde plantillas."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "AWS Config registra y evalúa la configuración de los recursos ya creados; no los despliega."
+      },
+      {
+        "id": "d",
+        "text": "Amazon CloudWatch",
+        "explanation": "CloudWatch monitorea métricas y logs; no crea infraestructura."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Infraestructura como código reproducible con plantillas → CloudFormation.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iac-002",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de desarrolladores quiere desplegar su aplicación web Java subiendo solo el código, y que AWS se encargue de aprovisionar las instancias, el balanceador, el escalado y el monitoreo de salud. ¿Qué servicio deben usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Correcta. Beanstalk es PaaS: recibe el código y gestiona capacidad, balanceo, escalado y monitoreo de salud."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EC2",
+        "explanation": "Con EC2 el equipo tendría que configurar todo: instancias, balanceador, Auto Scaling y monitoreo."
+      },
+      {
+        "id": "c",
+        "text": "AWS CloudFormation",
+        "explanation": "CloudFormation podría crear esa infraestructura, pero el equipo tendría que definir cada recurso en una plantilla; no es 'solo subir el código'."
+      },
+      {
+        "id": "d",
+        "text": "AWS CodeCommit",
+        "explanation": "CodeCommit almacena el código en Git; no lo despliega ni gestiona infraestructura."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "'Solo subo el código' para una app web → Elastic Beanstalk (PaaS).",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iac-003",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo quiere que cada cambio en su repositorio se compile, se pruebe y se despliegue automáticamente en producción siguiendo un flujo de etapas. ¿Qué servicio orquesta todo el proceso?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CodeBuild",
+        "explanation": "CodeBuild compila y ejecuta pruebas, pero es solo una etapa; no orquesta el flujo completo."
+      },
+      {
+        "id": "b",
+        "text": "AWS CodePipeline",
+        "explanation": "Correcta. CodePipeline define y automatiza las etapas de CI/CD (origen, compilación, prueba, despliegue)."
+      },
+      {
+        "id": "c",
+        "text": "AWS CodeDeploy",
+        "explanation": "CodeDeploy realiza la etapa de despliegue en servidores, Lambda o ECS, pero no coordina el flujo completo."
+      },
+      {
+        "id": "d",
+        "text": "AWS CodeArtifact",
+        "explanation": "CodeArtifact almacena paquetes de dependencias; no automatiza el flujo de CI/CD."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Orquestar CI/CD de principio a fin → CodePipeline. Compilar → CodeBuild. Desplegar → CodeDeploy.",
+    "refs": [
+      "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iac-004",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita desplegar automáticamente nuevas versiones de su aplicación tanto en instancias EC2 como en servidores físicos de su propio centro de datos. ¿Qué servicio lo permite?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CodeDeploy",
+        "explanation": "Correcta. CodeDeploy es híbrido: despliega en EC2 y en servidores on-premises que tengan el agente instalado."
+      },
+      {
+        "id": "b",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk despliega aplicaciones solo en la infraestructura que él crea en AWS; no en servidores on-premises."
+      },
+      {
+        "id": "c",
+        "text": "AWS CloudFormation",
+        "explanation": "CloudFormation crea recursos de AWS; no despliega versiones de aplicaciones en servidores locales."
+      },
+      {
+        "id": "d",
+        "text": "AWS Lambda",
+        "explanation": "Lambda ejecuta funciones serverless; no es una herramienta para desplegar aplicaciones en servidores."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Despliegues automáticos en EC2 y on-premises → CodeDeploy (servicio híbrido).",
+    "refs": [
+      "https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iac-005",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de desarrolladores prefiere definir su infraestructura de AWS con TypeScript, usando bucles y clases, en lugar de escribir plantillas YAML. ¿Qué herramienta deben usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CDK",
+        "explanation": "Correcta. El Cloud Development Kit permite definir infraestructura con lenguajes de programación y genera plantillas de CloudFormation."
+      },
+      {
+        "id": "b",
+        "text": "AWS SDK para JavaScript",
+        "explanation": "El SDK permite llamar a las APIs de AWS desde el código, pero no es una herramienta de IaC declarativa con stacks y control de cambios."
+      },
+      {
+        "id": "c",
+        "text": "AWS CodeBuild",
+        "explanation": "CodeBuild compila código y ejecuta pruebas; no define infraestructura."
+      },
+      {
+        "id": "d",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk despliega aplicaciones con una infraestructura predefinida; no permite modelar cualquier recurso con TypeScript."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "IaC con lenguajes de programación → AWS CDK (genera CloudFormation).",
+    "refs": [
+      "https://docs.aws.amazon.com/cdk/v2/guide/home.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iac-006",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un administrador debe instalar parches del sistema operativo en cientos de instancias EC2 y servidores on-premises de forma centralizada y programada. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Systems Manager Patch Manager",
+        "explanation": "Correcta. Patch Manager automatiza la aplicación de parches en flotas de EC2 y servidores on-premises con el agente SSM."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector detecta vulnerabilidades y paquetes desactualizados, pero no instala los parches."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "AWS Config puede indicar que un recurso no cumple una regla, pero no aplica parches por sí mismo."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor da recomendaciones sobre la cuenta; no gestiona parches de sistemas operativos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Parchear flotas híbridas (EC2 + on-premises) → Systems Manager Patch Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iac-007",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación necesita leer valores de configuración (URLs de servicios y algunas contraseñas cifradas) desde un almacén central con control de versiones y sin coste adicional para el nivel estándar. ¿Qué debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Systems Manager Parameter Store",
+        "explanation": "Correcta. Parameter Store guarda configuración y secretos de forma jerárquica, cifrables con KMS, con versiones; el nivel estándar no tiene coste."
+      },
+      {
+        "id": "b",
+        "text": "Amazon S3 con un archivo público",
+        "explanation": "Guardar configuración (y menos contraseñas) en un archivo público expone los datos a cualquiera."
+      },
+      {
+        "id": "c",
+        "text": "AWS Certificate Manager",
+        "explanation": "ACM gestiona certificados SSL/TLS; no guarda parámetros de configuración."
+      },
+      {
+        "id": "d",
+        "text": "Amazon DynamoDB",
+        "explanation": "DynamoDB podría guardar datos, pero no está pensado como almacén de configuración con cifrado y versiones integrados."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Configuración y secretos sencillos → Parameter Store. Rotación automática de secretos → Secrets Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iac-008",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Qué DOS beneficios aporta usar AWS CloudFormation? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Recrear la misma infraestructura de forma repetible y consistente",
+        "explanation": "Correcta. Una misma plantilla produce siempre el mismo entorno, evitando errores manuales."
+      },
+      {
+        "id": "b",
+        "text": "Controlar las versiones de la infraestructura como si fuera código",
+        "explanation": "Correcta. Las plantillas se guardan en repositorios y se revisan como cualquier código."
+      },
+      {
+        "id": "c",
+        "text": "Eliminar el coste de los recursos creados",
+        "explanation": "Incorrecta. CloudFormation es gratuito, pero los recursos que crea (EC2, RDS…) se cobran normalmente."
+      },
+      {
+        "id": "d",
+        "text": "Aplicar automáticamente parches al sistema operativo de las instancias",
+        "explanation": "Incorrecta. CloudFormation crea y actualiza recursos; parchear el SO es tarea de Systems Manager."
+      },
+      {
+        "id": "e",
+        "text": "Detectar amenazas en la cuenta",
+        "explanation": "Incorrecta. La detección de amenazas corresponde a GuardDuty."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "CloudFormation: infraestructura repetible y versionada; el servicio es gratis pero los recursos se pagan.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-iac-009",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo necesita un servicio serverless que compile su código, ejecute las pruebas unitarias y genere los artefactos de despliegue, pagando solo por los minutos de compilación. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CodeBuild",
+        "explanation": "Correcta. CodeBuild es el servicio de compilación y pruebas totalmente gestionado que cobra por minuto."
+      },
+      {
+        "id": "b",
+        "text": "AWS CodeCommit",
+        "explanation": "CodeCommit almacena el código fuente en Git; no compila ni ejecuta pruebas."
+      },
+      {
+        "id": "c",
+        "text": "AWS CodeDeploy",
+        "explanation": "CodeDeploy despliega artefactos ya construidos; no compila."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EC2 con Jenkins",
+        "explanation": "Funcionaría, pero hay que gestionar y pagar el servidor de Jenkins aunque no se compile nada."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Compilar y probar sin servidores → CodeBuild.",
+    "refs": [
+      "https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-001",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "Una empresa europea va a elegir la Región de AWS para una nueva aplicación. ¿Qué DOS factores deben influir en la decisión? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Los requisitos legales sobre dónde deben residir los datos",
+        "explanation": "Correcta. Las leyes de residencia o soberanía de datos pueden obligar a usar una Región concreta."
+      },
+      {
+        "id": "b",
+        "text": "La proximidad a los usuarios para reducir la latencia",
+        "explanation": "Correcta. Una Región cercana a los usuarios mejora los tiempos de respuesta."
+      },
+      {
+        "id": "c",
+        "text": "El número de usuarios de IAM de la cuenta",
+        "explanation": "Incorrecta. IAM es global; el número de usuarios no depende de la Región."
+      },
+      {
+        "id": "d",
+        "text": "El plan de soporte contratado",
+        "explanation": "Incorrecta. El plan de soporte aplica a toda la cuenta y no varía por Región."
+      },
+      {
+        "id": "e",
+        "text": "La zona horaria de la sede de la empresa",
+        "explanation": "Incorrecta. La zona horaria no afecta a la elección técnica; importan latencia, cumplimiento, servicios y precio."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "Elegir Región: cumplimiento, latencia, servicios disponibles y precio.",
+    "refs": [
+      "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-002",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Cuál de las siguientes afirmaciones describe correctamente una zona de disponibilidad?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Uno o más centros de datos con energía y red redundantes, aislados de otras AZ de la misma Región",
+        "explanation": "Correcta. Cada AZ está físicamente separada para aislar fallos, pero conectada a las demás con redes de baja latencia."
+      },
+      {
+        "id": "b",
+        "text": "Una ubicación de caché de CloudFront cercana a los usuarios",
+        "explanation": "Eso describe una Edge Location (punto de presencia), no una zona de disponibilidad."
+      },
+      {
+        "id": "c",
+        "text": "Un área geográfica que agrupa varias Regiones",
+        "explanation": "Es al revés: una Región agrupa varias AZ."
+      },
+      {
+        "id": "d",
+        "text": "Un rack de AWS instalado en el centro de datos del cliente",
+        "explanation": "Un rack de AWS en las instalaciones del cliente es AWS Outposts, no una zona de disponibilidad."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Región > zonas de disponibilidad (centros de datos aislados) ; Edge Locations aparte para entregar contenido.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-003",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un sitio web con imágenes y vídeos alojados en S3 tiene usuarios en todo el mundo que se quejan de lentitud. ¿Qué servicio reduce la latencia cacheando el contenido cerca de ellos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon CloudFront",
+        "explanation": "Correcta. CloudFront es la CDN de AWS: cachea el contenido en Edge Locations cercanas a los usuarios."
+      },
+      {
+        "id": "b",
+        "text": "AWS Global Accelerator",
+        "explanation": "Global Accelerator mejora la ruta de red hasta la aplicación, pero NO cachea contenido. Sería la respuesta para tráfico TCP/UDP no HTTP, como juegos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon ElastiCache",
+        "explanation": "ElastiCache es una caché en memoria para la aplicación dentro de una Región; no acerca contenido a usuarios de otros continentes."
+      },
+      {
+        "id": "d",
+        "text": "AWS Direct Connect",
+        "explanation": "Direct Connect es una conexión privada entre un centro de datos y AWS; no sirve a usuarios finales en internet."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Cachear contenido cerca de los usuarios (CDN) → CloudFront.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-004",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa de videojuegos con servidores UDP en una Región quiere mejorar la latencia de jugadores de otros continentes y ofrecerles dos direcciones IP estáticas. El contenido no se puede cachear. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Global Accelerator",
+        "explanation": "Correcta. Global Accelerator dirige el tráfico TCP/UDP por la red de AWS desde la Edge Location más cercana y proporciona 2 IPs anycast estáticas."
+      },
+      {
+        "id": "b",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront está pensado para contenido HTTP/HTTPS cacheable; no es la opción para tráfico UDP de juegos ni ofrece IPs estáticas."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Route 53 con enrutamiento simple",
+        "explanation": "El enrutamiento simple solo resuelve el nombre a una IP; no acelera la ruta de red ni da IPs anycast."
+      },
+      {
+        "id": "d",
+        "text": "S3 Transfer Acceleration",
+        "explanation": "Transfer Acceleration solo acelera subidas y descargas de objetos a S3."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "TCP/UDP sin caché, IPs estáticas y mejor ruta global → Global Accelerator.",
+    "refs": [
+      "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-005",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación está desplegada en us-east-1 y en eu-west-1. La empresa quiere que cada usuario sea dirigido automáticamente a la Región que le dé la respuesta más rápida. ¿Qué política de Route 53 debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enrutamiento basado en latencia",
+        "explanation": "Correcta. Route 53 dirige a cada usuario hacia la Región con menor latencia medida desde su ubicación."
+      },
+      {
+        "id": "b",
+        "text": "Enrutamiento ponderado",
+        "explanation": "El ponderado reparte el tráfico por porcentajes fijos (p. ej. 80/20), sin tener en cuenta la latencia de cada usuario."
+      },
+      {
+        "id": "c",
+        "text": "Enrutamiento simple",
+        "explanation": "El simple devuelve siempre el mismo recurso y no compara Regiones."
+      },
+      {
+        "id": "d",
+        "text": "Enrutamiento por conmutación por error",
+        "explanation": "El failover envía a un recurso secundario solo cuando el principal falla; no elige según la velocidad."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Route 53: latencia → la Región más rápida; failover → recuperación ante desastres; ponderado → porcentajes.",
+    "refs": [
+      "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-006",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita ejecutar servicios de AWS dentro de su propio centro de datos para procesar datos que, por normativa, no pueden salir de sus instalaciones, usando las mismas APIs que en la nube. ¿Qué solución debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Outposts",
+        "explanation": "Correcta. Outposts instala racks de AWS en las instalaciones del cliente con los mismos servicios y APIs."
+      },
+      {
+        "id": "b",
+        "text": "AWS Local Zones",
+        "explanation": "Las Local Zones son infraestructura de AWS en ciudades concretas, pero siguen fuera de las instalaciones del cliente."
+      },
+      {
+        "id": "c",
+        "text": "AWS Wavelength",
+        "explanation": "Wavelength coloca infraestructura de AWS en redes 5G de operadores, no en el centro de datos del cliente."
+      },
+      {
+        "id": "d",
+        "text": "AWS Direct Connect",
+        "explanation": "Direct Connect conecta el centro de datos con AWS, pero el procesamiento seguiría ocurriendo en la nube."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Servicios de AWS dentro de tu propio centro de datos → AWS Outposts.",
+    "refs": [
+      "https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-007",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa desarrolla una aplicación de realidad aumentada para teléfonos móviles que necesita latencia de milisegundos de un dígito a través de redes 5G. ¿Qué infraestructura de AWS es la más adecuada?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Wavelength",
+        "explanation": "Correcta. Wavelength integra cómputo y almacenamiento de AWS en las redes 5G de los operadores para reducir la latencia móvil."
+      },
+      {
+        "id": "b",
+        "text": "AWS Outposts",
+        "explanation": "Outposts lleva AWS al centro de datos del cliente; no está en la red 5G de los operadores."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront cachea contenido en Edge Locations, pero no ejecuta la lógica de la aplicación dentro de la red 5G."
+      },
+      {
+        "id": "d",
+        "text": "Una Región adicional",
+        "explanation": "Desplegar en otra Región ayuda a la latencia general, pero no alcanza el nivel de latencia ultrabaja que ofrece estar dentro de la red 5G."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Latencia ultrabaja en redes 5G → AWS Wavelength.",
+    "refs": [
+      "https://docs.aws.amazon.com/wavelength/latest/developerguide/what-is-wavelength.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-008",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación tiene un sitio principal en una Región y una copia de reserva en otra. Si las comprobaciones de estado del principal fallan, el DNS debe dirigir automáticamente a los usuarios a la copia. ¿Qué política de Route 53 se usa?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Conmutación por error (failover)",
+        "explanation": "Correcta. La política de failover usa comprobaciones de estado para enviar el tráfico al recurso secundario cuando el principal no está sano."
+      },
+      {
+        "id": "b",
+        "text": "Geolocalización",
+        "explanation": "La geolocalización enruta según el país o continente del usuario, no según la salud del sitio."
+      },
+      {
+        "id": "c",
+        "text": "Ponderada",
+        "explanation": "La ponderada reparte porcentajes de tráfico entre recursos; no conmuta automáticamente ante un fallo por sí sola."
+      },
+      {
+        "id": "d",
+        "text": "Simple",
+        "explanation": "La política simple no admite comprobaciones de estado."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recuperación ante desastres vía DNS → Route 53 failover con health checks.",
+    "refs": [
+      "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-009",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Cuál de estos servicios es global y NO requiere elegir una Región al configurarlo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Route 53",
+        "explanation": "Correcta. Route 53 es un servicio global de DNS, igual que IAM y CloudFront."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EC2",
+        "explanation": "EC2 es regional: las instancias se lanzan en una Región y en una AZ concreta."
+      },
+      {
+        "id": "c",
+        "text": "AWS Lambda",
+        "explanation": "Lambda es regional: cada función vive en una Región."
+      },
+      {
+        "id": "d",
+        "text": "Amazon RDS",
+        "explanation": "RDS es regional: cada base de datos se crea en una Región."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Servicios globales: IAM, Route 53, CloudFront, WAF (con CloudFront). Casi todo lo demás es regional.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-glob-010",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa de medios en una gran ciudad sin Región de AWS necesita renderizar vídeo con latencia de milisegundos de un dígito para sus estaciones de trabajo locales, usando infraestructura gestionada por AWS. ¿Qué opción es la más adecuada?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Local Zones",
+        "explanation": "Correcta. Las Local Zones acercan cómputo y almacenamiento de AWS a grandes ciudades para cargas sensibles a la latencia."
+      },
+      {
+        "id": "b",
+        "text": "AWS Wavelength",
+        "explanation": "Wavelength está pensado para dispositivos móviles en redes 5G, no para estaciones de trabajo de una oficina."
+      },
+      {
+        "id": "c",
+        "text": "Edge Locations de CloudFront",
+        "explanation": "Las Edge Locations cachean contenido; no ofrecen instancias para renderizar vídeo."
+      },
+      {
+        "id": "d",
+        "text": "AWS Snowball Edge",
+        "explanation": "Snowball Edge es un dispositivo físico para migrar datos o procesar en lugares desconectados (y solo para clientes existentes desde nov-2025)."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Cómputo de AWS cerca de una gran ciudad sin Región → Local Zones.",
+    "refs": [
+      "https://docs.aws.amazon.com/local-zones/latest/ug/what-is-aws-local-zones.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iac-001",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Crea y gestiona recursos de AWS a partir de plantillas declarativas en YAML o JSON, agrupados en stacks.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CloudFormation",
+        "explanation": "Correcta. CloudFormation es el servicio de IaC declarativo de AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS CDK",
+        "explanation": "El CDK usa lenguajes de programación (no YAML/JSON directamente) y genera plantillas de CloudFormation. Sería la respuesta si se mencionara TypeScript o Python."
+      },
+      {
+        "id": "c",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk despliega aplicaciones con una infraestructura predefinida; no se escriben plantillas de cada recurso."
+      },
+      {
+        "id": "d",
+        "text": "AWS Service Catalog",
+        "explanation": "Service Catalog ofrece a los usuarios un catálogo de productos aprobados (que suelen ser plantillas de CloudFormation), pero no es el motor que las ejecuta."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Plantillas YAML/JSON → CloudFormation.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iac-002",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Define infraestructura con TypeScript, Python, Java o C# y la convierte en plantillas de CloudFormation.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS SDK",
+        "explanation": "El SDK llama a las APIs desde una aplicación, no genera plantillas de infraestructura."
+      },
+      {
+        "id": "b",
+        "text": "AWS CDK",
+        "explanation": "Correcta. El Cloud Development Kit modela infraestructura con lenguajes de programación."
+      },
+      {
+        "id": "c",
+        "text": "AWS CLI",
+        "explanation": "La CLI ejecuta comandos individuales; no modela infraestructura completa."
+      },
+      {
+        "id": "d",
+        "text": "AWS Infrastructure Composer",
+        "explanation": "Infrastructure Composer diseña la infraestructura de forma VISUAL (arrastrando componentes); no usa lenguajes de programación. Sería la respuesta para diseño visual."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "IaC con lenguajes de programación → CDK.",
+    "refs": [
+      "https://docs.aws.amazon.com/cdk/v2/guide/home.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iac-003",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Plataforma como servicio para desplegar aplicaciones web: subes el código y gestiona capacidad, balanceo, escalado y monitoreo de salud.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Correcta. Beanstalk es el PaaS de AWS centrado en el desarrollador."
+      },
+      {
+        "id": "b",
+        "text": "Amazon ECS",
+        "explanation": "ECS orquesta contenedores; requiere definir tareas y servicios. Sería la respuesta para aplicaciones ya empaquetadas en contenedores."
+      },
+      {
+        "id": "c",
+        "text": "AWS Amplify Hosting",
+        "explanation": "Amplify Hosting despliega sobre todo aplicaciones web front-end y full-stack JavaScript; no es el PaaS genérico para Java, .NET o PHP en EC2."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Lightsail",
+        "explanation": "Lightsail ofrece servidores simples a precio fijo; no gestiona el despliegue ni el escalado de la aplicación."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "PaaS para aplicaciones web → Elastic Beanstalk.",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iac-004",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Despliega automáticamente nuevas versiones de una aplicación en instancias EC2, servidores on-premises, funciones Lambda o servicios de ECS.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CodePipeline",
+        "explanation": "CodePipeline orquesta el flujo de CI/CD, pero delega el despliegue en otros servicios. Sería la respuesta para automatizar todo el flujo."
+      },
+      {
+        "id": "b",
+        "text": "AWS CodeDeploy",
+        "explanation": "Correcta. CodeDeploy realiza los despliegues en distintos tipos de destino, incluido on-premises."
+      },
+      {
+        "id": "c",
+        "text": "AWS CodeBuild",
+        "explanation": "CodeBuild compila y prueba el código; no lo despliega."
+      },
+      {
+        "id": "d",
+        "text": "AWS CloudFormation",
+        "explanation": "CloudFormation crea infraestructura; no gestiona el despliegue de versiones de la aplicación en servidores."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Desplegar versiones en EC2/on-premises/Lambda/ECS → CodeDeploy.",
+    "refs": [
+      "https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iac-005",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Orquesta las etapas de integración y entrega continuas (origen, compilación, pruebas y despliegue) para publicar cambios automáticamente.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CodePipeline",
+        "explanation": "Correcta. CodePipeline automatiza el flujo completo de CI/CD."
+      },
+      {
+        "id": "b",
+        "text": "AWS Step Functions",
+        "explanation": "Step Functions orquesta flujos de trabajo de aplicaciones (p. ej. funciones Lambda), no está especializado en CI/CD. Sería la respuesta para flujos de negocio visuales."
+      },
+      {
+        "id": "c",
+        "text": "AWS CodeArtifact",
+        "explanation": "CodeArtifact almacena paquetes de dependencias; no automatiza el flujo."
+      },
+      {
+        "id": "d",
+        "text": "AWS CodeCommit",
+        "explanation": "CodeCommit guarda el código en Git; es solo la etapa de origen."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Flujo de CI/CD completo → CodePipeline.",
+    "refs": [
+      "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iac-006",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Repositorio gestionado de paquetes de software (npm, Maven, pip, NuGet) para que desarrolladores y procesos de compilación obtengan sus dependencias.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon ECR",
+        "explanation": "ECR almacena imágenes de contenedor, no paquetes de lenguajes. Sería la respuesta para imágenes Docker."
+      },
+      {
+        "id": "b",
+        "text": "AWS CodeCommit",
+        "explanation": "CodeCommit guarda código fuente en repositorios Git, no paquetes compilados de dependencias."
+      },
+      {
+        "id": "c",
+        "text": "AWS CodeArtifact",
+        "explanation": "Correcta. CodeArtifact es el repositorio gestionado de artefactos y dependencias."
+      },
+      {
+        "id": "d",
+        "text": "Amazon S3",
+        "explanation": "S3 podría guardar archivos, pero no es compatible con los gestores de paquetes como un repositorio npm o Maven."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Dependencias de software (npm, Maven, pip) → CodeArtifact.",
+    "refs": [
+      "https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iac-007",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Gestiona flotas de EC2 y servidores on-premises a escala: parches, ejecución de comandos, sesiones sin SSH y almacén de parámetros.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Systems Manager",
+        "explanation": "Correcta. Systems Manager reúne Patch Manager, Run Command, Session Manager y Parameter Store."
+      },
+      {
+        "id": "b",
+        "text": "AWS OpsWorks",
+        "explanation": "OpsWorks gestionaba configuración con Chef/Puppet y ya llegó al fin de su vida útil; no es la respuesta vigente."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "AWS Config registra y evalúa configuraciones, pero no ejecuta comandos ni parches."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector detecta vulnerabilidades en instancias; no las gestiona ni parchea."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Gestión operativa de flotas híbridas → Systems Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-iac-008",
+    "domain": 3,
+    "section": "Despliegue e IaC",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Repositorio Git privado y gestionado, integrado con IAM, para almacenar el código fuente con control de versiones.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CodeCommit",
+        "explanation": "Correcta. CodeCommit es el servicio de repositorios Git de AWS (volvió a aceptar clientes nuevos en nov-2025)."
+      },
+      {
+        "id": "b",
+        "text": "AWS CodeArtifact",
+        "explanation": "CodeArtifact guarda paquetes y dependencias, no repositorios Git."
+      },
+      {
+        "id": "c",
+        "text": "Amazon S3 con versionado",
+        "explanation": "S3 con versionado conserva versiones de objetos, pero no ofrece ramas, commits ni operaciones Git."
+      },
+      {
+        "id": "d",
+        "text": "AWS CodeBuild",
+        "explanation": "CodeBuild compila el código; no lo almacena."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Repositorio Git gestionado en AWS → CodeCommit.",
+    "refs": [
+      "https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html"
+    ],
+    "source": "original",
+    "note": "CodeCommit cerró a clientes nuevos en 2024 y volvió a disponibilidad general el 24-nov-2025."
+  },
+  {
+    "id": "srv-glob-001",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "DNS gestionado que registra dominios, comprueba la salud de los endpoints y enruta por latencia, geolocalización o failover.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Route 53",
+        "explanation": "Correcta. Route 53 es el servicio DNS global de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront es una CDN que cachea contenido; no es un servicio DNS. Sería la respuesta para acelerar la entrega de contenido."
+      },
+      {
+        "id": "c",
+        "text": "AWS Global Accelerator",
+        "explanation": "Global Accelerator mejora la ruta de red con IPs anycast; no registra dominios ni resuelve DNS."
+      },
+      {
+        "id": "d",
+        "text": "Elastic Load Balancing",
+        "explanation": "ELB reparte el tráfico entre instancias en una Región; no es un DNS global."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "DNS y registro de dominios → Route 53.",
+    "refs": [
+      "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-glob-002",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Red de entrega de contenido que cachea archivos estáticos y dinámicos en ubicaciones de borde cercanas a los usuarios.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Global Accelerator",
+        "explanation": "Global Accelerator usa las Edge Locations para acelerar conexiones, pero NO cachea contenido. Sería la respuesta para TCP/UDP con IPs estáticas."
+      },
+      {
+        "id": "b",
+        "text": "Amazon CloudFront",
+        "explanation": "Correcta. CloudFront es la CDN de AWS y cachea contenido en el borde."
+      },
+      {
+        "id": "c",
+        "text": "S3 Transfer Acceleration",
+        "explanation": "Transfer Acceleration acelera subidas y descargas a un bucket, pero no cachea contenido para servirlo a muchos usuarios."
+      },
+      {
+        "id": "d",
+        "text": "Amazon ElastiCache",
+        "explanation": "ElastiCache es una caché en memoria dentro de una Región para la aplicación, no una CDN."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "CDN con caché en el borde → CloudFront.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-glob-003",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Proporciona dos IPs anycast estáticas y envía el tráfico TCP/UDP por la red privada de AWS para mejorar el rendimiento y la conmutación por error de aplicaciones globales.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Global Accelerator",
+        "explanation": "Correcta. Global Accelerator ofrece IPs estáticas anycast y enrutamiento por la red global de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Route 53",
+        "explanation": "Route 53 dirige tráfico mediante DNS, pero no proporciona IPs anycast ni lleva el tráfico por la red de AWS."
+      },
+      {
+        "id": "c",
+        "text": "Network Load Balancer",
+        "explanation": "El NLB puede tener IPs estáticas, pero es regional; no acelera el tráfico global por las Edge Locations."
+      },
+      {
+        "id": "d",
+        "text": "AWS Direct Connect",
+        "explanation": "Direct Connect conecta un centro de datos con AWS de forma privada; no es para usuarios de internet de todo el mundo."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "IPs anycast estáticas + red global de AWS → Global Accelerator.",
+    "refs": [
+      "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-glob-004",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Racks totalmente gestionados por AWS que se instalan en el centro de datos del cliente para ejecutar servicios de AWS localmente.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Local Zones",
+        "explanation": "Las Local Zones son ubicaciones de AWS en grandes ciudades, no en el centro de datos del cliente."
+      },
+      {
+        "id": "b",
+        "text": "AWS Outposts",
+        "explanation": "Correcta. Outposts lleva la infraestructura de AWS a las instalaciones del cliente."
+      },
+      {
+        "id": "c",
+        "text": "AWS Storage Gateway",
+        "explanation": "Storage Gateway conecta almacenamiento local con AWS, pero no ejecuta servicios de cómputo de AWS en las instalaciones."
+      },
+      {
+        "id": "d",
+        "text": "AWS Wavelength",
+        "explanation": "Wavelength está dentro de las redes 5G de los operadores, no en el centro de datos del cliente."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "AWS dentro de tu centro de datos → Outposts.",
+    "refs": [
+      "https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-glob-005",
+    "domain": 3,
+    "section": "Infraestructura global",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Infraestructura de AWS integrada en las redes 5G de los operadores para aplicaciones móviles de latencia ultrabaja.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Wavelength",
+        "explanation": "Correcta. Wavelength es la oferta de AWS para el borde de las redes 5G."
+      },
+      {
+        "id": "b",
+        "text": "AWS IoT Greengrass",
+        "explanation": "Greengrass ejecuta código y ML en dispositivos IoT locales; no está en la red del operador. Sería la respuesta para procesamiento en dispositivos de campo."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront cachea contenido en Edge Locations; no ejecuta aplicaciones dentro de la red 5G."
+      },
+      {
+        "id": "d",
+        "text": "AWS Local Zones",
+        "explanation": "Las Local Zones acercan AWS a ciudades, pero no están integradas en la red 5G de los operadores."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Borde de redes 5G → Wavelength.",
+    "refs": [
+      "https://docs.aws.amazon.com/wavelength/latest/developerguide/what-is-wavelength.html"
+    ],
+    "source": "original"
   }
 ]
