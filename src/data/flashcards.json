@@ -558,5 +558,422 @@
       "iam"
     ],
     "difficulty": 2
+  },
+  {
+    "id": "ec2-001",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "¿Qué es Amazon EC2?",
+    "back": "Elastic Compute Cloud: servidores virtuales (instancias) en la nube que puedes crear en minutos, redimensionar y pagar por uso. Es el servicio IaaS por excelencia de AWS.",
+    "tags": [
+      "ec2"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-002",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "¿Qué decides al lanzar una instancia EC2?",
+    "back": "La AMI (sistema operativo), el tipo de instancia (CPU, RAM, red), el almacenamiento (EBS o instance store), los Security Groups, el par de claves, la red/subred y, opcionalmente, un script de user data y un rol IAM.",
+    "tags": [
+      "ec2"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-003",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "¿Qué es EC2 User Data?",
+    "back": "Un script que se ejecuta automáticamente UNA vez, la primera vez que arranca la instancia (como root). Se usa para instalar paquetes, actualizar el sistema o descargar archivos al iniciar.",
+    "tags": [
+      "ec2",
+      "bootstrap"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ec2-004",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "comparacion",
+    "front": "Familias de instancias EC2: ¿para qué sirve cada una?",
+    "back": "Uso general (M, T): equilibrio CPU/RAM, servidores web.\nOptimizadas para cómputo (C): procesamiento por lotes, HPC, juegos, ML de inferencia.\nOptimizadas para memoria (R, X): bases de datos en memoria, cachés, análisis en tiempo real.\nOptimizadas para almacenamiento (I, D): alto IOPS local, OLTP, data warehouses.\nComputación acelerada (P, G, Inf, Trn): GPU o chips de ML.",
+    "tags": [
+      "tipos-instancia"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ec2-005",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "dato-clave",
+    "front": "¿Cómo se lee el nombre m5.2xlarge?",
+    "back": "m = familia (uso general), 5 = generación, 2xlarge = tamaño dentro de la familia (más CPU y RAM cuanto mayor).",
+    "tags": [
+      "tipos-instancia"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-006",
+    "domain": 2,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "¿Qué es un Security Group?",
+    "back": "Un firewall virtual a nivel de instancia que controla el tráfico entrante y saliente con reglas de PERMITIR por puerto, protocolo y origen (IP o otro Security Group). Es con estado: las respuestas se permiten automáticamente.",
+    "tags": [
+      "security-groups"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-007",
+    "domain": 2,
+    "section": "Amazon EC2",
+    "type": "dato-clave",
+    "front": "Comportamiento por defecto de un Security Group",
+    "back": "Todo el tráfico ENTRANTE está bloqueado y todo el SALIENTE está permitido. Solo tiene reglas de permitir; no puedes crear reglas de denegar.",
+    "tags": [
+      "security-groups"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-008",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "dato-clave",
+    "front": "Puertos clásicos que debes conocer",
+    "back": "22 = SSH (Linux) y SFTP · 21 = FTP · 80 = HTTP · 443 = HTTPS · 3389 = RDP (Windows).",
+    "tags": [
+      "puertos"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-009",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "comparacion",
+    "front": "Formas de conectarse a una instancia EC2",
+    "back": "SSH (Linux/Mac, o Windows 10+) con un par de claves; PuTTY en Windows antiguos; EC2 Instance Connect desde el navegador (instancias Linux compatibles); Session Manager de Systems Manager sin abrir el puerto 22 ni usar claves.",
+    "tags": [
+      "acceso"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ec2-010",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "Instancias On-Demand",
+    "back": "Pagas por segundo (Linux/Windows, mínimo 60 s) o por hora, sin compromiso ni pago inicial. Las más caras, ideales para cargas cortas, impredecibles o que no se pueden interrumpir.",
+    "tags": [
+      "precios",
+      "on-demand"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-011",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "Reserved Instances (RI)",
+    "back": "Compromiso de 1 o 3 años con un tipo de instancia, región y SO, con hasta ~72 % de descuento. Pago total, parcial o sin pago inicial. Las Convertible RI permiten cambiar de tipo con menos descuento (~66 %). Se pueden vender en el RI Marketplace.",
+    "tags": [
+      "precios",
+      "reservadas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ec2-012",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "Savings Plans",
+    "back": "Te comprometes a gastar una cantidad en USD por hora durante 1 o 3 años y obtienes descuentos de hasta ~72 %. EC2 Instance SP: flexible en tamaño y SO dentro de una familia y región. Compute SP: aplica también a Fargate y Lambda y entre regiones.",
+    "tags": [
+      "precios",
+      "savings-plans"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ec2-013",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "Spot Instances",
+    "back": "Capacidad sobrante de AWS con hasta ~90 % de descuento. AWS puede reclamarla con 2 minutos de aviso, así que solo sirve para cargas tolerantes a interrupciones: batch, análisis, procesamiento de imágenes, CI.",
+    "tags": [
+      "precios",
+      "spot"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-014",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "type": "comparacion",
+    "front": "Dedicated Host vs Dedicated Instance",
+    "back": "Dedicated Host: un servidor físico completo para ti, con visibilidad de sockets y núcleos; útil para licencias BYOL por servidor y cumplimiento. La opción más cara.\nDedicated Instance: tus instancias en hardware no compartido con otros clientes, pero sin control sobre el host físico.",
+    "tags": [
+      "precios",
+      "dedicadas"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ec2-015",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "Capacity Reservations",
+    "back": "Reservan capacidad On-Demand en una AZ concreta durante el tiempo que quieras, sin compromiso ni descuento. Pagas la tarifa On-Demand aunque no ejecutes las instancias. Se pueden combinar con Savings Plans o RI regionales para obtener descuento.",
+    "tags": [
+      "precios"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ec2-016",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "type": "caso-de-uso",
+    "front": "Analogía del hotel para las opciones de compra de EC2",
+    "back": "On-Demand: llegas cuando quieres y pagas tarifa completa.\nReservada / Savings Plan: reservas con mucha antelación y te hacen descuento.\nSpot: compras habitaciones libres de última hora baratas, pero pueden echarte.\nDedicated Host: alquilas el edificio entero.\nCapacity Reservation: reservas una habitación a precio completo por si llegas.",
+    "tags": [
+      "precios"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-017",
+    "domain": 2,
+    "section": "Amazon EC2",
+    "type": "comparacion",
+    "front": "Responsabilidad compartida en EC2",
+    "back": "AWS: infraestructura global, hardware, aislamiento en el host físico y reemplazo de hardware defectuoso.\nCliente: reglas de Security Groups, parches y actualizaciones del SO, software instalado, roles IAM asignados y seguridad de los datos en la instancia.",
+    "tags": [
+      "responsabilidad-compartida"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ec2-018",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "dato-clave",
+    "front": "¿Qué pasa con la IP pública de una instancia al detenerla y arrancarla?",
+    "back": "Cambia: la IP pública por defecto no es fija. Para una IP pública estática se usa una Elastic IP (se cobra; todas las IPv4 públicas tienen un coste por hora).",
+    "tags": [
+      "red"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ec2-019",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "type": "concepto",
+    "front": "¿Qué son las instancias Graviton?",
+    "back": "Instancias con procesadores ARM diseñados por AWS (familias con 'g', p. ej. m7g, c7g). Ofrecen mejor relación precio-rendimiento y menor consumo energético; aparecen en el pilar de sostenibilidad.",
+    "tags": [
+      "graviton"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ec2-020",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "type": "dato-clave",
+    "front": "Facturación por segundo en EC2",
+    "back": "Las instancias Linux y Windows (y otras como Ubuntu) se facturan por segundo con un mínimo de 60 segundos. Algunos SO con licencia (p. ej. ciertos RHEL o SUSE más antiguos) se cobraban por hora.",
+    "tags": [
+      "precios"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ebs-001",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "¿Qué es un volumen EBS?",
+    "back": "Elastic Block Store: un disco de red (almacenamiento en bloque) que se conecta a una instancia EC2 y persiste aunque la instancia se detenga. Está ligado a una zona de disponibilidad y se cobra por la capacidad aprovisionada.",
+    "tags": [
+      "ebs"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ebs-002",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "dato-clave",
+    "front": "Restricciones clave de EBS",
+    "back": "Un volumen vive en UNA AZ (para moverlo a otra se usa un snapshot). En general se conecta a una instancia a la vez (Multi-Attach existe solo para io1/io2). Una instancia puede tener varios volúmenes.",
+    "tags": [
+      "ebs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ebs-003",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "Atributo 'Delete on Termination' de EBS",
+    "back": "Por defecto, el volumen raíz se ELIMINA al terminar la instancia y los volúmenes adicionales se CONSERVAN. Se puede cambiar para conservar el volumen raíz.",
+    "tags": [
+      "ebs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ebs-004",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "¿Qué es un EBS Snapshot?",
+    "back": "Una copia de seguridad puntual de un volumen EBS, guardada de forma incremental. Sirve para restaurar, crear volúmenes en otra AZ o copiar a otra Región. Existen el nivel Archive (hasta 75 % más barato, restauración de 24-72 h) y la Papelera de reciclaje para recuperar borrados.",
+    "tags": [
+      "ebs",
+      "snapshot"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ebs-005",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "¿Qué es una AMI?",
+    "back": "Amazon Machine Image: plantilla con el SO, configuración y software para lanzar instancias. Puede ser pública (de AWS), propia o del AWS Marketplace. Es regional, pero se puede copiar a otras Regiones.",
+    "tags": [
+      "ami"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ebs-006",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "caso-de-uso",
+    "front": "Quieres que tus instancias arranquen más rápido con todo el software ya instalado. ¿Qué haces?",
+    "back": "Crear una AMI personalizada a partir de una instancia configurada (preferiblemente detenida) y lanzar las nuevas instancias desde ella, en lugar de instalar todo con user data en cada arranque.",
+    "tags": [
+      "ami"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ebs-007",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "¿Qué es EC2 Image Builder?",
+    "back": "Servicio gratuito (pagas los recursos usados) que automatiza la creación, prueba y distribución de AMIs e imágenes de contenedor, con programación periódica y distribución a varias Regiones.",
+    "tags": [
+      "ami",
+      "automatizacion"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ebs-008",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "¿Qué es EC2 Instance Store?",
+    "back": "Disco físico conectado directamente al host de la instancia: rendimiento de E/S muy alto, pero EFÍMERO: los datos se pierden si la instancia se detiene, hiberna o termina, o si falla el hardware. Ideal para cachés y datos temporales.",
+    "tags": [
+      "instance-store"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ebs-009",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "¿Qué es Amazon EFS?",
+    "back": "Elastic File System: sistema de archivos NFS gestionado que se monta en cientos de instancias Linux a la vez y en varias AZ. Crece y se reduce automáticamente; pagas por lo que guardas. Más caro que EBS.",
+    "tags": [
+      "efs"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ebs-010",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "¿Qué es EFS Infrequent Access (EFS-IA)?",
+    "back": "Clase de almacenamiento de EFS más barata para archivos poco usados. Con una política de ciclo de vida, EFS mueve automáticamente los archivos no accedidos en N días a IA, de forma transparente para las aplicaciones.",
+    "tags": [
+      "efs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ebs-011",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "comparacion",
+    "front": "FSx for Windows File Server vs FSx for Lustre",
+    "back": "FSx for Windows: sistema de archivos compartido nativo de Windows (SMB, NTFS) integrado con Active Directory.\nFSx for Lustre: sistema de archivos de altísimo rendimiento para HPC, ML y análisis, integrado con S3. (Lustre = Linux + cluster).",
+    "tags": [
+      "fsx"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ebs-012",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "comparacion",
+    "front": "EBS vs EFS",
+    "back": "EBS: disco de bloque para UNA instancia (en general), en una AZ; pagas lo aprovisionado.\nEFS: sistema de archivos compartido para MUCHAS instancias Linux en varias AZ; pagas lo usado.",
+    "tags": [
+      "ebs",
+      "efs"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ebs-013",
+    "domain": 2,
+    "section": "Almacenamiento EC2",
+    "type": "concepto",
+    "front": "Responsabilidad compartida en el almacenamiento de EC2",
+    "back": "AWS: infraestructura, replicación de los datos de EBS/EFS dentro del servicio, reemplazo de hardware y que sus empleados no accedan a tus datos.\nCliente: copias de seguridad y snapshots, cifrado de los datos, y asumir el riesgo de usar instance store.",
+    "tags": [
+      "responsabilidad-compartida"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ebs-014",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "type": "comparacion",
+    "front": "Otros FSx para recordar",
+    "back": "FSx for NetApp ONTAP (NFS/SMB/iSCSI, compatible con NetApp) y FSx for OpenZFS (compatible con ZFS). Para el examen basta con saber que FSx lanza sistemas de archivos de terceros totalmente gestionados.",
+    "tags": [
+      "fsx"
+    ],
+    "difficulty": 3
   }
 ]

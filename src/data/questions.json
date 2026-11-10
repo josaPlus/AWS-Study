@@ -1666,5 +1666,1181 @@
       "https://aws.amazon.com/developer/tools/"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-ec2-001",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa ejecuta un trabajo de procesamiento de imágenes por lotes que puede detenerse y reanudarse en cualquier momento sin perder progreso. Quiere minimizar el coste de cómputo. ¿Qué opción de compra de EC2 debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Instancias Spot",
+        "explanation": "Correcta. Las Spot ofrecen hasta ~90 % de descuento a cambio de que AWS pueda reclamarlas; como el trabajo tolera interrupciones, es la opción más barata."
+      },
+      {
+        "id": "b",
+        "text": "Instancias On-Demand",
+        "explanation": "On-Demand no se interrumpe, pero es la opción más cara. Sería la respuesta si el trabajo fuera corto y NO pudiera interrumpirse."
+      },
+      {
+        "id": "c",
+        "text": "Reserved Instances de 3 años",
+        "explanation": "Las RI requieren un compromiso largo y convienen para cargas estables 24/7. Un trabajo por lotes ocasional y tolerante a fallos se aprovecha mejor con Spot."
+      },
+      {
+        "id": "d",
+        "text": "Dedicated Hosts",
+        "explanation": "Los Dedicated Hosts son la opción más cara y se usan por licencias por servidor físico o cumplimiento. No tienen sentido para minimizar costes aquí."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Carga tolerante a interrupciones + mínimo coste = Spot.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-002",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una base de datos se ejecutará en EC2 de forma continua durante los próximos 3 años con el mismo tipo de instancia. ¿Qué opción ofrece el mayor ahorro para esta carga predecible?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Instancias On-Demand",
+        "explanation": "On-Demand no requiere compromiso, pero cobra la tarifa completa. Para 3 años de uso continuo se pagaría mucho más de lo necesario."
+      },
+      {
+        "id": "b",
+        "text": "Instancias Spot",
+        "explanation": "Spot es muy barata, pero AWS puede interrumpirla con 2 minutos de aviso; una base de datos continua no debe correr así."
+      },
+      {
+        "id": "c",
+        "text": "Reserved Instances de 3 años con pago total por adelantado",
+        "explanation": "Correcta. Un compromiso de 3 años con pago total inicial da el mayor descuento de las RI (hasta ~72 %) para una carga estable y conocida."
+      },
+      {
+        "id": "d",
+        "text": "Capacity Reservations",
+        "explanation": "Las Capacity Reservations garantizan capacidad en una AZ, pero se cobran a precio On-Demand y no ofrecen descuento por sí solas."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Uso estable y continuo durante años → Reserved Instances o Savings Plans; 3 años y pago total = máximo descuento.",
+    "refs": [
+      "https://aws.amazon.com/ec2/pricing/reserved-instances/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-003",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa tiene licencias de software que se cobran por socket físico y núcleo, y necesita visibilidad del servidor subyacente para cumplirlas. ¿Qué opción de EC2 debe elegir?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dedicated Instances",
+        "explanation": "Las Dedicated Instances no comparten hardware con otros clientes, pero no dan visibilidad ni control de sockets y núcleos del servidor físico."
+      },
+      {
+        "id": "b",
+        "text": "Dedicated Hosts",
+        "explanation": "Correcta. Un Dedicated Host es un servidor físico completo asignado a ti, con visibilidad de sockets y núcleos, ideal para licencias BYOL por servidor."
+      },
+      {
+        "id": "c",
+        "text": "Instancias Spot",
+        "explanation": "Spot es capacidad sobrante y barata que puede interrumpirse; no da control del hardware ni ayuda con licencias por servidor."
+      },
+      {
+        "id": "d",
+        "text": "Savings Plans",
+        "explanation": "Los Savings Plans son un modelo de descuento por compromiso de gasto, no un tipo de hardware dedicado."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Licencias por socket/núcleo (BYOL) o cumplimiento que exige servidor físico → Dedicated Host.",
+    "refs": [
+      "https://aws.amazon.com/ec2/dedicated-hosts/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-004",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa usa EC2, AWS Fargate y AWS Lambda y quiere un compromiso de 1 año que le dé descuentos en los tres servicios, aunque cambie de tipo de instancia o de Región. ¿Qué debe comprar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Compute Savings Plans",
+        "explanation": "Correcta. El Compute Savings Plan aplica el descuento al uso de EC2, Fargate y Lambda, sin importar familia, tamaño, SO ni Región."
+      },
+      {
+        "id": "b",
+        "text": "EC2 Instance Savings Plans",
+        "explanation": "Este plan solo aplica a EC2 dentro de una familia y Región concretas; no cubre Fargate ni Lambda."
+      },
+      {
+        "id": "c",
+        "text": "Standard Reserved Instances",
+        "explanation": "Las RI estándar solo aplican a EC2 (y a otros servicios con su propia versión de RI), y están ligadas a un tipo de instancia; no cubren Lambda ni Fargate."
+      },
+      {
+        "id": "d",
+        "text": "Instancias Spot",
+        "explanation": "Spot no es un compromiso de gasto ni aplica a Lambda; es capacidad interrumpible de EC2 (o Fargate Spot) con descuento."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Descuento flexible para EC2 + Fargate + Lambda → Compute Savings Plans.",
+    "refs": [
+      "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-005",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo quiere que cada nueva instancia EC2 instale automáticamente un servidor web y descargue el código la primera vez que arranca. ¿Qué característica de EC2 debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "EC2 User Data",
+        "explanation": "Correcta. El script de user data se ejecuta automáticamente en el primer arranque y permite instalar software y configurar la instancia."
+      },
+      {
+        "id": "b",
+        "text": "Instance Store",
+        "explanation": "Instance Store es almacenamiento temporal de alto rendimiento conectado al host; no ejecuta scripts de configuración."
+      },
+      {
+        "id": "c",
+        "text": "Elastic IP",
+        "explanation": "Una Elastic IP es una dirección IP pública fija; no tiene relación con la configuración inicial del software."
+      },
+      {
+        "id": "d",
+        "text": "Placement Groups",
+        "explanation": "Los Placement Groups controlan cómo se colocan las instancias en el hardware (juntas o separadas), no qué software se instala."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Ejecutar un script de configuración en el primer arranque = EC2 User Data.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-006",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación mantiene una caché de datos de varios cientos de GB en memoria y necesita mucha RAM por vCPU. ¿Qué familia de instancias EC2 es más adecuada?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Optimizadas para cómputo (C)",
+        "explanation": "Las de cómputo priorizan CPU de alto rendimiento (procesamiento por lotes, HPC); tienen poca RAM por vCPU para una caché grande en memoria."
+      },
+      {
+        "id": "b",
+        "text": "Optimizadas para memoria (R / X)",
+        "explanation": "Correcta. Están diseñadas para procesar grandes conjuntos de datos en memoria, como cachés y bases de datos en memoria."
+      },
+      {
+        "id": "c",
+        "text": "Optimizadas para almacenamiento (I / D)",
+        "explanation": "Priorizan discos locales con muchas IOPS y alto rendimiento secuencial, no la cantidad de RAM."
+      },
+      {
+        "id": "d",
+        "text": "Uso general (T)",
+        "explanation": "Las T son de rendimiento ampliable (burstable) para cargas ligeras; no son adecuadas para cachés grandes de uso intensivo."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Mucha RAM (cachés, BD en memoria) → optimizadas para memoria. Mucha CPU → cómputo. Mucho disco local → almacenamiento.",
+    "refs": [
+      "https://aws.amazon.com/ec2/instance-types/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-007",
+    "domain": 2,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un servidor web en EC2 no responde a peticiones HTTPS desde internet, aunque la aplicación funciona dentro de la instancia. ¿Qué es lo PRIMERO que conviene revisar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Que el Security Group permita tráfico entrante en el puerto 443",
+        "explanation": "Correcta. Por defecto los Security Groups bloquean todo el tráfico entrante; sin una regla para 443 las peticiones HTTPS no llegan."
+      },
+      {
+        "id": "b",
+        "text": "Que la instancia tenga un rol IAM",
+        "explanation": "Los roles IAM dan permisos para llamar a servicios de AWS; no afectan a que el tráfico de red llegue a la instancia."
+      },
+      {
+        "id": "c",
+        "text": "Que el volumen EBS esté cifrado",
+        "explanation": "El cifrado del disco protege los datos en reposo, pero no tiene relación con recibir tráfico HTTPS."
+      },
+      {
+        "id": "d",
+        "text": "Que el plan de soporte sea Business",
+        "explanation": "El plan de soporte no influye en la conectividad de red de una instancia."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Timeout al conectar a EC2 = casi siempre una regla de Security Group que falta.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-008",
+    "domain": 2,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Qué DOS afirmaciones sobre los Security Groups son correctas? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Solo admiten reglas de permitir",
+        "explanation": "Correcta. Los Security Groups no tienen reglas de denegar: todo lo que no está permitido explícitamente se bloquea."
+      },
+      {
+        "id": "b",
+        "text": "Son con estado: si se permite la petición, la respuesta sale automáticamente",
+        "explanation": "Correcta. Al ser stateful, el tráfico de respuesta a una conexión permitida se autoriza sin necesidad de una regla adicional."
+      },
+      {
+        "id": "c",
+        "text": "Se aplican a nivel de subred",
+        "explanation": "Incorrecta. Se aplican a nivel de instancia (interfaz de red). Lo que actúa a nivel de subred es la Network ACL."
+      },
+      {
+        "id": "d",
+        "text": "Por defecto permiten todo el tráfico entrante",
+        "explanation": "Incorrecta. Por defecto bloquean todo el tráfico entrante y permiten todo el saliente."
+      },
+      {
+        "id": "e",
+        "text": "Evalúan las reglas en orden numérico",
+        "explanation": "Incorrecta. Las reglas de un Security Group se evalúan todas en conjunto. El orden numérico es característico de las Network ACL."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "Security Group: nivel de instancia, solo permitir, con estado. NACL: nivel de subred, permitir y denegar, sin estado.",
+    "refs": [
+      "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-009",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un administrador necesita conectarse a una instancia Windows en EC2 con escritorio remoto. ¿Qué puerto debe permitir en el Security Group?",
+    "options": [
+      {
+        "id": "a",
+        "text": "22",
+        "explanation": "El 22 es SSH, usado normalmente para instancias Linux. No sirve para el escritorio remoto de Windows."
+      },
+      {
+        "id": "b",
+        "text": "80",
+        "explanation": "El 80 es HTTP, para tráfico web sin cifrar. No permite conexiones de escritorio remoto."
+      },
+      {
+        "id": "c",
+        "text": "3389",
+        "explanation": "Correcta. RDP (Remote Desktop Protocol) usa el puerto 3389 para conectarse a instancias Windows."
+      },
+      {
+        "id": "d",
+        "text": "443",
+        "explanation": "El 443 es HTTPS, para tráfico web cifrado. No es el puerto de RDP."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Puertos: 22 SSH · 80 HTTP · 443 HTTPS · 3389 RDP · 21 FTP.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-010",
+    "domain": 2,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Según el modelo de responsabilidad compartida, ¿quién es responsable de aplicar los parches de seguridad al sistema operativo de una instancia EC2?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS, porque es un servicio gestionado",
+        "explanation": "EC2 es IaaS, no un servicio gestionado como RDS. AWS no entra en tu sistema operativo invitado."
+      },
+      {
+        "id": "b",
+        "text": "El cliente",
+        "explanation": "Correcta. En EC2 el cliente controla el SO invitado, por lo que debe actualizarlo y parchearlo (puede automatizarlo con Systems Manager Patch Manager)."
+      },
+      {
+        "id": "c",
+        "text": "Ambos, a partes iguales",
+        "explanation": "Los parches son un control compartido en sentido amplio (AWS parchea su infraestructura), pero el SO invitado de EC2 es solo responsabilidad del cliente."
+      },
+      {
+        "id": "d",
+        "text": "El proveedor de la AMI",
+        "explanation": "El proveedor de la AMI crea la imagen inicial, pero una vez lanzada la instancia, mantenerla al día es responsabilidad del cliente."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "EC2: el SO invitado y sus parches son del cliente. RDS: el SO y el motor los parchea AWS.",
+    "refs": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-011",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa celebrará un evento importante dentro de dos semanas y necesita la GARANTÍA de tener capacidad EC2 disponible en una zona de disponibilidad concreta durante ese día, sin comprometerse a largo plazo. ¿Qué opción debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "On-Demand Capacity Reservation",
+        "explanation": "Correcta. Reserva capacidad en una AZ específica por el tiempo que necesites, sin compromiso de 1 o 3 años (se paga a tarifa On-Demand)."
+      },
+      {
+        "id": "b",
+        "text": "Instancias Spot",
+        "explanation": "Spot es la opción menos garantizada: AWS puede reclamar la capacidad en cualquier momento."
+      },
+      {
+        "id": "c",
+        "text": "Reserved Instances regionales de 1 año",
+        "explanation": "Requieren compromiso de 1 año y, en su forma regional, dan descuento pero NO reservan capacidad en una AZ concreta."
+      },
+      {
+        "id": "d",
+        "text": "Dedicated Instances",
+        "explanation": "Las Dedicated Instances aíslan el hardware, pero no garantizan que haya capacidad disponible en una AZ para una fecha."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Garantizar capacidad en una AZ sin compromiso largo → Capacity Reservation.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-012",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo quiere acceder a la consola de comandos de sus instancias EC2 sin abrir el puerto 22 ni gestionar claves SSH, y que cada sesión quede registrada. ¿Qué debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Systems Manager Session Manager",
+        "explanation": "Correcta. Session Manager abre una shell segura a través del agente SSM, sin puertos de entrada ni claves, y puede registrar las sesiones en S3 o CloudWatch Logs."
+      },
+      {
+        "id": "b",
+        "text": "EC2 Instance Connect",
+        "explanation": "Instance Connect permite SSH desde el navegador, pero sigue necesitando el puerto 22 abierto en el Security Group."
+      },
+      {
+        "id": "c",
+        "text": "AWS Direct Connect",
+        "explanation": "Direct Connect es una conexión de red física privada entre tu centro de datos y AWS; no es una herramienta para abrir sesiones en instancias."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector escanea vulnerabilidades en las instancias; no proporciona acceso a su línea de comandos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Acceso a instancias sin puerto 22 ni claves, con auditoría → Session Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-013",
+    "domain": 1,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere reducir la huella de carbono y el coste de sus servidores web en EC2 sin cambiar su arquitectura. ¿Qué recomendación es más adecuada?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Migrar a instancias basadas en AWS Graviton",
+        "explanation": "Correcta. Los procesadores Graviton (ARM) ofrecen mejor precio-rendimiento y consumen menos energía, y aparecen como práctica del pilar de sostenibilidad."
+      },
+      {
+        "id": "b",
+        "text": "Usar Dedicated Hosts",
+        "explanation": "Los Dedicated Hosts son la opción más cara y reducen la eficiencia al no compartir hardware; no ayudan ni al coste ni a la sostenibilidad."
+      },
+      {
+        "id": "c",
+        "text": "Aumentar el tamaño de todas las instancias",
+        "explanation": "Sobredimensionar instancias desperdicia recursos y energía, justo lo contrario de lo que se busca."
+      },
+      {
+        "id": "d",
+        "text": "Desplegar las instancias en más Regiones",
+        "explanation": "Duplicar en más Regiones aumenta el consumo total y el coste; solo se justificaría por latencia o recuperación ante desastres."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Menos coste y menos energía con la misma carga → instancias Graviton.",
+    "refs": [
+      "https://aws.amazon.com/ec2/graviton/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ec2-014",
+    "domain": 4,
+    "section": "Amazon EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un desarrollador ejecuta una prueba de carga de 20 minutos en una instancia Linux On-Demand. ¿Cómo se le cobra?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Una hora completa, porque se cobra por hora redondeando hacia arriba",
+        "explanation": "Las instancias Linux On-Demand se facturan por segundo (mínimo 60 s), no por hora completa."
+      },
+      {
+        "id": "b",
+        "text": "Por segundo, con un mínimo de 60 segundos",
+        "explanation": "Correcta. Linux y Windows se facturan por segundo tras el primer minuto, así que paga aproximadamente 20 minutos."
+      },
+      {
+        "id": "c",
+        "text": "Un día completo de uso",
+        "explanation": "AWS no cobra por días en EC2 On-Demand; esto haría inviable el modelo de pago por uso."
+      },
+      {
+        "id": "d",
+        "text": "Nada, porque las pruebas son gratuitas",
+        "explanation": "Las pruebas consumen recursos y se cobran igual, salvo lo que cubran los créditos o la capa gratuita."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "EC2 On-Demand Linux/Windows: facturación por segundo con mínimo de 1 minuto.",
+    "refs": [
+      "https://aws.amazon.com/ec2/pricing/on-demand/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ebs-001",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Varias instancias EC2 Linux, repartidas en distintas zonas de disponibilidad, necesitan leer y escribir en el mismo sistema de archivos compartido. ¿Qué servicio deben usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EBS",
+        "explanation": "Un volumen EBS está ligado a una sola AZ y normalmente se conecta a una instancia a la vez; no sirve como sistema de archivos compartido entre AZ."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EFS",
+        "explanation": "Correcta. EFS es un sistema de archivos NFS gestionado que pueden montar a la vez cientos de instancias Linux en varias AZ."
+      },
+      {
+        "id": "c",
+        "text": "EC2 Instance Store",
+        "explanation": "Instance Store es un disco local y temporal de una sola instancia; no se comparte y pierde los datos al detenerse."
+      },
+      {
+        "id": "d",
+        "text": "Amazon FSx for Windows File Server",
+        "explanation": "FSx for Windows ofrece archivos compartidos con SMB para Windows. Sería la respuesta si las instancias fueran Windows y usaran Active Directory."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Sistema de archivos compartido para muchas instancias Linux en varias AZ → EFS.",
+    "refs": [
+      "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ebs-002",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un administrador necesita mover un volumen EBS de la zona us-east-1a a us-east-1b. ¿Cuál es el procedimiento correcto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Desconectar el volumen y conectarlo a una instancia en us-east-1b",
+        "explanation": "No es posible: un volumen EBS solo puede conectarse a instancias de su misma AZ."
+      },
+      {
+        "id": "b",
+        "text": "Crear un snapshot del volumen y restaurarlo como nuevo volumen en us-east-1b",
+        "explanation": "Correcta. Los snapshots no están ligados a una AZ, así que se pueden usar para crear el volumen en otra AZ (o copiarlos a otra Región)."
+      },
+      {
+        "id": "c",
+        "text": "Activar Multi-Attach en el volumen",
+        "explanation": "Multi-Attach permite conectar ciertos volumenes io1/io2 a varias instancias, pero solo dentro de la misma AZ."
+      },
+      {
+        "id": "d",
+        "text": "Copiar el volumen con AWS DataSync",
+        "explanation": "DataSync transfiere datos entre almacenamiento on-premises y servicios como S3, EFS o FSx; no es la forma estándar de mover un volumen EBS entre AZ."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "EBS está ligado a una AZ; para moverlo se usa un snapshot.",
+    "refs": [
+      "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ebs-003",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación necesita el mayor rendimiento de E/S posible para datos temporales de procesamiento que puede regenerar si se pierden. ¿Qué almacenamiento es el más adecuado?",
+    "options": [
+      {
+        "id": "a",
+        "text": "EC2 Instance Store",
+        "explanation": "Correcta. Al estar conectado físicamente al host, ofrece IOPS altísimas; su naturaleza efímera no es problema porque los datos son regenerables."
+      },
+      {
+        "id": "b",
+        "text": "Amazon S3 Glacier Deep Archive",
+        "explanation": "Glacier Deep Archive es almacenamiento de archivo con recuperación de horas; lo opuesto a alto rendimiento."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EFS",
+        "explanation": "EFS es un sistema de archivos de red compartido; su latencia es mayor que la de un disco local."
+      },
+      {
+        "id": "d",
+        "text": "Amazon S3 Standard",
+        "explanation": "S3 es almacenamiento de objetos accesible por API; no es un disco de bloque de alto rendimiento para la instancia."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Máximo rendimiento de disco para datos temporales → Instance Store (efímero).",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ebs-004",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa lanza decenas de instancias con la misma configuración de software y quiere reducir el tiempo de arranque. ¿Qué debe hacer?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Crear una AMI personalizada con el software preinstalado",
+        "explanation": "Correcta. Lanzar desde una AMI que ya contiene todo evita instalar el software en cada arranque y acelera el despliegue."
+      },
+      {
+        "id": "b",
+        "text": "Usar instancias más grandes",
+        "explanation": "Una instancia más grande no evita instalar el software; solo aumenta el coste."
+      },
+      {
+        "id": "c",
+        "text": "Guardar el software en un volumen Instance Store",
+        "explanation": "El Instance Store es efímero y propio de cada instancia; no sirve como plantilla para nuevas instancias."
+      },
+      {
+        "id": "d",
+        "text": "Activar la facturación por segundo",
+        "explanation": "La facturación por segundo es automática para Linux y Windows y no afecta al tiempo de arranque."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Arranque rápido con software preinstalado → AMI personalizada (automatizable con EC2 Image Builder).",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ebs-005",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa migra aplicaciones Windows que usan carpetas compartidas SMB e integración con Active Directory. ¿Qué servicio de almacenamiento debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EFS",
+        "explanation": "EFS usa el protocolo NFS y está pensado para Linux; no es compatible de forma nativa con SMB ni Windows."
+      },
+      {
+        "id": "b",
+        "text": "Amazon FSx for Windows File Server",
+        "explanation": "Correcta. Ofrece un sistema de archivos Windows nativo (SMB, NTFS) totalmente gestionado e integrado con Active Directory."
+      },
+      {
+        "id": "c",
+        "text": "Amazon FSx for Lustre",
+        "explanation": "FSx for Lustre es para cargas de alto rendimiento (HPC, ML) en Linux. Sería la respuesta si se necesitara procesar grandes volúmenes de datos de S3 a gran velocidad."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EBS",
+        "explanation": "EBS es un disco para una instancia; no proporciona carpetas compartidas SMB para muchos usuarios."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Archivos compartidos para Windows (SMB, AD) → FSx for Windows. HPC → FSx for Lustre. Linux compartido → EFS.",
+    "refs": [
+      "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ebs-006",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un científico de datos necesita un sistema de archivos de altísimo rendimiento para entrenar modelos de ML leyendo millones de archivos almacenados en S3. ¿Qué servicio es el más adecuado?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon FSx for Lustre",
+        "explanation": "Correcta. Lustre es un sistema de archivos paralelo para HPC y ML, con integración directa con S3 y latencias de submilisegundos."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EFS Infrequent Access",
+        "explanation": "EFS-IA es una clase barata para archivos poco usados; no está pensada para cargas de altísimo rendimiento."
+      },
+      {
+        "id": "c",
+        "text": "AWS Storage Gateway",
+        "explanation": "Storage Gateway conecta almacenamiento on-premises con la nube; no es un sistema de archivos de alto rendimiento para cómputo en AWS."
+      },
+      {
+        "id": "d",
+        "text": "Amazon FSx for Windows File Server",
+        "explanation": "FSx for Windows ofrece archivos compartidos SMB para Windows; no es la opción de HPC ni tiene integración nativa con S3 para este fin."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "HPC / ML / análisis de alto rendimiento sobre datos en S3 → FSx for Lustre.",
+    "refs": [
+      "https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ebs-007",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Al terminar una instancia EC2, ¿qué ocurre por defecto con su volumen EBS raíz y con un volumen EBS adicional que se conectó después?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ambos se eliminan",
+        "explanation": "Solo el volumen raíz tiene 'Delete on Termination' activado por defecto; los volúmenes adicionales se conservan."
+      },
+      {
+        "id": "b",
+        "text": "El raíz se elimina y el adicional se conserva",
+        "explanation": "Correcta. Es el comportamiento por defecto del atributo Delete on Termination, que se puede modificar."
+      },
+      {
+        "id": "c",
+        "text": "Ambos se conservan",
+        "explanation": "El volumen raíz se elimina por defecto, salvo que se desactive el atributo Delete on Termination."
+      },
+      {
+        "id": "d",
+        "text": "Ambos se convierten automáticamente en snapshots",
+        "explanation": "AWS no crea snapshots automáticamente al terminar una instancia; para eso hay que programarlos (p. ej., con AWS Backup o Data Lifecycle Manager)."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Delete on Termination: el volumen raíz se borra por defecto; los adicionales no.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-ebs-008",
+    "domain": 2,
+    "section": "Almacenamiento EC2",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Según el modelo de responsabilidad compartida, ¿qué es responsabilidad del CLIENTE respecto a los volúmenes EBS?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Replicar los datos dentro de la zona de disponibilidad",
+        "explanation": "EBS replica automáticamente cada volumen dentro de su AZ; es parte del servicio que gestiona AWS."
+      },
+      {
+        "id": "b",
+        "text": "Reemplazar los discos físicos defectuosos",
+        "explanation": "El hardware es responsabilidad de AWS; el cliente nunca accede a los discos físicos."
+      },
+      {
+        "id": "c",
+        "text": "Programar snapshots y cifrar los datos sensibles",
+        "explanation": "Correcta. Las copias de seguridad y el cifrado de los datos (con KMS) son decisiones y tareas del cliente."
+      },
+      {
+        "id": "d",
+        "text": "Garantizar la durabilidad de la infraestructura de almacenamiento",
+        "explanation": "La durabilidad del servicio la garantiza AWS con su infraestructura y replicación interna."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Almacenamiento: AWS replica y mantiene el hardware; el cliente hace backups (snapshots) y cifra sus datos.",
+    "refs": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ec2-001",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Servidores virtuales en la nube donde eliges el sistema operativo, la CPU, la memoria y la red, y gestionas tú mismo el software.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EC2",
+        "explanation": "Correcta. EC2 proporciona instancias (máquinas virtuales) con control total del sistema operativo y del software: IaaS."
+      },
+      {
+        "id": "b",
+        "text": "AWS Lambda",
+        "explanation": "Lambda ejecuta funciones sin servidores que gestionar; no eliges SO ni administras la máquina. Sería la respuesta para código que se ejecuta en respuesta a eventos."
+      },
+      {
+        "id": "c",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk es PaaS: despliega tu aplicación y gestiona por ti las instancias, el balanceo y el escalado. Sería la respuesta si solo quisieras subir el código."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Lightsail",
+        "explanation": "Lightsail ofrece servidores virtuales simplificados con precio fijo mensual para usuarios con poca experiencia; no da el control granular de tipos y redes de EC2."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Máquinas virtuales con control total → EC2.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ec2-002",
+    "domain": 3,
+    "section": "Amazon EC2",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Automatiza la creación, el mantenimiento, la prueba y la distribución de imágenes de máquina (AMI) y de contenedores, con programación periódica.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CloudFormation",
+        "explanation": "CloudFormation crea infraestructura desde plantillas, pero no está pensado para construir y probar imágenes de SO. Sería la respuesta para desplegar una pila de recursos como código."
+      },
+      {
+        "id": "b",
+        "text": "EC2 Image Builder",
+        "explanation": "Correcta. Image Builder construye, prueba y distribuye AMIs e imágenes de contenedor de forma automática y programable."
+      },
+      {
+        "id": "c",
+        "text": "AWS Systems Manager Patch Manager",
+        "explanation": "Patch Manager aplica parches a instancias en ejecución; no genera nuevas imágenes. Sería correcto para parchear una flota existente."
+      },
+      {
+        "id": "d",
+        "text": "Amazon ECR",
+        "explanation": "ECR almacena imágenes de contenedor ya construidas; no las construye ni crea AMIs. Sería la respuesta para un registro privado de Docker."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Automatizar la creación de AMIs → EC2 Image Builder.",
+    "refs": [
+      "https://docs.aws.amazon.com/imagebuilder/latest/userguide/what-is-image-builder.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ec2-003",
+    "domain": 2,
+    "section": "Amazon EC2",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Firewall virtual con estado que se asocia a las instancias y solo admite reglas de permitir tráfico por puerto, protocolo y origen.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Network ACL",
+        "explanation": "La NACL actúa a nivel de subred, es sin estado y admite reglas de permitir y denegar. Sería la respuesta para bloquear una IP concreta en toda una subred."
+      },
+      {
+        "id": "b",
+        "text": "AWS WAF",
+        "explanation": "WAF filtra peticiones HTTP/HTTPS (capa 7) en CloudFront, ALB o API Gateway; no se asocia a instancias. Sería correcto contra inyección SQL."
+      },
+      {
+        "id": "c",
+        "text": "Security Group",
+        "explanation": "Correcta. El Security Group es el firewall con estado a nivel de instancia, con solo reglas de permitir."
+      },
+      {
+        "id": "d",
+        "text": "AWS Network Firewall",
+        "explanation": "Network Firewall protege toda una VPC con reglas avanzadas (capas 3 a 7). Sería la respuesta para inspeccionar el tráfico de toda la red."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Firewall de instancia, con estado y solo 'permitir' → Security Group.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ebs-001",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Disco de red persistente en bloque que se conecta a una instancia EC2 dentro de una zona de disponibilidad.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EBS",
+        "explanation": "Correcta. EBS proporciona volúmenes de bloque persistentes ligados a una AZ, que actúan como el disco de la instancia."
+      },
+      {
+        "id": "b",
+        "text": "Amazon S3",
+        "explanation": "S3 es almacenamiento de objetos accesible por API/HTTP; no se monta como disco de bloque. Sería la respuesta para guardar archivos y copias de seguridad."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EFS",
+        "explanation": "EFS es un sistema de archivos compartido (NFS) para muchas instancias en varias AZ. Sería correcto si se pidiera compartir archivos entre servidores."
+      },
+      {
+        "id": "d",
+        "text": "EC2 Instance Store",
+        "explanation": "Instance Store también es bloque, pero es un disco físico local y efímero, no un disco de red persistente."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Disco de red persistente para una instancia en una AZ → EBS.",
+    "refs": [
+      "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ebs-002",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Sistema de archivos NFS gestionado y elástico que pueden montar a la vez cientos de instancias Linux en varias zonas de disponibilidad.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon FSx for Windows File Server",
+        "explanation": "FSx for Windows usa SMB y está pensado para Windows con Active Directory. Sería correcto para carpetas compartidas de Windows."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EBS",
+        "explanation": "EBS es un disco ligado a una AZ y normalmente a una instancia; no es un sistema de archivos compartido multi-AZ."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EFS",
+        "explanation": "Correcta. EFS es el sistema de archivos NFS compartido, elástico y multi-AZ para Linux."
+      },
+      {
+        "id": "d",
+        "text": "AWS Storage Gateway",
+        "explanation": "Storage Gateway conecta almacenamiento on-premises con AWS (archivos, volúmenes, cintas). Sería la respuesta para una solución híbrida."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Archivos compartidos NFS entre muchas instancias Linux multi-AZ → EFS.",
+    "refs": [
+      "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ebs-003",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Sistema de archivos paralelo de alto rendimiento para HPC y machine learning, con integración directa con Amazon S3.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon FSx for Lustre",
+        "explanation": "Correcta. FSx for Lustre está diseñado para cargas de cómputo intensivo y puede presentar datos de S3 como archivos."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EFS",
+        "explanation": "EFS es un sistema de archivos general para Linux; no está optimizado para HPC paralelo ni se integra así con S3."
+      },
+      {
+        "id": "c",
+        "text": "Amazon S3 Express One Zone",
+        "explanation": "Express One Zone es una clase de S3 de baja latencia, pero sigue siendo almacenamiento de objetos, no un sistema de archivos paralelo."
+      },
+      {
+        "id": "d",
+        "text": "Amazon FSx for NetApp ONTAP",
+        "explanation": "FSx for NetApp ONTAP ofrece compatibilidad con NetApp (NFS, SMB, iSCSI) para migrar cargas empresariales; no es la opción de HPC."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "HPC / ML con datos en S3 → FSx for Lustre.",
+    "refs": [
+      "https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ebs-004",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Plantilla con el sistema operativo, la configuración y el software, a partir de la cual se lanzan instancias EC2.",
+    "options": [
+      {
+        "id": "a",
+        "text": "EBS Snapshot",
+        "explanation": "Un snapshot es una copia de seguridad de un volumen; se usa para crear AMIs o volúmenes, pero no es la plantilla de lanzamiento en sí."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Machine Image (AMI)",
+        "explanation": "Correcta. La AMI contiene todo lo necesario para lanzar una instancia: SO, configuración y software."
+      },
+      {
+        "id": "c",
+        "text": "Launch Template de Auto Scaling",
+        "explanation": "Una plantilla de lanzamiento indica qué AMI, tipo y red usar al lanzar instancias, pero no contiene el sistema operativo; la imagen es la AMI."
+      },
+      {
+        "id": "d",
+        "text": "Imagen de contenedor en ECR",
+        "explanation": "Una imagen de contenedor empaqueta una aplicación para Docker/ECS/EKS; no es la plantilla de una máquina virtual EC2."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Plantilla de SO + software para lanzar instancias → AMI.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-ebs-005",
+    "domain": 3,
+    "section": "Almacenamiento EC2",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Almacenamiento en bloque conectado físicamente al servidor donde corre la instancia, con IOPS muy altas, pero cuyos datos se pierden al detener la instancia.",
+    "options": [
+      {
+        "id": "a",
+        "text": "EBS io2 Block Express",
+        "explanation": "io2 ofrece IOPS muy altas y es persistente, porque es un disco de red EBS. Sería correcto para una base de datos crítica que no puede perder datos."
+      },
+      {
+        "id": "b",
+        "text": "EC2 Instance Store",
+        "explanation": "Correcta. Instance Store es local al host, rapidísimo y efímero."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EFS",
+        "explanation": "EFS es un sistema de archivos de red persistente y compartido; no es local al host."
+      },
+      {
+        "id": "d",
+        "text": "Amazon ElastiCache",
+        "explanation": "ElastiCache es un servicio de caché en memoria (Redis/Valkey/Memcached), no un disco de bloque de la instancia."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Disco local, rapidísimo y efímero → Instance Store.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"
+    ],
+    "source": "original"
   }
 ]
