@@ -6858,5 +6858,869 @@
       "https://docs.aws.amazon.com/wavelength/latest/developerguide/what-is-wavelength.html"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-int-001",
+    "domain": 3,
+    "section": "Integración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación web recibe picos repentinos de pedidos que saturan el servicio de procesamiento. La empresa quiere que ningún pedido se pierda y que el procesamiento siga su propio ritmo. ¿Qué servicio debe colocar entre ambos componentes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon SQS",
+        "explanation": "Correcta. Una cola SQS guarda los pedidos de forma duradera y permite que los consumidores los procesen a su ritmo, desacoplando ambos componentes."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SNS",
+        "explanation": "SNS empuja cada mensaje a todos los suscriptores inmediatamente; no actúa como búfer que guarde los pedidos hasta que el procesador esté libre. Sería la respuesta para notificar a varios sistemas a la vez."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront es una CDN que cachea contenido web; no gestiona mensajes entre componentes."
+      },
+      {
+        "id": "d",
+        "text": "Elastic Load Balancing",
+        "explanation": "Un balanceador reparte peticiones en tiempo real entre servidores; si todos están saturados, no guarda los pedidos para después."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Amortiguar picos y desacoplar con mensajes que esperan → SQS.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-int-002",
+    "domain": 3,
+    "section": "Integración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Cuando se registra un nuevo cliente, la empresa quiere enviar al mismo tiempo un correo de bienvenida, un SMS y un mensaje a un sistema de análisis. ¿Qué servicio permite publicar un único mensaje y entregarlo a todos esos destinos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon SNS",
+        "explanation": "Correcta. SNS es pub/sub: un mensaje publicado en un tema se entrega a todos los suscriptores (correo, SMS, SQS, Lambda, HTTP)."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SQS FIFO",
+        "explanation": "Una cola FIFO garantiza orden para UN consumidor que extrae los mensajes; no distribuye el mismo mensaje a varios destinos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Kinesis Data Streams",
+        "explanation": "Kinesis está pensado para streaming de grandes volúmenes en tiempo real (clics, telemetría), no para notificaciones por correo y SMS."
+      },
+      {
+        "id": "d",
+        "text": "Amazon MQ",
+        "explanation": "Amazon MQ es un broker para migrar aplicaciones con protocolos como AMQP o MQTT; no es la opción nativa para enviar correo y SMS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Un mensaje a muchos destinos (fan-out, notificaciones) → SNS.",
+    "refs": [
+      "https://docs.aws.amazon.com/sns/latest/dg/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-int-003",
+    "domain": 3,
+    "section": "Integración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa migra a AWS una aplicación on-premises que usa RabbitMQ y protocolos AMQP, y no quiere reescribir el código de mensajería. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon MQ",
+        "explanation": "Correcta. Amazon MQ ofrece RabbitMQ y ActiveMQ gestionados, compatibles con protocolos abiertos como AMQP."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SQS",
+        "explanation": "SQS usa su propia API de AWS; habría que reescribir la mensajería de la aplicación."
+      },
+      {
+        "id": "c",
+        "text": "Amazon SNS",
+        "explanation": "SNS es pub/sub con API propia de AWS; no es compatible con RabbitMQ."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EventBridge",
+        "explanation": "EventBridge es un bus de eventos serverless con API propia; no implementa AMQP ni RabbitMQ."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Migrar mensajería con protocolos abiertos (AMQP, MQTT) sin reescribir → Amazon MQ.",
+    "refs": [
+      "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-int-004",
+    "domain": 3,
+    "section": "Integración",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un sitio de comercio electrónico quiere capturar y analizar en tiempo real millones de eventos de clics por segundo para personalizar ofertas al instante. ¿Qué servicio es el más adecuado para ingerir esos datos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Kinesis Data Streams",
+        "explanation": "Correcta. Kinesis está diseñado para ingerir y procesar flujos de datos en tiempo real a gran escala."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SQS Standard",
+        "explanation": "SQS desacopla componentes con mensajes que se borran al procesarse; no está pensado para análisis en streaming con múltiples lectores en tiempo real."
+      },
+      {
+        "id": "c",
+        "text": "AWS Batch",
+        "explanation": "Batch procesa trabajos por lotes; no ingiere datos en tiempo real."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Redshift",
+        "explanation": "Redshift analiza datos ya almacenados (OLAP); no es el servicio de ingesta de streaming."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Streaming de big data en tiempo real → Kinesis.",
+    "refs": [
+      "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-mon-001",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un auditor quiere saber qué usuario de IAM eliminó un bucket de S3 la semana pasada y desde qué dirección IP. ¿Qué servicio contiene esa información?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CloudTrail",
+        "explanation": "Correcta. CloudTrail registra las llamadas a la API (como DeleteBucket) con la identidad, la hora, la IP de origen y los parámetros."
+      },
+      {
+        "id": "b",
+        "text": "Amazon CloudWatch",
+        "explanation": "CloudWatch guarda métricas de rendimiento, logs y alarmas, pero no es el registro de auditoría de quién hizo cada llamada a la API."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "AWS Config muestra cómo cambió la configuración de un recurso a lo largo del tiempo, pero para saber QUIÉN hizo el cambio se apoya en CloudTrail."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector busca vulnerabilidades en EC2, ECR y Lambda; no registra acciones de usuarios."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "¿Quién hizo qué y cuándo (llamadas a la API)? → CloudTrail.",
+    "refs": [
+      "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-mon-002",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de operaciones quiere recibir un correo cuando la utilización de CPU de sus instancias EC2 supere el 80 % durante 10 minutos. ¿Qué debe configurar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Una alarma de CloudWatch con una notificación de SNS",
+        "explanation": "Correcta. La alarma vigila la métrica CPUUtilization y, al cruzar el umbral, publica en un tema SNS que envía el correo."
+      },
+      {
+        "id": "b",
+        "text": "Un trail de CloudTrail",
+        "explanation": "CloudTrail registra llamadas a la API; no mide la CPU ni dispara alertas por rendimiento."
+      },
+      {
+        "id": "c",
+        "text": "Una regla de AWS Config",
+        "explanation": "AWS Config evalúa la configuración de los recursos (p. ej., si un volumen está cifrado), no métricas de uso como la CPU."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor da recomendaciones periódicas sobre la cuenta; no vigila la CPU en tiempo real para enviar alertas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Alertar por una métrica de rendimiento → alarma de CloudWatch + SNS.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-mon-003",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un administrador nota que CloudWatch muestra la CPU y la red de sus instancias EC2, pero no el uso de memoria RAM. ¿Qué debe hacer para verlo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Instalar el agente de CloudWatch en las instancias",
+        "explanation": "Correcta. La memoria es una métrica del sistema operativo invitado y solo se envía si se instala el agente de CloudWatch."
+      },
+      {
+        "id": "b",
+        "text": "Activar CloudTrail",
+        "explanation": "CloudTrail registra llamadas a la API; no recoge métricas del sistema operativo."
+      },
+      {
+        "id": "c",
+        "text": "Cambiar a un tipo de instancia optimizada para memoria",
+        "explanation": "El tipo de instancia no cambia qué métricas se publican; sin el agente la RAM seguiría sin aparecer."
+      },
+      {
+        "id": "d",
+        "text": "Contratar el plan Business Support",
+        "explanation": "El plan de soporte no modifica las métricas que envía EC2 a CloudWatch."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "La RAM no es métrica por defecto de EC2: requiere el agente de CloudWatch.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-mon-004",
+    "domain": 3,
+    "section": "Monitoreo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación de microservicios responde lentamente y el equipo no sabe qué servicio de la cadena de llamadas causa el retraso. ¿Qué servicio le ayuda a visualizar el recorrido de cada petición y encontrar el cuello de botella?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS X-Ray",
+        "explanation": "Correcta. X-Ray hace rastreo distribuido y muestra un mapa de servicios con latencias y errores de cada salto."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudTrail",
+        "explanation": "CloudTrail audita llamadas a la API de AWS, no el tiempo que tarda cada microservicio en responder dentro de una petición."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector detecta vulnerabilidades de seguridad, no problemas de rendimiento."
+      },
+      {
+        "id": "d",
+        "text": "AWS Config",
+        "explanation": "AWS Config registra cambios de configuración; no traza peticiones entre servicios."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Rastreo de peticiones entre microservicios y cuellos de botella → X-Ray.",
+    "refs": [
+      "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-mon-005",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere saber si un evento programado de mantenimiento de AWS afectará a sus instancias EC2 y recibir una guía para prepararse. ¿Dónde lo consulta?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Health Dashboard (vista de la cuenta)",
+        "explanation": "Correcta. La vista de tu cuenta del AWS Health Dashboard muestra los eventos que afectan a tus recursos, como mantenimientos programados, con recomendaciones."
+      },
+      {
+        "id": "b",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor revisa buenas prácticas de la cuenta (costes, seguridad, etc.), pero no notifica mantenimientos programados de AWS."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudWatch Logs",
+        "explanation": "CloudWatch Logs guarda los logs de tus aplicaciones y servicios; no publica avisos de mantenimiento de AWS."
+      },
+      {
+        "id": "d",
+        "text": "AWS Artifact",
+        "explanation": "Artifact ofrece informes de cumplimiento; no informa del estado de los servicios."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Eventos de AWS que afectan a TUS recursos → AWS Health Dashboard (antes Personal Health Dashboard).",
+    "refs": [
+      "https://docs.aws.amazon.com/health/latest/ug/aws-health-dashboard-status.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-mon-006",
+    "domain": 3,
+    "section": "Monitoreo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere que, cada vez que una instancia EC2 cambie a estado 'stopped', se ejecute automáticamente una función Lambda que avise al equipo. ¿Qué servicio conecta el evento con la función?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EventBridge",
+        "explanation": "Correcta. EventBridge recibe los eventos de cambio de estado de EC2 y, mediante una regla, invoca la función Lambda."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudFormation",
+        "explanation": "CloudFormation crea infraestructura; no reacciona a eventos de cambio de estado en tiempo real."
+      },
+      {
+        "id": "c",
+        "text": "Amazon SQS",
+        "explanation": "SQS guarda mensajes para que alguien los consuma, pero no detecta por sí mismo el cambio de estado de una instancia."
+      },
+      {
+        "id": "d",
+        "text": "AWS X-Ray",
+        "explanation": "X-Ray traza peticiones de aplicaciones; no reacciona a eventos de infraestructura."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Reaccionar a eventos de AWS (o programar tareas tipo cron) → EventBridge.",
+    "refs": [
+      "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-mon-007",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Qué DOS afirmaciones sobre AWS CloudTrail son correctas? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Registra las llamadas a la API realizadas desde la consola, la CLI y los SDK",
+        "explanation": "Correcta. CloudTrail captura la actividad de API independientemente de la herramienta usada."
+      },
+      {
+        "id": "b",
+        "text": "Puede enviar los registros a un bucket de S3 para conservarlos a largo plazo",
+        "explanation": "Correcta. Creando un trail, los eventos se guardan en S3 (y opcionalmente en CloudWatch Logs) más allá de los 90 días del historial."
+      },
+      {
+        "id": "c",
+        "text": "Mide el uso de CPU y memoria de las instancias",
+        "explanation": "Incorrecta. Esas son métricas de rendimiento de CloudWatch."
+      },
+      {
+        "id": "d",
+        "text": "Bloquea automáticamente las llamadas a la API sospechosas",
+        "explanation": "Incorrecta. CloudTrail registra, no bloquea. La detección de amenazas es tarea de GuardDuty y el bloqueo, de los permisos de IAM o las SCP."
+      },
+      {
+        "id": "e",
+        "text": "Debe activarse manualmente para tener historial de eventos",
+        "explanation": "Incorrecta. CloudTrail está activado por defecto y guarda 90 días de historial de eventos de gestión."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "CloudTrail: registra la actividad de API de cualquier origen, activo por defecto (90 días) y exportable a S3.",
+    "refs": [
+      "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-mon-008",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Antes de lanzar una campaña, el equipo quiere comprobar si hay alguna incidencia general en el servicio Amazon S3 en la Región us-east-1. ¿Dónde debe mirar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "En la vista de estado de servicios del AWS Health Dashboard",
+        "explanation": "Correcta. La vista de Service Health muestra el estado de todos los servicios en todas las Regiones, con su historial."
+      },
+      {
+        "id": "b",
+        "text": "En AWS CloudTrail",
+        "explanation": "CloudTrail muestra las acciones realizadas en tu cuenta; no informa del estado general de los servicios de AWS."
+      },
+      {
+        "id": "c",
+        "text": "En AWS Config",
+        "explanation": "AWS Config registra la configuración de tus recursos, no el estado de los servicios de AWS."
+      },
+      {
+        "id": "d",
+        "text": "En el AWS Pricing Calculator",
+        "explanation": "La calculadora estima costes; no tiene información de disponibilidad."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Estado general de los servicios de AWS → AWS Health Dashboard (Service Health).",
+    "refs": [
+      "https://health.aws.amazon.com/health/status"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-int-001",
+    "domain": 3,
+    "section": "Integración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Cola de mensajes totalmente gestionada para desacoplar componentes; cada mensaje lo procesa un consumidor que lo extrae.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon SQS",
+        "explanation": "Correcta. SQS es el servicio de colas de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SNS",
+        "explanation": "SNS es pub/sub: EMPUJA cada mensaje a todos los suscriptores. Sería la respuesta para notificar a muchos destinos a la vez."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Kinesis Data Streams",
+        "explanation": "Kinesis gestiona flujos de datos en tiempo real que varios consumidores pueden leer; no es una cola simple. Sería la respuesta para streaming de clics o telemetría."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EventBridge",
+        "explanation": "EventBridge enruta eventos según reglas a distintos destinos; no es una cola de trabajo. Sería la respuesta para reaccionar a eventos de AWS o SaaS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Cola de mensajes → SQS.",
+    "refs": [
+      "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-int-002",
+    "domain": 3,
+    "section": "Integración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Publicación/suscripción: un mensaje enviado a un tema se entrega a correo, SMS, notificaciones móviles, colas y funciones suscritas.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon SQS",
+        "explanation": "SQS es una cola donde un consumidor extrae los mensajes; no los entrega a muchos destinos a la vez."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SNS",
+        "explanation": "Correcta. SNS es el servicio pub/sub de AWS."
+      },
+      {
+        "id": "c",
+        "text": "Amazon SES",
+        "explanation": "SES envía correo electrónico (transaccional o marketing) a escala; no distribuye mensajes a colas o funciones. Sería la respuesta si solo se tratara de enviar emails."
+      },
+      {
+        "id": "d",
+        "text": "Amazon MQ",
+        "explanation": "Amazon MQ es un broker ActiveMQ/RabbitMQ para migrar aplicaciones con protocolos abiertos."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Pub/sub y notificaciones a muchos destinos → SNS.",
+    "refs": [
+      "https://docs.aws.amazon.com/sns/latest/dg/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-int-003",
+    "domain": 3,
+    "section": "Integración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Recopila, procesa y analiza datos en streaming en tiempo real, como clics de un sitio web o telemetría de dispositivos IoT.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Kinesis",
+        "explanation": "Correcta. Kinesis es la familia de servicios de streaming en tiempo real."
+      },
+      {
+        "id": "b",
+        "text": "AWS Glue",
+        "explanation": "Glue hace ETL (sobre todo por lotes) y cataloga datos; no es el servicio de ingesta en tiempo real."
+      },
+      {
+        "id": "c",
+        "text": "Amazon SQS",
+        "explanation": "SQS desacopla aplicaciones con mensajes individuales; no está pensado para analizar flujos continuos de datos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Athena",
+        "explanation": "Athena consulta datos ya guardados en S3 con SQL; no procesa flujos en tiempo real."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Streaming en tiempo real → Kinesis.",
+    "refs": [
+      "https://aws.amazon.com/kinesis/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-int-004",
+    "domain": 3,
+    "section": "Integración",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Broker de mensajes gestionado para ActiveMQ y RabbitMQ, ideal para migrar aplicaciones que usan AMQP, MQTT o STOMP.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon MQ",
+        "explanation": "Correcta. Amazon MQ gestiona brokers con protocolos abiertos."
+      },
+      {
+        "id": "b",
+        "text": "AWS IoT Core",
+        "explanation": "IoT Core conecta dispositivos IoT (usa MQTT), pero no es un broker ActiveMQ/RabbitMQ para aplicaciones empresariales. Sería la respuesta para conectar sensores a la nube."
+      },
+      {
+        "id": "c",
+        "text": "Amazon SNS",
+        "explanation": "SNS es pub/sub nativo de AWS, sin compatibilidad con ActiveMQ ni RabbitMQ."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EventBridge",
+        "explanation": "EventBridge es un bus de eventos serverless con API propia de AWS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "ActiveMQ / RabbitMQ gestionado → Amazon MQ.",
+    "refs": [
+      "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-mon-001",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Recoge métricas de los servicios de AWS, centraliza logs, crea dashboards y dispara alarmas cuando una métrica supera un umbral.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon CloudWatch",
+        "explanation": "Correcta. CloudWatch es el servicio de monitoreo y observabilidad de AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudTrail",
+        "explanation": "CloudTrail registra llamadas a la API para auditoría; no gestiona métricas ni alarmas de rendimiento. Sería la respuesta para saber quién hizo un cambio."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "Config registra la configuración de los recursos y su cumplimiento. Sería la respuesta para auditar cambios de configuración."
+      },
+      {
+        "id": "d",
+        "text": "AWS X-Ray",
+        "explanation": "X-Ray traza peticiones entre microservicios. Sería la respuesta para encontrar cuellos de botella en una aplicación distribuida."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Métricas, logs y alarmas → CloudWatch.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-mon-002",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Registra cada llamada a la API de la cuenta (quién, qué, cuándo y desde dónde) para gobernanza y auditoría.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon CloudWatch Logs",
+        "explanation": "CloudWatch Logs almacena logs (incluso los de CloudTrail si se envían), pero no es el servicio que captura la actividad de API de la cuenta."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudTrail",
+        "explanation": "Correcta. CloudTrail es el registro de auditoría de la actividad de API."
+      },
+      {
+        "id": "c",
+        "text": "Amazon GuardDuty",
+        "explanation": "GuardDuty ANALIZA los eventos de CloudTrail para detectar amenazas, pero no es el registro de auditoría. Sería la respuesta para detectar actividad maliciosa."
+      },
+      {
+        "id": "d",
+        "text": "AWS Audit Manager",
+        "explanation": "Audit Manager reúne evidencias para auditorías de cumplimiento (y está cerrado a clientes nuevos desde abril de 2026); no registra cada llamada a la API."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Auditoría de llamadas a la API → CloudTrail.",
+    "refs": [
+      "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-mon-003",
+    "domain": 3,
+    "section": "Monitoreo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Bus de eventos serverless que conecta eventos de servicios de AWS, aplicaciones SaaS y aplicaciones propias con destinos, y permite programar tareas tipo cron.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EventBridge",
+        "explanation": "Correcta. EventBridge (antes CloudWatch Events) es el bus de eventos de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon SNS",
+        "explanation": "SNS distribuye mensajes a suscriptores, pero no filtra eventos de AWS y SaaS con reglas ni programa tareas tipo cron."
+      },
+      {
+        "id": "c",
+        "text": "AWS Step Functions",
+        "explanation": "Step Functions orquesta pasos de un flujo de trabajo; no es un bus de eventos. Sería la respuesta para coordinar varias funciones Lambda en secuencia."
+      },
+      {
+        "id": "d",
+        "text": "Amazon SQS",
+        "explanation": "SQS es una cola de mensajes; no enruta eventos ni programa tareas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Eventos + reglas + programación cron → EventBridge.",
+    "refs": [
+      "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-mon-004",
+    "domain": 3,
+    "section": "Monitoreo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Rastrea las peticiones a través de una aplicación distribuida y genera un mapa de servicios con latencias y errores.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS X-Ray",
+        "explanation": "Correcta. X-Ray hace rastreo distribuido de peticiones."
+      },
+      {
+        "id": "b",
+        "text": "Amazon CloudWatch Metrics",
+        "explanation": "Las métricas muestran valores agregados (CPU, errores), pero no el recorrido de cada petición entre servicios."
+      },
+      {
+        "id": "c",
+        "text": "AWS CloudTrail",
+        "explanation": "CloudTrail audita llamadas a la API de AWS, no el flujo interno de las peticiones de tu aplicación."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Detective",
+        "explanation": "Detective investiga incidentes de SEGURIDAD; no traza el rendimiento de las aplicaciones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Rastreo distribuido → X-Ray.",
+    "refs": [
+      "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-mon-005",
+    "domain": 2,
+    "section": "Monitoreo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Muestra el estado de los servicios de AWS en todas las Regiones y los eventos que afectan específicamente a los recursos de tu cuenta.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Health Dashboard",
+        "explanation": "Correcta. El AWS Health Dashboard combina el estado general de los servicios y la salud de tu cuenta."
+      },
+      {
+        "id": "b",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor hace recomendaciones de buenas prácticas; no informa de incidencias de los servicios. Sería la respuesta para optimizar costes o seguridad."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudWatch Dashboards",
+        "explanation": "Los dashboards de CloudWatch muestran TUS métricas; no el estado de los servicios de AWS."
+      },
+      {
+        "id": "d",
+        "text": "AWS Systems Manager",
+        "explanation": "Systems Manager gestiona flotas de servidores; no muestra el estado de los servicios de AWS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Estado de los servicios de AWS y eventos de tu cuenta → AWS Health Dashboard.",
+    "refs": [
+      "https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-mon-006",
+    "domain": 3,
+    "section": "Monitoreo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Usa machine learning para analizar una aplicación en ejecución y recomendar cómo reducir el consumo de CPU y el coste del código.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon CodeGuru Profiler",
+        "explanation": "Correcta. CodeGuru Profiler analiza el comportamiento en tiempo de ejecución y recomienda optimizaciones."
+      },
+      {
+        "id": "b",
+        "text": "AWS Compute Optimizer",
+        "explanation": "Compute Optimizer recomienda el TAMAÑO adecuado de recursos (instancias, volúmenes, Lambda), no optimizaciones dentro del código. Sería la respuesta para elegir el tipo de instancia correcto."
+      },
+      {
+        "id": "c",
+        "text": "AWS X-Ray",
+        "explanation": "X-Ray muestra latencias entre servicios, pero no recomienda cambios en el código para ahorrar CPU."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector busca vulnerabilidades de seguridad, no ineficiencias de rendimiento."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Perfilar el código en ejecución → CodeGuru Profiler. Tamaño correcto de recursos → Compute Optimizer.",
+    "refs": [
+      "https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html"
+    ],
+    "source": "original"
   }
 ]

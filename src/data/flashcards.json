@@ -2273,5 +2273,303 @@
       "regiones"
     ],
     "difficulty": 1
+  },
+  {
+    "id": "int-001",
+    "domain": 3,
+    "section": "Integración",
+    "type": "concepto",
+    "front": "¿Qué significa desacoplar una aplicación?",
+    "back": "Separar sus componentes para que se comuniquen de forma asíncrona (colas, temas, flujos) en lugar de llamarse directamente. Así un pico de tráfico o el fallo de un componente no tumba a los demás y cada parte escala por separado.",
+    "tags": [
+      "desacoplamiento"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "int-002",
+    "domain": 3,
+    "section": "Integración",
+    "type": "concepto",
+    "front": "¿Qué es Amazon SQS?",
+    "back": "Simple Queue Service: cola de mensajes totalmente gestionada (y serverless) para desacoplar aplicaciones. Los productores envían mensajes, los consumidores los leen y los borran. Retención de 4 días por defecto (hasta 14). Es el servicio más antiguo de AWS.",
+    "tags": [
+      "sqs"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "int-003",
+    "domain": 3,
+    "section": "Integración",
+    "type": "comparacion",
+    "front": "Cola SQS Standard vs FIFO",
+    "back": "Standard: rendimiento prácticamente ilimitado, entrega al menos una vez y orden aproximado.\nFIFO: orden estricto (primero en entrar, primero en salir) y procesamiento exactamente una vez, con un rendimiento menor.",
+    "tags": [
+      "sqs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "int-004",
+    "domain": 3,
+    "section": "Integración",
+    "type": "concepto",
+    "front": "¿Qué es Amazon SNS?",
+    "back": "Simple Notification Service: mensajería publicación/suscripción (pub/sub). Un publicador envía un mensaje a un tema y SNS lo entrega a TODOS los suscriptores: correo, SMS, notificaciones móviles, HTTP, colas SQS o funciones Lambda.",
+    "tags": [
+      "sns"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "int-005",
+    "domain": 3,
+    "section": "Integración",
+    "type": "comparacion",
+    "front": "SQS vs SNS",
+    "back": "SQS: COLA; un mensaje lo procesa UN consumidor que lo extrae (pull). Sirve para amortiguar picos.\nSNS: PUB/SUB; un mensaje se envía a MUCHOS suscriptores (push). Sirve para notificar o distribuir (fan-out).",
+    "tags": [
+      "sqs",
+      "sns"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "int-006",
+    "domain": 3,
+    "section": "Integración",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Kinesis?",
+    "back": "Familia de servicios para recopilar, procesar y analizar datos en STREAMING en tiempo real a gran escala: clics de sitios web, telemetría de IoT, logs. Kinesis Data Streams captura los flujos; Amazon Data Firehose los entrega a S3, Redshift u OpenSearch.",
+    "tags": [
+      "kinesis",
+      "streaming"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "int-007",
+    "domain": 3,
+    "section": "Integración",
+    "type": "concepto",
+    "front": "¿Qué es Amazon MQ?",
+    "back": "Broker de mensajes gestionado para Apache ActiveMQ y RabbitMQ. Se usa al migrar aplicaciones on-premises que ya usan protocolos abiertos (MQTT, AMQP, STOMP, OpenWire) sin reescribirlas para SQS/SNS.",
+    "tags": [
+      "amazon-mq"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "int-008",
+    "domain": 3,
+    "section": "Integración",
+    "type": "caso-de-uso",
+    "front": "Un sitio de pedidos recibe picos y el servicio que procesa los pagos no da abasto. ¿Cómo lo desacoplas?",
+    "back": "Poniendo una cola SQS entre ambos: el sitio deja los pedidos en la cola y los procesadores los consumen a su ritmo (y pueden escalar con un ASG según el tamaño de la cola). No se pierde ningún pedido.",
+    "tags": [
+      "sqs"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "int-009",
+    "domain": 3,
+    "section": "Integración",
+    "type": "dato-clave",
+    "front": "¿Qué es el patrón fan-out?",
+    "back": "Publicar un mensaje en un tema SNS que tiene suscritas varias colas SQS, para que distintos sistemas reciban y procesen el mismo evento de forma independiente.",
+    "tags": [
+      "sns",
+      "sqs"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "int-010",
+    "domain": 3,
+    "section": "Integración",
+    "type": "comparacion",
+    "front": "SQS/SNS vs Amazon MQ",
+    "back": "SQS y SNS: servicios nativos de la nube con protocolos propios de AWS; escalan casi sin límite.\nAmazon MQ: protocolos abiertos estándar para migrar sin reescribir; escala menos y se ejecuta en servidores (puede ser Multi-AZ).",
+    "tags": [
+      "amazon-mq"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "mon-001",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "concepto",
+    "front": "¿Qué es Amazon CloudWatch?",
+    "back": "El servicio de monitoreo de AWS: recoge métricas de todos los servicios, centraliza logs (CloudWatch Logs), dispara alarmas y muestra dashboards. Incluye métricas de facturación.",
+    "tags": [
+      "cloudwatch"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "mon-002",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "dato-clave",
+    "front": "Métricas por defecto de EC2 en CloudWatch",
+    "back": "CPU, red (entrada/salida), discos y comprobaciones de estado. La MEMORIA RAM no se envía por defecto: hay que instalar el agente de CloudWatch. Monitoreo básico cada 5 min; detallado cada 1 min (con coste).",
+    "tags": [
+      "cloudwatch",
+      "ec2"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "mon-003",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "concepto",
+    "front": "¿Qué son las alarmas de CloudWatch?",
+    "back": "Reglas que vigilan una métrica y actúan cuando cruza un umbral: enviar notificación por SNS, escalar un Auto Scaling Group o actuar sobre una instancia EC2 (detener, terminar, reiniciar, recuperar).",
+    "tags": [
+      "cloudwatch"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "mon-004",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "concepto",
+    "front": "¿Qué es CloudWatch Logs?",
+    "back": "Recopila y almacena logs de Lambda, Beanstalk, ECS, VPC Flow Logs, CloudTrail, Route 53 y de servidores (EC2 u on-premises con el agente de CloudWatch). Permite búsquedas, retención configurable y alertas.",
+    "tags": [
+      "cloudwatch",
+      "logs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "mon-005",
+    "domain": 3,
+    "section": "Monitoreo",
+    "type": "concepto",
+    "front": "¿Qué es Amazon EventBridge?",
+    "back": "Bus de eventos serverless (antes CloudWatch Events). Reacciona a eventos de servicios de AWS, aplicaciones SaaS o propias y los envía a destinos (Lambda, SQS, SNS…). También programa tareas tipo cron.",
+    "tags": [
+      "eventbridge"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "mon-006",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "concepto",
+    "front": "¿Qué es AWS CloudTrail?",
+    "back": "Registra el historial de llamadas a la API y acciones en la cuenta (consola, CLI, SDK y servicios): quién, qué, cuándo y desde dónde. Activado por defecto (90 días de historial de eventos). Sirve para gobernanza, auditoría y forense; se puede enviar a S3 o CloudWatch Logs.",
+    "tags": [
+      "cloudtrail",
+      "auditoria"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "mon-007",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "caso-de-uso",
+    "front": "Alguien terminó una instancia de producción y nadie sabe quién. ¿Dónde lo investigas?",
+    "back": "En AWS CloudTrail: el evento TerminateInstances muestra la identidad que hizo la llamada, la hora, la IP de origen y los parámetros.",
+    "tags": [
+      "cloudtrail"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "mon-008",
+    "domain": 3,
+    "section": "Monitoreo",
+    "type": "concepto",
+    "front": "¿Qué es AWS X-Ray?",
+    "back": "Rastreo distribuido: sigue cada petición a través de los microservicios y muestra un mapa visual con tiempos, errores y cuellos de botella. Útil para depurar aplicaciones distribuidas en producción.",
+    "tags": [
+      "xray"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "mon-009",
+    "domain": 3,
+    "section": "Monitoreo",
+    "type": "concepto",
+    "front": "¿Qué es Amazon CodeGuru?",
+    "back": "Servicio con ML con dos partes: CodeGuru Reviewer (revisión automática de código para encontrar errores y problemas de seguridad) y CodeGuru Profiler (analiza la aplicación en ejecución y recomienda mejoras de rendimiento y coste).",
+    "tags": [
+      "codeguru"
+    ],
+    "difficulty": 3,
+    "note": "CodeGuru Reviewer pasó a mantenimiento y no acepta clientes nuevos desde el 7-nov-2025. Para revisión de código con IA AWS orienta a Amazon Q Developer."
+  },
+  {
+    "id": "mon-010",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "comparacion",
+    "front": "AWS Health Dashboard: vista de servicios vs vista de tu cuenta",
+    "back": "Service Health: estado general de todos los servicios en todas las Regiones (y su historial).\nYour account health (antes Personal Health Dashboard): eventos que afectan a TUS recursos, como mantenimientos programados o incidencias, con guía de remediación.",
+    "tags": [
+      "health-dashboard"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "mon-011",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "dato-clave",
+    "front": "Métrica de facturación en CloudWatch",
+    "back": "Las métricas de facturación (EstimatedCharges) se guardan en la Región us-east-1, aunque cubren toda la cuenta. Puedes crear una alarma de CloudWatch sobre ellas para avisarte al superar un importe.",
+    "tags": [
+      "cloudwatch",
+      "facturacion"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "mon-012",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "concepto",
+    "front": "¿Qué son CloudTrail Insights?",
+    "back": "Una función de CloudTrail que detecta actividad INUSUAL en la cuenta analizando los eventos de escritura (p. ej., un pico de llamadas para lanzar instancias o un límite de servicio alcanzado).",
+    "tags": [
+      "cloudtrail"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "mon-013",
+    "domain": 2,
+    "section": "Monitoreo",
+    "type": "comparacion",
+    "front": "CloudWatch vs CloudTrail en una frase",
+    "back": "CloudWatch = rendimiento y salud (métricas, logs, alarmas).\nCloudTrail = auditoría de acciones (quién llamó a qué API y cuándo).",
+    "tags": [
+      "cloudwatch",
+      "cloudtrail"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "mon-014",
+    "domain": 3,
+    "section": "Monitoreo",
+    "type": "caso-de-uso",
+    "front": "Quieres ejecutar una función Lambda cada hora para limpiar archivos temporales. ¿Qué usas para programarla?",
+    "back": "Amazon EventBridge (una regla programada o EventBridge Scheduler con expresión cron/rate) que invoca la función Lambda cada hora.",
+    "tags": [
+      "eventbridge",
+      "lambda"
+    ],
+    "difficulty": 1
   }
 ]
