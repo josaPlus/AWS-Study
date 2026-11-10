@@ -1403,5 +1403,479 @@
       "cumplimiento"
     ],
     "difficulty": 3
+  },
+  {
+    "id": "db-001",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "comparacion",
+    "front": "Base de datos relacional vs NoSQL",
+    "back": "Relacional (SQL): tablas con filas y columnas, esquema fijo, relaciones y JOIN; ideal para transacciones. Ej.: RDS, Aurora.\nNoSQL: modelos flexibles (clave-valor, documentos, grafos, series temporales), escala horizontal y alto rendimiento. Ej.: DynamoDB, DocumentDB, Neptune.",
+    "tags": [
+      "bases-de-datos"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "db-002",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "Ventajas de una base de datos gestionada en AWS",
+    "back": "AWS se encarga del aprovisionamiento, parches del SO y del motor, copias de seguridad automáticas, monitoreo, alta disponibilidad y escalado. Tú te centras en el esquema, los datos y las consultas.",
+    "tags": [
+      "bases-de-datos"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "db-003",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon RDS?",
+    "back": "Relational Database Service: bases de datos relacionales gestionadas con motores PostgreSQL, MySQL, MariaDB, Oracle, Microsoft SQL Server, IBM Db2 y Aurora. No tienes acceso SSH a la instancia subyacente.",
+    "tags": [
+      "rds"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "db-004",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "comparacion",
+    "front": "RDS en EC2 (autogestionado) vs Amazon RDS",
+    "back": "Instalar la BD en EC2: control total, pero tú gestionas SO, parches, backups, réplicas y alta disponibilidad.\nAmazon RDS: AWS gestiona todo eso; tú no accedes al SO (salvo RDS Custom para Oracle/SQL Server).",
+    "tags": [
+      "rds"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-005",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Aurora?",
+    "back": "Base de datos relacional creada por AWS (propietaria), compatible con MySQL y PostgreSQL. Más rendimiento que RDS estándar, almacenamiento que crece solo y 6 copias de los datos en 3 AZ. Optimizada para la nube.",
+    "tags": [
+      "aurora"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "db-006",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Aurora Serverless?",
+    "back": "Una configuración de Aurora que ajusta automáticamente la capacidad según la carga y se paga por uso. Ideal para cargas poco frecuentes, intermitentes o impredecibles, sin gestionar instancias.",
+    "tags": [
+      "aurora",
+      "serverless"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-007",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "comparacion",
+    "front": "Réplicas de lectura vs Multi-AZ en RDS",
+    "back": "Réplicas de lectura: copias asíncronas para ESCALAR lecturas (hasta 15); las aplicaciones leen de ellas; pueden estar en otra Región.\nMulti-AZ: réplica en espera síncrona en otra AZ para ALTA DISPONIBILIDAD y conmutación por error automática; no sirve lecturas (en la configuración clásica).",
+    "tags": [
+      "rds",
+      "disponibilidad"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-008",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon ElastiCache?",
+    "back": "Caché en memoria gestionada (Redis OSS, Valkey o Memcached) con latencias de microsegundos. Reduce la carga de la base de datos guardando en memoria los resultados que se leen con frecuencia.",
+    "tags": [
+      "elasticache"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "db-009",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon DynamoDB?",
+    "back": "Base de datos NoSQL clave-valor y de documentos, totalmente gestionada y serverless, replicada en 3 AZ. Escala a millones de peticiones por segundo con latencia de milisegundos de un dígito. Modos de capacidad bajo demanda o aprovisionada.",
+    "tags": [
+      "dynamodb"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "db-010",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "comparacion",
+    "front": "DynamoDB Accelerator (DAX) vs ElastiCache",
+    "back": "DAX: caché en memoria específica para DynamoDB, compatible con su API; latencia de microsegundos sin cambiar el código.\nElastiCache: caché general para cualquier base de datos o aplicación (Redis/Valkey/Memcached).",
+    "tags": [
+      "dynamodb",
+      "cache"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-011",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué son las DynamoDB Global Tables?",
+    "back": "Tablas de DynamoDB replicadas en varias Regiones con replicación activa-activa: puedes leer y escribir en cualquier Región con baja latencia.",
+    "tags": [
+      "dynamodb",
+      "global"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-012",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "comparacion",
+    "front": "OLTP vs OLAP",
+    "back": "OLTP (procesamiento transaccional): muchas operaciones pequeñas de lectura/escritura (pedidos, pagos). → RDS, Aurora, DynamoDB.\nOLAP (procesamiento analítico): consultas complejas sobre grandes volúmenes históricos. → Redshift.",
+    "tags": [
+      "analitica"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-013",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Redshift?",
+    "back": "Almacén de datos (data warehouse) basado en PostgreSQL pero diseñado para OLAP: almacenamiento en columnas y procesamiento masivo en paralelo. Escala a petabytes y se integra con herramientas de BI como QuickSight. Existe Redshift Serverless.",
+    "tags": [
+      "redshift"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "db-014",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon EMR?",
+    "back": "Elastic MapReduce: crea clústeres gestionados de Hadoop, Spark, Hive, Presto y otras herramientas de big data sobre EC2 (o serverless) para procesar y analizar grandes volúmenes de datos.",
+    "tags": [
+      "emr",
+      "big-data"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-015",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Athena?",
+    "back": "Servicio de consultas serverless que analiza datos directamente en S3 usando SQL estándar (CSV, JSON, Parquet…). Se paga por TB escaneado. Ideal para análisis puntuales, logs y BI sobre un data lake.",
+    "tags": [
+      "athena"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "db-016",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon QuickSight?",
+    "back": "Servicio de inteligencia de negocio (BI) serverless con machine learning para crear dashboards interactivos y visualizaciones a partir de RDS, Aurora, Redshift, Athena, S3 y más. Se paga por sesión o usuario.",
+    "tags": [
+      "quicksight",
+      "bi"
+    ],
+    "difficulty": 1,
+    "note": "En 2025 AWS integró QuickSight dentro de Amazon Quick Suite; sus capacidades de BI siguen disponibles."
+  },
+  {
+    "id": "db-017",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon DocumentDB?",
+    "back": "Base de datos de documentos JSON gestionada y compatible con MongoDB. Igual que Aurora es la versión de AWS de MySQL/PostgreSQL, DocumentDB lo es de MongoDB (almacenamiento replicado en 3 AZ que crece solo).",
+    "tags": [
+      "documentdb"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-018",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Neptune?",
+    "back": "Base de datos de grafos gestionada, optimizada para datos muy conectados: redes sociales, motores de recomendación, detección de fraude y grafos de conocimiento.",
+    "tags": [
+      "neptune"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-019",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Timestream?",
+    "back": "Base de datos de series temporales gestionada y serverless para métricas, telemetría de IoT y datos con marca de tiempo. Ahora también se ofrece como Timestream for InfluxDB.",
+    "tags": [
+      "timestream"
+    ],
+    "difficulty": 2,
+    "note": "Timestream for LiveAnalytics dejó de aceptar clientes nuevos el 20-jun-2025; Timestream for InfluxDB sigue disponible."
+  },
+  {
+    "id": "db-020",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Managed Blockchain?",
+    "back": "Servicio gestionado para unirse a redes blockchain públicas (como Ethereum) o crear redes privadas (Hyperledger Fabric), donde varias partes ejecutan transacciones sin una autoridad central de confianza.",
+    "tags": [
+      "blockchain"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "db-021",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es Amazon QLDB?",
+    "back": "Quantum Ledger Database: base de datos de libro mayor inmutable y verificable criptográficamente, con una autoridad central (a diferencia de una blockchain descentralizada).",
+    "tags": [
+      "qldb"
+    ],
+    "difficulty": 3,
+    "note": "Amazon QLDB llegó al fin de soporte el 31-jul-2025. AWS recomienda migrar a Aurora PostgreSQL. No lo elijas como respuesta para diseños nuevos."
+  },
+  {
+    "id": "db-022",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es AWS Glue?",
+    "back": "Servicio serverless de ETL (extraer, transformar y cargar) para preparar datos para análisis. Su Glue Data Catalog guarda los metadatos (esquemas) de tus datos y lo usan Athena, Redshift Spectrum y EMR.",
+    "tags": [
+      "glue",
+      "etl"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-023",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "type": "concepto",
+    "front": "¿Qué es AWS DMS?",
+    "back": "Database Migration Service: migra bases de datos a AWS de forma segura; la base de origen sigue operativa durante la migración. Soporta migraciones homogéneas (Oracle→Oracle) y heterogéneas (SQL Server→Aurora) con la herramienta de conversión de esquemas.",
+    "tags": [
+      "dms",
+      "migracion"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "db-024",
+    "domain": 2,
+    "section": "Bases de datos y análisis",
+    "type": "comparacion",
+    "front": "Responsabilidad compartida en RDS",
+    "back": "AWS: parches del SO y del motor, hardware, copias automáticas, infraestructura de Multi-AZ.\nCliente: reglas de Security Groups, usuarios y permisos de la BD, activar el cifrado, decidir si es accesible públicamente y diseñar el esquema.",
+    "tags": [
+      "responsabilidad-compartida",
+      "rds"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-001",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es Docker y qué es un contenedor?",
+    "back": "Docker es una plataforma para empaquetar una aplicación con todas sus dependencias en un contenedor, que se ejecuta igual en cualquier sistema. Los contenedores comparten el kernel del host, así que son más ligeros que las máquinas virtuales.",
+    "tags": [
+      "contenedores"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-002",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es Amazon ECS?",
+    "back": "Elastic Container Service: orquestador de contenedores propio de AWS. Con el tipo de lanzamiento EC2 gestionas tú las instancias del clúster; con Fargate no hay servidores que gestionar.",
+    "tags": [
+      "ecs"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-003",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es AWS Fargate?",
+    "back": "Motor serverless para ejecutar contenedores (con ECS o EKS) sin aprovisionar ni gestionar servidores. Defines CPU y RAM por tarea y pagas por lo que usa.",
+    "tags": [
+      "fargate",
+      "serverless"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-004",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es Amazon ECR?",
+    "back": "Elastic Container Registry: registro privado (y público) de imágenes de contenedor en AWS. ECS, EKS y Fargate descargan las imágenes desde ahí.",
+    "tags": [
+      "ecr"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-005",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es Amazon EKS?",
+    "back": "Elastic Kubernetes Service: Kubernetes gestionado en AWS. Útil si ya usas Kubernetes o quieres una herramienta de orquestación de código abierto independiente de la nube. Funciona con nodos EC2 o con Fargate.",
+    "tags": [
+      "eks",
+      "kubernetes"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "comp-006",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué significa serverless?",
+    "back": "Un paradigma en el que no aprovisionas ni gestionas servidores (aunque existen). El servicio escala solo, pagas por uso y AWS gestiona la infraestructura. Ej.: Lambda, Fargate, DynamoDB, S3, Aurora Serverless, API Gateway.",
+    "tags": [
+      "serverless"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-007",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es AWS Lambda?",
+    "back": "Funciones serverless que se ejecutan en respuesta a eventos o bajo demanda. Escalan automáticamente, se pagan por número de invocaciones y duración (en ms) y tienen un tiempo máximo de 15 minutos por ejecución.",
+    "tags": [
+      "lambda"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-008",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "comparacion",
+    "front": "EC2 vs Lambda",
+    "back": "EC2: servidores virtuales que gestionas tú; limitados por CPU/RAM; siempre encendidos salvo que los detengas; escalas con ASG.\nLambda: funciones sin servidores; ejecuciones cortas (máx. 15 min); se ejecutan bajo demanda y escalan automáticamente; pagas solo al ejecutarse.",
+    "tags": [
+      "lambda",
+      "ec2"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-009",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "caso-de-uso",
+    "front": "Cada vez que se sube una imagen a S3 quieres generar su miniatura automáticamente. ¿Qué servicio usas?",
+    "back": "AWS Lambda disparado por un evento de S3: la función se ejecuta solo cuando llega una imagen nueva, crea la miniatura y la guarda. Sin servidores encendidos esperando.",
+    "tags": [
+      "lambda",
+      "eventos"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-010",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es Amazon API Gateway?",
+    "back": "Servicio serverless para crear, publicar, proteger y monitorear APIs REST, HTTP y WebSocket. Junto con Lambda permite construir backends completamente serverless; incluye autenticación, límites de tasa y caché.",
+    "tags": [
+      "api-gateway"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-011",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es AWS Batch?",
+    "back": "Procesamiento por lotes totalmente gestionado a cualquier escala: envías trabajos (empaquetados como contenedores) y Batch aprovisiona dinámicamente instancias EC2 o Spot o Fargate para ejecutarlos.",
+    "tags": [
+      "batch"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "comp-012",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "comparacion",
+    "front": "Lambda vs AWS Batch",
+    "back": "Lambda: tiempo máximo de 15 min, almacenamiento temporal limitado, runtimes gestionados, serverless.\nBatch: sin límite de tiempo, cualquier runtime empaquetado como imagen Docker, usa EC2/Spot/Fargate por debajo. Para trabajos largos → Batch.",
+    "tags": [
+      "lambda",
+      "batch"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "comp-013",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Lightsail?",
+    "back": "Servidores virtuales, bases de datos, almacenamiento y redes con precios bajos y predecibles (plan mensual fijo). Pensado para usuarios con poca experiencia en la nube: sitios web sencillos, WordPress, entornos de prueba. Alta disponibilidad limitada y sin Auto Scaling completo.",
+    "tags": [
+      "lightsail"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "comp-014",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "type": "dato-clave",
+    "front": "¿Cómo se cobra AWS Lambda?",
+    "back": "Por número de peticiones (invocaciones) y por duración de ejecución multiplicada por la memoria asignada (GB-segundo). Tiene una capa gratuita mensual de 1 millón de peticiones y 400.000 GB-segundo.",
+    "tags": [
+      "lambda",
+      "precios"
+    ],
+    "difficulty": 2
   }
 ]

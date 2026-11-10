@@ -4025,5 +4025,1577 @@
       "https://aws.amazon.com/s3/storage-classes/glacier/"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-db-001",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita una base de datos relacional MySQL y no quiere encargarse de los parches del sistema operativo, las copias de seguridad ni la configuración de alta disponibilidad. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon RDS for MySQL",
+        "explanation": "Correcta. RDS gestiona el SO, los parches del motor, los backups automáticos y permite activar Multi-AZ con un clic."
+      },
+      {
+        "id": "b",
+        "text": "MySQL instalado en Amazon EC2",
+        "explanation": "Funciona, pero la empresa tendría que gestionar el SO, los parches, los backups y la alta disponibilidad: justo lo que quiere evitar."
+      },
+      {
+        "id": "c",
+        "text": "Amazon DynamoDB",
+        "explanation": "DynamoDB es NoSQL (clave-valor/documentos) y no es compatible con MySQL. Sería la respuesta para una base de datos serverless que escala a millones de peticiones."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Redshift",
+        "explanation": "Redshift es un almacén de datos para análisis (OLAP), no una base de datos transaccional MySQL para una aplicación."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Relacional gestionada sin administrar SO ni backups → Amazon RDS (o Aurora).",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-002",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación sobre RDS recibe muchísimas consultas de lectura para generar informes y la base de datos principal se ralentiza. ¿Qué solución reduce la carga de lectura sobre la instancia principal?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Activar Multi-AZ",
+        "explanation": "Multi-AZ crea una réplica en espera para conmutación por error; en su configuración clásica no atiende lecturas, así que no reduce la carga."
+      },
+      {
+        "id": "b",
+        "text": "Crear réplicas de lectura y dirigir los informes a ellas",
+        "explanation": "Correcta. Las réplicas de lectura copian los datos de forma asíncrona y permiten repartir las consultas de lectura."
+      },
+      {
+        "id": "c",
+        "text": "Aumentar el periodo de retención de backups",
+        "explanation": "Los backups sirven para restaurar datos; no afectan al rendimiento de las lecturas."
+      },
+      {
+        "id": "d",
+        "text": "Mover la base de datos a S3 Glacier",
+        "explanation": "Glacier es almacenamiento de archivo con recuperación lenta; no es una base de datos ni ayuda al rendimiento."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Escalar lecturas → réplicas de lectura. Alta disponibilidad → Multi-AZ.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-003",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una base de datos RDS de producción debe seguir disponible automáticamente si falla la zona de disponibilidad en la que se ejecuta. ¿Qué característica debe activarse?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Réplicas de lectura en la misma AZ",
+        "explanation": "Una réplica en la misma AZ caería junto con la principal; además, las réplicas de lectura no hacen conmutación automática por defecto."
+      },
+      {
+        "id": "b",
+        "text": "RDS Multi-AZ",
+        "explanation": "Correcta. Multi-AZ mantiene una réplica síncrona en otra AZ y conmuta automáticamente si falla la principal, sin cambiar el endpoint."
+      },
+      {
+        "id": "c",
+        "text": "Amazon ElastiCache",
+        "explanation": "ElastiCache es una caché en memoria para acelerar lecturas; no protege a la base de datos ante la caída de una AZ."
+      },
+      {
+        "id": "d",
+        "text": "Snapshots manuales diarios",
+        "explanation": "Los snapshots permiten restaurar, pero la recuperación es manual y se pierden los datos posteriores al último snapshot."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Conmutación automática ante la caída de una AZ → RDS Multi-AZ.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-004",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un juego móvil necesita guardar el progreso de millones de jugadores con latencia de milisegundos de un dígito, sin servidores que gestionar y con escalado automático. ¿Qué base de datos debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon DynamoDB",
+        "explanation": "Correcta. DynamoDB es NoSQL clave-valor serverless, con latencia de milisegundos de un dígito a cualquier escala."
+      },
+      {
+        "id": "b",
+        "text": "Amazon RDS for PostgreSQL",
+        "explanation": "RDS es relacional y requiere elegir tamaño de instancia; escalar a millones de usuarios con latencia constante es más complejo. Sería la respuesta si se necesitaran JOIN y SQL."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Redshift",
+        "explanation": "Redshift es para análisis de grandes volúmenes (OLAP), no para lecturas y escrituras rápidas de una aplicación en tiempo real."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Neptune",
+        "explanation": "Neptune es una base de datos de grafos para datos muy conectados. Sería la respuesta para una red social o un motor de recomendaciones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "NoSQL serverless, escala masiva y milisegundos → DynamoDB.",
+    "refs": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-005",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "El equipo de finanzas quiere ejecutar consultas SQL complejas sobre varios años de datos de ventas (petabytes) para generar informes analíticos. ¿Qué servicio es el más adecuado?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon RDS",
+        "explanation": "RDS está optimizado para transacciones (OLTP); las consultas analíticas sobre petabytes serían lentas y caras."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Redshift",
+        "explanation": "Correcta. Redshift es un data warehouse en columnas con procesamiento paralelo masivo, diseñado para OLAP sobre grandes volúmenes."
+      },
+      {
+        "id": "c",
+        "text": "Amazon ElastiCache",
+        "explanation": "ElastiCache es una caché en memoria; no está pensada para almacenar ni analizar años de datos históricos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon DynamoDB",
+        "explanation": "DynamoDB está optimizada para accesos por clave con baja latencia, no para consultas SQL analíticas complejas."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Análisis (OLAP) sobre grandes volúmenes históricos → Redshift.",
+    "refs": [
+      "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-006",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un analista quiere consultar con SQL los registros de acceso guardados en un bucket de S3, sin cargar los datos en ninguna base de datos ni gestionar servidores. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Athena",
+        "explanation": "Correcta. Athena ejecuta SQL directamente sobre archivos en S3, es serverless y se paga por los datos escaneados."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EMR",
+        "explanation": "EMR también puede analizar datos de S3, pero requiere crear y gestionar un clúster de big data. Sería la respuesta para trabajos complejos de Spark o Hadoop."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Redshift",
+        "explanation": "Redshift requiere un data warehouse (aprovisionado o serverless) y normalmente cargar los datos; para consultas puntuales sobre S3 Athena es más simple."
+      },
+      {
+        "id": "d",
+        "text": "AWS Glue",
+        "explanation": "Glue sirve para ETL y para catalogar los datos; no es la herramienta para lanzar consultas SQL interactivas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "SQL directo sobre archivos en S3, serverless → Athena.",
+    "refs": [
+      "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-007",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación consulta repetidamente los mismos datos de una base de datos RDS y quiere reducir la latencia y la carga de la base de datos. ¿Qué servicio debe añadir?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon ElastiCache",
+        "explanation": "Correcta. ElastiCache guarda en memoria los resultados frecuentes, ofrece latencias de microsegundos y descarga a la base de datos."
+      },
+      {
+        "id": "b",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront cachea contenido web en Edge Locations para usuarios finales; no cachea consultas de la aplicación a la base de datos."
+      },
+      {
+        "id": "c",
+        "text": "AWS Global Accelerator",
+        "explanation": "Global Accelerator mejora la ruta de red hacia la aplicación; no reduce las consultas a la base de datos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon S3 Standard-IA",
+        "explanation": "Standard-IA es almacenamiento de objetos poco usados; no sirve como caché de baja latencia para consultas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Caché en memoria delante de la base de datos → ElastiCache (DAX si es DynamoDB).",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-008",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una red social quiere almacenar relaciones del tipo 'amigo de', 'le gusta' y 'sigue a' para encontrar rápidamente conexiones entre usuarios. ¿Qué base de datos se ajusta mejor?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Neptune",
+        "explanation": "Correcta. Neptune es una base de datos de grafos optimizada para navegar relaciones entre entidades muy conectadas."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Timestream",
+        "explanation": "Timestream es para series temporales (métricas con marca de tiempo). Sería la respuesta para telemetría de IoT."
+      },
+      {
+        "id": "c",
+        "text": "Amazon DocumentDB",
+        "explanation": "DocumentDB almacena documentos JSON compatibles con MongoDB; puede guardar perfiles, pero no está optimizada para recorrer relaciones."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Redshift",
+        "explanation": "Redshift es un data warehouse para análisis; no es eficiente para consultas de relaciones en tiempo real."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Datos muy conectados (grafos, redes sociales, fraude) → Neptune.",
+    "refs": [
+      "https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-009",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa usa MongoDB en sus servidores y quiere migrar a una base de datos de documentos totalmente gestionada en AWS con mínimos cambios en el código. ¿Qué servicio debe elegir?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon DocumentDB",
+        "explanation": "Correcta. DocumentDB es compatible con la API de MongoDB y gestiona la infraestructura, las copias y la replicación."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Aurora",
+        "explanation": "Aurora es relacional y compatible con MySQL/PostgreSQL, no con MongoDB. Migrar exigiría rediseñar el modelo de datos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Neptune",
+        "explanation": "Neptune es una base de datos de grafos; no es compatible con MongoDB."
+      },
+      {
+        "id": "d",
+        "text": "Amazon ElastiCache",
+        "explanation": "ElastiCache es una caché en memoria; no es una base de datos de documentos persistente compatible con MongoDB."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "MongoDB gestionado en AWS → DocumentDB.",
+    "refs": [
+      "https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-010",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere migrar su base de datos Oracle on-premises a Amazon Aurora PostgreSQL manteniendo la base de datos de origen operativa durante la migración. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Database Migration Service (DMS)",
+        "explanation": "Correcta. DMS migra datos con replicación continua mientras el origen sigue funcionando y, junto con la conversión de esquemas, soporta migraciones heterogéneas."
+      },
+      {
+        "id": "b",
+        "text": "AWS DataSync",
+        "explanation": "DataSync transfiere archivos y objetos (NFS, SMB, S3…), no migra bases de datos con conversión de esquema."
+      },
+      {
+        "id": "c",
+        "text": "AWS Application Migration Service",
+        "explanation": "MGN replica servidores completos (lift-and-shift) a EC2; no convierte Oracle en Aurora PostgreSQL."
+      },
+      {
+        "id": "d",
+        "text": "AWS Glue",
+        "explanation": "Glue es ETL para preparar datos para análisis; no es el servicio diseñado para migrar bases de datos operativas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Migrar bases de datos (incluso de un motor a otro) con mínimo tiempo de inactividad → DMS.",
+    "refs": [
+      "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-011",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "La dirección de una empresa quiere dashboards interactivos con los datos de ventas guardados en Redshift, accesibles desde el navegador y sin gestionar servidores de BI. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon QuickSight",
+        "explanation": "Correcta. QuickSight es el servicio de BI serverless de AWS para crear dashboards y visualizaciones a partir de muchas fuentes, incluida Redshift."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Athena",
+        "explanation": "Athena ejecuta consultas SQL sobre S3, pero no ofrece dashboards ni visualizaciones interactivas por sí mismo."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudWatch Dashboards",
+        "explanation": "Los dashboards de CloudWatch muestran métricas operativas de recursos de AWS, no informes de negocio sobre datos de ventas."
+      },
+      {
+        "id": "d",
+        "text": "AWS Glue DataBrew",
+        "explanation": "DataBrew sirve para limpiar y preparar datos visualmente; no está pensado para presentar dashboards a la dirección."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Dashboards e informes de negocio (BI) → QuickSight.",
+    "refs": [
+      "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-012",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de datos necesita descubrir automáticamente el esquema de archivos CSV en S3, transformarlos a Parquet y dejarlos catalogados para consultarlos con Athena, todo sin servidores. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Glue",
+        "explanation": "Correcta. Glue ofrece crawlers que detectan esquemas, trabajos ETL serverless y el Data Catalog que usa Athena."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EMR",
+        "explanation": "EMR podría transformar los datos con Spark, pero requiere gestionar un clúster y no cataloga los esquemas por sí mismo."
+      },
+      {
+        "id": "c",
+        "text": "AWS DMS",
+        "explanation": "DMS migra bases de datos; no es una herramienta de ETL sobre archivos en S3."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Kinesis Data Streams",
+        "explanation": "Kinesis Data Streams captura flujos de datos en tiempo real; no transforma ni cataloga archivos existentes en S3."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "ETL serverless y catálogo de datos → AWS Glue.",
+    "refs": [
+      "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-013",
+    "domain": 2,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "Una empresa usa Amazon RDS. Según el modelo de responsabilidad compartida, ¿qué DOS tareas le corresponden a AWS? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Aplicar parches al sistema operativo subyacente",
+        "explanation": "Correcta. En RDS, AWS gestiona el SO de la instancia de base de datos y aplica sus parches."
+      },
+      {
+        "id": "b",
+        "text": "Aplicar parches al motor de base de datos",
+        "explanation": "Correcta. Las actualizaciones del motor las aplica AWS dentro de las ventanas de mantenimiento configuradas."
+      },
+      {
+        "id": "c",
+        "text": "Configurar los Security Groups que permiten acceder a la base de datos",
+        "explanation": "Incorrecta. Decidir qué orígenes pueden conectarse es configuración de red del cliente."
+      },
+      {
+        "id": "d",
+        "text": "Crear los usuarios de la base de datos y sus permisos",
+        "explanation": "Incorrecta. La gestión de usuarios y permisos dentro de la base de datos es responsabilidad del cliente."
+      },
+      {
+        "id": "e",
+        "text": "Decidir si la base de datos tiene acceso público",
+        "explanation": "Incorrecta. La opción de acceso público la elige y controla el cliente."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "RDS: AWS parchea el SO y el motor; el cliente gestiona red, usuarios, cifrado y acceso público.",
+    "refs": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-db-014",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación global usa DynamoDB y necesita que usuarios de Europa, América y Asia lean y escriban con baja latencia en la Región más cercana. ¿Qué característica debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "DynamoDB Global Tables",
+        "explanation": "Correcta. Las tablas globales replican los datos en varias Regiones con escrituras activas en todas ellas."
+      },
+      {
+        "id": "b",
+        "text": "DynamoDB Accelerator (DAX)",
+        "explanation": "DAX es una caché en memoria dentro de una Región; acelera las lecturas, pero no replica los datos a otras Regiones."
+      },
+      {
+        "id": "c",
+        "text": "RDS Multi-AZ",
+        "explanation": "Multi-AZ es una característica de RDS para alta disponibilidad dentro de una Región; no aplica a DynamoDB."
+      },
+      {
+        "id": "d",
+        "text": "S3 Cross-Region Replication",
+        "explanation": "CRR replica objetos de S3, no tablas de DynamoDB."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "DynamoDB multi-Región con lectura y escritura en todas → Global Tables.",
+    "refs": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-comp-001",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere ejecutar contenedores Docker sin aprovisionar ni gestionar servidores ni clústeres de EC2. ¿Qué debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Fargate",
+        "explanation": "Correcta. Fargate es el motor serverless para contenedores de ECS y EKS: defines CPU y memoria y AWS gestiona la infraestructura."
+      },
+      {
+        "id": "b",
+        "text": "Amazon ECS con tipo de lanzamiento EC2",
+        "explanation": "Con el tipo EC2 tú aprovisionas y mantienes las instancias del clúster, justo lo que se quiere evitar."
+      },
+      {
+        "id": "c",
+        "text": "Amazon ECR",
+        "explanation": "ECR solo almacena imágenes de contenedor; no las ejecuta."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Lightsail",
+        "explanation": "Lightsail ofrece servidores simplificados (y algún servicio de contenedores básico), pero no es la opción serverless estándar para ECS/EKS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Contenedores sin gestionar servidores → Fargate.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-comp-002",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo ya usa Kubernetes en sus servidores y quiere migrar a un servicio gestionado en AWS manteniendo las mismas herramientas de código abierto. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EKS",
+        "explanation": "Correcta. EKS es Kubernetes gestionado, compatible con las herramientas y manifiestos estándar de Kubernetes."
+      },
+      {
+        "id": "b",
+        "text": "Amazon ECS",
+        "explanation": "ECS es el orquestador propio de AWS; funciona muy bien, pero no usa la API de Kubernetes, así que habría que adaptar los despliegues."
+      },
+      {
+        "id": "c",
+        "text": "AWS Lambda",
+        "explanation": "Lambda ejecuta funciones serverless; no es un orquestador de contenedores Kubernetes."
+      },
+      {
+        "id": "d",
+        "text": "AWS Batch",
+        "explanation": "Batch ejecuta trabajos por lotes; no ofrece un plano de control de Kubernetes para aplicaciones existentes."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Kubernetes gestionado → EKS. Orquestador propio de AWS → ECS.",
+    "refs": [
+      "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-comp-003",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita ejecutar un pequeño fragmento de código cada vez que se sube un archivo a un bucket de S3. Las subidas son esporádicas y no quiere pagar por servidores ociosos. ¿Qué servicio es el más adecuado?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Lambda",
+        "explanation": "Correcta. Lambda se dispara con eventos de S3, escala automáticamente y solo cobra mientras se ejecuta el código."
+      },
+      {
+        "id": "b",
+        "text": "Una instancia EC2 On-Demand siempre encendida",
+        "explanation": "Funcionaría, pero se pagaría todo el tiempo aunque no lleguen archivos, y habría que gestionar el servidor."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EMR",
+        "explanation": "EMR crea clústeres de big data; es desproporcionado para ejecutar un fragmento de código por cada archivo."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Lightsail",
+        "explanation": "Lightsail es un servidor con precio mensual fijo; seguiría encendido y cobrando aunque no haya eventos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Código que reacciona a eventos, esporádico y sin servidores → Lambda.",
+    "refs": [
+      "https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-comp-004",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un proceso de cálculo científico tarda 3 horas por trabajo, se ejecuta en contenedores y la empresa quiere que AWS aprovisione automáticamente la capacidad (incluidas instancias Spot). ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Lambda",
+        "explanation": "Lambda tiene un límite de 15 minutos por ejecución; un trabajo de 3 horas no puede ejecutarse ahí."
+      },
+      {
+        "id": "b",
+        "text": "AWS Batch",
+        "explanation": "Correcta. Batch gestiona colas de trabajos por lotes sin límite de duración y aprovisiona EC2, Spot o Fargate según la necesidad."
+      },
+      {
+        "id": "c",
+        "text": "Amazon API Gateway",
+        "explanation": "API Gateway publica y gestiona APIs; no ejecuta trabajos de cálculo largos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon ECR",
+        "explanation": "ECR almacena imágenes de contenedor; no planifica ni ejecuta trabajos."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Trabajos por lotes largos (más de 15 min) en contenedores → AWS Batch.",
+    "refs": [
+      "https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-comp-005",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un desarrollador sin experiencia en la nube quiere lanzar un blog WordPress con un precio mensual fijo y predecible, sin configurar VPCs, Security Groups ni balanceadores. ¿Qué servicio es el más adecuado?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Lightsail",
+        "explanation": "Correcta. Lightsail ofrece servidores con plantillas como WordPress, precio mensual fijo y una consola simplificada."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EC2 con Auto Scaling",
+        "explanation": "EC2 da más control, pero exige configurar red, seguridad y escalado y su coste es variable; no es lo más sencillo para un principiante."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EKS",
+        "explanation": "EKS es Kubernetes gestionado; es demasiado complejo para un blog personal."
+      },
+      {
+        "id": "d",
+        "text": "AWS Batch",
+        "explanation": "Batch ejecuta trabajos por lotes; no sirve para alojar un sitio web."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Sencillez y precio fijo para usuarios con poca experiencia → Lightsail.",
+    "refs": [
+      "https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-comp-006",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo construye un backend serverless con funciones Lambda y necesita exponerlo a aplicaciones móviles como una API REST con autenticación y límites de peticiones. ¿Qué servicio debe colocar delante de Lambda?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon API Gateway",
+        "explanation": "Correcta. API Gateway crea y protege APIs REST/HTTP/WebSocket que invocan Lambda, con autorización, throttling y monitoreo."
+      },
+      {
+        "id": "b",
+        "text": "Network Load Balancer",
+        "explanation": "Un NLB balancea TCP/UDP en la capa 4; no ofrece gestión de APIs, autenticación ni límites de peticiones."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudFront únicamente",
+        "explanation": "CloudFront es una CDN; puede ir delante de una API, pero no gestiona por sí solo los recursos, métodos ni la autorización de una API REST."
+      },
+      {
+        "id": "d",
+        "text": "Amazon SQS",
+        "explanation": "SQS es una cola de mensajes para desacoplar componentes; no expone una API REST a clientes móviles."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Exponer funciones Lambda como API REST gestionada → API Gateway.",
+    "refs": [
+      "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-comp-007",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Cuáles de los siguientes servicios se consideran serverless? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Lambda",
+        "explanation": "Correcta. Lambda ejecuta código sin que gestiones servidores; escala solo y se paga por invocación y duración."
+      },
+      {
+        "id": "b",
+        "text": "Amazon DynamoDB",
+        "explanation": "Correcta. DynamoDB es una base de datos sin servidores que aprovisionar: escala automáticamente y puede pagarse bajo demanda."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EC2",
+        "explanation": "Incorrecta. En EC2 tú eliges y gestionas las instancias (servidores virtuales)."
+      },
+      {
+        "id": "d",
+        "text": "Amazon RDS (instancias aprovisionadas)",
+        "explanation": "Incorrecta. En RDS eliges el tamaño de la instancia y pagas por hora aunque no se use; es gestionado, pero no serverless (salvo Aurora Serverless)."
+      },
+      {
+        "id": "e",
+        "text": "Amazon EMR sobre EC2",
+        "explanation": "Incorrecta. EMR sobre EC2 crea un clúster de instancias que debes dimensionar (existe EMR Serverless, pero no es esta opción)."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "Serverless = sin aprovisionar servidores: Lambda, Fargate, DynamoDB, S3, API Gateway, Aurora Serverless…",
+    "refs": [
+      "https://aws.amazon.com/serverless/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-comp-008",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo necesita un registro privado y gestionado donde guardar las imágenes Docker que luego desplegará en Amazon ECS. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon ECR",
+        "explanation": "Correcta. Elastic Container Registry almacena, versiona y protege imágenes de contenedor, con integración directa con ECS y EKS."
+      },
+      {
+        "id": "b",
+        "text": "AWS CodeArtifact",
+        "explanation": "CodeArtifact guarda paquetes de software (npm, Maven, pip…), no imágenes de contenedor. Sería correcto para dependencias de código."
+      },
+      {
+        "id": "c",
+        "text": "Amazon S3",
+        "explanation": "S3 podría almacenar archivos, pero no es un registro de contenedores compatible con docker push/pull ni se integra igual con ECS."
+      },
+      {
+        "id": "d",
+        "text": "AWS CodeCommit",
+        "explanation": "CodeCommit es un repositorio Git para código fuente; no almacena imágenes de contenedor."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Registro privado de imágenes Docker → ECR.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-001",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Base de datos relacional creada por AWS, compatible con MySQL y PostgreSQL, que guarda 6 copias de los datos en 3 zonas de disponibilidad.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Aurora",
+        "explanation": "Correcta. Aurora es la base de datos relacional nativa de la nube de AWS, con almacenamiento replicado 6 veces en 3 AZ."
+      },
+      {
+        "id": "b",
+        "text": "Amazon RDS for MySQL",
+        "explanation": "RDS for MySQL es el motor MySQL estándar gestionado; no tiene la arquitectura de almacenamiento distribuido de Aurora. Sería la respuesta si se pidiera MySQL estándar gestionado."
+      },
+      {
+        "id": "c",
+        "text": "Amazon DynamoDB",
+        "explanation": "DynamoDB también replica en 3 AZ, pero es NoSQL y no es compatible con MySQL ni PostgreSQL."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Redshift",
+        "explanation": "Redshift se basa en PostgreSQL, pero es un data warehouse para análisis (OLAP), no una base de datos transaccional."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Relacional nativa de AWS, compatible MySQL/PostgreSQL → Aurora.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-002",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Base de datos NoSQL clave-valor serverless con latencia de milisegundos de un dígito a cualquier escala.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon ElastiCache",
+        "explanation": "ElastiCache es una caché en memoria (microsegundos), pero no es una base de datos serverless persistente. Sería la respuesta para acelerar consultas a otra base de datos."
+      },
+      {
+        "id": "b",
+        "text": "Amazon DynamoDB",
+        "explanation": "Correcta. DynamoDB es la base de datos NoSQL serverless de AWS."
+      },
+      {
+        "id": "c",
+        "text": "Amazon DocumentDB",
+        "explanation": "DocumentDB es de documentos y compatible con MongoDB, basada en clústeres de instancias. Sería la respuesta para migrar MongoDB."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Keyspaces",
+        "explanation": "Keyspaces es compatible con Apache Cassandra (columnas anchas). Sería la respuesta para migrar cargas de Cassandra."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "NoSQL clave-valor serverless → DynamoDB.",
+    "refs": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-003",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Almacén de datos en columnas, con procesamiento paralelo masivo, para análisis (OLAP) sobre petabytes de datos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Redshift",
+        "explanation": "Correcta. Redshift es el data warehouse de AWS para consultas analíticas a gran escala."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Athena",
+        "explanation": "Athena consulta archivos en S3 sin cargar datos; es serverless y no es un almacén de datos en sí. Sería la respuesta para consultas puntuales sobre S3."
+      },
+      {
+        "id": "c",
+        "text": "Amazon RDS",
+        "explanation": "RDS es para cargas transaccionales (OLTP), no para análisis sobre petabytes."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EMR",
+        "explanation": "EMR crea clústeres de Hadoop/Spark para procesar big data; no es un data warehouse SQL gestionado."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Data warehouse / OLAP → Redshift.",
+    "refs": [
+      "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-004",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Ejecuta consultas SQL serverless directamente sobre archivos guardados en S3 y cobra por los datos escaneados.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Redshift",
+        "explanation": "Redshift es un data warehouse; aunque Redshift Spectrum puede leer S3, el servicio pensado para SQL serverless puntual sobre S3 es otro."
+      },
+      {
+        "id": "b",
+        "text": "AWS Glue",
+        "explanation": "Glue cataloga y transforma datos (ETL); no es la herramienta para lanzar consultas SQL interactivas."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Athena",
+        "explanation": "Correcta. Athena consulta datos en S3 con SQL estándar sin infraestructura que gestionar."
+      },
+      {
+        "id": "d",
+        "text": "Amazon QuickSight",
+        "explanation": "QuickSight crea dashboards de BI; puede usar Athena como fuente, pero no es el motor de consultas sobre S3."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "SQL serverless sobre S3 → Athena.",
+    "refs": [
+      "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-005",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Caché en memoria gestionada compatible con Redis OSS, Valkey y Memcached para reducir la carga de las bases de datos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "DynamoDB Accelerator (DAX)",
+        "explanation": "DAX es una caché exclusiva para DynamoDB, no compatible con Redis ni Memcached. Sería la respuesta si la base de datos fuera DynamoDB."
+      },
+      {
+        "id": "b",
+        "text": "Amazon ElastiCache",
+        "explanation": "Correcta. ElastiCache ofrece Redis OSS, Valkey y Memcached gestionados."
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront cachea contenido web en el borde para usuarios finales; no es una caché de base de datos para la aplicación."
+      },
+      {
+        "id": "d",
+        "text": "Amazon MemoryDB",
+        "explanation": "MemoryDB es una base de datos en memoria DURABLE compatible con Redis/Valkey, pensada como base de datos principal, no como caché."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Caché en memoria Redis/Valkey/Memcached → ElastiCache.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-006",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Base de datos de grafos totalmente gestionada para recomendaciones, redes sociales y detección de fraude.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Neptune",
+        "explanation": "Correcta. Neptune está optimizada para almacenar y recorrer relaciones (grafos)."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Timestream",
+        "explanation": "Timestream es para series temporales. Sería la respuesta para métricas de sensores IoT."
+      },
+      {
+        "id": "c",
+        "text": "Amazon DocumentDB",
+        "explanation": "DocumentDB guarda documentos JSON (compatible con MongoDB), no está optimizada para grafos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Managed Blockchain",
+        "explanation": "Managed Blockchain crea redes blockchain para transacciones descentralizadas; no es una base de datos de grafos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Grafos → Neptune.",
+    "refs": [
+      "https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-007",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Base de datos de documentos JSON gestionada y compatible con MongoDB.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon DynamoDB",
+        "explanation": "DynamoDB admite documentos, pero no es compatible con la API de MongoDB. Sería la respuesta para una base NoSQL serverless propia de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon DocumentDB",
+        "explanation": "Correcta. DocumentDB es la opción compatible con MongoDB."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Aurora",
+        "explanation": "Aurora es relacional (MySQL/PostgreSQL); no es compatible con MongoDB."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Keyspaces",
+        "explanation": "Keyspaces es compatible con Apache Cassandra, no con MongoDB."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "MongoDB en AWS → DocumentDB.",
+    "refs": [
+      "https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-008",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Crea clústeres gestionados de Hadoop y Apache Spark para procesar y analizar grandes volúmenes de datos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EMR",
+        "explanation": "Correcta. EMR gestiona clústeres de herramientas de big data como Hadoop, Spark, Hive y Presto."
+      },
+      {
+        "id": "b",
+        "text": "AWS Glue",
+        "explanation": "Glue ejecuta ETL serverless (usa Spark por debajo), pero no te da un clúster de Hadoop configurable. Sería la respuesta para ETL sin gestionar infraestructura."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Kinesis",
+        "explanation": "Kinesis captura y procesa flujos de datos en tiempo real; no crea clústeres de Hadoop."
+      },
+      {
+        "id": "d",
+        "text": "AWS Batch",
+        "explanation": "Batch ejecuta trabajos por lotes en contenedores; no es una plataforma de Hadoop/Spark."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Hadoop / Spark / big data en clúster → EMR.",
+    "refs": [
+      "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-009",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Servicio de inteligencia de negocio serverless para crear dashboards interactivos a partir de muchas fuentes de datos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon QuickSight",
+        "explanation": "Correcta. QuickSight es el servicio de BI de AWS (integrado en Amazon Quick Suite desde 2025)."
+      },
+      {
+        "id": "b",
+        "text": "Amazon CloudWatch",
+        "explanation": "CloudWatch muestra métricas operativas de los recursos; no es una herramienta de BI para datos de negocio."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Athena",
+        "explanation": "Athena ejecuta SQL sobre S3; no genera dashboards."
+      },
+      {
+        "id": "d",
+        "text": "AWS Glue",
+        "explanation": "Glue prepara y cataloga datos; no los visualiza."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Dashboards de negocio (BI) → QuickSight.",
+    "refs": [
+      "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-010",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "ETL serverless con un catálogo central de metadatos que usan Athena, Redshift Spectrum y EMR.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Glue",
+        "explanation": "Correcta. Glue ofrece trabajos ETL y el Glue Data Catalog."
+      },
+      {
+        "id": "b",
+        "text": "AWS DMS",
+        "explanation": "DMS migra bases de datos con replicación continua; no es una herramienta de ETL con catálogo."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EMR",
+        "explanation": "EMR puede hacer ETL con Spark, pero gestionando un clúster; no es serverless por defecto ni es el catálogo central."
+      },
+      {
+        "id": "d",
+        "text": "AWS DataSync",
+        "explanation": "DataSync transfiere archivos entre almacenamientos; no transforma ni cataloga datos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "ETL serverless + Data Catalog → Glue.",
+    "refs": [
+      "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-011",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Migra bases de datos a AWS manteniendo operativo el origen, incluso entre motores distintos (por ejemplo, de Oracle a Aurora).",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Application Migration Service",
+        "explanation": "MGN replica servidores completos a EC2 (lift-and-shift); no convierte motores de base de datos. Sería la respuesta para migrar VMs."
+      },
+      {
+        "id": "b",
+        "text": "AWS Database Migration Service",
+        "explanation": "Correcta. DMS migra y replica bases de datos de forma continua, con conversión de esquemas para migraciones heterogéneas."
+      },
+      {
+        "id": "c",
+        "text": "AWS Snowball Edge",
+        "explanation": "Snowball Edge mueve datos físicamente; no replica una base de datos en funcionamiento."
+      },
+      {
+        "id": "d",
+        "text": "AWS Backup",
+        "explanation": "AWS Backup centraliza copias de seguridad; no migra bases de datos entre motores."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Migración de bases de datos → DMS.",
+    "refs": [
+      "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-db-012",
+    "domain": 3,
+    "section": "Bases de datos y análisis",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Servicio gestionado para unirse a redes blockchain públicas o crear redes privadas sin una autoridad central.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Managed Blockchain",
+        "explanation": "Correcta. Managed Blockchain gestiona redes Ethereum o Hyperledger Fabric."
+      },
+      {
+        "id": "b",
+        "text": "Amazon QLDB",
+        "explanation": "QLDB era un libro mayor inmutable CON autoridad central (no descentralizado) y llegó al fin de soporte en julio de 2025."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Neptune",
+        "explanation": "Neptune es una base de datos de grafos; no implementa redes blockchain."
+      },
+      {
+        "id": "d",
+        "text": "AWS KMS",
+        "explanation": "KMS gestiona claves de cifrado; no crea redes blockchain."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Blockchain descentralizada → Managed Blockchain. (QLDB, retirado, era centralizado).",
+    "refs": [
+      "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/what-is-managed-blockchain.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-comp-001",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Ejecuta código en respuesta a eventos sin gestionar servidores, con un máximo de 15 minutos por ejecución y cobro por milisegundo.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Lambda",
+        "explanation": "Correcta. Lambda es el servicio de funciones serverless (FaaS) de AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS Fargate",
+        "explanation": "Fargate ejecuta CONTENEDORES sin servidores, sin el límite de 15 minutos. Sería la respuesta para servicios en contenedores de larga duración."
+      },
+      {
+        "id": "c",
+        "text": "AWS Batch",
+        "explanation": "Batch ejecuta trabajos por lotes sin límite de tiempo sobre EC2/Spot/Fargate. Sería correcto para trabajos de horas."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EC2",
+        "explanation": "EC2 son servidores virtuales que gestionas tú y se cobran mientras están encendidos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Funciones serverless por eventos (máx. 15 min) → Lambda.",
+    "refs": [
+      "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-comp-002",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Motor serverless para ejecutar contenedores en ECS o EKS sin aprovisionar instancias.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon ECR",
+        "explanation": "ECR almacena imágenes de contenedor; no las ejecuta. Sería la respuesta para un registro Docker privado."
+      },
+      {
+        "id": "b",
+        "text": "AWS Fargate",
+        "explanation": "Correcta. Fargate es el cómputo serverless para contenedores."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EKS",
+        "explanation": "EKS es el plano de control de Kubernetes gestionado; necesita nodos (EC2 o Fargate) para ejecutar los contenedores."
+      },
+      {
+        "id": "d",
+        "text": "AWS Lambda",
+        "explanation": "Lambda ejecuta funciones (también desde imágenes de contenedor), pero con límite de 15 min y sin ser un motor para ECS/EKS."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Contenedores serverless → Fargate.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-comp-003",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Orquestador de contenedores propio de AWS que puede ejecutar tareas sobre instancias EC2 o sobre Fargate.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon ECS",
+        "explanation": "Correcta. Elastic Container Service es el orquestador nativo de AWS."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EKS",
+        "explanation": "EKS también orquesta contenedores, pero con Kubernetes (código abierto), no con el orquestador propio de AWS."
+      },
+      {
+        "id": "c",
+        "text": "AWS App Runner",
+        "explanation": "App Runner desplegaba aplicaciones web desde código o imagen sin configurar orquestación, y está cerrado a clientes nuevos desde el 30-abr-2026."
+      },
+      {
+        "id": "d",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk es PaaS para desplegar aplicaciones (puede usar Docker), pero no es el orquestador de contenedores en sí."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Orquestador nativo de AWS → ECS. Kubernetes → EKS.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-comp-004",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Crea, publica y protege APIs REST, HTTP y WebSocket a cualquier escala, con integración nativa con Lambda.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS AppSync",
+        "explanation": "AppSync crea APIs GraphQL con sincronización en tiempo real. Sería la respuesta si la pregunta mencionara GraphQL."
+      },
+      {
+        "id": "b",
+        "text": "Amazon API Gateway",
+        "explanation": "Correcta. API Gateway gestiona APIs REST, HTTP y WebSocket."
+      },
+      {
+        "id": "c",
+        "text": "Application Load Balancer",
+        "explanation": "Un ALB puede invocar Lambda, pero no ofrece funciones de gestión de APIs como claves, planes de uso o etapas."
+      },
+      {
+        "id": "d",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront es una CDN; no define ni gestiona APIs."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "APIs REST/HTTP/WebSocket gestionadas → API Gateway. GraphQL → AppSync.",
+    "refs": [
+      "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-comp-005",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Planifica y ejecuta trabajos por lotes a cualquier escala, aprovisionando dinámicamente instancias EC2 o Spot según la cola de trabajos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Batch",
+        "explanation": "Correcta. Batch gestiona colas y entornos de cómputo para trabajos por lotes."
+      },
+      {
+        "id": "b",
+        "text": "AWS Step Functions",
+        "explanation": "Step Functions orquesta flujos de trabajo visuales entre servicios; no aprovisiona capacidad para trabajos por lotes. Sería la respuesta para encadenar pasos de una aplicación."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EventBridge Scheduler",
+        "explanation": "EventBridge Scheduler programa invocaciones a una hora concreta; no gestiona colas ni capacidad de cómputo."
+      },
+      {
+        "id": "d",
+        "text": "AWS Lambda",
+        "explanation": "Lambda ejecuta funciones cortas (máx. 15 min); no gestiona colas de trabajos largos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Trabajos por lotes a gran escala → AWS Batch.",
+    "refs": [
+      "https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-comp-006",
+    "domain": 3,
+    "section": "Otros servicios de cómputo",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Servidores virtuales, bases de datos y redes con un precio mensual fijo y una consola simplificada para usuarios con poca experiencia.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EC2",
+        "explanation": "EC2 ofrece control total, pero con precios por uso y configuración avanzada. Sería la respuesta si se pidiera flexibilidad total."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Lightsail",
+        "explanation": "Correcta. Lightsail es la opción simple y de precio predecible."
+      },
+      {
+        "id": "c",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk despliega aplicaciones gestionando la infraestructura, pero cobra por los recursos subyacentes, no con un plan fijo."
+      },
+      {
+        "id": "d",
+        "text": "Amazon WorkSpaces",
+        "explanation": "WorkSpaces proporciona escritorios virtuales, no servidores para alojar aplicaciones."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Simplicidad y precio mensual fijo → Lightsail.",
+    "refs": [
+      "https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html"
+    ],
+    "source": "original"
   }
 ]
