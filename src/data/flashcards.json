@@ -2868,5 +2868,223 @@
       "cognito"
     ],
     "difficulty": 1
+  },
+  {
+    "id": "sec-009",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es AWS Network Firewall?",
+    "back": "Firewall gestionado que protege toda una VPC, filtrando el tráfico de las capas 3 a 7 (IP, puertos, dominios, firmas de intrusiones) en cualquier dirección: entre VPCs, hacia internet o hacia on-premises.",
+    "tags": [
+      "network-firewall"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-010",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es AWS Firewall Manager?",
+    "back": "Administra de forma centralizada reglas de seguridad (WAF, Shield Advanced, Security Groups, Network Firewall…) en todas las cuentas de una AWS Organization, aplicándolas también a los recursos nuevos.",
+    "tags": [
+      "firewall-manager"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-011",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "dato-clave",
+    "front": "Pruebas de penetración en AWS",
+    "back": "Los clientes pueden hacer pentesting sin aprobación previa sobre una lista de servicios (EC2, RDS, Aurora, CloudFront, API Gateway, Lambda, Lightsail, Beanstalk, entre otros). Están prohibidos los ataques DoS/DDoS, el flooding de puertos/protocolos y recorrer zonas DNS de Route 53. Para simular DDoS hay una política aparte.",
+    "tags": [
+      "pentesting"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "sec-012",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "comparacion",
+    "front": "Cifrado en reposo vs en tránsito",
+    "back": "En reposo: datos guardados en disco (EBS, S3, RDS, EFS…), normalmente con claves de KMS.\nEn tránsito: datos que viajan por la red, protegidos con TLS/SSL (HTTPS) y certificados (ACM).",
+    "tags": [
+      "cifrado"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-013",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es AWS KMS?",
+    "back": "Key Management Service: crea y controla claves de cifrado. AWS gestiona el software y el hardware; tú defines quién puede usar cada clave (con políticas e IAM). Integrado con la mayoría de los servicios; cada uso queda registrado en CloudTrail.",
+    "tags": [
+      "kms"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-014",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "comparacion",
+    "front": "Tipos de claves KMS",
+    "back": "Administradas por el cliente: las creas, gestionas y rotas tú (puedes activar la rotación).\nAdministradas por AWS: las crea un servicio en tu cuenta (aws/s3, aws/ebs).\nPropiedad de AWS: AWS las usa en varias cuentas; no las ves.\nAdemás existe el almacén de claves de CloudHSM (claves en tu HSM).",
+    "tags": [
+      "kms"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "sec-015",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es AWS Certificate Manager (ACM)?",
+    "back": "Aprovisiona, gestiona y despliega certificados SSL/TLS para cifrar en tránsito (HTTPS). Los certificados públicos de ACM son gratuitos y se renuevan automáticamente. Se integran con ELB, CloudFront y API Gateway.",
+    "tags": [
+      "acm"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-016",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es AWS Secrets Manager?",
+    "back": "Guarda secretos (contraseñas, claves de API) cifrados con KMS y puede ROTARLOS automáticamente cada X días mediante Lambda. Integración nativa con RDS, Aurora, Redshift y DocumentDB.",
+    "tags": [
+      "secrets-manager"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-017",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es AWS Config?",
+    "back": "Registra la configuración de tus recursos y sus cambios a lo largo del tiempo, y evalúa si cumplen reglas (gestionadas por AWS o propias). Puede notificar por SNS y remediar automáticamente con Systems Manager. Es regional y se puede agregar entre cuentas.",
+    "tags": [
+      "config"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-018",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es AWS Security Hub?",
+    "back": "Panel central para gestionar la seguridad de varias cuentas: reúne y prioriza hallazgos de GuardDuty, Inspector, Macie, IAM Access Analyzer, Firewall Manager y socios, y comprueba la cuenta contra estándares (CIS, AWS Foundational Security Best Practices). Requiere AWS Config.",
+    "tags": [
+      "security-hub"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-019",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es Amazon Detective?",
+    "back": "Ayuda a INVESTIGAR la causa raíz de hallazgos de seguridad: recoge automáticamente datos de VPC Flow Logs, CloudTrail y GuardDuty y crea una vista unificada con gráficos de relaciones entre recursos, usuarios y eventos.",
+    "tags": [
+      "detective"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-020",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "comparacion",
+    "front": "GuardDuty vs Security Hub vs Detective",
+    "back": "GuardDuty: DETECTA amenazas.\nSecurity Hub: CENTRALIZA y prioriza los hallazgos de varios servicios y cuentas.\nDetective: INVESTIGA el origen de un hallazgo concreto.",
+    "tags": [
+      "guardduty",
+      "security-hub",
+      "detective"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-021",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es el equipo AWS Abuse (Trust & Safety)?",
+    "back": "El canal para denunciar que recursos de AWS se están usando para fines abusivos o ilegales: spam, escaneo de puertos, ataques DoS, alojamiento de contenido ilegal o malware. Se contacta mediante un formulario o el correo de abuse.",
+    "tags": [
+      "abuse"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-022",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es IAM Access Analyzer?",
+    "back": "Identifica qué recursos (buckets de S3, roles, claves KMS, funciones Lambda, colas, secretos) se comparten con entidades EXTERNAS a tu zona de confianza (tu cuenta u organización), para detectar accesos no intencionados.",
+    "tags": [
+      "access-analyzer"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-023",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "Responsabilidad compartida: 'controles compartidos'",
+    "back": "Algunos controles aplican a ambos en su propio ámbito: gestión de parches (AWS su infraestructura, el cliente sus SO y aplicaciones), gestión de configuración y concienciación/formación (cada uno de sus empleados).",
+    "tags": [
+      "responsabilidad-compartida"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-024",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "comparacion",
+    "front": "Controles heredados vs del cliente",
+    "back": "Heredados: los que el cliente hereda totalmente de AWS (controles físicos y ambientales del centro de datos).\nEspecíficos del cliente: dependen solo del cliente (p. ej., la protección de datos y el enrutamiento dentro de sus propios servicios).",
+    "tags": [
+      "responsabilidad-compartida"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "sec-025",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "dato-clave",
+    "front": "¿Qué es el AWS Compliance Center / programas de cumplimiento?",
+    "back": "AWS mantiene certificaciones y atestaciones (ISO 27001, SOC 1/2/3, PCI DSS, HIPAA, FedRAMP, GDPR…). Los informes se descargan en AWS Artifact; cumplir la normativa en tus cargas sigue siendo responsabilidad compartida.",
+    "tags": [
+      "cumplimiento"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-026",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "caso-de-uso",
+    "front": "Quieres que se avise y se corrija automáticamente cualquier bucket de S3 que deje de tener cifrado activado. ¿Qué combinas?",
+    "back": "Una regla de AWS Config que evalúe el cifrado de los buckets + una acción de remediación automática de Systems Manager (y, si quieres, una notificación por SNS o EventBridge).",
+    "tags": [
+      "config"
+    ],
+    "difficulty": 2
   }
 ]

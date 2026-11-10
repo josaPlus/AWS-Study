@@ -8664,5 +8664,1109 @@
       "https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-sec-006",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un sitio web crítico sufre con frecuencia ataques DDoS sofisticados. La empresa quiere acceso 24/7 a expertos de AWS en respuesta a DDoS y protección ante los cargos extra por escalado durante un ataque. ¿Qué debe contratar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Shield Advanced",
+        "explanation": "Correcta. Shield Advanced añade el equipo de respuesta DDoS (SRT) 24/7, protección avanzada y protección de costes durante ataques."
+      },
+      {
+        "id": "b",
+        "text": "AWS Shield Standard",
+        "explanation": "Shield Standard es gratuito y protege contra ataques comunes de capa 3 y 4, pero no incluye el equipo de respuesta ni la protección de costes."
+      },
+      {
+        "id": "c",
+        "text": "Amazon GuardDuty",
+        "explanation": "GuardDuty detecta amenazas en la cuenta analizando logs; no mitiga ataques DDoS ni da acceso a expertos."
+      },
+      {
+        "id": "d",
+        "text": "AWS Firewall Manager",
+        "explanation": "Firewall Manager administra reglas en varias cuentas (incluido Shield Advanced), pero no es la protección DDoS en sí."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "DDoS avanzado + equipo de respuesta 24/7 + protección de costes → Shield Advanced.",
+    "refs": [
+      "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-summary.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-007",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa con 30 cuentas en AWS Organizations quiere aplicar automáticamente las mismas reglas de AWS WAF y de Security Groups en todas las cuentas, incluidas las que se creen en el futuro. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Firewall Manager",
+        "explanation": "Correcta. Firewall Manager aplica políticas de seguridad de forma centralizada en toda la organización y en los recursos nuevos."
+      },
+      {
+        "id": "b",
+        "text": "AWS WAF en cada cuenta por separado",
+        "explanation": "Configurar WAF cuenta por cuenta es manual, propenso a errores y no cubre automáticamente las cuentas nuevas."
+      },
+      {
+        "id": "c",
+        "text": "AWS Security Hub",
+        "explanation": "Security Hub centraliza HALLAZGOS y comprueba estándares, pero no despliega reglas de WAF ni Security Groups."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector escanea vulnerabilidades; no gestiona reglas de firewall."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Reglas de firewall centralizadas en toda la organización → Firewall Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-008",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere habilitar HTTPS en su Application Load Balancer con un certificado público gratuito que se renueve automáticamente. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Certificate Manager (ACM)",
+        "explanation": "Correcta. ACM emite certificados SSL/TLS públicos gratuitos, los renueva y los integra con ELB, CloudFront y API Gateway."
+      },
+      {
+        "id": "b",
+        "text": "AWS KMS",
+        "explanation": "KMS gestiona claves para cifrar datos en reposo; no emite certificados SSL/TLS para HTTPS."
+      },
+      {
+        "id": "c",
+        "text": "AWS Secrets Manager",
+        "explanation": "Secrets Manager guarda y rota secretos como contraseñas; no gestiona certificados para el balanceador."
+      },
+      {
+        "id": "d",
+        "text": "AWS CloudHSM",
+        "explanation": "CloudHSM proporciona HSM dedicados para claves; no emite ni renueva certificados públicos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Certificados SSL/TLS (HTTPS) gratuitos y autorrenovables → ACM.",
+    "refs": [
+      "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-009",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "El responsable de cumplimiento necesita ver cómo ha cambiado la configuración de un Security Group durante los últimos 6 meses y si en algún momento dejó el puerto 22 abierto a todo internet. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Config",
+        "explanation": "Correcta. AWS Config guarda el historial de configuración de cada recurso y evalúa reglas de cumplimiento como 'SSH no abierto a 0.0.0.0/0'."
+      },
+      {
+        "id": "b",
+        "text": "Amazon CloudWatch",
+        "explanation": "CloudWatch mide rendimiento y centraliza logs; no mantiene un historial de la configuración de los recursos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector evalúa vulnerabilidades y exposición de red actuales, pero no conserva el historial de cambios de configuración."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor puede señalar puertos abiertos HOY, pero no ofrece el historial de cambios de un recurso."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Historial de configuración y cumplimiento de recursos → AWS Config.",
+    "refs": [
+      "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-010",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere una vista única que agregue y priorice los hallazgos de GuardDuty, Inspector y Macie de todas sus cuentas, y que compruebe automáticamente la configuración frente a estándares como CIS. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Security Hub",
+        "explanation": "Correcta. Security Hub centraliza hallazgos de múltiples servicios y cuentas y ejecuta comprobaciones contra estándares de seguridad."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Detective",
+        "explanation": "Detective sirve para investigar un hallazgo concreto y su causa raíz; no es el panel central de hallazgos y estándares."
+      },
+      {
+        "id": "c",
+        "text": "AWS CloudTrail",
+        "explanation": "CloudTrail registra la actividad de API; no agrega hallazgos de otros servicios de seguridad."
+      },
+      {
+        "id": "d",
+        "text": "AWS Artifact",
+        "explanation": "Artifact proporciona los informes de cumplimiento de AWS; no evalúa tus cuentas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Panel central de seguridad multicuenta y estándares → Security Hub.",
+    "refs": [
+      "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-011",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "GuardDuty generó un hallazgo sobre una instancia posiblemente comprometida. El analista quiere visualizar con qué IPs, usuarios y recursos interactuó la instancia para encontrar la causa raíz. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Detective",
+        "explanation": "Correcta. Detective analiza automáticamente Flow Logs, CloudTrail y hallazgos de GuardDuty y muestra gráficos de relaciones para investigar."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Macie",
+        "explanation": "Macie descubre datos sensibles en S3; no investiga el comportamiento de una instancia."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "Config muestra cambios de configuración, pero no reconstruye la actividad de red y de usuarios relacionada con un incidente."
+      },
+      {
+        "id": "d",
+        "text": "AWS Shield",
+        "explanation": "Shield protege frente a DDoS; no es una herramienta de investigación forense."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Investigar la causa raíz de un hallazgo de seguridad → Amazon Detective.",
+    "refs": [
+      "https://docs.aws.amazon.com/detective/latest/userguide/what-is-detective.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-012",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de seguridad quiere hacer una prueba de penetración contra sus propias instancias EC2. ¿Qué afirmación es correcta?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Puede hacerla sin aprobación previa siempre que no realice ataques prohibidos como DoS o DDoS",
+        "explanation": "Correcta. AWS permite pentesting sin aprobación previa en una lista de servicios, pero prohíbe actividades como DoS/DDoS o inundación de puertos."
+      },
+      {
+        "id": "b",
+        "text": "Necesita siempre una autorización por escrito de AWS con 30 días de antelación",
+        "explanation": "Antes era así, pero hoy no se requiere aprobación previa para los servicios permitidos."
+      },
+      {
+        "id": "c",
+        "text": "Está prohibido hacer pruebas de penetración en AWS",
+        "explanation": "Falso. AWS permite las pruebas de penetración sobre los recursos del propio cliente con ciertas condiciones."
+      },
+      {
+        "id": "d",
+        "text": "Solo puede hacerlas el equipo de AWS Professional Services",
+        "explanation": "Falso. El cliente o quien él contrate puede hacer pruebas de penetración sobre sus recursos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Pentesting permitido sin aprobación previa en servicios listados; prohibidos DoS/DDoS y flooding.",
+    "refs": [
+      "https://aws.amazon.com/security/penetration-testing/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-013",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa detecta que unas instancias EC2 que NO son suyas están enviando spam y escaneando puertos de sus servidores. ¿A quién debe reportarlo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Al equipo AWS Abuse (Trust & Safety)",
+        "explanation": "Correcta. Este equipo recibe denuncias de uso abusivo o ilegal de recursos de AWS, como spam, escaneos o ataques."
+      },
+      {
+        "id": "b",
+        "text": "Al AWS Concierge",
+        "explanation": "Concierge es el equipo de facturación y cuentas del plan Enterprise; no gestiona denuncias de abuso."
+      },
+      {
+        "id": "c",
+        "text": "A AWS Professional Services",
+        "explanation": "Professional Services ofrece consultoría para proyectos del cliente; no investiga abusos de terceros."
+      },
+      {
+        "id": "d",
+        "text": "Abrir un caso en AWS Trusted Advisor",
+        "explanation": "Trusted Advisor da recomendaciones de buenas prácticas; no es un canal de denuncia."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recursos de AWS usados para spam, ataques o contenido ilegal → reportar a AWS Abuse.",
+    "refs": [
+      "https://repost.aws/knowledge-center/report-aws-abuse"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-014",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo quiere descubrir qué buckets de S3, roles de IAM y claves de KMS de su organización son accesibles desde cuentas o entidades externas. ¿Qué herramienta debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "IAM Access Analyzer",
+        "explanation": "Correcta. Access Analyzer identifica recursos compartidos fuera de tu zona de confianza (cuenta u organización)."
+      },
+      {
+        "id": "b",
+        "text": "IAM Access Advisor",
+        "explanation": "Access Advisor muestra qué servicios usó una identidad y cuándo; no detecta recursos compartidos con terceros."
+      },
+      {
+        "id": "c",
+        "text": "IAM Credentials Report",
+        "explanation": "El Credentials Report lista el estado de las credenciales de los usuarios; no analiza el acceso externo a recursos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon GuardDuty",
+        "explanation": "GuardDuty detecta actividad maliciosa; no revisa políticas para encontrar recursos compartidos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recursos accesibles desde fuera de tu cuenta/organización → IAM Access Analyzer.",
+    "refs": [
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-015",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Cuáles de las siguientes son responsabilidades de AWS según el modelo de responsabilidad compartida? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Seguridad física de los centros de datos",
+        "explanation": "Correcta. El acceso físico, la vigilancia y la protección ambiental de los centros de datos los gestiona AWS."
+      },
+      {
+        "id": "b",
+        "text": "Mantenimiento del hardware y de la red global",
+        "explanation": "Correcta. Servidores, almacenamiento, red y la infraestructura global son responsabilidad de AWS."
+      },
+      {
+        "id": "c",
+        "text": "Cifrar los datos de las aplicaciones del cliente",
+        "explanation": "Incorrecta. Decidir y configurar el cifrado de sus datos es responsabilidad del cliente."
+      },
+      {
+        "id": "d",
+        "text": "Configurar los permisos de IAM de los usuarios del cliente",
+        "explanation": "Incorrecta. La gestión de identidades y permisos es siempre responsabilidad del cliente."
+      },
+      {
+        "id": "e",
+        "text": "Configurar las reglas de los Security Groups",
+        "explanation": "Incorrecta. Las reglas de firewall de las instancias las define el cliente."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "AWS: seguridad DE la nube (física, hardware, red global). Cliente: seguridad EN la nube (datos, IAM, red propia).",
+    "refs": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-016",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa usa AWS Lambda para su backend. Según el modelo de responsabilidad compartida, ¿qué sigue siendo responsabilidad del cliente?",
+    "options": [
+      {
+        "id": "a",
+        "text": "El código de la función y los permisos de IAM que usa",
+        "explanation": "Correcta. Aunque AWS gestiona los servidores y el entorno de ejecución, el cliente responde de su código, sus datos y sus permisos."
+      },
+      {
+        "id": "b",
+        "text": "Aplicar parches al sistema operativo donde se ejecuta Lambda",
+        "explanation": "En Lambda (serverless) AWS gestiona el sistema operativo y el entorno de ejecución."
+      },
+      {
+        "id": "c",
+        "text": "Escalar los servidores cuando aumentan las invocaciones",
+        "explanation": "El escalado de Lambda es automático y lo gestiona AWS."
+      },
+      {
+        "id": "d",
+        "text": "Mantener el hardware de los centros de datos",
+        "explanation": "El hardware siempre es responsabilidad de AWS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Cuanto más gestionado (Lambda), menos responsabilidad del cliente, pero el código, los datos y los permisos siguen siendo suyos.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/security-overview-aws-lambda/the-shared-responsibility-model.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-017",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere cifrar sus volúmenes EBS y sus buckets de S3 con claves que ella misma controle (quién las usa y cuándo se rotan), sin gestionar hardware criptográfico. ¿Qué debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Claves administradas por el cliente en AWS KMS",
+        "explanation": "Correcta. Con KMS el cliente controla políticas, uso y rotación de sus claves mientras AWS gestiona el hardware y el software."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudHSM",
+        "explanation": "CloudHSM también da control total, pero obliga a gestionar un HSM dedicado; es más de lo que se necesita aquí."
+      },
+      {
+        "id": "c",
+        "text": "AWS Certificate Manager",
+        "explanation": "ACM gestiona certificados para cifrado en tránsito (HTTPS), no claves para cifrar volúmenes o buckets en reposo."
+      },
+      {
+        "id": "d",
+        "text": "AWS Secrets Manager",
+        "explanation": "Secrets Manager guarda contraseñas y claves de API; no es el servicio de claves de cifrado para EBS y S3."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Cifrado en reposo con claves controladas por el cliente → KMS (claves administradas por el cliente).",
+    "refs": [
+      "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-018",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo necesita guardar la contraseña de una base de datos Aurora y que se cambie automáticamente cada 30 días sin modificar la aplicación. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Secrets Manager",
+        "explanation": "Correcta. Secrets Manager rota automáticamente las credenciales de Aurora/RDS y la aplicación siempre lee el valor actual."
+      },
+      {
+        "id": "b",
+        "text": "SSM Parameter Store (nivel estándar)",
+        "explanation": "Parameter Store guarda valores cifrados, pero no ofrece rotación automática nativa de credenciales de bases de datos."
+      },
+      {
+        "id": "c",
+        "text": "AWS KMS",
+        "explanation": "KMS rota claves de cifrado, no contraseñas de bases de datos."
+      },
+      {
+        "id": "d",
+        "text": "IAM Credentials Report",
+        "explanation": "El Credentials Report informa del estado de las credenciales de usuarios IAM; no gestiona contraseñas de bases de datos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Rotación automática de contraseñas de BD → Secrets Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-019",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita inspeccionar y filtrar todo el tráfico que entra y sale de su VPC, incluido el filtrado por nombres de dominio y la detección de intrusiones, con un servicio gestionado de AWS. ¿Qué debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Network Firewall",
+        "explanation": "Correcta. Network Firewall protege toda la VPC con reglas de capas 3 a 7, filtrado de dominios e IPS."
+      },
+      {
+        "id": "b",
+        "text": "Security Groups",
+        "explanation": "Los Security Groups filtran por IP y puerto en cada instancia; no filtran por dominio ni detectan intrusiones."
+      },
+      {
+        "id": "c",
+        "text": "AWS WAF",
+        "explanation": "WAF filtra peticiones web en CloudFront, ALB o API Gateway; no inspecciona todo el tráfico de la VPC."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector evalúa vulnerabilidades; no filtra el tráfico de red."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Firewall gestionado para toda la VPC (capas 3-7, IPS, dominios) → AWS Network Firewall.",
+    "refs": [
+      "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-020",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "Un analista de seguridad estudia servicios que detectan problemas. ¿Qué DOS servicios usan machine learning para identificar riesgos de seguridad? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon GuardDuty",
+        "explanation": "Correcta. GuardDuty combina ML, detección de anomalías e inteligencia de amenazas para encontrar actividad maliciosa."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Macie",
+        "explanation": "Correcta. Macie usa ML y coincidencia de patrones para descubrir datos sensibles en S3."
+      },
+      {
+        "id": "c",
+        "text": "AWS Shield Standard",
+        "explanation": "Incorrecta. Shield Standard es protección DDoS automática; no se describe como un servicio de detección con ML para la cuenta."
+      },
+      {
+        "id": "d",
+        "text": "AWS Artifact",
+        "explanation": "Incorrecta. Artifact es un portal de documentos de cumplimiento."
+      },
+      {
+        "id": "e",
+        "text": "AWS Certificate Manager",
+        "explanation": "Incorrecta. ACM emite y renueva certificados SSL/TLS."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "ML en seguridad: GuardDuty (amenazas) y Macie (datos sensibles en S3).",
+    "refs": [
+      "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-021",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación médica en AWS debe cumplir HIPAA. ¿Qué afirmación sobre el cumplimiento es correcta?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS ofrece servicios aptos para HIPAA y un acuerdo BAA, pero el cliente debe configurar su aplicación para cumplir",
+        "explanation": "Correcta. El cumplimiento es compartido: AWS certifica su infraestructura y ofrece el BAA (vía Artifact), y el cliente configura correctamente sus cargas."
+      },
+      {
+        "id": "b",
+        "text": "Cualquier aplicación en AWS cumple HIPAA automáticamente",
+        "explanation": "Falso. AWS no puede garantizar que la configuración del cliente cumpla; eso depende de cómo se diseñe la aplicación."
+      },
+      {
+        "id": "c",
+        "text": "AWS es el único responsable del cumplimiento de HIPAA del cliente",
+        "explanation": "Falso. El cliente sigue siendo responsable de sus datos, accesos y configuración."
+      },
+      {
+        "id": "d",
+        "text": "HIPAA no se puede cumplir en la nube pública",
+        "explanation": "Falso. Muchas organizaciones de salud cumplen HIPAA en AWS usando los servicios aptos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Cumplimiento = responsabilidad compartida: AWS certifica su infraestructura; el cliente configura sus cargas.",
+    "refs": [
+      "https://aws.amazon.com/compliance/hipaa-compliance/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-022",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo quiere cifrar el tráfico entre los navegadores de los usuarios y su aplicación. ¿Qué tipo de cifrado necesita y con qué servicio lo implementa más fácilmente?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cifrado en tránsito con TLS, usando un certificado de ACM en el balanceador",
+        "explanation": "Correcta. El tráfico que viaja por la red se protege con TLS (HTTPS); ACM proporciona y renueva el certificado."
+      },
+      {
+        "id": "b",
+        "text": "Cifrado en reposo con KMS en los volúmenes EBS",
+        "explanation": "El cifrado de EBS protege los datos guardados en disco, no el tráfico entre el navegador y la aplicación."
+      },
+      {
+        "id": "c",
+        "text": "Cifrado del lado del cliente en S3",
+        "explanation": "Cifrar objetos antes de subirlos a S3 protege datos en reposo, no la comunicación web."
+      },
+      {
+        "id": "d",
+        "text": "Activar MFA para los usuarios de IAM",
+        "explanation": "MFA refuerza la autenticación de IAM; no cifra el tráfico de la aplicación."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Datos que viajan → cifrado en tránsito (TLS/HTTPS con ACM). Datos guardados → en reposo (KMS).",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-023",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un auditor quiere demostrar que cada uso de una clave de cifrado de KMS (quién la usó y cuándo) queda registrado. ¿Dónde se encuentra esa información?",
+    "options": [
+      {
+        "id": "a",
+        "text": "En AWS CloudTrail",
+        "explanation": "Correcta. Las operaciones con claves de KMS (Encrypt, Decrypt, GenerateDataKey…) son llamadas a la API que CloudTrail registra."
+      },
+      {
+        "id": "b",
+        "text": "En AWS Artifact",
+        "explanation": "Artifact contiene informes de cumplimiento de AWS, no el uso de tus claves."
+      },
+      {
+        "id": "c",
+        "text": "En Amazon Macie",
+        "explanation": "Macie analiza datos en S3; no registra el uso de claves."
+      },
+      {
+        "id": "d",
+        "text": "En el AWS Health Dashboard",
+        "explanation": "El Health Dashboard muestra eventos de los servicios de AWS, no la actividad de tus claves."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "El uso de claves de KMS queda auditado en CloudTrail.",
+    "refs": [
+      "https://docs.aws.amazon.com/kms/latest/developerguide/logging-using-cloudtrail.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-024",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere que, si un bucket de S3 se configura sin cifrado, se detecte y se corrija automáticamente. ¿Qué combinación es la más adecuada?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Una regla de AWS Config con remediación automática mediante Systems Manager",
+        "explanation": "Correcta. Config detecta el recurso no conforme y puede lanzar una acción de remediación automática de SSM."
+      },
+      {
+        "id": "b",
+        "text": "Una alarma de CloudWatch sobre la CPU",
+        "explanation": "Las métricas de CPU no indican si un bucket está cifrado."
+      },
+      {
+        "id": "c",
+        "text": "AWS Artifact",
+        "explanation": "Artifact solo ofrece documentos de cumplimiento de AWS; no evalúa ni corrige tus recursos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon GuardDuty",
+        "explanation": "GuardDuty detecta amenazas activas, no configuraciones incorrectas como la falta de cifrado, y no las corrige."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Detectar y corregir configuraciones no conformes → reglas de AWS Config + remediación con SSM.",
+    "refs": [
+      "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-004",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Detección continua de amenazas que analiza CloudTrail, VPC Flow Logs y registros DNS con machine learning, sin instalar agentes.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon GuardDuty",
+        "explanation": "Correcta. GuardDuty es el servicio de detección inteligente de amenazas."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector busca vulnerabilidades de software en EC2, ECR y Lambda. Sería la respuesta para encontrar paquetes con CVE."
+      },
+      {
+        "id": "c",
+        "text": "AWS Security Hub",
+        "explanation": "Security Hub agrega hallazgos de otros servicios; no analiza los logs por sí mismo para detectar amenazas."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Detective",
+        "explanation": "Detective investiga un hallazgo ya generado. Sería la respuesta para encontrar la causa raíz de un incidente."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Detección de amenazas → GuardDuty.",
+    "refs": [
+      "https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-005",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Portal de autoservicio para descargar los informes de cumplimiento de AWS (SOC, ISO, PCI) y aceptar acuerdos como el BAA.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Config",
+        "explanation": "Config evalúa el cumplimiento de TUS recursos frente a reglas. Sería la respuesta para comprobar tu propia configuración."
+      },
+      {
+        "id": "b",
+        "text": "AWS Artifact",
+        "explanation": "Correcta. Artifact es el portal de documentos de cumplimiento de AWS."
+      },
+      {
+        "id": "c",
+        "text": "AWS Audit Manager",
+        "explanation": "Audit Manager recopilaba evidencias de tus cargas para tus auditorías (cerrado a clientes nuevos desde abril de 2026); no entrega los informes de AWS."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor recomienda buenas prácticas para tu cuenta; no entrega certificaciones."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Informes de cumplimiento de AWS → Artifact.",
+    "refs": [
+      "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-006",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Firewall de aplicaciones web (capa 7) que bloquea inyección SQL, cross-site scripting y peticiones por IP o país en CloudFront, ALB o API Gateway.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS WAF",
+        "explanation": "Correcta. WAF es el firewall de aplicaciones web de AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS Shield Standard",
+        "explanation": "Shield protege contra DDoS en capas 3 y 4; no analiza peticiones HTTP. Sería la respuesta ante un ataque volumétrico."
+      },
+      {
+        "id": "c",
+        "text": "AWS Network Firewall",
+        "explanation": "Network Firewall protege toda la VPC (capas 3 a 7) a nivel de red; no se asocia a CloudFront ni API Gateway."
+      },
+      {
+        "id": "d",
+        "text": "Security Groups",
+        "explanation": "Los Security Groups filtran por IP y puerto en instancias; no entienden el contenido HTTP."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Ataques web de capa 7 → WAF.",
+    "refs": [
+      "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-007",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Protección contra ataques DDoS de capa 3 y 4, activada automáticamente y sin coste para todos los clientes de AWS.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Shield Standard",
+        "explanation": "Correcta. Shield Standard es gratuito y está siempre activo."
+      },
+      {
+        "id": "b",
+        "text": "AWS Shield Advanced",
+        "explanation": "Shield Advanced tiene una cuota mensual y añade el equipo de respuesta DDoS. Sería la respuesta para protección avanzada 24/7."
+      },
+      {
+        "id": "c",
+        "text": "AWS WAF",
+        "explanation": "WAF filtra peticiones de capa 7 con reglas y se paga por uso; no es la protección DDoS gratuita."
+      },
+      {
+        "id": "d",
+        "text": "Amazon GuardDuty",
+        "explanation": "GuardDuty detecta amenazas en la cuenta; no mitiga DDoS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "DDoS básico gratis para todos → Shield Standard.",
+    "refs": [
+      "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-standard-summary.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-008",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Registra el historial de configuración de los recursos y evalúa si cumplen reglas definidas, con opción de remediación automática.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS CloudTrail",
+        "explanation": "CloudTrail registra QUIÉN hizo cada llamada a la API, no el estado de configuración de cada recurso en el tiempo."
+      },
+      {
+        "id": "b",
+        "text": "AWS Config",
+        "explanation": "Correcta. AWS Config es el servicio de historial de configuración y reglas de cumplimiento."
+      },
+      {
+        "id": "c",
+        "text": "AWS Systems Manager",
+        "explanation": "Systems Manager puede EJECUTAR la remediación, pero quien detecta el incumplimiento de configuración es otro servicio."
+      },
+      {
+        "id": "d",
+        "text": "AWS Security Hub",
+        "explanation": "Security Hub agrega hallazgos y estándares (y usa Config por debajo), pero no es el registro de configuración en sí."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Historial de configuración y reglas de cumplimiento → AWS Config.",
+    "refs": [
+      "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-009",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Crea y controla claves de cifrado integradas con la mayoría de los servicios de AWS; AWS gestiona el hardware y el software.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS KMS",
+        "explanation": "Correcta. Key Management Service es el servicio central de claves."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudHSM",
+        "explanation": "CloudHSM da un HSM dedicado en el que TÚ gestionas las claves. Sería la respuesta si se exigiera hardware de un solo inquilino."
+      },
+      {
+        "id": "c",
+        "text": "AWS Certificate Manager",
+        "explanation": "ACM gestiona certificados SSL/TLS para HTTPS. Sería la respuesta para cifrado en tránsito."
+      },
+      {
+        "id": "d",
+        "text": "AWS Secrets Manager",
+        "explanation": "Secrets Manager guarda y rota secretos (contraseñas). Sería la respuesta para credenciales de bases de datos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Claves de cifrado gestionadas → KMS.",
+    "refs": [
+      "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-010",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Panel central que reúne y prioriza hallazgos de seguridad de varios servicios y cuentas y los compara con estándares como CIS.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Security Hub",
+        "explanation": "Correcta. Security Hub es la herramienta central de postura de seguridad."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Detective",
+        "explanation": "Detective investiga hallazgos concretos con gráficos de relaciones. Sería la respuesta para el análisis de la causa raíz."
+      },
+      {
+        "id": "c",
+        "text": "AWS Firewall Manager",
+        "explanation": "Firewall Manager despliega reglas de firewall en varias cuentas; no agrega hallazgos."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor hace comprobaciones de buenas prácticas, pero no agrega hallazgos de GuardDuty, Inspector y Macie."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Centralizar hallazgos y estándares → Security Hub.",
+    "refs": [
+      "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-011",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Investiga la causa raíz de actividades sospechosas creando gráficos de relaciones con datos de Flow Logs, CloudTrail y GuardDuty.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Detective",
+        "explanation": "Correcta. Detective está hecho para investigar incidentes de seguridad."
+      },
+      {
+        "id": "b",
+        "text": "Amazon GuardDuty",
+        "explanation": "GuardDuty DETECTA la amenaza y genera el hallazgo, pero no ofrece la vista de investigación. Sería la respuesta para la detección inicial."
+      },
+      {
+        "id": "c",
+        "text": "AWS X-Ray",
+        "explanation": "X-Ray traza peticiones de aplicaciones para depurar rendimiento, no incidentes de seguridad."
+      },
+      {
+        "id": "d",
+        "text": "AWS Config",
+        "explanation": "Config muestra el historial de configuración, no las interacciones de red y usuarios de un incidente."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Investigar el origen de un incidente → Detective.",
+    "refs": [
+      "https://docs.aws.amazon.com/detective/latest/userguide/what-is-detective.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-012",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Aplica de forma centralizada reglas de WAF, Shield Advanced y Security Groups en todas las cuentas de una AWS Organization.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Firewall Manager",
+        "explanation": "Correcta. Firewall Manager gestiona políticas de seguridad en toda la organización."
+      },
+      {
+        "id": "b",
+        "text": "AWS Organizations (SCP)",
+        "explanation": "Las SCP limitan qué acciones de API se pueden hacer en las cuentas; no despliegan reglas de firewall."
+      },
+      {
+        "id": "c",
+        "text": "AWS Control Tower",
+        "explanation": "Control Tower configura un entorno multicuenta con guardarraíles; no gestiona reglas de WAF y Security Groups."
+      },
+      {
+        "id": "d",
+        "text": "AWS Network Firewall",
+        "explanation": "Network Firewall es el firewall de una VPC; Firewall Manager puede desplegarlo, pero no es el gestor centralizado."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Reglas de firewall en toda la organización → Firewall Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"
+    ],
+    "source": "original"
   }
 ]
