@@ -3716,5 +3716,253 @@
       "migracion"
     ],
     "difficulty": 2
+  },
+  {
+    "id": "arq-001",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "¿Qué es el AWS Well-Architected Framework?",
+    "back": "Un conjunto de buenas prácticas y preguntas para diseñar y evaluar arquitecturas en la nube, organizado en 6 pilares: excelencia operativa, seguridad, fiabilidad, eficiencia del rendimiento, optimización de costes y sostenibilidad.",
+    "tags": [
+      "well-architected"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "arq-002",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "dato-clave",
+    "front": "Principios generales de diseño del Well-Architected Framework",
+    "back": "Dejar de adivinar la capacidad; probar a escala de producción; automatizar para facilitar la experimentación; permitir arquitecturas evolutivas; basar las decisiones en datos; mejorar mediante simulacros (game days).",
+    "tags": [
+      "well-architected"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-003",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "Pilar de excelencia operativa: principios clave",
+    "back": "Realizar las operaciones como código; hacer cambios frecuentes, pequeños y reversibles; refinar los procedimientos a menudo; anticipar los fallos; aprender de todos los fallos operativos. Servicios: CloudFormation, Config, CloudTrail, CloudWatch, X-Ray, CodePipeline.",
+    "tags": [
+      "well-architected",
+      "excelencia-operativa"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-004",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "Pilar de seguridad: principios clave",
+    "back": "Base de identidad sólida (mínimo privilegio); habilitar la trazabilidad; seguridad en todas las capas; automatizar las buenas prácticas; proteger los datos en tránsito y en reposo; mantener a las personas lejos de los datos; prepararse para incidentes.",
+    "tags": [
+      "well-architected",
+      "seguridad"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-005",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "Pilar de fiabilidad: principios clave",
+    "back": "Recuperarse automáticamente de los fallos; probar los procedimientos de recuperación; escalar horizontalmente para aumentar la disponibilidad; dejar de adivinar la capacidad; gestionar el cambio con automatización. Servicios: Auto Scaling, Multi-AZ, Backup, Route 53, Service Quotas.",
+    "tags": [
+      "well-architected",
+      "fiabilidad"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-006",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "Pilar de eficiencia del rendimiento: principios clave",
+    "back": "Democratizar tecnologías avanzadas (usarlas como servicio); hacerse global en minutos; usar arquitecturas serverless; experimentar más a menudo; afinidad mecánica (elegir la tecnología que mejor encaja con el objetivo).",
+    "tags": [
+      "well-architected",
+      "rendimiento"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-007",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "Pilar de optimización de costes: principios clave",
+    "back": "Implementar la gestión financiera en la nube; adoptar un modelo de consumo (pagar solo lo que usas); medir la eficiencia general; dejar de gastar en el 'trabajo pesado indiferenciado'; analizar y atribuir el gasto. Servicios: Cost Explorer, Budgets, CUR, Savings Plans, Spot.",
+    "tags": [
+      "well-architected",
+      "costes"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-008",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "Pilar de sostenibilidad: principios clave",
+    "back": "Entender tu impacto; fijar objetivos de sostenibilidad; maximizar la utilización; adoptar hardware y software más eficientes; usar servicios gestionados; reducir el impacto de los dispositivos de los usuarios. Ejemplos: Graviton, serverless, Auto Scaling, clases de S3 más frías.",
+    "tags": [
+      "well-architected",
+      "sostenibilidad"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-009",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "¿Qué es la AWS Well-Architected Tool?",
+    "back": "Herramienta gratuita de la consola para revisar tus cargas de trabajo frente a los 6 pilares: respondes preguntas, obtienes un informe con riesgos altos y medios y un plan de mejora.",
+    "tags": [
+      "well-architected"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "arq-010",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "¿Qué es la Customer Carbon Footprint Tool?",
+    "back": "Herramienta de la consola de facturación que muestra, mide y proyecta las emisiones de carbono asociadas a tu uso de AWS, y cómo cambian al migrar o optimizar.",
+    "tags": [
+      "sostenibilidad"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-011",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "dato-clave",
+    "front": "Principios de diseño de arquitecturas en la nube (resumen del curso)",
+    "back": "Escalabilidad (vertical y horizontal); recursos desechables (servidores fáciles de reemplazar); automatización (serverless, IaC, Auto Scaling); bajo acoplamiento (componentes que fallan sin arrastrar a otros); servicios, no servidores (usar servicios gestionados).",
+    "tags": [
+      "arquitectura"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-012",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "¿Qué es el AWS Cloud Adoption Framework (CAF)?",
+    "back": "Guía de AWS para planificar y ejecutar la transformación digital con la nube. Organiza las capacidades en 6 perspectivas: 3 de negocio (Negocio, Personas, Gobernanza) y 3 técnicas (Plataforma, Seguridad, Operaciones).",
+    "tags": [
+      "caf"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "arq-013",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "comparacion",
+    "front": "Dominios de transformación del CAF",
+    "back": "Tecnología: migrar y modernizar infraestructura, aplicaciones y datos.\nProcesos: digitalizar, automatizar y optimizar las operaciones de negocio.\nOrganización: reestructurar cómo trabajan los equipos (ágiles, centrados en el cliente).\nProducto: rediseñar el modelo de negocio con nuevos productos y servicios.",
+    "tags": [
+      "caf"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "arq-014",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "comparacion",
+    "front": "Las 4 fases de la transformación según CAF",
+    "back": "Envision (visualizar): mostrar cómo la nube acelerará los resultados.\nAlign (alinear): detectar brechas de capacidades y dependencias.\nLaunch (lanzar): pilotos en producción que demuestren valor.\nScale (escalar): ampliar los pilotos al resto del negocio.",
+    "tags": [
+      "caf"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-015",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "¿Qué es AWS Marketplace?",
+    "back": "Catálogo digital con miles de productos de software de proveedores independientes (AMIs, SaaS, contenedores, datos, servicios profesionales) que se compran y se pagan a través de la factura de AWS.",
+    "tags": [
+      "marketplace"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "arq-016",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "type": "comparacion",
+    "front": "Recursos de ayuda de AWS: ¿cuál es cuál?",
+    "back": "AWS re:Post: preguntas y respuestas de la comunidad moderadas por AWS (sustituye a los foros).\nKnowledge Center: respuestas de AWS a las preguntas más frecuentes.\nDocumentación, whitepapers, Prescriptive Guidance y Solutions Library: guías técnicas.\nSkill Builder / Training: formación.",
+    "tags": [
+      "soporte",
+      "recursos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-017",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "type": "comparacion",
+    "front": "AWS Professional Services vs AWS Partner Network vs AWS Managed Services",
+    "back": "Professional Services: equipo de expertos de AWS que trabaja con tu empresa en proyectos concretos (migraciones, arquitecturas).\nAPN: red global de socios (consultoría, tecnología, formación) que ayudan a los clientes.\nAMS: AWS opera y gestiona por ti la infraestructura del día a día (parches, monitoreo, seguridad).",
+    "tags": [
+      "ecosistema"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-018",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "¿Qué era AWS IQ?",
+    "back": "Un mercado para encontrar y contratar expertos independientes certificados por AWS para proyectos concretos, pagando a través de la factura de AWS.",
+    "tags": [
+      "ecosistema"
+    ],
+    "difficulty": 3,
+    "note": "AWS anunció el fin de soporte de AWS IQ en 2025; ya no es una opción vigente. Para ayuda externa, usa la AWS Partner Network o Professional Services."
+  },
+  {
+    "id": "arq-019",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "concepto",
+    "front": "¿Qué es el 'trabajo pesado indiferenciado'?",
+    "back": "Tareas de infraestructura que no diferencian a tu empresa (comprar servidores, parchear SO, gestionar centros de datos). La nube permite delegarlas a AWS para centrarte en lo que aporta valor a tus clientes.",
+    "tags": [
+      "valor"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "arq-020",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "type": "dato-clave",
+    "front": "¿Qué es el TCO (coste total de propiedad)?",
+    "back": "Comparar TODOS los costes de una solución: no solo el hardware, también energía, refrigeración, espacio, red, licencias, personal de operaciones y el coste de oportunidad. La nube suele reducir el TCO al eliminar costes ocultos y convertir CAPEX en OPEX.",
+    "tags": [
+      "economia"
+    ],
+    "difficulty": 2
   }
 ]

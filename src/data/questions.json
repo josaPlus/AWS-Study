@@ -12245,5 +12245,1148 @@
       "https://docs.aws.amazon.com/infrastructure-composer/latest/dg/what-is-composer.html"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-arq-001",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo quiere aplicar el pilar de excelencia operativa del AWS Well-Architected Framework. ¿Qué práctica está alineada con ese pilar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Realizar las operaciones como código y hacer cambios pequeños y reversibles",
+        "explanation": "Correcta. La excelencia operativa promueve automatizar las operaciones (IaC) y desplegar cambios frecuentes, pequeños y fáciles de revertir."
+      },
+      {
+        "id": "b",
+        "text": "Cifrar todos los datos en reposo con KMS",
+        "explanation": "El cifrado de datos pertenece al pilar de seguridad, no al de excelencia operativa."
+      },
+      {
+        "id": "c",
+        "text": "Comprar Reserved Instances para cargas estables",
+        "explanation": "Elegir el modelo de compra adecuado es una práctica del pilar de optimización de costes."
+      },
+      {
+        "id": "d",
+        "text": "Usar instancias Graviton para reducir el consumo energético",
+        "explanation": "Elegir hardware más eficiente forma parte del pilar de sostenibilidad."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Excelencia operativa = operaciones como código, cambios pequeños y reversibles, aprender de los fallos.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-002",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una arquitectura se diseña para recuperarse automáticamente de fallos, se prueban con regularidad los procedimientos de recuperación y se escala horizontalmente en varias AZ. ¿Qué pilar del Well-Architected Framework se está aplicando?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fiabilidad",
+        "explanation": "Correcta. La fiabilidad busca que la carga funcione correctamente y se recupere de fallos: recuperación automática, pruebas de recuperación y escalado horizontal."
+      },
+      {
+        "id": "b",
+        "text": "Eficiencia del rendimiento",
+        "explanation": "Este pilar trata de usar los recursos de forma eficiente según la demanda (tipos adecuados, serverless), no de recuperarse de fallos."
+      },
+      {
+        "id": "c",
+        "text": "Optimización de costes",
+        "explanation": "Este pilar busca entregar valor al menor coste; varias AZ y pruebas de recuperación suelen aumentar el coste."
+      },
+      {
+        "id": "d",
+        "text": "Seguridad",
+        "explanation": "Seguridad trata de proteger datos y sistemas, no de la recuperación ante fallos de infraestructura."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Recuperación automática, probar la recuperación, escalar horizontalmente → pilar de fiabilidad.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-003",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa implementa el mínimo privilegio, activa CloudTrail en todas las cuentas y cifra los datos en tránsito y en reposo. ¿Qué pilar del Well-Architected Framework está reforzando?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Seguridad",
+        "explanation": "Correcta. Base de identidad sólida, trazabilidad y protección de datos son principios del pilar de seguridad."
+      },
+      {
+        "id": "b",
+        "text": "Excelencia operativa",
+        "explanation": "La excelencia operativa se centra en operar y mejorar los sistemas (operaciones como código), no en identidades ni cifrado."
+      },
+      {
+        "id": "c",
+        "text": "Fiabilidad",
+        "explanation": "La fiabilidad se ocupa de la disponibilidad y la recuperación ante fallos."
+      },
+      {
+        "id": "d",
+        "text": "Sostenibilidad",
+        "explanation": "La sostenibilidad busca reducir el impacto ambiental de las cargas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Mínimo privilegio, trazabilidad y cifrado → pilar de seguridad.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-004",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa analiza su gasto por equipo con etiquetas, apaga los entornos de prueba fuera del horario laboral y usa instancias Spot para trabajos por lotes. ¿Qué pilar del Well-Architected Framework está aplicando?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Optimización de costes",
+        "explanation": "Correcta. Atribuir el gasto, pagar solo lo que se usa y elegir el modelo de compra adecuado son prácticas de optimización de costes."
+      },
+      {
+        "id": "b",
+        "text": "Eficiencia del rendimiento",
+        "explanation": "Este pilar se centra en seleccionar los recursos que mejor rinden, no en reducir el gasto."
+      },
+      {
+        "id": "c",
+        "text": "Fiabilidad",
+        "explanation": "La fiabilidad busca resistencia a fallos; las Spot incluso pueden interrumpirse."
+      },
+      {
+        "id": "d",
+        "text": "Excelencia operativa",
+        "explanation": "La excelencia operativa trata de operar y mejorar los procesos, no del control del gasto."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Atribuir gasto, apagar lo que no se usa y elegir bien el modelo de compra → optimización de costes.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-005",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo usa servicios serverless para no gestionar servidores, despliega en varias Regiones en minutos para estar cerca de los usuarios y experimenta con distintos tipos de instancia. ¿Qué pilar está aplicando?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eficiencia del rendimiento",
+        "explanation": "Correcta. Serverless, hacerse global en minutos y experimentar con frecuencia son principios del pilar de eficiencia del rendimiento."
+      },
+      {
+        "id": "b",
+        "text": "Seguridad",
+        "explanation": "Seguridad trata de identidades, trazabilidad y protección de datos; no de elegir arquitecturas por rendimiento."
+      },
+      {
+        "id": "c",
+        "text": "Sostenibilidad",
+        "explanation": "Serverless también ayuda a la sostenibilidad, pero ir global en minutos y experimentar con tipos de recursos son principios de rendimiento."
+      },
+      {
+        "id": "d",
+        "text": "Excelencia operativa",
+        "explanation": "La excelencia operativa se ocupa de las operaciones y su mejora, no de seleccionar recursos por rendimiento."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Serverless, global en minutos, experimentar, democratizar tecnologías → eficiencia del rendimiento.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-006",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere reducir el impacto ambiental de sus cargas: maximiza la utilización de las instancias, usa servicios gestionados y mueve los datos poco usados a clases de almacenamiento más frías. ¿Qué pilar está aplicando?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sostenibilidad",
+        "explanation": "Correcta. El pilar de sostenibilidad busca minimizar el impacto ambiental maximizando la utilización y usando servicios y hardware más eficientes."
+      },
+      {
+        "id": "b",
+        "text": "Fiabilidad",
+        "explanation": "La fiabilidad trata de resistir fallos, no del impacto ambiental."
+      },
+      {
+        "id": "c",
+        "text": "Seguridad",
+        "explanation": "La seguridad protege datos y sistemas; no se ocupa de la huella de carbono."
+      },
+      {
+        "id": "d",
+        "text": "Excelencia operativa",
+        "explanation": "La excelencia operativa se centra en operar y mejorar procesos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Maximizar utilización y reducir impacto ambiental → pilar de sostenibilidad.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-007",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un arquitecto quiere revisar una carga de trabajo frente a los 6 pilares, identificar riesgos altos y obtener un plan de mejora, usando una herramienta gratuita de la consola. ¿Cuál es?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Well-Architected Tool",
+        "explanation": "Correcta. La Well-Architected Tool guía la revisión mediante preguntas y genera un informe de riesgos y mejoras."
+      },
+      {
+        "id": "b",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor hace comprobaciones automáticas de la cuenta, pero no una revisión guiada por pilares de una carga concreta."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "AWS Config evalúa la configuración de recursos frente a reglas; no es una revisión de arquitectura por pilares."
+      },
+      {
+        "id": "d",
+        "text": "AWS Security Hub",
+        "explanation": "Security Hub se centra en hallazgos de seguridad; no cubre los 6 pilares."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Revisar una carga frente a los 6 pilares → Well-Architected Tool.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-008",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Según los principios de diseño en la nube, ¿qué práctica refleja el concepto de 'bajo acoplamiento'?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Comunicar los componentes mediante una cola SQS para que el fallo de uno no detenga a los demás",
+        "explanation": "Correcta. Desacoplar con colas o eventos permite que cada componente falle, escale y evolucione de forma independiente."
+      },
+      {
+        "id": "b",
+        "text": "Ejecutar todos los componentes en una sola instancia grande",
+        "explanation": "Concentrar todo en una instancia crea un acoplamiento fuerte y un único punto de fallo."
+      },
+      {
+        "id": "c",
+        "text": "Configurar manualmente cada servidor",
+        "explanation": "La configuración manual va contra el principio de automatización y no tiene que ver con el acoplamiento."
+      },
+      {
+        "id": "d",
+        "text": "Comprar Reserved Instances de 3 años",
+        "explanation": "Es una decisión de costes, no de diseño de la comunicación entre componentes."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Bajo acoplamiento = componentes independientes comunicados por colas, eventos o APIs.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_prevent_interaction_failure_loosely_coupled_system.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-009",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo trata sus servidores como recursos desechables: si uno falla, lo reemplaza automáticamente por uno nuevo idéntico en lugar de repararlo. ¿Qué beneficio de diseño en la nube aplica?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Recursos desechables y automatización",
+        "explanation": "Correcta. En la nube los recursos son temporales y reemplazables; automatizar su sustitución (p. ej., con Auto Scaling y AMIs) aumenta la fiabilidad."
+      },
+      {
+        "id": "b",
+        "text": "Escalado vertical",
+        "explanation": "El escalado vertical cambia el tamaño de un servidor; no habla de reemplazarlo ante fallos."
+      },
+      {
+        "id": "c",
+        "text": "Economías de escala",
+        "explanation": "Las economías de escala explican los precios bajos de AWS, no la forma de gestionar los servidores."
+      },
+      {
+        "id": "d",
+        "text": "Facturación unificada",
+        "explanation": "La facturación unificada agrupa las facturas de varias cuentas; no tiene relación con el diseño de servidores."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Reemplazar en lugar de reparar → recursos desechables + automatización.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/framework/general-design-principles.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-010",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Según AWS CAF, ¿qué perspectiva ayuda a garantizar que las inversiones en la nube aceleren los objetivos de transformación digital y los resultados de negocio?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Negocio",
+        "explanation": "Correcta. La perspectiva de Negocio alinea la estrategia de nube con los resultados de negocio; involucra a CEO, CFO, COO y CTO."
+      },
+      {
+        "id": "b",
+        "text": "Plataforma",
+        "explanation": "Plataforma se ocupa de construir una plataforma cloud técnica, escalable e híbrida."
+      },
+      {
+        "id": "c",
+        "text": "Operaciones",
+        "explanation": "Operaciones busca que los servicios cloud se entreguen al nivel acordado con el negocio."
+      },
+      {
+        "id": "d",
+        "text": "Seguridad",
+        "explanation": "Seguridad protege la confidencialidad, integridad y disponibilidad de datos y cargas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "CAF Negocio = inversiones en la nube que aceleran resultados de negocio.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/business-perspective.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-011",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Durante la adopción de la nube, una empresa detecta que sus empleados necesitan nuevas habilidades y que hay resistencia al cambio cultural. ¿Qué perspectiva de AWS CAF aborda estos retos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Personas",
+        "explanation": "Correcta. La perspectiva de Personas se ocupa de la cultura, la estructura organizativa, el liderazgo y la formación para la transformación."
+      },
+      {
+        "id": "b",
+        "text": "Gobernanza",
+        "explanation": "Gobernanza se centra en orquestar iniciativas, gestionar riesgos y medir beneficios, no en la cultura y las habilidades."
+      },
+      {
+        "id": "c",
+        "text": "Plataforma",
+        "explanation": "Plataforma es una perspectiva técnica sobre la arquitectura cloud."
+      },
+      {
+        "id": "d",
+        "text": "Operaciones",
+        "explanation": "Operaciones trata de la entrega y operación de los servicios cloud."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Cultura, formación y gestión del cambio → perspectiva de Personas (CAF).",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/people-perspective.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-012",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Qué perspectiva de AWS CAF se encarga de orquestar las iniciativas de nube, gestionar los riesgos y medir los beneficios para maximizar el valor para la organización?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gobernanza",
+        "explanation": "Correcta. Gobernanza gestiona el portafolio, los riesgos, la gestión financiera de la nube y la medición de beneficios."
+      },
+      {
+        "id": "b",
+        "text": "Negocio",
+        "explanation": "Negocio define la estrategia y los resultados esperados, pero la orquestación y la gestión de riesgos son de Gobernanza."
+      },
+      {
+        "id": "c",
+        "text": "Seguridad",
+        "explanation": "Seguridad trata de proteger datos y cargas, no de orquestar el programa de adopción."
+      },
+      {
+        "id": "d",
+        "text": "Personas",
+        "explanation": "Personas aborda la cultura y las habilidades."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Orquestar, gestionar riesgos y medir beneficios → perspectiva de Gobernanza.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/governance-perspective.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-013",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un equipo de arquitectos debe diseñar una plataforma cloud híbrida y escalable y modernizar las cargas existentes. ¿Qué perspectiva técnica de AWS CAF corresponde?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Plataforma",
+        "explanation": "Correcta. La perspectiva de Plataforma ayuda a construir una plataforma cloud de nivel empresarial, escalable e híbrida."
+      },
+      {
+        "id": "b",
+        "text": "Operaciones",
+        "explanation": "Operaciones se ocupa de operar los servicios al nivel acordado, no de diseñar la plataforma."
+      },
+      {
+        "id": "c",
+        "text": "Negocio",
+        "explanation": "Negocio es una perspectiva no técnica centrada en los resultados."
+      },
+      {
+        "id": "d",
+        "text": "Gobernanza",
+        "explanation": "Gobernanza es una perspectiva de negocio centrada en riesgos y beneficios."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Diseñar la plataforma cloud técnica → perspectiva de Plataforma.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/platform-perspective.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-014",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Cuáles de las siguientes son perspectivas TÉCNICAS de AWS CAF? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Seguridad",
+        "explanation": "Correcta. Seguridad, Plataforma y Operaciones son las tres perspectivas técnicas del CAF."
+      },
+      {
+        "id": "b",
+        "text": "Operaciones",
+        "explanation": "Correcta. Operaciones es una perspectiva técnica que garantiza la entrega de los servicios cloud."
+      },
+      {
+        "id": "c",
+        "text": "Personas",
+        "explanation": "Incorrecta. Personas es una perspectiva de negocio, junto con Negocio y Gobernanza."
+      },
+      {
+        "id": "d",
+        "text": "Gobernanza",
+        "explanation": "Incorrecta. Gobernanza es una perspectiva de negocio."
+      },
+      {
+        "id": "e",
+        "text": "Finanzas",
+        "explanation": "Incorrecta. 'Finanzas' no es una de las 6 perspectivas del CAF actual."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "CAF: negocio (Negocio, Personas, Gobernanza) y técnicas (Plataforma, Seguridad, Operaciones).",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/foundational-capabilities.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-015",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "En la transformación con AWS CAF, una empresa pone en producción proyectos piloto que demuestran valor de negocio incremental. ¿En qué fase se encuentra?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Launch (lanzar)",
+        "explanation": "Correcta. En Launch se entregan pilotos en producción que demuestran valor."
+      },
+      {
+        "id": "b",
+        "text": "Envision (visualizar)",
+        "explanation": "En Envision se identifican oportunidades y se muestra cómo la nube acelerará los resultados, antes de construir pilotos."
+      },
+      {
+        "id": "c",
+        "text": "Align (alinear)",
+        "explanation": "En Align se identifican brechas de capacidades y dependencias entre la organización, previo al lanzamiento."
+      },
+      {
+        "id": "d",
+        "text": "Scale (escalar)",
+        "explanation": "En Scale se amplían los pilotos ya probados al resto de la organización."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Fases CAF: Envision → Align → Launch (pilotos) → Scale.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/your-cloud-transformation-journey.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-016",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa usa la nube para crear nuevos productos digitales y cambiar su modelo de ingresos. ¿Qué dominio de transformación de AWS CAF describe esto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Producto",
+        "explanation": "Correcta. El dominio de Producto consiste en reimaginar el modelo de negocio con nuevas propuestas de valor y modelos de ingresos."
+      },
+      {
+        "id": "b",
+        "text": "Tecnología",
+        "explanation": "Tecnología se centra en migrar y modernizar infraestructura, aplicaciones y datos."
+      },
+      {
+        "id": "c",
+        "text": "Procesos",
+        "explanation": "Procesos busca digitalizar y automatizar las operaciones de negocio existentes."
+      },
+      {
+        "id": "d",
+        "text": "Organización",
+        "explanation": "Organización trata de cómo se estructuran y trabajan los equipos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Dominios CAF: Tecnología, Procesos, Organización y Producto (nuevos modelos de negocio).",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/your-cloud-transformation-value-chain.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-017",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Al calcular el coste total de propiedad (TCO) de su centro de datos para compararlo con AWS, ¿qué coste suele olvidar una empresa?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Energía, refrigeración, espacio físico y personal para mantener la infraestructura",
+        "explanation": "Correcta. El TCO incluye costes indirectos y operativos además del hardware, que a menudo no se consideran."
+      },
+      {
+        "id": "b",
+        "text": "El coste de la transferencia de datos entrante a AWS",
+        "explanation": "La entrada de datos a AWS es gratuita, así que no es un coste olvidado del centro de datos."
+      },
+      {
+        "id": "c",
+        "text": "El uso de IAM",
+        "explanation": "IAM es gratuito y no forma parte del coste del centro de datos."
+      },
+      {
+        "id": "d",
+        "text": "Las licencias de la consola de AWS",
+        "explanation": "La consola de AWS no tiene coste ni licencias que pagar."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "TCO = hardware + energía, refrigeración, espacio, red, licencias y personal.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/how-aws-pricing-works/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-018",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa de comercio electrónico prefiere dedicar a sus ingenieros a mejorar la experiencia de compra en lugar de parchear servidores y gestionar centros de datos. ¿Qué beneficio económico de la nube refleja esto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dejar de gastar en el trabajo pesado indiferenciado",
+        "explanation": "Correcta. Delegar en AWS las tareas de infraestructura que no diferencian al negocio libera al equipo para innovar."
+      },
+      {
+        "id": "b",
+        "text": "Economías de escala",
+        "explanation": "Las economías de escala explican los precios bajos de AWS, no cómo se reasigna el trabajo del personal."
+      },
+      {
+        "id": "c",
+        "text": "Elasticidad",
+        "explanation": "La elasticidad ajusta los recursos a la demanda; no describe el cambio de enfoque del equipo."
+      },
+      {
+        "id": "d",
+        "text": "Alta disponibilidad",
+        "explanation": "La alta disponibilidad trata de resistir fallos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Que AWS haga el trabajo de infraestructura para que tú te centres en el cliente = dejar el trabajo pesado indiferenciado.",
+    "refs": [
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-019",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Cuál es un principio general de diseño del AWS Well-Architected Framework?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dejar de adivinar las necesidades de capacidad",
+        "explanation": "Correcta. En la nube puedes usar la capacidad que necesitas y escalar automáticamente, en lugar de estimar por adelantado."
+      },
+      {
+        "id": "b",
+        "text": "Diseñar la arquitectura una vez y no cambiarla nunca",
+        "explanation": "Va en contra del principio de arquitecturas evolutivas: la arquitectura debe poder cambiar con el tiempo."
+      },
+      {
+        "id": "c",
+        "text": "Probar solo en entornos pequeños para ahorrar",
+        "explanation": "El framework recomienda probar a escala de producción, algo que la nube hace asequible."
+      },
+      {
+        "id": "d",
+        "text": "Tomar decisiones de arquitectura por intuición",
+        "explanation": "El framework recomienda basar las decisiones en datos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Principios generales: no adivinar capacidad, probar a escala real, automatizar, evolucionar, decidir con datos, game days.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/framework/general-design-principles.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-020",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Cuáles son DOS pilares del AWS Well-Architected Framework? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sostenibilidad",
+        "explanation": "Correcta. La sostenibilidad es el sexto pilar, añadido en 2021."
+      },
+      {
+        "id": "b",
+        "text": "Excelencia operativa",
+        "explanation": "Correcta. La excelencia operativa es uno de los 6 pilares."
+      },
+      {
+        "id": "c",
+        "text": "Elasticidad",
+        "explanation": "Incorrecta. La elasticidad es una característica de la nube, no un pilar."
+      },
+      {
+        "id": "d",
+        "text": "Escalabilidad",
+        "explanation": "Incorrecta. La escalabilidad aparece dentro de principios de diseño, pero no es uno de los 6 pilares."
+      },
+      {
+        "id": "e",
+        "text": "Gobernanza",
+        "explanation": "Incorrecta. Gobernanza es una perspectiva de AWS CAF, no un pilar de Well-Architected."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "6 pilares: excelencia operativa, seguridad, fiabilidad, eficiencia del rendimiento, optimización de costes y sostenibilidad.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-021",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere mostrar a sus inversores cuántas emisiones de carbono se asocian a su uso de AWS y cómo han cambiado tras optimizar sus cargas. ¿Qué herramienta debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Customer Carbon Footprint Tool",
+        "explanation": "Correcta. Esta herramienta de la consola de facturación muestra y proyecta las emisiones asociadas al uso de AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS Cost Explorer",
+        "explanation": "Cost Explorer analiza costes, no emisiones de carbono."
+      },
+      {
+        "id": "c",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor da recomendaciones de buenas prácticas; no informa de la huella de carbono."
+      },
+      {
+        "id": "d",
+        "text": "Amazon CloudWatch",
+        "explanation": "CloudWatch mide métricas operativas, no emisiones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Huella de carbono de tu uso de AWS → Customer Carbon Footprint Tool.",
+    "refs": [
+      "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-022",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una startup quiere usar servicios de reconocimiento de imágenes de última generación sin contratar expertos en ML, simplemente llamando a una API. ¿Qué principio de eficiencia del rendimiento aprovecha?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Democratizar las tecnologías avanzadas",
+        "explanation": "Correcta. AWS ofrece tecnologías complejas (como ML) como servicios que cualquiera puede consumir sin ser experto."
+      },
+      {
+        "id": "b",
+        "text": "Afinidad mecánica",
+        "explanation": "La afinidad mecánica trata de elegir la tecnología que mejor encaja con el patrón de acceso; no es el punto principal aquí."
+      },
+      {
+        "id": "c",
+        "text": "Recuperarse automáticamente de fallos",
+        "explanation": "Es un principio de fiabilidad, no de rendimiento."
+      },
+      {
+        "id": "d",
+        "text": "Proteger los datos en tránsito",
+        "explanation": "Proteger los datos en tránsito es un principio del pilar de seguridad."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Usar tecnologías avanzadas como servicio sin ser experto → democratizar la tecnología.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/design-principles.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-023",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa necesita un software de firewall de un proveedor externo, ya preconfigurado como AMI, y quiere pagarlo en su factura de AWS. ¿Dónde debe buscarlo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Marketplace",
+        "explanation": "Correcta. Marketplace es el catálogo de software de terceros (AMIs, SaaS, contenedores) que se factura a través de AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS Service Catalog",
+        "explanation": "Service Catalog contiene productos internos aprobados por tu empresa, no software de proveedores externos para comprar."
+      },
+      {
+        "id": "c",
+        "text": "AWS Artifact",
+        "explanation": "Artifact ofrece informes de cumplimiento, no software."
+      },
+      {
+        "id": "d",
+        "text": "AWS re:Post",
+        "explanation": "re:Post es una comunidad de preguntas y respuestas; no vende software."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Software de terceros pagado con la factura de AWS → AWS Marketplace.",
+    "refs": [
+      "https://docs.aws.amazon.com/marketplace/latest/buyerguide/what-is-marketplace.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-024",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un desarrollador tiene una duda técnica sobre Lambda y quiere hacer la pregunta a la comunidad, con respuestas revisadas por expertos de AWS, sin coste. ¿Qué recurso debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS re:Post",
+        "explanation": "Correcta. re:Post es el servicio gratuito de preguntas y respuestas gestionado por AWS, con participación de la comunidad y expertos."
+      },
+      {
+        "id": "b",
+        "text": "AWS Professional Services",
+        "explanation": "Professional Services es consultoría de pago para proyectos, no un foro de preguntas."
+      },
+      {
+        "id": "c",
+        "text": "AWS Managed Services",
+        "explanation": "AMS opera infraestructura por el cliente; no responde dudas puntuales de la comunidad."
+      },
+      {
+        "id": "d",
+        "text": "AWS Concierge",
+        "explanation": "Concierge ayuda con facturación y cuentas en los planes Enterprise."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Preguntas técnicas a la comunidad (gratis) → AWS re:Post.",
+    "refs": [
+      "https://repost.aws/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-025",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa sin experiencia en la nube quiere contratar a una consultora certificada que la ayude a diseñar y ejecutar su migración a AWS. ¿Dónde puede encontrarla?",
+    "options": [
+      {
+        "id": "a",
+        "text": "En la AWS Partner Network (APN)",
+        "explanation": "Correcta. La APN reúne a socios de consultoría y tecnología validados por AWS (con programas como Competencias) que ayudan a los clientes."
+      },
+      {
+        "id": "b",
+        "text": "En AWS Artifact",
+        "explanation": "Artifact contiene documentos de cumplimiento; no es un directorio de consultoras."
+      },
+      {
+        "id": "c",
+        "text": "En AWS Trusted Advisor",
+        "explanation": "Trusted Advisor da recomendaciones automáticas, no personal de consultoría."
+      },
+      {
+        "id": "d",
+        "text": "En AWS IQ",
+        "explanation": "AWS IQ conectaba con expertos independientes, pero AWS anunció su fin de soporte; la vía vigente son los socios de la APN o Professional Services."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Socios de consultoría y tecnología → AWS Partner Network. Expertos de AWS → Professional Services.",
+    "refs": [
+      "https://aws.amazon.com/partners/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-arq-026",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere que AWS se encargue de operar su infraestructura del día a día (parches, monitoreo, copias de seguridad, gestión de incidentes) para centrarse en sus aplicaciones. ¿Qué oferta se ajusta?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Managed Services (AMS)",
+        "explanation": "Correcta. AMS proporciona un equipo de AWS que opera y gestiona la infraestructura del cliente siguiendo buenas prácticas."
+      },
+      {
+        "id": "b",
+        "text": "AWS Marketplace",
+        "explanation": "Marketplace vende software de terceros; no opera tu infraestructura."
+      },
+      {
+        "id": "c",
+        "text": "Plan de soporte Developer",
+        "explanation": "El plan Developer da orientación por correo en horario laboral; no opera la infraestructura."
+      },
+      {
+        "id": "d",
+        "text": "AWS Well-Architected Tool",
+        "explanation": "La Well-Architected Tool ayuda a revisar arquitecturas; no gestiona operaciones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Que AWS opere tu infraestructura día a día → AWS Managed Services.",
+    "refs": [
+      "https://aws.amazon.com/managed-services/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-arq-001",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Herramienta gratuita para revisar tus cargas de trabajo frente a los 6 pilares de buenas prácticas y obtener un plan de mejora.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Well-Architected Tool",
+        "explanation": "Correcta. Es la herramienta oficial de revisión por pilares."
+      },
+      {
+        "id": "b",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor hace comprobaciones automáticas de la cuenta, no una revisión guiada por pilares. Sería la respuesta para recomendaciones automáticas de ahorro o seguridad."
+      },
+      {
+        "id": "c",
+        "text": "AWS Control Tower",
+        "explanation": "Control Tower configura un entorno multicuenta con guardarraíles; no revisa cargas de trabajo."
+      },
+      {
+        "id": "d",
+        "text": "AWS Compute Optimizer",
+        "explanation": "Compute Optimizer recomienda tamaños de recursos; no evalúa los 6 pilares."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Revisión por pilares → Well-Architected Tool.",
+    "refs": [
+      "https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-arq-002",
+    "domain": 4,
+    "section": "Arquitectura y ecosistema",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Catálogo digital de software de proveedores independientes (AMIs, SaaS, contenedores) que se compra y factura a través de AWS.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Marketplace",
+        "explanation": "Correcta. Marketplace es la tienda de software de terceros de AWS."
+      },
+      {
+        "id": "b",
+        "text": "AWS Service Catalog",
+        "explanation": "Service Catalog contiene productos internos aprobados por tu organización. Sería la respuesta para autoservicio controlado de TI."
+      },
+      {
+        "id": "c",
+        "text": "AWS Partner Network",
+        "explanation": "La APN es la red de socios; muchos venden en Marketplace, pero la APN no es el catálogo de compra."
+      },
+      {
+        "id": "d",
+        "text": "Amazon ECR Public Gallery",
+        "explanation": "La galería pública de ECR ofrece imágenes de contenedor gratuitas; no es un catálogo de software comercial facturado por AWS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Comprar software de terceros con la factura de AWS → Marketplace.",
+    "refs": [
+      "https://docs.aws.amazon.com/marketplace/latest/buyerguide/what-is-marketplace.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-arq-003",
+    "domain": 1,
+    "section": "Arquitectura y ecosistema",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Muestra y proyecta las emisiones de carbono asociadas a tu uso de AWS.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Customer Carbon Footprint Tool",
+        "explanation": "Correcta. Es la herramienta de sostenibilidad de la consola de facturación."
+      },
+      {
+        "id": "b",
+        "text": "AWS Cost Explorer",
+        "explanation": "Cost Explorer muestra costes, no emisiones. Sería la respuesta para analizar el gasto."
+      },
+      {
+        "id": "c",
+        "text": "AWS Compute Optimizer",
+        "explanation": "Compute Optimizer ayuda a dimensionar recursos (lo que indirectamente reduce emisiones), pero no mide la huella de carbono."
+      },
+      {
+        "id": "d",
+        "text": "AWS Health Dashboard",
+        "explanation": "El Health Dashboard informa del estado de los servicios; no de emisiones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Huella de carbono → Customer Carbon Footprint Tool.",
+    "refs": [
+      "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html"
+    ],
+    "source": "original"
   }
 ]
