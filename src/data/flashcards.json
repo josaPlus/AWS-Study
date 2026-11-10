@@ -975,5 +975,433 @@
       "fsx"
     ],
     "difficulty": 3
+  },
+  {
+    "id": "elb-001",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "concepto",
+    "front": "¿Qué es un balanceador de carga (load balancer)?",
+    "back": "Un servidor que recibe el tráfico y lo reparte entre varias instancias de destino. Ofrece un único punto de acceso (DNS), hace comprobaciones de estado y deja de enviar tráfico a las instancias que fallan.",
+    "tags": [
+      "elb"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "elb-002",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "concepto",
+    "front": "¿Qué es Elastic Load Balancing (ELB)?",
+    "back": "El balanceador gestionado de AWS: AWS se encarga de su disponibilidad, actualizaciones y escalado. Se integra con EC2, Auto Scaling, contenedores, certificados de ACM y WAF.",
+    "tags": [
+      "elb"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "elb-003",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "comparacion",
+    "front": "ALB vs NLB vs GWLB",
+    "back": "Application LB (capa 7): HTTP/HTTPS/gRPC, enrutamiento por ruta o host, ideal para aplicaciones web y microservicios.\nNetwork LB (capa 4): TCP/UDP, millones de peticiones por segundo, latencia ultrabaja e IP estática.\nGateway LB (capa 3): reparte tráfico hacia appliances virtuales de terceros (firewalls, IDS) con protocolo GENEVE.",
+    "tags": [
+      "elb"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "elb-004",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "concepto",
+    "front": "¿Qué es un Auto Scaling Group (ASG)?",
+    "back": "Un grupo de instancias EC2 que se escala automáticamente entre un mínimo y un máximo, mantiene la capacidad deseada, reemplaza las instancias que fallan y registra las nuevas en el balanceador.",
+    "tags": [
+      "asg"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "elb-005",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "dato-clave",
+    "front": "Capacidad mínima, deseada y máxima de un ASG",
+    "back": "Mínima: nunca baja de ese número de instancias.\nDeseada: cuántas quiere tener ahora mismo.\nMáxima: el tope al que puede crecer. El ASG escala hacia fuera (scale out) y hacia dentro (scale in) dentro de esos límites.",
+    "tags": [
+      "asg"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "elb-006",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "comparacion",
+    "front": "Estrategias de escalado de un ASG",
+    "back": "Manual: cambias tú el tamaño.\nDinámico: responde a la demanda (seguimiento de objetivo, p. ej. CPU al 40 %; por pasos; simple con alarmas de CloudWatch).\nProgramado: según horarios conocidos (p. ej. lunes a las 9:00).\nPredictivo: usa machine learning para prever la carga y escalar con antelación.",
+    "tags": [
+      "asg"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "elb-007",
+    "domain": 1,
+    "section": "ELB y Auto Scaling",
+    "type": "comparacion",
+    "front": "Escalabilidad vs alta disponibilidad vs elasticidad vs agilidad",
+    "back": "Escalabilidad: aguantar más carga (más grande o más instancias).\nAlta disponibilidad: seguir funcionando ante fallos (varias AZ).\nElasticidad: escalar automáticamente arriba y abajo según la demanda.\nAgilidad: obtener recursos en minutos (no es lo mismo que escalabilidad).",
+    "tags": [
+      "conceptos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "elb-008",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "caso-de-uso",
+    "front": "Tu web debe seguir funcionando aunque caiga una AZ y adaptarse al tráfico. ¿Qué combinas?",
+    "back": "Un Application Load Balancer + un Auto Scaling Group que reparta instancias en varias AZ. El ALB envía tráfico solo a instancias sanas y el ASG reemplaza las que fallan y ajusta la cantidad.",
+    "tags": [
+      "arquitectura"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "elb-009",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "dato-clave",
+    "front": "¿Qué son las comprobaciones de estado (health checks) del ELB?",
+    "back": "Peticiones periódicas (p. ej. a /health) para saber si una instancia responde bien. Si falla, el balanceador deja de enviarle tráfico y, si está en un ASG, este puede reemplazarla.",
+    "tags": [
+      "elb"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "elb-010",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "comparacion",
+    "front": "Scale up/down vs scale out/in",
+    "back": "Scale up/down = escalado VERTICAL (cambiar el tamaño de la instancia).\nScale out/in = escalado HORIZONTAL (añadir o quitar instancias). Los ASG hacen scale out/in.",
+    "tags": [
+      "escalabilidad"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "elb-011",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "dato-clave",
+    "front": "¿Qué es el Classic Load Balancer?",
+    "back": "La generación antigua de ELB (capas 4 y 7), ya retirada para la mayoría de los usos. Para el examen, las opciones vigentes son ALB, NLB y GWLB.",
+    "tags": [
+      "elb"
+    ],
+    "difficulty": 3,
+    "note": "Generación anterior en proceso de retiro: no lo elijas para diseños nuevos."
+  },
+  {
+    "id": "elb-012",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "type": "concepto",
+    "front": "¿Qué es AWS Auto Scaling (el servicio)?",
+    "back": "Un servicio que configura el escalado de varios recursos a la vez (grupos de EC2, tareas de ECS, tablas de DynamoDB, réplicas de Aurora) desde un solo lugar mediante planes de escalado.",
+    "tags": [
+      "asg"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "s3-001",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "¿Qué es Amazon S3?",
+    "back": "Simple Storage Service: almacenamiento de OBJETOS (archivos) prácticamente ilimitado, accesible por API/HTTP. Se usa para copias de seguridad, data lakes, sitios web estáticos, archivos de aplicaciones y distribución de contenido.",
+    "tags": [
+      "s3"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "s3-002",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "dato-clave",
+    "front": "Buckets de S3: nombre y ámbito",
+    "back": "El nombre del bucket es único a nivel GLOBAL (entre todas las cuentas), pero el bucket se crea en una Región concreta. S3 parece global, pero los datos viven en la Región elegida.",
+    "tags": [
+      "s3",
+      "buckets"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "s3-003",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "dato-clave",
+    "front": "Objetos de S3: clave y tamaño",
+    "back": "Cada objeto tiene una clave (la ruta completa, p. ej. fotos/2025/playa.jpg), el contenido, metadatos y etiquetas. No hay carpetas reales: son prefijos. Tamaño máximo actual por objeto: 50 TB (los de más de 5 GB requieren carga multiparte).",
+    "tags": [
+      "s3"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-004",
+    "domain": 2,
+    "section": "Amazon S3",
+    "type": "comparacion",
+    "front": "Formas de controlar el acceso a S3",
+    "back": "Basado en identidad: políticas IAM del usuario o rol.\nBasado en recurso: políticas de bucket (JSON en el bucket, permiten acceso entre cuentas o público) y ACL (desaconsejadas).\nUna identidad accede si un permiso lo permite y nada lo deniega explícitamente.",
+    "tags": [
+      "s3",
+      "seguridad"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-005",
+    "domain": 2,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "¿Qué es S3 Block Public Access?",
+    "back": "Un conjunto de ajustes (a nivel de bucket o de cuenta) que impiden que los datos se hagan públicos aunque una política lo permita. Activado por defecto; solo debe desactivarse si el bucket realmente debe ser público.",
+    "tags": [
+      "s3",
+      "seguridad"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "s3-006",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "caso-de-uso",
+    "front": "Quieres publicar un sitio web estático (HTML, CSS, imágenes) sin servidores. ¿Cómo lo haces con S3?",
+    "back": "Activas el alojamiento de sitios web estáticos en el bucket y permites lectura pública con una política de bucket (o, mejor, lo sirves a través de CloudFront). Si olvidas la política, obtendrás un error 403 Forbidden.",
+    "tags": [
+      "s3",
+      "web-estatica"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "s3-007",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "¿Qué es el versionado de S3?",
+    "back": "Guarda todas las versiones de cada objeto en el bucket. Protege contra borrados accidentales (el borrado añade un marcador que se puede quitar) y permite volver a una versión anterior. Se activa a nivel de bucket.",
+    "tags": [
+      "s3",
+      "versionado"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "s3-008",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "comparacion",
+    "front": "Replicación CRR vs SRR en S3",
+    "back": "CRR (Cross-Region): copia asíncrona a un bucket de OTRA Región: cumplimiento, menor latencia, recuperación ante desastres.\nSRR (Same-Region): copia a otro bucket de la MISMA Región: agregar logs, replicar entre producción y pruebas.\nAmbas requieren versionado activado en origen y destino.",
+    "tags": [
+      "s3",
+      "replicacion"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-009",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "dato-clave",
+    "front": "Durabilidad y disponibilidad de S3",
+    "back": "Durabilidad: 99,999999999 % (11 nueves) en todas las clases; equivale a perder un objeto cada 10.000 años de media guardando 10 millones.\nDisponibilidad: varía por clase; S3 Standard 99,99 %.",
+    "tags": [
+      "s3"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "s3-010",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "¿Qué son las reglas de ciclo de vida de S3?",
+    "back": "Reglas que mueven objetos automáticamente a clases más baratas después de cierto tiempo (p. ej. a Standard-IA a los 30 días y a Glacier a los 90) o los eliminan cuando caducan.",
+    "tags": [
+      "s3",
+      "ciclo-de-vida"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-011",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "S3 Intelligent-Tiering",
+    "back": "Clase que mueve los objetos automáticamente entre niveles de acceso (frecuente, infrecuente, archivo instantáneo y, opcionalmente, archivo) según su uso. Cobra una pequeña cuota de monitoreo por objeto y no cobra recuperaciones. Ideal si el patrón de acceso es desconocido.",
+    "tags": [
+      "s3",
+      "clases"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-012",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "comparacion",
+    "front": "Las tres clases de S3 Glacier",
+    "back": "Glacier Instant Retrieval: acceso en milisegundos, para datos consultados ~1 vez por trimestre.\nGlacier Flexible Retrieval: de minutos a 12 h (masivo gratis).\nGlacier Deep Archive: 12 a 48 h; la más barata, para retención a largo plazo.",
+    "tags": [
+      "s3",
+      "glacier"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-013",
+    "domain": 2,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "Cifrado en S3",
+    "back": "Todos los objetos nuevos se cifran en el servidor por defecto (SSE-S3). También puedes usar SSE-KMS (claves de KMS) o cifrar tú antes de subir (cifrado del lado del cliente). En tránsito, se usa HTTPS/TLS.",
+    "tags": [
+      "s3",
+      "cifrado"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-014",
+    "domain": 2,
+    "section": "Amazon S3",
+    "type": "comparacion",
+    "front": "Responsabilidad compartida en S3",
+    "back": "AWS: infraestructura, durabilidad, disponibilidad, capacidad prácticamente ilimitada y que sus empleados no accedan a tus datos.\nCliente: configurar versionado, políticas de bucket y replicación, cifrar los datos, registrar accesos y decidir qué es público.",
+    "tags": [
+      "responsabilidad-compartida"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "s3-015",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "¿Qué es la familia AWS Snow?",
+    "back": "Dispositivos físicos resistentes que AWS envía a tu ubicación para migrar grandes volúmenes de datos hacia o desde AWS sin usar la red, o para procesar datos en el borde (edge) donde no hay buena conectividad.",
+    "tags": [
+      "snow",
+      "migracion"
+    ],
+    "difficulty": 2,
+    "note": "Desde el 7-nov-2025 los dispositivos Snowball Edge solo están disponibles para clientes existentes. Snowcone se discontinuó en nov-2024 y Snowmobile se retiró en 2024. Para clientes nuevos AWS recomienda DataSync, Data Transfer Terminal o Outposts."
+  },
+  {
+    "id": "s3-016",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "dato-clave",
+    "front": "¿Cuándo conviene un dispositivo Snowball en lugar de transferir por red?",
+    "back": "Regla práctica de AWS: si transferir por la red tardaría más de una semana (decenas de TB o más con conexiones lentas, costosas o inestables), un dispositivo físico es más rápido.",
+    "tags": [
+      "snow",
+      "migracion"
+    ],
+    "difficulty": 2,
+    "note": "Snowball Edge ya no acepta clientes nuevos (desde nov-2025). El examen puede seguir mencionándolo."
+  },
+  {
+    "id": "s3-017",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "comparacion",
+    "front": "Snowcone vs Snowball Edge vs Snowmobile (histórico)",
+    "back": "Snowcone: pequeño y portátil (TB). Snowball Edge: maleta robusta de decenas de TB, con opciones de almacenamiento o de cómputo. Snowmobile: camión con contenedor para exabytes.",
+    "tags": [
+      "snow"
+    ],
+    "difficulty": 3,
+    "note": "Snowcone (discontinuado en nov-2024) y Snowmobile (retirado en 2024) ya no se ofrecen. Snowball Edge: solo clientes existentes desde nov-2025."
+  },
+  {
+    "id": "s3-018",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "¿Qué es AWS Storage Gateway?",
+    "back": "Un servicio de nube híbrida que conecta tus aplicaciones on-premises con almacenamiento de AWS (sobre todo S3). Tipos: File Gateway (archivos NFS/SMB → S3), Volume Gateway (volúmenes iSCSI respaldados en AWS) y Tape Gateway (cintas virtuales para backup).",
+    "tags": [
+      "storage-gateway",
+      "hibrido"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-019",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "comparacion",
+    "front": "Almacenamiento de bloque vs archivo vs objeto en AWS",
+    "back": "Bloque: EBS e Instance Store (discos).\nArchivo: EFS y FSx (sistemas de archivos compartidos).\nObjeto: S3 y Glacier (objetos accesibles por API).",
+    "tags": [
+      "almacenamiento"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "s3-020",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "¿Qué es S3 Transfer Acceleration?",
+    "back": "Acelera las subidas y descargas de larga distancia a un bucket enviando los datos primero a la Edge Location más cercana y desde allí por la red privada de AWS hasta la Región del bucket.",
+    "tags": [
+      "s3",
+      "rendimiento"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "s3-021",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "S3 Express One Zone",
+    "back": "Clase de almacenamiento de alto rendimiento y latencia de milisegundos de un dígito, en una sola AZ que eliges (usa 'directory buckets'). Pensada para cargas muy intensivas como entrenamiento de ML o análisis interactivo junto al cómputo.",
+    "tags": [
+      "s3",
+      "clases"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "s3-022",
+    "domain": 3,
+    "section": "Amazon S3",
+    "type": "concepto",
+    "front": "¿Qué es S3 Object Lock?",
+    "back": "Modelo WORM (escribir una vez, leer muchas): impide borrar o sobrescribir objetos durante un periodo de retención. Útil para cumplimiento normativo. Glacier Vault Lock es el equivalente en los vaults de Glacier.",
+    "tags": [
+      "s3",
+      "cumplimiento"
+    ],
+    "difficulty": 3
   }
 ]

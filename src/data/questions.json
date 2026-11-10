@@ -2842,5 +2842,1188 @@
       "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"
     ],
     "source": "original"
+  },
+  {
+    "id": "q-elb-001",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación web necesita enrutar las peticiones a distintos grupos de servidores según la ruta de la URL (/api a un grupo y /imagenes a otro). ¿Qué balanceador debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Application Load Balancer",
+        "explanation": "Correcta. El ALB trabaja en la capa 7 (HTTP/HTTPS) y puede enrutar según la ruta, el host o las cabeceras de la petición."
+      },
+      {
+        "id": "b",
+        "text": "Network Load Balancer",
+        "explanation": "El NLB trabaja en la capa 4 (TCP/UDP) y no entiende rutas HTTP. Sería la respuesta si se necesitara latencia ultrabaja, IP estática o millones de conexiones por segundo."
+      },
+      {
+        "id": "c",
+        "text": "Gateway Load Balancer",
+        "explanation": "El GWLB distribuye tráfico hacia appliances virtuales de seguridad (firewalls, IDS) a nivel de red. Sería correcto para insertar un firewall de terceros en la ruta del tráfico."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Route 53",
+        "explanation": "Route 53 es un servicio DNS: resuelve nombres de dominio y puede repartir tráfico entre endpoints, pero no enruta por la ruta de la URL dentro de una petición HTTP."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Enrutamiento por ruta/host HTTP → ALB (capa 7). TCP/UDP de alto rendimiento → NLB. Appliances de seguridad → GWLB.",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-elb-002",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un juego en línea necesita un balanceador para tráfico UDP con latencia ultrabaja que soporte millones de peticiones por segundo. ¿Qué tipo de balanceador debe elegir?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Application Load Balancer",
+        "explanation": "El ALB solo maneja HTTP, HTTPS y gRPC (capa 7); no soporta UDP. Sería correcto para una aplicación web con enrutamiento por URL."
+      },
+      {
+        "id": "b",
+        "text": "Network Load Balancer",
+        "explanation": "Correcta. El NLB opera en la capa 4 con TCP y UDP, ofrece latencia ultrabaja y escala a millones de peticiones por segundo."
+      },
+      {
+        "id": "c",
+        "text": "Gateway Load Balancer",
+        "explanation": "El GWLB está pensado para insertar appliances de red de terceros, no para servir tráfico de una aplicación de juegos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon CloudFront",
+        "explanation": "CloudFront es una CDN para contenido HTTP(S) con caché en el borde; no es un balanceador de tráfico UDP hacia servidores de juego."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "UDP / TCP con latencia ultrabaja y altísimo volumen → Network Load Balancer.",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-elb-003",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una tienda online sabe que cada lunes a las 9:00 aumenta mucho el tráfico. Quiere tener más instancias listas justo antes de esa hora. ¿Qué estrategia de escalado del ASG es la más adecuada?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Escalado programado",
+        "explanation": "Correcta. El escalado programado ajusta la capacidad según horarios conocidos, así las instancias ya están en marcha antes del pico."
+      },
+      {
+        "id": "b",
+        "text": "Escalado manual",
+        "explanation": "El escalado manual requiere que alguien cambie el tamaño cada semana; es propenso a olvidos y no aprovecha que el patrón es conocido."
+      },
+      {
+        "id": "c",
+        "text": "Escalado vertical",
+        "explanation": "El escalado vertical cambia el tamaño de la instancia; un ASG escala horizontalmente añadiendo instancias."
+      },
+      {
+        "id": "d",
+        "text": "Seguimiento de objetivo sobre la CPU",
+        "explanation": "El seguimiento de objetivo reacciona cuando la métrica ya subió; ayuda, pero llegaría tarde a un pico conocido de antemano."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Picos con horario conocido → escalado programado. Picos impredecibles → dinámico. Patrones aprendidos → predictivo.",
+    "refs": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scheduled-scaling.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-elb-004",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "¿Qué DOS beneficios aporta un Auto Scaling Group a una aplicación en EC2? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reemplaza automáticamente las instancias que no pasan las comprobaciones de estado",
+        "explanation": "Correcta. El ASG mantiene la capacidad deseada sustituyendo instancias con fallos, lo que mejora la disponibilidad."
+      },
+      {
+        "id": "b",
+        "text": "Ajusta el número de instancias según la demanda",
+        "explanation": "Correcta. Escala hacia fuera cuando sube la carga y hacia dentro cuando baja, para pagar solo lo necesario."
+      },
+      {
+        "id": "c",
+        "text": "Aplica parches al sistema operativo de las instancias",
+        "explanation": "Incorrecta. El ASG no parchea el SO; para eso se usa Systems Manager Patch Manager o se renuevan las AMIs."
+      },
+      {
+        "id": "d",
+        "text": "Cifra los volúmenes EBS de las instancias",
+        "explanation": "Incorrecta. El cifrado de EBS se configura en los volúmenes o la plantilla de lanzamiento (con KMS), no es una función del ASG."
+      },
+      {
+        "id": "e",
+        "text": "Distribuye el contenido estático desde ubicaciones de borde",
+        "explanation": "Incorrecta. Eso lo hace CloudFront (CDN). El ASG gestiona la cantidad de instancias EC2."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "ASG = reemplazar instancias que fallan + escalar según la demanda, entre un mínimo y un máximo.",
+    "refs": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-elb-005",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere insertar una flota de firewalls virtuales de un proveedor externo para inspeccionar todo el tráfico de red que entra en su VPC, con alta disponibilidad. ¿Qué servicio facilita esto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gateway Load Balancer",
+        "explanation": "Correcta. El GWLB despliega, escala y distribuye el tráfico hacia appliances virtuales de terceros (firewalls, IDS/IPS) de forma transparente."
+      },
+      {
+        "id": "b",
+        "text": "Application Load Balancer",
+        "explanation": "El ALB distribuye peticiones HTTP hacia aplicaciones; no está diseñado para encadenar appliances de inspección de red."
+      },
+      {
+        "id": "c",
+        "text": "AWS WAF",
+        "explanation": "WAF filtra peticiones web en la capa 7 con reglas propias de AWS; no sirve para usar firewalls de otro proveedor sobre todo el tráfico de red."
+      },
+      {
+        "id": "d",
+        "text": "Security Groups",
+        "explanation": "Los Security Groups son firewalls básicos de instancia; no permiten insertar appliances de terceros para inspeccionar el tráfico."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Appliances virtuales de seguridad de terceros en la ruta del tráfico → Gateway Load Balancer.",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-elb-006",
+    "domain": 1,
+    "section": "ELB y Auto Scaling",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un Auto Scaling Group mantiene al menos dos instancias repartidas en dos zonas de disponibilidad detrás de un balanceador. ¿Qué característica proporciona PRINCIPALMENTE esta configuración mínima?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Alta disponibilidad",
+        "explanation": "Correcta. Tener instancias en dos AZ permite que la aplicación siga funcionando si una AZ completa falla."
+      },
+      {
+        "id": "b",
+        "text": "Escalado vertical",
+        "explanation": "El escalado vertical consiste en aumentar el tamaño de una instancia; aquí se trata de cuántas instancias y dónde están."
+      },
+      {
+        "id": "c",
+        "text": "Reducción de la latencia global",
+        "explanation": "Dos AZ están en la misma Región; para reducir latencia a usuarios de todo el mundo se usarían varias Regiones o CloudFront."
+      },
+      {
+        "id": "d",
+        "text": "Cifrado de datos en tránsito",
+        "explanation": "El cifrado en tránsito se logra con TLS (por ejemplo, certificados en el balanceador); no depende del número de AZ."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Mínimo de instancias repartido en varias AZ = alta disponibilidad.",
+    "refs": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-elb-007",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "¿Qué estrategia de escalado de EC2 Auto Scaling utiliza machine learning sobre el historial de tráfico para lanzar instancias ANTES de que llegue la carga prevista?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Escalado simple",
+        "explanation": "El escalado simple reacciona a una alarma de CloudWatch añadiendo o quitando un número fijo de instancias; no predice nada."
+      },
+      {
+        "id": "b",
+        "text": "Escalado predictivo",
+        "explanation": "Correcta. El escalado predictivo analiza patrones históricos con ML y programa la capacidad con antelación."
+      },
+      {
+        "id": "c",
+        "text": "Escalado programado",
+        "explanation": "El escalado programado usa horarios que defines tú; no aprende de los datos históricos."
+      },
+      {
+        "id": "d",
+        "text": "Escalado por pasos",
+        "explanation": "El escalado por pasos ajusta la capacidad en escalones según el tamaño de la desviación de una métrica; es reactivo, no predictivo."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "ML para anticipar la carga → escalado predictivo.",
+    "refs": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-elb-008",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un Application Load Balancer sigue enviando tráfico a todas las instancias, pero una de ellas devuelve errores porque su aplicación se bloqueó. ¿Qué debe configurarse para que el balanceador deje de enviarle tráfico?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Comprobaciones de estado (health checks) en el grupo de destino",
+        "explanation": "Correcta. Con health checks, el ALB detecta que la instancia no responde correctamente y deja de enviarle peticiones."
+      },
+      {
+        "id": "b",
+        "text": "Una Elastic IP en cada instancia",
+        "explanation": "Una Elastic IP es una dirección pública fija; no informa al balanceador sobre la salud de la aplicación."
+      },
+      {
+        "id": "c",
+        "text": "Un plan de AWS Backup",
+        "explanation": "AWS Backup hace copias de seguridad de recursos; no influye en el enrutamiento del tráfico."
+      },
+      {
+        "id": "d",
+        "text": "Una regla de AWS Config",
+        "explanation": "AWS Config evalúa la configuración de recursos para cumplimiento; no controla a qué instancias envía tráfico el balanceador."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Para que un balanceador evite instancias rotas → health checks.",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-001",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa guarda registros que se consultan mucho el primer mes, rara vez después, y que debe conservar 7 años por ley sin necesidad de acceso rápido. ¿Cuál es la forma MÁS rentable de gestionarlos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Guardarlos siempre en S3 Standard",
+        "explanation": "S3 Standard es la clase más cara para guardar datos a largo plazo; pagar ese precio durante 7 años por datos casi nunca leídos desperdicia dinero."
+      },
+      {
+        "id": "b",
+        "text": "Usar reglas de ciclo de vida que los muevan a Standard-IA y luego a Glacier Deep Archive",
+        "explanation": "Correcta. El ciclo de vida automatiza las transiciones según la antigüedad, pagando menos a medida que los datos se usan menos."
+      },
+      {
+        "id": "c",
+        "text": "Guardarlos en volúmenes EBS",
+        "explanation": "EBS es almacenamiento en bloque para instancias y es más caro por GB; no está pensado para archivo a largo plazo."
+      },
+      {
+        "id": "d",
+        "text": "Guardarlos en EC2 Instance Store",
+        "explanation": "Instance Store es efímero: los datos se pierden al detener la instancia. Es inaceptable para retención legal."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Datos que se enfrían con el tiempo → reglas de ciclo de vida hacia clases más baratas (IA → Glacier).",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-002",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una aplicación guarda objetos en S3 cuyo patrón de acceso es impredecible y cambia con el tiempo. La empresa quiere optimizar costes sin gestionar reglas ni pagar cargos por recuperación. ¿Qué clase de almacenamiento debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Intelligent-Tiering",
+        "explanation": "Correcta. Mueve automáticamente cada objeto al nivel más barato según su uso real, sin cargos de recuperación (solo una pequeña cuota de monitoreo)."
+      },
+      {
+        "id": "b",
+        "text": "S3 Standard-IA",
+        "explanation": "Standard-IA es para datos que SABES que se usan poco; cobra por cada recuperación, lo que puede salir caro si el acceso aumenta."
+      },
+      {
+        "id": "c",
+        "text": "S3 One Zone-IA",
+        "explanation": "One Zone-IA guarda en una sola AZ y cobra recuperaciones; sirve para datos poco usados y recreables, no para patrones desconocidos."
+      },
+      {
+        "id": "d",
+        "text": "S3 Glacier Flexible Retrieval",
+        "explanation": "Glacier Flexible tarda de minutos a horas en recuperar los datos; no sirve para objetos que pueden necesitarse en cualquier momento."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Patrón de acceso desconocido o cambiante → S3 Intelligent-Tiering.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-003",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa guarda miniaturas de imágenes que puede regenerar en cualquier momento a partir de los originales. Se consultan poco y quiere el almacenamiento más barato con acceso en milisegundos. ¿Qué clase elige?",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Standard",
+        "explanation": "Standard es la opción más cara de las de acceso inmediato; no aprovecha que los datos se usan poco y son recreables."
+      },
+      {
+        "id": "b",
+        "text": "S3 One Zone-IA",
+        "explanation": "Correcta. Al guardar en una sola AZ es más barata que Standard-IA; el riesgo de perder la AZ es aceptable porque las miniaturas se pueden regenerar."
+      },
+      {
+        "id": "c",
+        "text": "S3 Glacier Deep Archive",
+        "explanation": "Deep Archive es la más barata, pero tarda de 12 a 48 horas en recuperar; no cumple el acceso en milisegundos."
+      },
+      {
+        "id": "d",
+        "text": "S3 Express One Zone",
+        "explanation": "Express One Zone prioriza el rendimiento extremo y no es la opción más barata para datos de poco uso."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Datos poco usados y recreables → One Zone-IA (una sola AZ, más barata).",
+    "refs": [
+      "https://aws.amazon.com/s3/storage-classes/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-004",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un usuario borró por error un archivo importante de un bucket de S3. ¿Qué característica, activada de antemano, habría permitido recuperarlo fácilmente?",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Versioning",
+        "explanation": "Correcta. Con el versionado, el borrado solo añade un marcador de eliminación y la versión anterior se puede restaurar."
+      },
+      {
+        "id": "b",
+        "text": "S3 Transfer Acceleration",
+        "explanation": "Transfer Acceleration acelera subidas y descargas a larga distancia usando Edge Locations; no conserva versiones de los objetos."
+      },
+      {
+        "id": "c",
+        "text": "S3 Intelligent-Tiering",
+        "explanation": "Intelligent-Tiering optimiza costes moviendo objetos entre niveles; no protege contra borrados."
+      },
+      {
+        "id": "d",
+        "text": "Alojamiento de sitio web estático",
+        "explanation": "El alojamiento estático sirve el contenido del bucket como sitio web; no guarda copias anteriores de los objetos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Protección contra borrados o sobrescrituras accidentales → versionado de S3.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-005",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa debe mantener una copia de sus datos de S3 en otra Región para recuperación ante desastres, actualizada automáticamente. ¿Qué debe configurar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Cross-Region Replication (CRR)",
+        "explanation": "Correcta. CRR copia automática y asíncronamente los objetos nuevos a un bucket en otra Región (requiere versionado en ambos buckets)."
+      },
+      {
+        "id": "b",
+        "text": "S3 Same-Region Replication (SRR)",
+        "explanation": "SRR copia a otro bucket de la MISMA Región; no protege ante la caída de una Región completa."
+      },
+      {
+        "id": "c",
+        "text": "Reglas de ciclo de vida",
+        "explanation": "Las reglas de ciclo de vida cambian de clase o eliminan objetos con el tiempo; no los copian a otra Región."
+      },
+      {
+        "id": "d",
+        "text": "S3 One Zone-IA",
+        "explanation": "One Zone-IA guarda los datos en una sola AZ, lo que REDUCE la resiliencia en lugar de aumentarla."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Copia automática en otra Región → Cross-Region Replication (con versionado activado).",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-006",
+    "domain": 2,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere asegurarse de que NINGÚN bucket de su cuenta pueda hacerse público por error, aunque alguien escriba una política de bucket permisiva. ¿Qué debe activar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Block Public Access a nivel de cuenta",
+        "explanation": "Correcta. Este ajuste anula cualquier política o ACL que intente dar acceso público a los buckets de la cuenta."
+      },
+      {
+        "id": "b",
+        "text": "Cifrado SSE-S3",
+        "explanation": "El cifrado protege los datos en reposo, pero un objeto cifrado se puede seguir leyendo si el bucket es público."
+      },
+      {
+        "id": "c",
+        "text": "S3 Versioning",
+        "explanation": "El versionado protege contra borrados, no contra la exposición pública de los datos."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Macie",
+        "explanation": "Macie detecta datos sensibles y buckets expuestos y genera alertas, pero no IMPIDE que un bucket se haga público."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Impedir que los buckets se hagan públicos → S3 Block Public Access (bucket o cuenta).",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-007",
+    "domain": 2,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Otra cuenta de AWS de un socio necesita leer objetos de un bucket de tu cuenta. ¿Qué mecanismo es el más adecuado para concederle acceso?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Una política de bucket que permita a la cuenta del socio leer los objetos",
+        "explanation": "Correcta. Las políticas de bucket son permisos basados en recursos y permiten conceder acceso a otras cuentas (cross-account)."
+      },
+      {
+        "id": "b",
+        "text": "Hacer el bucket público",
+        "explanation": "Hacerlo público daría acceso a cualquier persona en internet, no solo al socio. Es un riesgo innecesario."
+      },
+      {
+        "id": "c",
+        "text": "Compartir las claves de acceso de un usuario IAM de tu cuenta",
+        "explanation": "Compartir credenciales es una mala práctica: no hay trazabilidad y pueden filtrarse. Se debe dar acceso a la cuenta del socio, no prestarle una identidad."
+      },
+      {
+        "id": "d",
+        "text": "Activar S3 Transfer Acceleration",
+        "explanation": "Transfer Acceleration solo mejora la velocidad de transferencia; no concede permisos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Acceso a un bucket desde otra cuenta → política de bucket (basada en recurso).",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-008",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una ONG quiere publicar un sitio web informativo formado solo por HTML, CSS e imágenes, sin gestionar servidores y con coste mínimo. ¿Qué solución es la más sencilla?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Alojar el sitio como sitio web estático en Amazon S3",
+        "explanation": "Correcta. S3 puede servir contenido estático directamente, sin servidores, pagando solo almacenamiento y transferencia (opcionalmente detrás de CloudFront)."
+      },
+      {
+        "id": "b",
+        "text": "Lanzar una instancia EC2 con un servidor web",
+        "explanation": "Funciona, pero obliga a gestionar el servidor (SO, parches, disponibilidad) y cuesta más que S3 para contenido estático."
+      },
+      {
+        "id": "c",
+        "text": "Usar Amazon RDS",
+        "explanation": "RDS es una base de datos relacional gestionada; no sirve páginas web."
+      },
+      {
+        "id": "d",
+        "text": "Usar AWS Elastic Beanstalk con un Auto Scaling Group",
+        "explanation": "Beanstalk sirve para aplicaciones con código del lado del servidor; para HTML estático añade complejidad y coste innecesarios."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Sitio 100 % estático sin servidores → alojamiento estático en S3 (+ CloudFront).",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-009",
+    "domain": 2,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "Según el modelo de responsabilidad compartida, ¿qué DOS tareas sobre Amazon S3 corresponden al cliente? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Configurar las políticas de acceso de los buckets",
+        "explanation": "Correcta. Decidir quién puede acceder a los datos es parte de la seguridad EN la nube y la configura el cliente."
+      },
+      {
+        "id": "b",
+        "text": "Decidir si cifrar los datos y con qué claves",
+        "explanation": "Correcta. Aunque S3 cifra por defecto con SSE-S3, elegir el tipo de cifrado y gestionar claves (p. ej. KMS) es responsabilidad del cliente."
+      },
+      {
+        "id": "c",
+        "text": "Garantizar la durabilidad de 11 nueves",
+        "explanation": "Incorrecta. La durabilidad la proporciona la infraestructura de S3, que gestiona AWS."
+      },
+      {
+        "id": "d",
+        "text": "Proporcionar capacidad de almacenamiento ilimitada",
+        "explanation": "Incorrecta. Escalar la capacidad del servicio es responsabilidad de AWS."
+      },
+      {
+        "id": "e",
+        "text": "Proteger físicamente los centros de datos donde se guardan los objetos",
+        "explanation": "Incorrecta. La seguridad física de los centros de datos es siempre responsabilidad de AWS."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "S3: AWS garantiza durabilidad, disponibilidad y capacidad; el cliente, permisos, cifrado, versionado y replicación.",
+    "refs": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-010",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa con mala conexión a internet necesita migrar 80 TB de datos a Amazon S3 y la transferencia por red tardaría varios meses. Ya es cliente de la familia AWS Snow. ¿Qué opción es la más adecuada?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Snowball Edge",
+        "explanation": "Correcta. Un dispositivo Snowball Edge permite copiar los datos localmente y enviarlo a AWS para cargarlos en S3, evitando la red. (Desde nov-2025 solo está disponible para clientes existentes.)"
+      },
+      {
+        "id": "b",
+        "text": "S3 Transfer Acceleration",
+        "explanation": "Transfer Acceleration mejora la velocidad usando Edge Locations, pero sigue dependiendo del enlace del cliente; con una conexión lenta tardaría demasiado."
+      },
+      {
+        "id": "c",
+        "text": "AWS Snowmobile",
+        "explanation": "Snowmobile estaba pensado para exabytes (cientos de PB) y además fue retirado en 2024. Para 80 TB es desproporcionado."
+      },
+      {
+        "id": "d",
+        "text": "Amazon EBS",
+        "explanation": "EBS es un disco para instancias EC2; no es un método para trasladar datos físicamente desde una oficina a AWS."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Decenas de TB con red lenta → dispositivo físico de la familia Snow (Snowball Edge, solo clientes existentes).",
+    "refs": [
+      "https://docs.aws.amazon.com/snowball/latest/developer-guide/snowball-edge-availability-change.html"
+    ],
+    "source": "original",
+    "note": "Snowball Edge dejó de aceptar clientes nuevos el 7-nov-2025. Para clientes nuevos, AWS recomienda DataSync (online) o Data Transfer Terminal (físico)."
+  },
+  {
+    "id": "q-s3-011",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere que sus servidores on-premises sigan usando recursos compartidos de archivos NFS/SMB locales, pero que los archivos se guarden de forma duradera en Amazon S3. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Storage Gateway (File Gateway)",
+        "explanation": "Correcta. File Gateway expone recursos NFS/SMB en las instalaciones y almacena los archivos como objetos en S3, con caché local."
+      },
+      {
+        "id": "b",
+        "text": "Amazon EFS",
+        "explanation": "EFS es un sistema de archivos dentro de AWS; aunque se puede montar desde on-premises con conectividad, no guarda los archivos como objetos en S3."
+      },
+      {
+        "id": "c",
+        "text": "AWS DataSync",
+        "explanation": "DataSync transfiere datos de forma programada o puntual; no ofrece un recurso compartido local permanente respaldado por S3."
+      },
+      {
+        "id": "d",
+        "text": "Amazon FSx for Lustre",
+        "explanation": "FSx for Lustre es un sistema de archivos de alto rendimiento dentro de AWS para HPC; no es una pasarela híbrida para servidores locales."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Puente híbrido entre aplicaciones on-premises y almacenamiento en la nube → Storage Gateway.",
+    "refs": [
+      "https://docs.aws.amazon.com/filegateway/latest/files3/what-is-file-s3.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-012",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Usuarios de todo el mundo suben archivos grandes a un único bucket de S3 en us-east-1 y las subidas desde Asia son lentas. ¿Qué característica mejora la velocidad sin cambiar de bucket?",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Transfer Acceleration",
+        "explanation": "Correcta. Los datos entran por la Edge Location más cercana al usuario y viajan por la red troncal de AWS hasta la Región del bucket."
+      },
+      {
+        "id": "b",
+        "text": "S3 Cross-Region Replication",
+        "explanation": "CRR copia los objetos a otra Región DESPUÉS de subirlos; no acelera la subida inicial al bucket original."
+      },
+      {
+        "id": "c",
+        "text": "S3 Glacier Instant Retrieval",
+        "explanation": "Es una clase de almacenamiento de archivo; no influye en la velocidad de las subidas."
+      },
+      {
+        "id": "d",
+        "text": "S3 Versioning",
+        "explanation": "El versionado conserva versiones anteriores; no afecta al rendimiento de la red."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Acelerar subidas/descargas lejanas a un bucket → S3 Transfer Acceleration.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-013",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un hospital debe conservar imágenes médicas durante 10 años, rara vez se consultan y puede esperar hasta 48 horas para recuperarlas. ¿Cuál es la clase de S3 MÁS barata que cumple el requisito?",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Glacier Deep Archive",
+        "explanation": "Correcta. Es la clase más barata de S3, diseñada para retención a largo plazo con recuperación de 12 a 48 horas."
+      },
+      {
+        "id": "b",
+        "text": "S3 Glacier Instant Retrieval",
+        "explanation": "Instant Retrieval da acceso en milisegundos, pero cuesta más guardar; no tiene sentido pagarlo si se puede esperar 48 h."
+      },
+      {
+        "id": "c",
+        "text": "S3 Standard-IA",
+        "explanation": "Standard-IA es para datos de acceso poco frecuente pero inmediato; es bastante más caro que Deep Archive para guardar 10 años."
+      },
+      {
+        "id": "d",
+        "text": "S3 Intelligent-Tiering",
+        "explanation": "Intelligent-Tiering es útil con patrones desconocidos; aquí el patrón está claro (archivo a largo plazo) y Deep Archive es más barato."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Archivo de años y recuperación en horas → Glacier Deep Archive (la más barata).",
+    "refs": [
+      "https://aws.amazon.com/s3/storage-classes/glacier/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-s3-014",
+    "domain": 2,
+    "section": "Amazon S3",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una regulación financiera exige que ciertos registros guardados en S3 no puedan modificarse ni borrarse durante 5 años, ni siquiera por un administrador. ¿Qué característica cumple este requisito?",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Object Lock en modo de cumplimiento",
+        "explanation": "Correcta. Object Lock aplica un modelo WORM; en modo compliance nadie, ni el root, puede borrar o sobrescribir los objetos hasta que termine la retención."
+      },
+      {
+        "id": "b",
+        "text": "S3 Versioning",
+        "explanation": "El versionado conserva versiones, pero un usuario con permisos puede borrar versiones concretas; no garantiza inmutabilidad."
+      },
+      {
+        "id": "c",
+        "text": "S3 Block Public Access",
+        "explanation": "Block Public Access evita el acceso público, pero no impide que usuarios autorizados borren o modifiquen objetos."
+      },
+      {
+        "id": "d",
+        "text": "Cifrado SSE-KMS",
+        "explanation": "El cifrado protege la confidencialidad, no impide borrar o sobrescribir los objetos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Datos inmutables (WORM) por cumplimiento → S3 Object Lock (o Glacier Vault Lock).",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-elb-001",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Distribuye peticiones HTTP/HTTPS entre instancias y contenedores, y puede enrutar según la ruta o el nombre de host de la URL.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Application Load Balancer",
+        "explanation": "Correcta. El ALB es el balanceador de capa 7 con enrutamiento basado en contenido."
+      },
+      {
+        "id": "b",
+        "text": "Network Load Balancer",
+        "explanation": "El NLB trabaja con TCP/UDP en la capa 4 y no inspecciona rutas HTTP. Sería correcto para latencia ultrabaja o IP estática."
+      },
+      {
+        "id": "c",
+        "text": "Amazon Route 53",
+        "explanation": "Route 53 resuelve nombres DNS y reparte tráfico entre endpoints, pero no ve la ruta de cada petición HTTP. Sería la respuesta para enrutar por geolocalización o latencia."
+      },
+      {
+        "id": "d",
+        "text": "AWS Global Accelerator",
+        "explanation": "Global Accelerator dirige el tráfico por la red global de AWS con IPs anycast estáticas; no enruta por rutas de URL. Sería correcto para mejorar el rendimiento TCP/UDP global."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Balanceo HTTP con enrutamiento por contenido → ALB.",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-elb-002",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Mantiene un número de instancias EC2 entre un mínimo y un máximo, reemplaza las que fallan y añade o quita instancias según la demanda.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Elastic Load Balancing",
+        "explanation": "ELB reparte el tráfico entre instancias y detecta las que fallan, pero no crea ni elimina instancias. Sería la respuesta para distribuir la carga."
+      },
+      {
+        "id": "b",
+        "text": "EC2 Auto Scaling Group",
+        "explanation": "Correcta. El ASG gestiona la cantidad de instancias, su reemplazo y el escalado automático."
+      },
+      {
+        "id": "c",
+        "text": "AWS Elastic Beanstalk",
+        "explanation": "Beanstalk usa por debajo un ASG y un balanceador para desplegar aplicaciones, pero es una plataforma completa (PaaS), no el mecanismo de escalado en sí."
+      },
+      {
+        "id": "d",
+        "text": "Amazon CloudWatch",
+        "explanation": "CloudWatch proporciona métricas y alarmas que pueden disparar el escalado, pero no lanza ni termina instancias por sí mismo."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Crear/quitar/reemplazar instancias automáticamente → Auto Scaling Group.",
+    "refs": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-groups.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-elb-003",
+    "domain": 3,
+    "section": "ELB y Auto Scaling",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Balanceador de capa 3 que despliega y escala appliances virtuales de terceros (firewalls, sistemas de detección de intrusos) usando el protocolo GENEVE.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Network Firewall",
+        "explanation": "Network Firewall es el firewall gestionado de AWS para la VPC; no balancea tráfico hacia appliances de otros proveedores. Sería correcto si se quisiera un firewall de AWS sin terceros."
+      },
+      {
+        "id": "b",
+        "text": "Gateway Load Balancer",
+        "explanation": "Correcta. El GWLB inserta y escala appliances de seguridad de terceros de forma transparente en la ruta del tráfico."
+      },
+      {
+        "id": "c",
+        "text": "Network Load Balancer",
+        "explanation": "El NLB balancea TCP/UDP hacia aplicaciones en la capa 4; no está diseñado para encadenar appliances con GENEVE."
+      },
+      {
+        "id": "d",
+        "text": "AWS Transit Gateway",
+        "explanation": "Transit Gateway interconecta muchas VPCs y redes on-premises; no distribuye tráfico entre appliances. Sería correcto para una topología hub-and-spoke."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Appliances virtuales de terceros + GENEVE → Gateway Load Balancer.",
+    "refs": [
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-s3-001",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Almacenamiento de objetos prácticamente ilimitado, con 11 nueves de durabilidad, accesible por HTTP y capaz de alojar sitios web estáticos.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon EBS",
+        "explanation": "EBS es almacenamiento en bloque para una instancia EC2; no sirve objetos por HTTP. Sería la respuesta para el disco de un servidor."
+      },
+      {
+        "id": "b",
+        "text": "Amazon S3",
+        "explanation": "Correcta. S3 es el servicio de almacenamiento de objetos de AWS, base de data lakes, backups y sitios estáticos."
+      },
+      {
+        "id": "c",
+        "text": "Amazon EFS",
+        "explanation": "EFS es un sistema de archivos NFS compartido para instancias; no es almacenamiento de objetos por HTTP."
+      },
+      {
+        "id": "d",
+        "text": "Amazon DynamoDB",
+        "explanation": "DynamoDB es una base de datos NoSQL clave-valor; guarda elementos pequeños (hasta 400 KB), no archivos grandes."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Objetos, durabilidad de 11 nueves y sitios estáticos → S3.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-s3-002",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Servicio híbrido que presenta almacenamiento de AWS a las aplicaciones locales como recursos de archivos, volúmenes iSCSI o cintas virtuales.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Storage Gateway",
+        "explanation": "Correcta. Storage Gateway (File, Volume y Tape Gateway) conecta entornos on-premises con almacenamiento en la nube."
+      },
+      {
+        "id": "b",
+        "text": "AWS DataSync",
+        "explanation": "DataSync mueve datos (migraciones o sincronizaciones programadas) entre on-premises y AWS, pero no presenta un almacenamiento permanente a las aplicaciones locales."
+      },
+      {
+        "id": "c",
+        "text": "AWS Direct Connect",
+        "explanation": "Direct Connect es una conexión de red privada dedicada; no es un servicio de almacenamiento. Sería la respuesta para enlazar el centro de datos con AWS."
+      },
+      {
+        "id": "d",
+        "text": "AWS Backup",
+        "explanation": "AWS Backup centraliza copias de seguridad de servicios de AWS (y algunos on-premises vía Storage Gateway), pero no presenta volúmenes o cintas a las aplicaciones."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Aplicaciones locales que usan almacenamiento en la nube como archivos, volúmenes o cintas → Storage Gateway.",
+    "refs": [
+      "https://aws.amazon.com/storagegateway/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-s3-003",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Clase de almacenamiento de S3 que mueve automáticamente cada objeto al nivel de acceso más barato según su uso, sin cargos de recuperación.",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Standard-IA",
+        "explanation": "Standard-IA es una clase fija para datos de poco acceso y cobra por recuperar. Sería correcta si supieras que los datos casi no se consultan."
+      },
+      {
+        "id": "b",
+        "text": "S3 Glacier Flexible Retrieval",
+        "explanation": "Glacier Flexible es una clase de archivo con recuperaciones de minutos a horas; no mueve objetos por sí sola."
+      },
+      {
+        "id": "c",
+        "text": "S3 Intelligent-Tiering",
+        "explanation": "Correcta. Intelligent-Tiering monitoriza el acceso y ajusta automáticamente el nivel de cada objeto."
+      },
+      {
+        "id": "d",
+        "text": "Reglas de ciclo de vida de S3",
+        "explanation": "Las reglas de ciclo de vida mueven objetos según su ANTIGÜEDAD y las configuras tú; no según el uso real. Sería correcto para patrones conocidos."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Optimización automática según el uso real → Intelligent-Tiering.",
+    "refs": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-s3-004",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Transfiere de forma online y programada grandes volúmenes de datos entre almacenamiento on-premises (NFS, SMB, HDFS) u otras nubes y servicios como S3, EFS o FSx.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Snowball Edge",
+        "explanation": "Snowball Edge mueve datos de forma FÍSICA con un dispositivo enviado por mensajería (y desde nov-2025 solo para clientes existentes). Sería la respuesta con una red muy lenta."
+      },
+      {
+        "id": "b",
+        "text": "AWS DataSync",
+        "explanation": "Correcta. DataSync automatiza y acelera transferencias por red, con programación, verificación de integridad y conservación de metadatos."
+      },
+      {
+        "id": "c",
+        "text": "AWS Database Migration Service",
+        "explanation": "DMS migra BASES DE DATOS (con replicación continua), no sistemas de archivos."
+      },
+      {
+        "id": "d",
+        "text": "S3 Transfer Acceleration",
+        "explanation": "Transfer Acceleration acelera subidas a S3 vía Edge Locations, pero no es un servicio de sincronización programada desde NFS/SMB."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Transferencias online y programadas de archivos hacia S3/EFS/FSx → DataSync.",
+    "refs": [
+      "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-s3-005",
+    "domain": 3,
+    "section": "Amazon S3",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Clase de S3 para archivo a largo plazo, la más barata de todas, con tiempos de recuperación de 12 a 48 horas.",
+    "options": [
+      {
+        "id": "a",
+        "text": "S3 Glacier Instant Retrieval",
+        "explanation": "Instant Retrieval permite recuperar en milisegundos y cuesta más guardar. Sería correcta para archivo consultado una vez por trimestre."
+      },
+      {
+        "id": "b",
+        "text": "S3 One Zone-IA",
+        "explanation": "One Zone-IA da acceso inmediato en una sola AZ; es barata, pero no la más barata ni pensada para archivo de años."
+      },
+      {
+        "id": "c",
+        "text": "S3 Glacier Deep Archive",
+        "explanation": "Correcta. Deep Archive es la opción de menor coste para retener datos durante años con recuperación en horas."
+      },
+      {
+        "id": "d",
+        "text": "S3 Glacier Flexible Retrieval",
+        "explanation": "Flexible Retrieval recupera en minutos u horas (hasta 12 h) y cuesta algo más que Deep Archive. Sería correcta si necesitaras recuperar más rápido."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Lo más barato posible y recuperación en 12-48 h → Glacier Deep Archive.",
+    "refs": [
+      "https://aws.amazon.com/s3/storage-classes/glacier/"
+    ],
+    "source": "original"
   }
 ]
