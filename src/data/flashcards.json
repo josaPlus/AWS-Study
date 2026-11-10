@@ -1,0 +1,105 @@
+[
+  {
+    "id": "sec-001",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "Modelo de responsabilidad compartida: ¿qué significa \"seguridad DE la nube\" frente a \"seguridad EN la nube\"?",
+    "back": "Seguridad DE la nube = AWS: protege la infraestructura física, el hardware, la red global y el software de virtualización.\nSeguridad EN la nube = cliente: protege lo que pone encima (datos, identidades, permisos, SO invitado, configuración de red y cifrado).",
+    "tags": [
+      "responsabilidad-compartida"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-002",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "comparacion",
+    "front": "GuardDuty vs Inspector: ¿cuál detecta amenazas y cuál vulnerabilidades?",
+    "back": "GuardDuty detecta AMENAZAS y actividad sospechosa en la cuenta (analiza CloudTrail, VPC Flow Logs y DNS con ML).\nInspector busca VULNERABILIDADES de software (CVE) y exposición de red en EC2, imágenes de ECR y funciones Lambda.",
+    "tags": [
+      "guardduty",
+      "inspector"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-003",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué protege AWS Shield Standard y cuánto cuesta?",
+    "back": "Protege contra los ataques DDoS más comunes de capa 3 y 4 (p. ej., SYN/UDP floods). Está activado automáticamente para todos los clientes y no tiene coste adicional.",
+    "tags": [
+      "shield",
+      "ddos"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-004",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "dato-clave",
+    "front": "¿Qué añade AWS Shield Advanced sobre Shield Standard?",
+    "back": "Protección DDoS más sofisticada para EC2, ELB, CloudFront, Global Accelerator y Route 53; acceso 24/7 al equipo de respuesta DDoS de AWS (SRT) y protección de los costes extra causados por el escalado durante un ataque. Tiene cuota mensual.",
+    "tags": [
+      "shield",
+      "ddos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "sec-005",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "caso-de-uso",
+    "front": "Necesitas bloquear intentos de inyección SQL y cross-site scripting contra tu Application Load Balancer. ¿Qué servicio usas?",
+    "back": "AWS WAF: firewall de aplicaciones web de capa 7 que se asocia a ALB, CloudFront, API Gateway o AppSync y filtra peticiones HTTP con reglas (SQLi, XSS, IPs, países, límites de tasa).",
+    "tags": [
+      "waf"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-006",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Para qué sirve Amazon Macie?",
+    "back": "Usa machine learning y coincidencia de patrones para descubrir y proteger datos sensibles (como información personal identificable, PII) guardados en Amazon S3, y te avisa de buckets expuestos.",
+    "tags": [
+      "macie",
+      "pii"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-007",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "concepto",
+    "front": "¿Qué es AWS Artifact?",
+    "back": "Un portal de autoservicio para descargar los informes de cumplimiento de AWS (ISO, SOC, PCI…) y aceptar acuerdos como el BAA de HIPAA. Es documentación de AWS, no una herramienta que evalúe tus recursos.",
+    "tags": [
+      "artifact",
+      "cumplimiento"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "sec-008",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "type": "comparacion",
+    "front": "KMS vs CloudHSM: ¿qué cambia?",
+    "back": "KMS: AWS gestiona el hardware y el software de cifrado; tú controlas las claves mediante políticas. Integrado con casi todos los servicios.\nCloudHSM: AWS te da un módulo de seguridad de hardware (HSM) dedicado y TÚ gestionas las claves por completo (single-tenant, FIPS 140-3 nivel 3).",
+    "tags": [
+      "kms",
+      "cloudhsm",
+      "cifrado"
+    ],
+    "difficulty": 2
+  }
+]

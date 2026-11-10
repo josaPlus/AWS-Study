@@ -1,0 +1,320 @@
+[
+  {
+    "id": "q-sec-001",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa quiere detectar de forma continua actividad sospechosa en su cuenta de AWS, como llamadas a la API desde direcciones IP maliciosas conocidas o instancias EC2 que se comunican con servidores de minería de criptomonedas. No quiere instalar agentes. ¿Qué servicio debe usar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon GuardDuty",
+        "explanation": "Correcta. GuardDuty analiza CloudTrail, VPC Flow Logs y registros DNS con machine learning e inteligencia de amenazas para detectar actividad maliciosa en la cuenta, sin instalar nada en las instancias."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector escanea vulnerabilidades de software (CVE) y exposición de red en EC2, ECR y Lambda; no detecta amenazas activas en la cuenta. Sería la respuesta si la pregunta hablara de encontrar paquetes sin parchear o vulnerabilidades conocidas."
+      },
+      {
+        "id": "c",
+        "text": "AWS Shield Advanced",
+        "explanation": "Shield Advanced protege contra ataques DDoS y da acceso al equipo de respuesta DDoS. No analiza llamadas a la API ni tráfico hacia servidores de minería. Sería correcta si el escenario fuera un ataque de denegación de servicio."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Macie",
+        "explanation": "Macie descubre datos sensibles (PII) almacenados en buckets de S3. No vigila llamadas a la API ni el comportamiento de las instancias. Sería la respuesta si la empresa necesitara saber dónde guarda información personal en S3."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Amenazas y actividad sospechosa en la cuenta → GuardDuty. Vulnerabilidades del software → Inspector.",
+    "refs": [
+      "https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-002",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Un auditor externo pide a una empresa los informes de cumplimiento SOC 2 y la certificación ISO 27001 de la infraestructura de AWS que usa. ¿Dónde puede obtenerlos la empresa?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Config",
+        "explanation": "AWS Config registra la configuración de TUS recursos y evalúa si cumplen tus reglas, pero no contiene los informes de auditoría de AWS. Sería la respuesta si se pidiera demostrar que tus Security Groups o buckets cumplen una política interna."
+      },
+      {
+        "id": "b",
+        "text": "AWS Artifact",
+        "explanation": "Correcta. AWS Artifact es el portal de autoservicio donde se descargan bajo demanda los informes de cumplimiento de AWS (SOC, ISO, PCI) y se gestionan acuerdos como el BAA."
+      },
+      {
+        "id": "c",
+        "text": "AWS Security Hub",
+        "explanation": "Security Hub centraliza hallazgos de seguridad (de GuardDuty, Inspector, Macie…) y comprueba tus cuentas contra estándares como CIS. No entrega los informes de auditoría de AWS. Sería correcta si se pidiera una vista única del estado de seguridad de varias cuentas."
+      },
+      {
+        "id": "d",
+        "text": "AWS Trusted Advisor",
+        "explanation": "Trusted Advisor da recomendaciones sobre costes, rendimiento, seguridad, tolerancia a fallos y cuotas de servicio de tu cuenta. No proporciona certificaciones de AWS. Sería la respuesta si se buscaran buenas prácticas para optimizar la cuenta."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Informes de cumplimiento DE AWS (SOC, ISO, PCI) → AWS Artifact. Cumplimiento de TUS recursos → AWS Config.",
+    "refs": [
+      "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-003",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "multiple",
+    "selectCount": 2,
+    "stem": "Según el modelo de responsabilidad compartida, ¿cuáles de estas tareas son responsabilidad del cliente cuando usa Amazon EC2? (Elige 2)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Aplicar parches al sistema operativo invitado",
+        "explanation": "Correcta. En EC2 (IaaS) el cliente controla el sistema operativo de la instancia, así que debe mantenerlo actualizado y parcheado."
+      },
+      {
+        "id": "b",
+        "text": "Configurar las reglas de los Security Groups",
+        "explanation": "Correcta. Decidir qué puertos y orígenes pueden llegar a la instancia es configuración de red del cliente, parte de la seguridad EN la nube."
+      },
+      {
+        "id": "c",
+        "text": "Mantener el hardware físico de los servidores",
+        "explanation": "Incorrecta. El hardware, los centros de datos y su seguridad física son responsabilidad de AWS (seguridad DE la nube); el cliente nunca accede a ellos."
+      },
+      {
+        "id": "d",
+        "text": "Parchear el hipervisor que ejecuta las instancias",
+        "explanation": "Incorrecta. La capa de virtualización pertenece a la infraestructura que gestiona AWS. El cliente empieza a ser responsable a partir del sistema operativo invitado."
+      },
+      {
+        "id": "e",
+        "text": "Proteger la red global que conecta las Regiones",
+        "explanation": "Incorrecta. La red global, las Regiones, las AZ y las Edge Locations forman la infraestructura de AWS, que AWS protege y opera."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "summary": "En EC2 el cliente se encarga del SO invitado, las aplicaciones, los datos, IAM y los Security Groups; AWS del hardware, la red global y el hipervisor.",
+    "refs": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-004",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una tienda online sufre peticiones HTTP que intentan inyección SQL en su formulario de búsqueda. La aplicación está detrás de Amazon CloudFront. ¿Qué servicio permite filtrar esas peticiones antes de que lleguen a la aplicación?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Shield Standard",
+        "explanation": "Shield Standard protege automáticamente contra ataques DDoS de red y transporte (capas 3 y 4), no inspecciona el contenido de las peticiones HTTP. Sería correcta ante una inundación de tráfico que intenta tumbar el sitio."
+      },
+      {
+        "id": "b",
+        "text": "Network ACL",
+        "explanation": "Una NACL filtra tráfico por IP, puerto y protocolo a nivel de subred, sin entender HTTP ni detectar inyección SQL. Sería útil para bloquear una dirección IP concreta dentro de la VPC."
+      },
+      {
+        "id": "c",
+        "text": "AWS WAF",
+        "explanation": "Correcta. AWS WAF es un firewall de capa 7 que se asocia a CloudFront, ALB o API Gateway y bloquea patrones como inyección SQL y XSS con reglas gestionadas o propias."
+      },
+      {
+        "id": "d",
+        "text": "Amazon GuardDuty",
+        "explanation": "GuardDuty detecta amenazas analizando logs (CloudTrail, VPC Flow Logs, DNS) y genera hallazgos, pero no bloquea peticiones HTTP en línea. Sería la respuesta si se buscara detectar una cuenta comprometida."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Ataques a nivel de aplicación web (inyección SQL, XSS, filtrar por país o IP en HTTP) → AWS WAF.",
+    "refs": [
+      "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "q-sec-005",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "examen",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Una empresa de salud debe cumplir un requisito que exige que las claves de cifrado se guarden en un módulo de hardware dedicado de un solo inquilino, con control exclusivo del cliente. ¿Qué servicio cumple este requisito?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Key Management Service (KMS) con claves administradas por AWS",
+        "explanation": "Con claves administradas por AWS, es AWS quien crea y rota las claves, y el hardware es compartido y gestionado por AWS. No cumple el requisito de control exclusivo; sí sería válido para cifrar datos sin gestionar claves."
+      },
+      {
+        "id": "b",
+        "text": "AWS CloudHSM",
+        "explanation": "Correcta. CloudHSM aprovisiona HSM dedicados (single-tenant) en los que solo el cliente gestiona usuarios y claves; AWS solo mantiene el hardware."
+      },
+      {
+        "id": "c",
+        "text": "AWS Secrets Manager",
+        "explanation": "Secrets Manager guarda y rota secretos como contraseñas de bases de datos o claves de API; no es un módulo de hardware para claves de cifrado. Sería la respuesta si se pidiera rotar automáticamente credenciales de RDS."
+      },
+      {
+        "id": "d",
+        "text": "AWS Certificate Manager (ACM)",
+        "explanation": "ACM aprovisiona y renueva certificados SSL/TLS para ELB, CloudFront o API Gateway. No ofrece HSM dedicados. Sería correcta si la necesidad fuera activar HTTPS con certificados gratuitos."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "HSM dedicado y control total de las claves → CloudHSM. Claves gestionadas e integradas con los servicios → KMS.",
+    "refs": [
+      "https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-001",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Escanea automáticamente las instancias EC2, las imágenes de contenedor en ECR y las funciones Lambda en busca de vulnerabilidades de software conocidas (CVE) y exposición de red no deseada.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Amazon Inspector",
+        "explanation": "Correcta. Inspector evalúa continuamente cargas de trabajo en EC2, ECR y Lambda en busca de CVE y rutas de red expuestas, y prioriza los hallazgos por riesgo."
+      },
+      {
+        "id": "b",
+        "text": "Amazon GuardDuty",
+        "explanation": "GuardDuty detecta amenazas activas (comportamiento malicioso en la cuenta) analizando logs; no busca paquetes vulnerables. Sería la respuesta ante credenciales robadas o tráfico hacia IPs maliciosas."
+      },
+      {
+        "id": "c",
+        "text": "AWS Config",
+        "explanation": "Config registra cómo están configurados tus recursos y si cumplen reglas, pero no analiza el software instalado en busca de CVE. Sería correcta para detectar un bucket que se volvió público."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Detective",
+        "explanation": "Detective ayuda a investigar el origen de un hallazgo de seguridad visualizando relaciones entre recursos y eventos; no escanea vulnerabilidades. Sería la respuesta si se pidiera analizar la causa raíz de un incidente."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "summary": "Vulnerabilidades (CVE) en EC2, ECR y Lambda → Amazon Inspector.",
+    "refs": [
+      "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-002",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Usa machine learning para encontrar números de tarjeta, direcciones y otros datos personales guardados en buckets de Amazon S3, y alerta si un bucket es público o no está cifrado.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Security Hub",
+        "explanation": "Security Hub agrega y prioriza hallazgos de varios servicios y cuentas, pero no examina el contenido de los objetos de S3. Sería la respuesta si se buscara un panel central de seguridad multicuenta."
+      },
+      {
+        "id": "b",
+        "text": "Amazon Macie",
+        "explanation": "Correcta. Macie inspecciona el contenido de S3 para descubrir datos sensibles (PII, datos financieros) y evalúa la seguridad y el acceso de los buckets."
+      },
+      {
+        "id": "c",
+        "text": "AWS KMS",
+        "explanation": "KMS crea y gestiona claves para cifrar datos, pero no descubre qué datos son sensibles. Sería la respuesta si se pidiera cifrar los objetos con claves controladas por el cliente."
+      },
+      {
+        "id": "d",
+        "text": "Amazon Inspector",
+        "explanation": "Inspector busca vulnerabilidades de software en EC2, ECR y Lambda; no analiza datos almacenados en S3. Sería correcto para detectar librerías con CVE en una imagen de contenedor."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "summary": "Datos sensibles o PII en S3 → Amazon Macie.",
+    "refs": [
+      "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
+    ],
+    "source": "original"
+  },
+  {
+    "id": "srv-sec-003",
+    "domain": 2,
+    "section": "Seguridad y cumplimiento",
+    "mode": "servicio",
+    "type": "single",
+    "selectCount": 1,
+    "stem": "Guarda credenciales de bases de datos y claves de API, y las rota automáticamente cada cierto tiempo con integración nativa para Amazon RDS.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AWS Systems Manager Parameter Store",
+        "explanation": "Parameter Store guarda configuración y valores (incluso cifrados), pero no ofrece rotación automática nativa de secretos. Sería la opción para parámetros de configuración sencillos y sin coste."
+      },
+      {
+        "id": "b",
+        "text": "AWS Certificate Manager",
+        "explanation": "ACM gestiona certificados SSL/TLS y su renovación, no contraseñas ni claves de API. Sería la respuesta si se necesitara HTTPS en un balanceador."
+      },
+      {
+        "id": "c",
+        "text": "AWS Secrets Manager",
+        "explanation": "Correcta. Secrets Manager almacena secretos cifrados con KMS y puede rotarlos automáticamente con Lambda, con integración directa para RDS, Redshift y DocumentDB."
+      },
+      {
+        "id": "d",
+        "text": "AWS CloudHSM",
+        "explanation": "CloudHSM proporciona hardware dedicado para claves criptográficas, no un almacén de contraseñas con rotación. Sería correcto si se exigiera un HSM de un solo inquilino."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "summary": "Rotación automática de secretos (contraseñas de BD, claves de API) → Secrets Manager.",
+    "refs": [
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
+    ],
+    "source": "original"
+  }
+]

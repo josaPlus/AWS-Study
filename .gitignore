@@ -1,0 +1,5 @@
+material-privado/
+node_modules/
+dist/
+*.local
+.claude/
